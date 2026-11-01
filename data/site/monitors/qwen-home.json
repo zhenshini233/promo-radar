@@ -4,7 +4,7 @@
  "url": "https://qwen.ai",
  "slug": "qwen-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:43:32Z",
+ "last_checked_at": "2026-11-01T17:49:46Z",
  "last_changed_at": "2026-11-01T17:24:47Z",
  "notes": "auto-enrolled from brands 2026-11-01",
  "monitored": true,
@@ -28,6 +28,11 @@
   },
   {
    "checked_at": "2026-11-01T17:43:32Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:49:46Z",
    "promo_keywords": "",
    "changed": 0
   }

@@ -4,7 +4,7 @@
  "url": "https://nano-gpt.com/",
  "slug": "nanogpt-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:43:29Z",
+ "last_checked_at": "2026-11-01T17:49:42Z",
  "last_changed_at": "2026-11-01T17:32:30Z",
  "notes": "linux.do 常见便宜聚合，常有充值促销",
  "monitored": true,
@@ -51,6 +51,11 @@
   },
   {
    "checked_at": "2026-11-01T17:43:29Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:49:42Z",
    "promo_keywords": "",
    "changed": 0
   }

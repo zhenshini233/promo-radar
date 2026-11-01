@@ -4,7 +4,7 @@
  "url": "https://vercel.com",
  "slug": "vercel-com-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:43:30Z",
+ "last_checked_at": "2026-11-01T17:49:44Z",
  "last_changed_at": "2026-11-01T10:46:31Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
@@ -51,6 +51,11 @@
   },
   {
    "checked_at": "2026-11-01T17:43:30Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:49:44Z",
    "promo_keywords": "",
    "changed": 0
   }

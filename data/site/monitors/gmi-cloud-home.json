@@ -4,8 +4,8 @@
  "url": "https://gmicloud.ai",
  "slug": "gmi-cloud-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:43:31Z",
- "last_changed_at": "2026-11-01T17:43:31Z",
+ "last_checked_at": "2026-11-01T17:49:45Z",
+ "last_changed_at": "2026-11-01T17:49:45Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
  "band": "-----------------------------0",
@@ -32,6 +32,11 @@
   },
   {
    "checked_at": "2026-11-01T17:43:31Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:49:45Z",
    "promo_keywords": "",
    "changed": 1
   }
