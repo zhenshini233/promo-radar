@@ -4,7 +4,7 @@
  "url": "https://grafana.com",
  "slug": "grafana-com-home",
  "promo_keywords": "free tier",
- "last_checked_at": "2026-11-01T17:32:31Z",
+ "last_checked_at": "2026-11-01T17:43:30Z",
  "last_changed_at": "2026-11-01T17:32:31Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
@@ -48,6 +48,11 @@
    "checked_at": "2026-11-01T17:32:31Z",
    "promo_keywords": "free tier",
    "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:43:30Z",
+   "promo_keywords": "free tier",
+   "changed": 0
   }
  ]
 }

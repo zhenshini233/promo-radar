@@ -4,8 +4,8 @@
  "url": "https://mimo.mi.com/",
  "slug": "xiaomi-mimo-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:32:31Z",
- "last_changed_at": "2026-11-01T11:22:07Z",
+ "last_checked_at": "2026-11-01T17:43:30Z",
+ "last_changed_at": "2026-11-01T17:43:30Z",
  "notes": "MiMo-V2.5-TTS 价格限时免费",
  "monitored": true,
  "band": "-----------------------------0",
@@ -51,6 +51,11 @@
    "checked_at": "2026-11-01T17:32:31Z",
    "promo_keywords": "",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:30Z",
+   "promo_keywords": "",
+   "changed": 1
   }
  ]
 }

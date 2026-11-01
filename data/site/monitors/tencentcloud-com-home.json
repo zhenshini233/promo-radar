@@ -3,9 +3,9 @@
  "label": "home",
  "url": "https://tencentcloud.com",
  "slug": "tencentcloud-com-home",
- "promo_keywords": "free tier",
- "last_checked_at": "2026-11-01T17:32:31Z",
- "last_changed_at": "2026-11-01T10:46:31Z",
+ "promo_keywords": "",
+ "last_checked_at": "2026-11-01T17:43:30Z",
+ "last_changed_at": "2026-11-01T17:43:30Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
  "band": "-----------------------------1",
@@ -51,6 +51,11 @@
    "checked_at": "2026-11-01T17:32:31Z",
    "promo_keywords": "free tier",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:30Z",
+   "promo_keywords": "",
+   "changed": 1
   }
  ]
 }

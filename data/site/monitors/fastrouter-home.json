@@ -4,7 +4,7 @@
  "url": "https://fastrouter.ai",
  "slug": "fastrouter-home",
  "promo_keywords": "free credits",
- "last_checked_at": "2026-11-01T17:32:32Z",
+ "last_checked_at": "2026-11-01T17:43:31Z",
  "last_changed_at": "2026-11-01T14:08:07Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
@@ -26,6 +26,11 @@
   },
   {
    "checked_at": "2026-11-01T17:32:32Z",
+   "promo_keywords": "free credits",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:31Z",
    "promo_keywords": "free credits",
    "changed": 0
   }

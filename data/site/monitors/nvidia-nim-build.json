@@ -4,8 +4,8 @@
  "url": "https://build.nvidia.com/",
  "slug": "nvidia-nim-build",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:32:31Z",
- "last_changed_at": "2026-11-01T17:32:31Z",
+ "last_checked_at": "2026-11-01T17:43:30Z",
+ "last_changed_at": "2026-11-01T17:43:30Z",
  "notes": "Free inference + 注册 1000 credits 免绑卡（第三方证实）",
  "monitored": true,
  "band": "-----------------------------0",
@@ -51,6 +51,11 @@
   },
   {
    "checked_at": "2026-11-01T17:32:31Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:43:30Z",
    "promo_keywords": "",
    "changed": 1
   }

@@ -4,7 +4,7 @@
  "url": "https://groq.com/",
  "slug": "groq-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:32:30Z",
+ "last_checked_at": "2026-11-01T17:43:29Z",
  "last_changed_at": "2026-11-01T17:32:30Z",
  "notes": "",
  "monitored": true,
@@ -53,6 +53,11 @@
    "checked_at": "2026-11-01T17:32:30Z",
    "promo_keywords": "",
    "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:43:29Z",
+   "promo_keywords": "",
+   "changed": 0
   }
  ]
 }

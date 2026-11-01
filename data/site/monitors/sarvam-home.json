@@ -4,8 +4,8 @@
  "url": "https://www.sarvam.ai/",
  "slug": "sarvam-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:32:31Z",
- "last_changed_at": "2026-11-01T17:32:31Z",
+ "last_checked_at": "2026-11-01T17:43:30Z",
+ "last_changed_at": "2026-11-01T17:43:30Z",
  "notes": "印度 Sarvam AI；AA 交叉比对发现的盲区",
  "monitored": true,
  "band": "-----------------------------0",
@@ -29,6 +29,11 @@
   },
   {
    "checked_at": "2026-11-01T17:32:31Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:43:30Z",
    "promo_keywords": "",
    "changed": 1
   }

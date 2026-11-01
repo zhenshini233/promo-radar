@@ -1,26 +1,29 @@
 {
- "provider": "美团",
+ "provider": "阿里云（中国站）",
  "label": "home",
- "url": "https://about.meituan.com",
+ "url": "https://www.aliyun.com",
  "slug": "home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:32:32Z",
- "last_changed_at": "2026-11-01T17:32:32Z",
+ "last_checked_at": "2026-11-01T17:43:32Z",
+ "last_changed_at": "2026-11-01T17:43:32Z",
  "notes": "auto-enrolled from brands 2026-11-01",
  "monitored": true,
- "band": "-----------------------------0",
+ "band": "-----------------------------1",
  "checked_days": 1,
- "covered_by": [
-  "openrouter"
- ],
+ "covered_by": [],
  "history": [
   {
    "checked_at": "2026-11-01T17:24:47Z",
-   "promo_keywords": "",
+   "promo_keywords": "免费额度",
    "changed": 0
   },
   {
    "checked_at": "2026-11-01T17:32:32Z",
+   "promo_keywords": "免费额度",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:32Z",
    "promo_keywords": "",
    "changed": 1
   }

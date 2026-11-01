@@ -4,7 +4,7 @@
  "url": "https://hyperbolic.ai",
  "slug": "hyperbolic-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:32:30Z",
+ "last_checked_at": "2026-11-01T17:43:29Z",
  "last_changed_at": "2026-11-01T10:03:21Z",
  "notes": "SSR，当前无静态 promo 文案，纳入监控等其上线",
  "monitored": true,
@@ -47,6 +47,11 @@
   },
   {
    "checked_at": "2026-11-01T17:32:30Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:29Z",
    "promo_keywords": "",
    "changed": 0
   }

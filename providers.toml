@@ -2678,3 +2678,18 @@ urls = [
     { label = "home", url = "https://www.turing.ac.uk" },
 ]
 notes = "auto-enrolled from brands 2026-11-01"
+
+[[provider]]
+name = "sovereignai.gov.uk"
+urls = [
+    { label = "home", url = "https://sovereignai.gov.uk" },
+]
+notes = "auto-enrolled from aicredits 2026-11-01"
+
+
+[[provider]]
+name = "disg.gov.sg"
+urls = [
+    { label = "home", url = "https://disg.gov.sg" },
+]
+notes = "auto-enrolled from aicredits 2026-11-01"

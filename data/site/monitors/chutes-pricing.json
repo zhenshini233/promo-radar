@@ -4,7 +4,7 @@
  "url": "https://chutes.ai/pricing",
  "slug": "chutes-pricing",
  "promo_keywords": "free tier",
- "last_checked_at": "2026-11-01T17:32:30Z",
+ "last_checked_at": "2026-11-01T17:43:29Z",
  "last_changed_at": "2026-11-01T17:24:45Z",
  "notes": "SSR，free tier 声明在静态 HTML",
  "monitored": true,
@@ -47,6 +47,11 @@
   },
   {
    "checked_at": "2026-11-01T17:32:30Z",
+   "promo_keywords": "free tier",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:29Z",
    "promo_keywords": "free tier",
    "changed": 0
   }

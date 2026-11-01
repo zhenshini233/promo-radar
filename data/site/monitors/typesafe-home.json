@@ -4,7 +4,7 @@
  "url": "https://typesafe.ai/",
  "slug": "typesafe-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:32:31Z",
+ "last_checked_at": "2026-11-01T17:43:30Z",
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "Jev 模型 early access，盯定价/促销",
  "monitored": true,
@@ -47,6 +47,11 @@
   },
   {
    "checked_at": "2026-11-01T17:32:31Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:30Z",
    "promo_keywords": "",
    "changed": 0
   }

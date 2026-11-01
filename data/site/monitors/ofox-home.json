@@ -4,8 +4,8 @@
  "url": "https://ofox.ai",
  "slug": "ofox-home",
  "promo_keywords": "$3 credit;;free tier",
- "last_checked_at": "2026-11-01T17:32:32Z",
- "last_changed_at": "2026-11-01T14:08:07Z",
+ "last_checked_at": "2026-11-01T17:43:31Z",
+ "last_changed_at": "2026-11-01T17:43:31Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
  "band": "-----------------------------1",
@@ -28,6 +28,11 @@
    "checked_at": "2026-11-01T17:32:32Z",
    "promo_keywords": "$3 credit;;free tier",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:43:31Z",
+   "promo_keywords": "$3 credit;;free tier",
+   "changed": 1
   }
  ]
 }
