@@ -31,6 +31,7 @@ jobs:
         env:
           RADAR_TG_TOKEN: ${{ secrets.RADAR_TG_TOKEN }}
           RADAR_TG_CHAT_ID: ${{ secrets.RADAR_TG_CHAT_ID }}
+          RADAR_AA_KEY: ${{ secrets.RADAR_AA_KEY }}
         run: python -m radar run
 
       # 数据 commit 回仓库 = 持久化 + 去重历史 + 天然保活（规避 60 天无活动自动禁用）
