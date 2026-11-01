@@ -1,0 +1,36 @@
+{
+ "provider": "MiniMax Token Plan (minimax.cn)",
+ "label": "home",
+ "url": "https://minimaxi.com",
+ "slug": "minimax-token-plan-minimax-cn-home",
+ "promo_keywords": "",
+ "last_checked_at": "2026-11-01T17:32:32Z",
+ "last_changed_at": "2026-11-01T17:32:32Z",
+ "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
+ "monitored": true,
+ "band": "-----------------------------0",
+ "checked_days": 1,
+ "covered_by": [
+  "openrouter",
+  "modelsdev",
+  "litellm",
+  "aa_providers"
+ ],
+ "history": [
+  {
+   "checked_at": "2026-11-01T14:08:07Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T17:24:47Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:32:32Z",
+   "promo_keywords": "",
+   "changed": 1
+  }
+ ]
+}

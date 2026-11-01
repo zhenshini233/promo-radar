@@ -1,0 +1,54 @@
+{
+ "provider": "Lambda",
+ "label": "home",
+ "url": "https://lambda.ai/",
+ "slug": "lambda-home",
+ "promo_keywords": "",
+ "last_checked_at": "2026-11-01T17:32:30Z",
+ "last_changed_at": "2026-11-01T17:32:30Z",
+ "notes": "",
+ "monitored": true,
+ "band": "-----------------------------0",
+ "checked_days": 1,
+ "covered_by": [
+  "aicredits",
+  "litellm"
+ ],
+ "history": [
+  {
+   "checked_at": "2026-11-01T12:29:38Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T12:39:06Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T12:42:37Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T13:55:03Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T14:08:06Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:24:45Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:32:30Z",
+   "promo_keywords": "",
+   "changed": 1
+  }
+ ]
+}

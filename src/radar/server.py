@@ -1,0 +1,137 @@
+"""本地服务模式：`radar serve` —— 静态 dashboard + 手动刷新 API。
+
+- GET  /            及静态文件：site/ 目录
+- GET  /api/status  {"running": bool, "last": {...}}
+- POST /api/refresh {"sources": ["aicredits", ...]}  省略 = 全部源
+  后台线程执行一轮抓取；进行中重复请求返回 running。
+
+仅绑定 127.0.0.1，供本机使用；零第三方依赖（标准库实现）。
+"""
+
+from __future__ import annotations
+
+import json
+import threading
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+
+from .infra.config import load_config, load_providers
+from .pipeline.runner import run
+from .storage.repository import SqliteRepository
+
+_lock = threading.Lock()
+_state = {"running": False, "started_at": None, "finished_at": None, "error": ""}
+
+
+def _build_site(cfg) -> None:
+    """独立构建站点（避免 delivery↔pipeline 循环导入，延迟导入）。"""
+    from .delivery.site import build_site
+
+    repo = SqliteRepository(cfg.data_dir / "radar.db")
+    try:
+        build_site(cfg, repo)
+    finally:
+        repo.close()
+
+
+def _refresh_worker(cfg, sources: list[str] | None) -> None:
+    try:
+        repo = SqliteRepository(cfg.data_dir / "radar.db")
+        try:
+            run(cfg, repo, only=sources or None)
+        finally:
+            repo.close()
+        _build_site(cfg)
+        _state["error"] = ""
+    except Exception as e:  # noqa: BLE001 - 后台刷新失败回传给页面
+        _state["error"] = f"{type(e).__name__}: {e}"
+    finally:
+        import datetime as _dt
+
+        _state["finished_at"] = _dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        _state["running"] = False
+
+
+class RadarHandler(SimpleHTTPRequestHandler):
+    cfg = None  # 由 make_server 注入
+    registry_names: list[str] = []
+
+    def log_message(self, fmt, *args):  # 静默默认访问日志
+        pass
+
+    def _json(self, obj: dict, code: int = 200) -> None:
+        body = json.dumps(obj, ensure_ascii=False).encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_GET(self):
+        if self.path.split("?")[0] == "/api/status":
+            last = None
+            repo = SqliteRepository(self.cfg.data_dir / "radar.db")
+            try:
+                last = repo.last_run()
+            finally:
+                repo.close()
+            self._json({"running": _state["running"], "error": _state["error"],
+                        "finished_at": _state["finished_at"], "last": last})
+            return
+        super().do_GET()
+
+    def do_POST(self):
+        if self.path.split("?")[0] != "/api/refresh":
+            self._json({"error": "not found"}, 404)
+            return
+        if _state["running"]:
+            self._json({"running": True, "message": "上一轮刷新仍在进行"})
+            return
+        length = int(self.headers.get("Content-Length") or 0)
+        body = json.loads(self.rfile.read(length) or b"{}") if length else {}
+        sources = body.get("sources") or None
+        if sources:
+            valid = set(self.registry_names)
+            sources = [s for s in sources if s in valid] or None
+
+        _state["running"] = True
+        _state["error"] = ""
+        import datetime as _dt
+
+        _state["started_at"] = _dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        threading.Thread(target=_refresh_worker, args=(self.cfg, sources), daemon=True).start()
+        self._json({"started": True, "sources": sources or "all"})
+
+
+def make_server(cfg, host: str = "127.0.0.1", port: int = 8790) -> ThreadingHTTPServer:
+    site_dir = cfg.data_dir / "site"
+    site_dir.mkdir(parents=True, exist_ok=True)
+
+    class BoundHandler(RadarHandler):
+        def __init__(self, *a, **kw):
+            super().__init__(*a, directory=str(site_dir), **kw)
+
+    BoundHandler.cfg = cfg
+    BoundHandler.registry_names = _source_names()
+    return ThreadingHTTPServer((host, port), BoundHandler)
+
+
+def _source_names() -> list[str]:
+    from .collectors.base import registered_names
+
+    return registered_names()
+
+
+def serve(cfg, port: int) -> None:
+    # 启动前先保证站点存在
+    _build_site(cfg)
+    httpd = make_server(cfg, port=port)
+    names = ", ".join(_source_names())
+    print(f"promo-radar 本地服务已启动: http://127.0.0.1:{port}/")
+    print(f"  页面: 浏览器打开上面地址；刷新: 页面右上角按钮（可勾选部分源）")
+    print(f"  可用源: {names}")
+    print("  Ctrl+C 退出")
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\n已退出")

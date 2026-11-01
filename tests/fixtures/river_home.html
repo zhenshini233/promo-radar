@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Token pricing moved from the #pricing sheet to its own page; old links land there before the homepage draws,
+       keeping their query string so campaign parameters (utm_*, gclid) still reach analytics. -->
+  <script>if (location.hash === "#pricing") location.replace("/pricing" + location.search);</script>
+  <link rel="canonical" href="https://river.ai/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>River AI — Your own frontier AI lab. In one API.</title>
+  <meta name="description" content="Develop frontier language models and agents. Training, reinforcement learning, and inference in one system, on River Cloud or your own GPU cluster." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="River AI" />
+  <meta property="og:title" content="River AI — Your own frontier AI lab. In one API." />
+  <meta property="og:description" content="Develop frontier models and agents. Own the intelligence you create. The complete River stack, on our cloud or your GPUs." />
+  <meta property="og:url" content="https://river.ai/" />
+  <meta property="og:image" content="https://river.ai/assets/og-river-monogram.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The River logo centred on a deep blue card, with a faint pattern of small River marks in the bottom-right corner" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="/assets/fonts/instrument-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/fonts/fonts.css?v=6" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png?v=2" sizes="192x192" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2" />
+  <link rel="stylesheet" href="/styles.css?v=79" />
+  <link rel="stylesheet" href="/api.css?v=193" />
+  <script src="/api-experience.js?v=17" defer></script>
+  <script src="/pricing-table.js?v=6" defer></script>
+  <script src="/customer-ticker.js?v=2" defer></script>
+  <script src="/hero-layout.js?v=5" defer></script>
+  <script src="/api-cluster.js?v=29" defer></script>
+  <link rel="stylesheet" href="/site.css?v=99" />
+  <link rel="stylesheet" href="/interest-form.css?v=3" />
+  <script src="/site.js?v=8" defer></script>
+  <script src="/interest-config.js?v=2" defer></script>
+  <script src="/interest-form.js?v=3" defer></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458611770"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18458611770');
+  </script>
+  <script src="/analytics.js?v=2" data-page="home" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://river.ai/#organization",
+        "name": "River AI",
+        "url": "https://river.ai/",
+        "logo": "https://river.ai/assets/favicon.png",
+        "sameAs": ["https://x.com/river_ai_inc"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://river.ai/#website",
+        "name": "River AI",
+        "url": "https://river.ai/",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://river.ai/#organization" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="api-page">
+  <a class="lab-skip-link" href="#main">Skip to content</a>
+  <nav class="nav site-nav" aria-label="Main navigation">
+    <a href="/" class="wordmark" aria-label="River.ai home"><svg class="logo" viewBox="51 75 709 176" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M290 96.9999C290 137.317 257.344 170.066 216.875 170.066H160L166.216 145.171C168.44 136.265 176.441 130.016 185.62 130.016H216.875C235.169 130.015 250 115.222 250 96.9741V93.005C250 91.3462 251.346 90.0022 253.005 90.005L287.005 90.0613C288.66 90.064 290 91.4064 290 93.0613V96.9999Z" fill="currentColor"/><path d="M51.0004 163.066C51.0004 122.75 83.6561 90.0004 124.125 90.0002H176.159C178.11 90.0002 179.542 91.8337 179.069 93.7269L171.514 123.989C170.624 127.551 167.424 130.051 163.752 130.051H124.125C105.831 130.051 91.0004 144.844 91.0004 163.092V167.033C91.0004 168.69 89.6572 170.033 88.0004 170.033H54.0004C52.3435 170.033 51.0004 168.69 51.0004 167.033V163.066Z" fill="currentColor"/><path d="M51.0002 243.334C51.0002 203.017 83.6559 170.268 124.125 170.268L160 170L151.496 204.017C150.614 207.543 147.467 210.031 143.833 210.076L124.125 210.318C105.831 210.319 91.0002 225.112 91.0002 243.36V247.329C91.0002 248.988 89.654 250.332 87.9952 250.329L53.9952 250.273C52.3403 250.27 51.0002 248.928 51.0002 247.273V243.334Z" fill="currentColor"/><path d="M290 177C290 217.317 257.344 250.066 216.875 250.066H140L145.27 228.96C148.05 217.827 158.051 210.016 169.525 210.016H216.875C235.169 210.015 250 195.222 250 176.974V173.005C250 171.346 251.346 170.002 253.005 170.005L287.005 170.061C288.66 170.064 290 171.406 290 173.061V177Z" fill="currentColor"/><path d="M360.143 240V177.852C360.143 139.753 379.907 120.465 410.148 120.465H412.529V143.087H410.148C393.004 143.087 383.479 154.278 383.479 177.852V240H360.143ZM424.5 90.2246C424.5 81.8905 430.929 75.9376 438.787 75.9376C446.645 75.9376 452.836 82.3668 452.836 90.2246C452.836 98.0825 446.645 104.512 438.787 104.512C430.929 104.512 424.5 98.0825 424.5 90.2246ZM427.119 240V120.942H450.455V240H427.119ZM505.391 240L457.529 120.942H482.056L517.059 209.759L552.3 120.942H576.826L528.726 240H505.391ZM635.06 119.037C666.016 119.037 695.542 142.372 696.494 178.328C696.494 182.376 696.256 185.948 695.78 189.043H599.581C601.486 206.902 616.011 219.284 635.06 219.284C646.728 219.284 656.253 215.236 663.634 207.378L691.494 207.616C681.017 228.332 659.586 241.905 635.775 241.905C602.2 242.619 573.864 213.807 574.579 180.709C573.864 147.611 601.962 118.322 635.06 119.037ZM599.581 169.994H671.492C666.968 153.564 652.681 141.658 635.775 141.658C617.678 141.658 604.105 153.087 599.581 169.994ZM707.096 240V177.852C707.096 139.753 726.86 120.465 757.101 120.465H759.482V143.087H757.101C739.956 143.087 730.432 154.278 730.432 177.852V240H707.096Z" fill="currentColor"/></svg></a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" fill="currentColor"/></svg><svg class="menu-close-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4z" fill="currentColor"/></svg></button>
+    <div class="site-nav-links" id="site-menu"><a class="site-mobile-console" href="https://console.river.ai">River Console <span aria-hidden="true">↗</span></a><a href="/vision">Our Vision</a><a href="https://docs.river.ai">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/careers">Careers</a><a href="/#contact">Contact Us</a><span class="site-nav-actions"><a class="site-nav-start" href="https://console.river.ai"><svg class="console-mark" viewBox="51 90 239 161" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M290 96.9999C290 137.317 257.344 170.066 216.875 170.066H160L166.216 145.171C168.44 136.265 176.441 130.016 185.62 130.016H216.875C235.169 130.015 250 115.222 250 96.9741V93.005C250 91.3462 251.346 90.0022 253.005 90.005L287.005 90.0613C288.66 90.064 290 91.4064 290 93.0613V96.9999Z" fill="currentColor"/><path d="M51.0004 163.066C51.0004 122.75 83.6561 90.0004 124.125 90.0002H176.159C178.11 90.0002 179.542 91.8337 179.069 93.7269L171.514 123.989C170.624 127.551 167.424 130.051 163.752 130.051H124.125C105.831 130.051 91.0004 144.844 91.0004 163.092V167.033C91.0004 168.69 89.6572 170.033 88.0004 170.033H54.0004C52.3435 170.033 51.0004 168.69 51.0004 167.033V163.066Z" fill="currentColor"/><path d="M51.0002 243.334C51.0002 203.017 83.6559 170.268 124.125 170.268L160 170L151.496 204.017C150.614 207.543 147.467 210.031 143.833 210.076L124.125 210.318C105.831 210.319 91.0002 225.112 91.0002 243.36V247.329C91.0002 248.988 89.654 250.332 87.9952 250.329L53.9952 250.273C52.3403 250.27 51.0002 248.928 51.0002 247.273V243.334Z" fill="currentColor"/><path d="M290 177C290 217.317 257.344 250.066 216.875 250.066H140L145.27 228.96C148.05 217.827 158.051 210.016 169.525 210.016H216.875C235.169 210.015 250 195.222 250 176.974V173.005C250 171.346 251.346 170.002 253.005 170.005L287.005 170.061C288.66 170.064 290 171.406 290 173.061V177Z" fill="currentColor"/></svg><span class="console-label">Console</span><span aria-hidden="true">↗</span></a></span></div>
+  </nav>
+
+  <main class="api" id="main">
+    <header class="platform-hero" aria-labelledby="hero-heading">
+      <div class="platform-hero-copy">
+        <a class="inference-bar" href="#inference-pricing"><span class="inference-bar-badge">New</span><span class="inference-bar-text"><strong>River Inference</strong> <span class="inference-bar-rule" aria-hidden="true">·</span> <span class="inference-bar-detail">Save up to 60%</span></span><span class="inference-bar-arrow" aria-hidden="true">→</span></a>
+        <h1 id="hero-heading"><span class="hero-title-line">Your own frontier AI&nbsp;lab.</span><br /><em>In one API.</em></h1>
+        <p class="hero-description">Build models and agents that learn from experience. Use reinforcement learning to sharpen their reasoning, tool use, and ability to get things done. Train with River, then serve on River Cloud or run the model on your own GPUs.</p>
+        <div class="hero-actions">
+          <a class="page-cta hero-console-cta" href="https://console.river.ai"><svg class="console-mark" viewBox="51 90 239 161" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g id="river-mark"><path d="M290 96.9999C290 137.317 257.344 170.066 216.875 170.066H160L166.216 145.171C168.44 136.265 176.441 130.016 185.62 130.016H216.875C235.169 130.015 250 115.222 250 96.9741V93.005C250 91.3462 251.346 90.0022 253.005 90.005L287.005 90.0613C288.66 90.064 290 91.4064 290 93.0613V96.9999Z" fill="currentColor"/><path d="M51.0004 163.066C51.0004 122.75 83.6561 90.0004 124.125 90.0002H176.159C178.11 90.0002 179.542 91.8337 179.069 93.7269L171.514 123.989C170.624 127.551 167.424 130.051 163.752 130.051H124.125C105.831 130.051 91.0004 144.844 91.0004 163.092V167.033C91.0004 168.69 89.6572 170.033 88.0004 170.033H54.0004C52.3435 170.033 51.0004 168.69 51.0004 167.033V163.066Z" fill="currentColor"/><path d="M51.0002 243.334C51.0002 203.017 83.6559 170.268 124.125 170.268L160 170L151.496 204.017C150.614 207.543 147.467 210.031 143.833 210.076L124.125 210.318C105.831 210.319 91.0002 225.112 91.0002 243.36V247.329C91.0002 248.988 89.654 250.332 87.9952 250.329L53.9952 250.273C52.3403 250.27 51.0002 248.928 51.0002 247.273V243.334Z" fill="currentColor"/><path d="M290 177C290 217.317 257.344 250.066 216.875 250.066H140L145.27 228.96C148.05 217.827 158.051 210.016 169.525 210.016H216.875C235.169 210.015 250 195.222 250 176.974V173.005C250 171.346 251.346 170.002 253.005 170.005L287.005 170.061C288.66 170.064 290 171.406 290 173.061V177Z" fill="currentColor"/></g></svg><span>Start building</span><span aria-hidden="true">↗</span></a>
+          <a class="vision-link" href="#contact">Talk to our team <span aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    <div class="customer-band" role="group" aria-label="River customers">
+      <p>Trusted by teams <strong>at the frontier.</strong></p>
+      <div class="customer-marquee">
+      <div class="customer-marks">
+        <a href="https://www.perplexity.ai" class="customer-perplexity" aria-label="Perplexity AI, a River customer"><img src="/assets/perplexity-symbol.svg" width="30" height="34" alt="" /><span>perplexity</span></a>
+        <a href="https://www.ivo.ai" aria-label="Ivo AI, a River customer"><img class="customer-ivo" src="/assets/ivo-logo.svg" width="112" height="36" alt="Ivo" /></a>
+        <!-- Logo source: https://abacus.ai/static/h60348627/imgs/logo_text80.webp -->
+        <a href="https://abacus.ai" aria-label="Abacus AI, a River customer"><img class="customer-abacus" src="/assets/abacus-logo.webp" width="676" height="92" alt="Abacus AI" /></a>
+        <a href="https://www.mixedbread.com" class="customer-mixedbread" aria-label="Mixedbread AI, a River customer"><img src="/assets/mixedbread-symbol.svg" width="36" height="28" alt="" /><span>Mixedbread</span></a>
+        <a href="https://www.afori.com" aria-label="Afori AI, a River customer"><img class="customer-afori" src="/assets/afori-logo.svg" width="111" height="26" alt="Afori" /></a>
+      </div>
+      </div>
+      <a class="hero-scroll-teaser" href="#river-stack" aria-label="Meet your lab"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9.5l6 6 6-6" /></svg></a>
+    </div>
+
+    </header>
+
+    <section class="platform-stack" id="river-stack" aria-labelledby="river-stack-heading">
+      <div class="section-heading platform-stack-heading">
+        <h2 id="river-stack-heading">Meet your lab.<br /><em>And your inference stack.</em></h2>
+      </div>
+      <figure class="gpu-system is-paused">
+        <div class="hero-workloads">
+        <div class="mode-tabs" role="tablist" aria-label="Explore the River workloads" hidden>
+          <button id="mode-training" type="button" role="tab" aria-selected="true" aria-controls="mode-panel-training"><span class="legend-training" aria-hidden="true"></span>Training</button>
+          <button id="mode-production" type="button" role="tab" aria-selected="false" aria-controls="mode-panel-production" tabindex="-1"><span class="legend-serving" aria-hidden="true"></span>Inference</button>
+        </div>
+        <div class="api-modes">
+          <div class="api-mode api-mode--training" id="mode-panel-training">
+            <h3>Training</h3><p>Reinforcement learning for better agents</p>
+            <svg class="mode-diagram" viewBox="0 0 300 190" fill="none" role="img" aria-labelledby="training-diagram-title training-diagram-desc">
+              <title id="training-diagram-title">Training and inference workers form a learning cycle</title>
+              <desc id="training-diagram-desc">Training workers send updated weights to inference workers. Inference generates rollouts that are scored, feeding rewards and training data back into training.</desc>
+              <defs><marker id="learning-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m1 1 5 3-5 3" stroke="#e3e9f5" stroke-width="1.2" fill="none"/></marker></defs>
+              <path d="M222 35C292 35 292 139 222 139" class="learning-track" marker-end="url(#learning-arrow)"/>
+              <path d="M78 139C8 139 8 35 78 35" class="learning-track" marker-end="url(#learning-arrow)"/>
+              <path d="M222 35C292 35 292 139 222 139" class="flow-packet flow-packet--learning" pathLength="100"/>
+              <path d="M78 139C8 139 8 35 78 35" class="flow-packet flow-packet--learning" pathLength="100"/>
+              <text x="185" y="81" class="flow-label">Updated</text><text x="185" y="97" class="flow-label">weights</text>
+              <text x="115" y="81" class="flow-label">Rollouts</text><text x="115" y="97" class="flow-label">&amp; rewards</text>
+              <rect x="78" y="12" width="144" height="46" rx="4" class="worker-node"/>
+              <text x="150" y="31" class="worker-label">Training workers</text>
+              <g class="worker-slots"><rect x="108" y="43" width="16" height="9"/><rect x="131" y="43" width="16" height="9"/><rect x="154" y="43" width="16" height="9"/><rect x="177" y="43" width="16" height="9"/></g>
+              <rect x="78" y="116" width="144" height="46" rx="4" class="worker-node"/>
+              <text x="150" y="135" class="worker-label">Inference workers</text>
+              <g class="worker-slots"><rect x="108" y="147" width="16" height="9"/><rect x="131" y="147" width="16" height="9"/><rect x="154" y="147" width="16" height="9"/><rect x="177" y="147" width="16" height="9"/></g>
+              <path d="M150 162V190" class="compute-uplink"/>
+            </svg>
+          </div>
+          <div class="api-mode api-mode--production" id="mode-panel-production">
+            <h3>Inference</h3><p>Your models, serving your users</p>
+            <svg class="mode-diagram" viewBox="0 0 300 190" fill="none" role="img" aria-labelledby="serving-diagram-title serving-diagram-desc">
+              <title id="serving-diagram-title">Inference serves a large audience</title>
+              <desc id="serving-diagram-desc">Inference workers serve deployed models to many users and applications.</desc>
+              <defs><g id="audience-person"><circle cx="0" cy="0" r="3"/><path d="M-6 11V9a6 6 0 0 1 12 0v2"/></g><marker id="serving-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="m1 1 5 3-5 3" stroke="#e3e9f5" stroke-width="1.2" fill="none"/></marker></defs>
+              <g class="audience"><use href="#audience-person" x="33" y="14" opacity="0.55"/><use href="#audience-person" x="72" y="14" opacity="0.64"/><use href="#audience-person" x="111" y="14" opacity="0.73"/><use href="#audience-person" x="150" y="14" opacity="0.82"/><use href="#audience-person" x="189" y="14" opacity="0.91"/><use href="#audience-person" x="228" y="14" opacity="0.55"/><use href="#audience-person" x="267" y="14" opacity="0.64"/><use href="#audience-person" x="33" y="38" opacity="0.64"/><use href="#audience-person" x="72" y="38" opacity="0.73"/><use href="#audience-person" x="111" y="38" opacity="0.82"/><use href="#audience-person" x="150" y="38" opacity="0.91"/><use href="#audience-person" x="189" y="38" opacity="0.55"/><use href="#audience-person" x="228" y="38" opacity="0.64"/><use href="#audience-person" x="267" y="38" opacity="0.73"/><use href="#audience-person" x="33" y="62" opacity="0.73"/><use href="#audience-person" x="72" y="62" opacity="0.82"/><use href="#audience-person" x="111" y="62" opacity="0.91"/><use href="#audience-person" x="150" y="62" opacity="0.55"/><use href="#audience-person" x="189" y="62" opacity="0.64"/><use href="#audience-person" x="228" y="62" opacity="0.73"/><use href="#audience-person" x="267" y="62" opacity="0.82"/></g>
+              <path d="M150 116V78M33 84V98Q33 102 37 102H263Q267 102 267 98V84M72 102V84M111 102V84M189 102V84M228 102V84" class="serving-track"/>
+              <path d="M150 116V78" class="flow-packet flow-packet--serving" pathLength="100"/>
+              <path d="M33 92V78" class="serving-track" marker-end="url(#serving-arrow)"/>
+              <path d="M72 92V78" class="serving-track" marker-end="url(#serving-arrow)"/>
+              <path d="M111 92V78" class="serving-track" marker-end="url(#serving-arrow)"/>
+              <path d="M150 92V78" class="serving-track" marker-end="url(#serving-arrow)"/>
+              <path d="M189 92V78" class="serving-track" marker-end="url(#serving-arrow)"/>
+              <path d="M228 92V78" class="serving-track" marker-end="url(#serving-arrow)"/>
+              <path d="M267 92V78" class="serving-track" marker-end="url(#serving-arrow)"/>
+              <rect x="78" y="116" width="144" height="46" rx="4" class="worker-node"/>
+              <text x="150" y="135" class="worker-label">Inference workers</text>
+              <g class="worker-slots"><rect x="108" y="147" width="16" height="9"/><rect x="131" y="147" width="16" height="9"/><rect x="154" y="147" width="16" height="9"/><rect x="177" y="147" width="16" height="9"/></g>
+              <path d="M150 162V190" class="compute-uplink"/>
+            </svg>
+          </div>
+        </div>
+        <div class="compute-rail"><strong>River API</strong><span>One shared GPU fleet</span></div>
+        </div>
+        <div class="compute-foundation">
+          <div class="cluster-stage">
+            <canvas class="cluster-canvas" role="img" aria-label="One shared GPU fleet, illustrated as sixteen racks with six server shelves each. A shifting boundary divides the shared fleet into contiguous violet training and blue inference regions."></canvas>
+            <svg class="cluster-feeds" aria-hidden="true" focusable="false"><path class="cluster-feed cluster-feed--training"/><path class="cluster-feed cluster-feed--serving"/><circle class="cluster-terminal" r="2"/><circle class="cluster-terminal" r="2"/><circle class="cluster-packet cluster-packet--training" r="3"/><circle class="cluster-packet cluster-packet--serving" r="3"/></svg>
+            <div class="cluster-fallback" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="cluster-legend"><span><i class="legend-training" aria-hidden="true"></i>Training &amp; rollouts</span><span><i class="legend-serving" aria-hidden="true"></i>Inference</span></div>
+        </div>
+        <p class="compute-location">Use River Cloud or <a href="#deployment">deploy on-prem on your own GPUs<span aria-hidden="true"> ↗</span></a></p>
+      </figure>
+      <div class="hero-baseline"><span>Optimized models · RL tested at scale</span><a href="#develop">Explore the system <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="story-section develop-section" id="develop" aria-labelledby="develop-heading">
+      <div class="section-heading section-heading--split">
+        <div><h2 id="develop-heading">The next era of AI.<br /><em>Intelligence you own.</em></h2></div>
+      </div>
+      <div class="capabilities">
+        <article class="capability capability--training">
+          <div class="capability-topline"><svg viewBox="0 0 48 40" fill="none" aria-hidden="true"><path d="m5 27 19-10 19 10-19 10ZM5 19l19-10 19 10-19 10ZM5 11 24 1l19 10-19 10Z"/></svg></div>
+          <h3>Training</h3>
+          <p class="capability-lead">Build agents that get better at your work.</p>
+          <p>Fine-tune an open model on expert examples, then improve it with reinforcement learning. Define the tasks, tools, and rewards; River runs the training and inference that power your learning loop.</p>
+        </article>
+        <article class="capability capability--inference" id="inference">
+          <div class="capability-topline"><svg viewBox="0 0 48 40" fill="none" aria-hidden="true"><rect x="17" y="13" width="14" height="14"/><path d="M24 0v13M0 20h17M31 20h17M24 27v13"/><circle cx="24" cy="3" r="2"/><circle cx="3" cy="20" r="2"/><circle cx="45" cy="20" r="2"/><circle cx="24" cy="37" r="2"/></svg></div>
+          <h3>Production inference</h3>
+          <p class="capability-lead">Frontier models, ready for your applications.</p>
+          <p>Call leading open models through an OpenAI-compatible API, or serve your own trained checkpoint.</p>
+          <div class="inference-links">
+            <a class="text-link" href="https://console.river.ai/keys">Get API key <span aria-hidden="true">›</span></a>
+            <a class="text-link" href="https://docs.river.ai/guides/inference-models/">Models &amp; pricing <span aria-hidden="true">›</span></a>
+            <a class="text-link" href="https://docs.river.ai/guides/inference/">Quickstart <span aria-hidden="true">›</span></a>
+          </div>
+        </article>
+      </div>
+      <section class="inference-pricing" id="inference-pricing" aria-labelledby="inference-pricing-heading">
+        <div class="inference-pricing-head">
+          <div>
+            <p class="eyebrow">New / River Inference</p>
+            <h3 id="inference-pricing-heading">The same open models.<br /><em>Save up to 60%.</em></h3>
+          </div>
+          <div class="inference-pricing-actions">
+            <a class="page-cta" href="https://docs.river.ai/guides/inference/">Try it now <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="https://docs.river.ai/guides/inference-models/">All models &amp; pricing <span aria-hidden="true">›</span></a>
+          </div>
+        </div>
+        <div class="inference-price-grid">
+          <article class="inference-price-card" aria-labelledby="deepseek-price-heading">
+            <h4 id="deepseek-price-heading">DeepSeek V4.1 Flash-1017 / V4.1 Flash</h4>
+            <table aria-labelledby="deepseek-price-heading">
+              <thead><tr><th scope="col">Provider</th><th scope="col">Input</th><th scope="col">Cached<br />input</th><th scope="col">Output</th><th scope="col">Save</th></tr></thead>
+              <tbody>
+                <tr class="inference-price-river"><th scope="row">River</th><td>$0.12</td><td>$0.0024</td><td>$0.48</td><td>—</td></tr>
+                <tr><th scope="row"><a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek</a></th><td>$0.15</td><td>$0.003</td><td>$0.60</td><td class="inference-price-saving">20%</td></tr>
+                <tr><th scope="row"><a href="https://docs.fireworks.ai/serverless/pricing">Fireworks</a></th><td>$0.30</td><td>$0.006</td><td>$1.20</td><td class="inference-price-saving">60%</td></tr>
+                <tr><th scope="row"><a href="https://www.together.ai/pricing">Together AI</a></th><td>$0.30</td><td>$0.006</td><td>$1.20</td><td class="inference-price-saving">60%</td></tr>
+              </tbody>
+            </table>
+          </article>
+          <article class="inference-price-card" aria-labelledby="glm-price-heading">
+            <h4 id="glm-price-heading">GLM-5.3 Flash</h4>
+            <table aria-labelledby="glm-price-heading">
+              <thead><tr><th scope="col">Provider</th><th scope="col">Input</th><th scope="col">Cached<br />input</th><th scope="col">Output</th><th scope="col">Save</th></tr></thead>
+              <tbody>
+                <tr class="inference-price-river"><th scope="row">River</th><td>$0.12</td><td>$0.024</td><td>$0.40</td><td>—</td></tr>
+                <tr><th scope="row"><a href="https://docs.z.ai/guides/overview/pricing">Z.ai</a></th><td>$0.15</td><td>$0.03</td><td>$0.50</td><td class="inference-price-saving">20%</td></tr>
+                <tr><th scope="row"><a href="https://docs.fireworks.ai/serverless/pricing">Fireworks</a></th><td>$0.15</td><td>$0.03</td><td>$0.50</td><td class="inference-price-saving">20%</td></tr>
+                <tr><th scope="row"><a href="https://www.together.ai/pricing">Together AI</a></th><td>$0.15</td><td>$0.03</td><td>$0.50</td><td class="inference-price-saving">20%</td></tr>
+              </tbody>
+            </table>
+          </article>
+          <article class="inference-price-card" aria-labelledby="glm-full-price-heading">
+            <h4 id="glm-full-price-heading">GLM-5.3</h4>
+            <table aria-labelledby="glm-full-price-heading">
+              <thead><tr><th scope="col">Provider</th><th scope="col">Input</th><th scope="col">Cached<br />input</th><th scope="col">Output</th><th scope="col">Save</th></tr></thead>
+              <tbody>
+                <tr class="inference-price-river"><th scope="row">River</th><td>$1.12</td><td>$0.208</td><td>$3.52</td><td>—</td></tr>
+                <tr><th scope="row"><a href="https://docs.z.ai/guides/overview/pricing">Z.ai</a></th><td>$1.40</td><td>$0.26</td><td>$4.40</td><td class="inference-price-saving">20%</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+        <p class="inference-price-note">USD per 1M tokens. Provider names link to their published pricing.</p>
+      </section>
+    </section>
+
+    <section class="model-foundation model-showcase" id="models" aria-labelledby="models-heading">
+      <div class="model-intro">
+        <h2 id="models-heading">Every model, tuned.<br /><em>Every run, tested.</em></h2>
+        <div class="model-notes">
+          <article><h3>Optimization at every step</h3><p>We optimize every supported open-weight model for training and inference. Our custom implementations run faster than open-source alternatives. We handle GPU topology and performance tuning, and test each model for correctness—so you can compare models and experiment with confidence.</p></article>
+          <article><h3>Reliable RL at scale</h3><p>At scale, subtle errors can undermine a learning loop. We carefully evaluate and stress-test the API to keep KL mismatch and numerical instability under control—so you can focus on improving your agents and developing new training algorithms.</p></article>
+        </div>
+      </div>
+      <div class="model-roster">
+        <div class="model-roster-head">
+          <p class="eyebrow">Open-weight models, optimized for training and inference</p>
+          <a class="text-link" href="/pricing">All models &amp; pricing <span aria-hidden="true">›</span></a>
+        </div>
+        <ul class="model-list"><li><small>Qwen3.8 · Dense</small><strong>Qwen3.8 27B</strong><span class="model-contexts"><span>262k</span></span></li><li><small>Qwen3.6 · MoE</small><strong>Qwen3.6 35B</strong><span class="model-contexts"><span>262k</span></span></li><li><small>Qwen3.5 · MoE</small><strong>Qwen3.5 397B</strong><span class="model-contexts"><span>262k</span></span></li><li><small>Kimi · MoE</small><strong>Kimi K2.6</strong><span class="model-contexts"><span>32k</span><span>262k</span></span></li><li><small>GLM · MoE</small><strong>GLM 5.3 Flash</strong><span class="model-contexts"><span>262k</span></span></li><li><small>GLM · MoE</small><strong>GLM 5.3</strong><span class="model-contexts"><span>1M</span></span></li><li><small>DeepSeek · MoE</small><strong>DeepSeek V4.1 Flash</strong><span class="model-contexts"><span>262k</span></span></li><li><small>Nemotron · MoE</small><strong>Nemotron 3.5 Super VL</strong><span class="model-contexts"><span>262k</span></span></li></ul>
+      </div>
+    </section>
+
+    <section class="sovereign-section" id="deployment" aria-labelledby="deployment-heading">
+      <div class="sovereign-inner">
+        <div class="section-heading">
+          <h2 id="deployment-heading">Frontier capability.<br /><em>Sovereign control.</em></h2>
+          <p class="section-intro">Your models are a strategic asset. Build and run them where you choose—with control over your data, your weights, and your compute.</p>
+        </div>
+        <div class="deployment-options">
+          <article class="deployment-option">
+            <div class="deployment-icon" aria-hidden="true"><svg viewBox="0 0 52 40" fill="none"><path d="M13 31H40A9 9 0 0 0 40 13 14 14 0 0 0 13 12 10 10 0 0 0 13 31Z"/><path d="M20 22h12M26 16v12"/></svg></div>
+            <p class="eyebrow">Managed infrastructure</p><h3>River Cloud</h3>
+            <p>The complete AI lab, ready to use. Focus on your models while River operates the infrastructure.</p>
+            <ul><li>Managed training, sampling, and inference</li><li>Download your trained weights and take them with you</li><li>Usage-based, per-token pricing</li></ul>
+            <div class="deployment-actions">
+            <a class="page-cta" href="https://console.river.ai">Start on River Cloud <span aria-hidden="true">↗</span></a>
+            <a class="text-link deployment-contact" href="#contact" data-interest="cloud">Talk about River Cloud <span aria-hidden="true">›</span></a>
+            </div>
+          </article>
+          <article class="deployment-option deployment-option--cluster">
+            <div class="deployment-icon" aria-hidden="true"><svg viewBox="0 0 52 40" fill="none"><rect x="5" y="5" width="42" height="12" rx="1"/><rect x="5" y="23" width="42" height="12" rx="1"/><path d="M11 11h2M11 29h2M32 11h9M32 29h9"/></svg></div>
+            <p class="eyebrow">On-prem · Your infrastructure</p><h3>River Cluster</h3>
+            <p>Turn the GPUs you already own into a frontier AI lab. Deploy the same River product in your environment.</p>
+            <ul><li>Training and inference on your existing GPU cluster</li><li>Your data and model weights in your environment</li><li>The same API, workflows, and Console</li></ul>
+            <a class="page-cta" href="#contact" data-interest="cluster">Bring River to your cluster <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="story-section system-section" id="docs" aria-labelledby="system-heading">
+      <div class="section-heading section-heading--split">
+        <div><h2 id="system-heading">From experiment<br /><em>to deployment.</em></h2></div>
+      </div>
+      <div class="research-bench">
+        <div class="loop-tabs" role="tablist" aria-label="River training and serving workflow">
+          <button id="loop-train" type="button" role="tab" aria-controls="loop-panel-train" aria-selected="true">Train <span class="loop-arrow" aria-hidden="true">→</span></button>
+          <button id="loop-sample" type="button" role="tab" aria-controls="loop-panel-sample" aria-selected="false" tabindex="-1">Improve <span class="loop-arrow" aria-hidden="true">→</span></button>
+          <button id="loop-deploy" type="button" role="tab" aria-controls="loop-panel-deploy" aria-selected="false" tabindex="-1">Deploy <span class="loop-arrow" aria-hidden="true">→</span></button>
+          <button id="loop-serve" type="button" role="tab" aria-controls="loop-panel-serve" aria-selected="false" tabindex="-1">Serve <span class="loop-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div class="loop-panel" id="loop-panel-train" role="tabpanel" aria-labelledby="loop-train" tabindex="0">
+          <div class="loop-explanation"><span class="eyebrow">Open model → your training run</span><h3>Distributed training from Python</h3><p>Choose an open model, configure its adapters, and start learning from your data. River handles the compute behind each training step.</p><p class="loop-technical"><code>train_step</code> pipelines forward/backward and the optimizer update on the server. Control the learning rate, loss function, and optimizer settings.</p><a class="text-link" href="https://docs.river.ai">Explore the Python client <span aria-hidden="true">›</span></a></div>
+          <div class="primitive-window"><div class="primitive-title"><span>train.py</span><span>Tokenized batch supplied by you</span></div><pre class="api-code" data-lang="python" tabindex="0"><code>import river_client as river
+
+client = river.Client(api_key="...")
+with client.session(project="my-lab") as session:
+    model = session.create_model(
+        base_model="Qwen/Qwen3.6-35B-A3B-FP8",
+        lora=river.LoraConfig(rank=16),
+    )
+    model.train_step(
+        batch, lr=1e-4,
+        loss_fn="cross_entropy",
+    )
+    # Continue sampling or deploy in this session.</code></pre><div class="primitive-footer"><span class="signal-dot" aria-hidden="true"></span> Your data and objectives on River’s training system</div></div>
+        </div>
+        <div class="loop-panel" id="loop-panel-sample" role="tabpanel" aria-labelledby="loop-sample" tabindex="0" hidden>
+          <div class="loop-explanation"><span class="eyebrow">Experience → better weights</span><h3>Improve agents with reinforcement learning</h3><p>Let your agent attempt a task, use tools, and act in your environment. Score the outcome, then train on that feedback. You control the rewards and algorithm; River connects sampling and weight updates.</p><p class="loop-technical">Construct <code>rl_batch</code> from sampled tokens, log probabilities, and your reward-derived advantages. Control the loss and update schedule—or submit operations asynchronously to pipeline your loop.</p></div>
+          <div class="primitive-window"><div class="primitive-title"><span>improve.py</span><span>Inside the same training session</span></div><pre class="api-code" data-lang="python" tabindex="0"><code>groups = model.sample(
+    prompts=prompts,
+    num_samples=4,
+    max_tokens=4096,
+)
+
+# Score the samples and construct rl_batch
+# using your reward function and advantages.
+model.train_step(
+    rl_batch, lr=4e-5,
+    loss_fn="importance_sampling",
+)</code></pre><div class="primitive-footer"><span class="signal-dot" aria-hidden="true"></span> Sampling and training, connected by one API</div></div>
+        </div>
+        <div class="loop-panel" id="loop-panel-deploy" role="tabpanel" aria-labelledby="loop-deploy" tabindex="0" hidden>
+          <div class="loop-explanation"><span class="eyebrow">Checkpoint → deployment</span><h3>Deploy a trained checkpoint</h3><p>Save your trained weights, then create a dedicated inference deployment. Serve the model in your application as it moves from research into production.</p><p class="loop-technical">Use a team API key with deployment access. Set <code>unified_replicas</code> to reserve serving capacity and <code>wait=True</code> to wait until it can serve requests.</p></div>
+          <div class="primitive-window"><div class="primitive-title"><span>deploy.py</span><span>Inside the same training session</span></div><pre class="api-code" data-lang="python" tabindex="0"><code>checkpoint = model.save_weights(
+    "domain-expert-v1",
+    mode="inference",
+)
+
+deployment = client.create_deployment(
+    checkpoint=checkpoint,
+    unified_replicas=1,
+    wait=True,
+)
+print(deployment.base_url)</code></pre><div class="primitive-footer"><span class="signal-dot" aria-hidden="true"></span> Saved weights → dedicated production inference</div></div>
+        </div>
+        <div class="loop-panel" id="loop-panel-serve" role="tabpanel" aria-labelledby="loop-serve" tabindex="0" hidden>
+          <div class="loop-explanation"><span class="eyebrow">Your model → your product</span><h3>Use the OpenAI client with your River model</h3><p>Connect your application to the model you trained using the OpenAI Python client. Point it at your River deployment and stream responses with a familiar API.</p><p class="loop-technical">Pass <code>deployment.base_url</code> directly to the OpenAI client; it already includes the API prefix. Authenticate with the same River team API key.</p></div>
+          <div class="primitive-window"><div class="primitive-title"><span>serve.py</span><span>OpenAI Python SDK · After the Deploy example</span></div><pre class="api-code" data-lang="python" tabindex="0"><code>import os
+from openai import OpenAI
+
+inference = OpenAI(
+    api_key=os.environ["RIVER_API_KEY"],
+    base_url=deployment.base_url,
+)
+stream = inference.chat.completions.create(
+    model=deployment.model,
+    messages=[{"role": "user", "content": "Hello!"}],
+    stream=True,
+)
+for chunk in stream:
+    if chunk.choices:
+        print(chunk.choices[0].delta.content or "", end="")</code></pre><div class="primitive-footer"><span class="signal-dot" aria-hidden="true"></span> OpenAI-compatible streaming from your River deployment</div></div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="console-section console-standalone" aria-labelledby="console-heading">
+        <p class="eyebrow console-eyebrow">The River Console</p>
+        <div class="console-copy">
+          <div><h2 id="console-heading">See your lab<br /><em>in action.</em></h2><a class="page-cta console-cta" href="https://console.river.ai">Open the Console <span aria-hidden="true">↗</span></a></div>
+          <div class="console-description"><p>See what’s happening across your cluster without losing sight of the experiment. The Console brings your team’s training runs, checkpoints, and deployments into one place.</p></div>
+        </div>
+        <figure class="console-toy" role="img" aria-label="The River Console, illustrated with sample data: a training run’s reward climbing, the team’s other runs, saved checkpoints and live deployments.">
+          <div class="console-toy-window" aria-hidden="true">
+            <div class="console-toy-side">
+              <div class="console-toy-brand"><svg viewBox="51 90 239 161" fill="none" focusable="false"><use href="#river-mark" /></svg>Console</div>
+              <ul class="console-toy-nav"><li>Overview</li><li class="is-current">Training runs</li><li>Checkpoints</li><li>Deployments</li><li>Usage</li><li>API keys</li></ul>
+              <div class="console-toy-team"><span>R</span>Research team</div>
+            </div>
+            <div class="console-toy-main">
+              <div class="console-toy-panel">
+                <div class="console-toy-head"><div><strong>grpo-gsm8k</strong><small>Kimi K2.6 · GRPO · step 1,280 of 2,000</small></div><span class="console-toy-status is-live">Running</span></div>
+                <div class="console-toy-plot">
+                  <svg viewBox="0 0 560 150" preserveAspectRatio="none" focusable="false"><defs><linearGradient id="console-toy-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#254e99" stop-opacity="0.22" /><stop offset="1" stop-color="#254e99" stop-opacity="0" /></linearGradient></defs><path class="console-toy-grid" d="M0 109H560M0 76H560M0 43H560" /><path class="console-toy-area" d="M0 130.4 L10 123.9 L20 111.8 L30 110.0 L40 99.5 L50 95.0 L60 92.1 L70 83.1 L80 82.3 L90 74.6 L100 73.5 L110 69.5 L120 63.4 L130 57.0 L140 59.4 L150 55.9 L160 50.3 L170 45.6 L180 46.1 L190 45.4 L200 39.5 L210 44.1 L220 37.0 L230 39.3 L240 38.8 L250 37.7 L260 35.3 L270 31.0 L280 33.9 L290 30.5 L300 29.3 L310 30.1 L320 28.3 L330 30.3 L340 29.6 L350 28.2 L360 25.2 L370 26.0 L380 26.0 L390 24.3 L400 24.5 L410 24.8 L420 22.3 L430 22.4 L440 24.0 L450 22.4 L460 22.3 L470 20.8 L480 21.1 L490 22.5 L500 19.9 L510 22.7 L520 21.5 L530 20.3 L540 22.0 L550 20.9 L560 21.9 L560 150 L0 150 Z" /><path class="console-toy-line" d="M0 130.4 L10 123.9 L20 111.8 L30 110.0 L40 99.5 L50 95.0 L60 92.1 L70 83.1 L80 82.3 L90 74.6 L100 73.5 L110 69.5 L120 63.4 L130 57.0 L140 59.4 L150 55.9 L160 50.3 L170 45.6 L180 46.1 L190 45.4 L200 39.5 L210 44.1 L220 37.0 L230 39.3 L240 38.8 L250 37.7 L260 35.3 L270 31.0 L280 33.9 L290 30.5 L300 29.3 L310 30.1 L320 28.3 L330 30.3 L340 29.6 L350 28.2 L360 25.2 L370 26.0 L380 26.0 L390 24.3 L400 24.5 L410 24.8 L420 22.3 L430 22.4 L440 24.0 L450 22.4 L460 22.3 L470 20.8 L480 21.1 L490 22.5 L500 19.9 L510 22.7 L520 21.5 L530 20.3 L540 22.0 L550 20.9 L560 21.9" /></svg>
+                  <i style="top: 14.6%"></i>
+                </div>
+                <dl class="console-toy-stats"><div><dt>Mean reward</dt><dd>0.91</dd></div><div><dt>Tokens trained</dt><dd>184M</dd></div><div><dt>Time left</dt><dd>38 min</dd></div></dl>
+              </div>
+              <ul class="console-toy-rows console-toy-panel">
+                <li><div><strong>scalerl-polaris</strong><small>Qwen3.6 35B · step 412 of 3,000</small></div><span class="console-toy-status is-live">Running</span></li>
+                <li><div><strong>sft-support-agent</strong><small>GLM 5.3 Flash · finished 2 hours ago</small></div><span class="console-toy-status">Completed</span></li>
+              </ul>
+            </div>
+            <div class="console-toy-aside">
+              <div class="console-toy-panel">
+                <strong class="console-toy-title">Checkpoints</strong>
+                <ul class="console-toy-rows">
+                  <li><div><strong>step 1,200</strong><small>grpo-gsm8k · reward 0.90</small></div><span class="console-toy-action">Deploy</span></li>
+                  <li><div><strong>step 1,000</strong><small>grpo-gsm8k · reward 0.86</small></div><span class="console-toy-action">Deploy</span></li>
+                  <li><div><strong>final</strong><small>sft-support-agent</small></div><span class="console-toy-status">Deployed</span></li>
+                </ul>
+              </div>
+              <div class="console-toy-panel">
+                <strong class="console-toy-title">Deployments</strong>
+                <ul class="console-toy-rows">
+                  <li><div><strong>support-agent</strong><small>GLM 5.3 Flash · 412 requests / min</small></div><span class="console-toy-status is-live">Live</span></li>
+                  <li><div><strong>gsm8k-solver</strong><small>Kimi K2.6 · 96 requests / min</small></div><span class="console-toy-status is-live">Live</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+    </section>
+    <section class="story-section build-section" id="build" aria-labelledby="build-heading">
+      <div class="build-inner">
+      <div class="section-heading section-heading--split">
+        <div><h2 id="build-heading">Everything you need<br /><em>to get started.</em></h2></div>
+      </div>
+      <div class="resource-library">
+        <details class="resource" id="examples">
+          <summary><span>Explore the training recipes<small>Python examples · GRPO &amp; CISPO</small></span><span class="resource-plus" aria-hidden="true">+</span></summary>
+          <div class="resource-body"><p class="resource-intro">Simplified research examples showing the shape of the API. Bring your own data preparation, reward functions, and evaluation.</p>
+      <div class="code-tabs" role="tablist" aria-label="Example training scripts">
+        <button class="code-tab" id="tab-rl" type="button" role="tab" aria-selected="true" aria-controls="panel-rl">
+          rl_loop.py <span class="tab-kind">simple</span>
+        </button>
+        <button class="code-tab" id="tab-scalerl" type="button" role="tab" aria-selected="false" aria-controls="panel-scalerl" tabindex="-1">
+          scalerl.py <span class="tab-kind">advanced</span>
+        </button>
+      </div>
+
+      <!-- rl_loop panel -->
+      <div class="code-panel is-active" id="panel-rl" role="tabpanel" aria-labelledby="tab-rl">
+        <p class="code-panel-desc">
+          <strong>A toy example:</strong> a minimal GRPO loop on GSM8K, training Kimi-K2.6-NVFP4. Reward
+          starts low because Kimi tends to think for longer than the 128-token budget, then climbs above
+          0.9 reasonably quickly as it learns to answer within the limit.
+        </p>
+        <div class="code-window">
+          <div class="code-bar">
+            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+            <span class="code-file">rl_loop.py</span>
+            <button class="code-copy" type="button">Copy</button>
+          </div>
+          <pre class="code" data-lang="python" tabindex="0"><code>import river_client as river
+from datasets import load_dataset
+from transformers import AutoTokenizer
+
+MODEL      = "nvidia/Kimi-K2.6-NVFP4"
+BATCH      = 256          # prompts per step
+GROUP      = 4            # samples per prompt
+MAX_TOKENS = 128
+LORA_RANK  = 16
+LR         = 4e-5         # learning rate
+
+client = river.Client(api_key="...")
+tok = AutoTokenizer.from_pretrained(MODEL, trust_remote_code=True)
+gsm8k = load_dataset("openai/gsm8k", "main", split="train")   # math word problems
+
+def reward(text, answer):
+    # 1.0 if the \boxed{...} answer matches the GSM8K ground truth, else 0.0
+    return float(extract_boxed(text) == extract_gsm8k_answer(answer))
+
+def make_prompt(question):
+    ...   # render the question with the chat template (+ "...answer inside \boxed{}" suffix)
+
+with client.session() as session:
+    model = session.create_model(
+        base_model=MODEL,
+        lora=river.LoraConfig(
+            rank=LORA_RANK,
+            train_attn=True,     # attention projections
+            train_mlp=True,      # MLP / MoE experts
+            train_unembed=True,  # unembedding (lm_head)
+        ),
+    )
+
+    for step in range(len(gsm8k) // BATCH):
+        rows = gsm8k.select(range(step * BATCH, (step + 1) * BATCH))
+        prompts = [make_prompt(q) for q in rows["question"]]
+
+        # 1. Sample a group of candidate answers per prompt
+        groups = model.sample(
+            prompts=prompts, num_samples=GROUP, max_tokens=MAX_TOKENS, stop=["&lt;|im_end|&gt;"],
+        )
+
+        # 2. Score, then center rewards into GRPO advantages (no std division)
+        train_data = []
+        for prompt, samples, answer in zip(prompts, groups, rows["answer"]):
+            rewards = [reward(s.text, answer) for s in samples]
+            baseline = sum(rewards) / len(rewards)
+            if all(r == baseline for r in rewards):
+                continue  # no signal — skip this group
+
+            ptoks = tok.encode(prompt, add_special_tokens=False)
+            for s, r in zip(samples, rewards):
+                adv = r - baseline
+                full_ids = ptoks + s.tokens
+                train_data.append({
+                    "input_ids": full_ids,
+                    "attention_mask": [1] * len(full_ids),
+                    "old_logprobs": [0.0] * (len(ptoks) - 1) + s.logprobs + [0.0],
+                    "advantages": [0.0] * (len(ptoks) - 1) + [adv] * len(s.tokens) + [0.0],
+                })
+
+        # 3. One policy-gradient update
+        if train_data:
+            model.forward_backward(data=train_data, loss_fn="importance_sampling")
+            model.optim_step(lr=LR)
+
+    model.save_weights("final")</code></pre>
+        </div>
+
+        <!-- Reward chart -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title"><span class="dot"></span>reward/mean · 29 steps</div>
+            <div class="chart-legend">
+              <span><span class="swatch smooth"></span>reward</span>
+            </div>
+          </div>
+          <svg class="chart-svg" id="rlChart" viewBox="0 0 760 300" preserveAspectRatio="none" role="img" aria-label="Mean reward per step for the toy GSM8K run."></svg>
+          <div class="chart-foot">rl_loop.py · Kimi-K2.6-NVFP4 · GSM8K · GRPO · hover to inspect any step</div>
+        </div>
+      </div>
+
+      <!-- scalerl panel -->
+      <div class="code-panel" id="panel-scalerl" role="tabpanel" aria-labelledby="tab-scalerl" hidden>
+        <p class="code-panel-desc">
+          <strong>An example of a larger RL run</strong> on the
+          <a href="https://huggingface.co/datasets/POLARIS-Project/Polaris-Dataset-53K" target="_blank" rel="noopener" style="border-bottom:1px solid currentColor">Polaris-53K</a>
+          math dataset (filtered to difficulty &le; 3/8), with batch-normalized advantages and the
+          <code>cispo</code> loss, following the ScaleRL recipe
+          (<a href="https://arxiv.org/abs/2510.13786" target="_blank" rel="noopener" style="border-bottom:1px solid currentColor">Khatri et al., 2025</a>).
+          The base model can already solve some of these problems, but before fine-tuning, its
+          completions run long and rarely finish within the 4,096-token budget, which is why reward
+          stays near zero for the first ~40 steps below. For <strong>under $1,000</strong> — roughly
+          500M completion tokens and 250M training tokens — you end up with a model that solves the
+          same math much faster and cheaper.
+        </p>
+        <div class="code-window">
+          <div class="code-bar">
+            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+            <span class="code-file">scalerl.py</span>
+            <button class="code-copy" type="button">Copy</button>
+          </div>
+          <pre class="code" data-lang="python" tabindex="0"><code>import numpy as np
+import river_client as river
+from collections import deque
+from transformers import AutoTokenizer
+
+MODEL         = "Qwen/Qwen3.6-35B-A3B-FP8"   # 35B MoE, FP8
+LORA_RANK     = 8
+LEARNING_RATE = 1e-4
+WARMUP_STEPS  = 100          # linear LR warmup
+PIPELINE_K    = 1            # PipelineRL depth (1 = on-policy)
+GROUP         = 16           # generations per prompt
+BATCH         = 48           # prompts per step
+MAX_TOKENS    = 4096
+EPS_MAX       = 6.0          # CISPO clip
+
+client = river.Client(api_key="...")
+tok = AutoTokenizer.from_pretrained(MODEL, trust_remote_code=True)
+
+SUFFIX = " Think step by step, then put your final answer inside \boxed{}."
+
+def render(problem):
+    messages = [{"role": "user", "content": problem + SUFFIX}]
+    return tok.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+
+def grade(response, answer):
+    ...   # your task reward, e.g. a symbolic math checker -&gt; 0.0 / 1.0
+
+def advantages(group_rewards):
+    # ScaleRL: center each group by its own mean (the GRPO baseline), but
+    # normalize by the BATCH std — not the per-group std that standard GRPO
+    # uses. This drops GRPO's difficulty/length bias from per-group scaling.
+    centered = [[r - np.mean(g) for r in g] for g in group_rewards]
+    std = max(float(np.std([a for g in centered for a in g])), 1e-8)
+    return [[a / std for a in g] for g in centered]
+
+def build_cispo_data(prompts, groups, advs):
+    ...   # pack prompt + sample tokens with old_logprobs and advantages
+
+def lr_at(train_step):
+    # linear warmup over the first WARMUP_STEPS optimizer steps, then hold
+    if train_step &lt; WARMUP_STEPS:
+        return LEARNING_RATE * (train_step + 1) / WARMUP_STEPS
+    return LEARNING_RATE
+
+with client.session() as session:
+    model = session.create_model(
+        base_model=MODEL,
+        lora=river.LoraConfig(
+            rank=LORA_RANK,
+            train_attn=True,     # attention projections
+            train_mlp=True,      # MLP / MoE experts
+            train_unembed=True,  # unembedding (lm_head)
+        ),
+    )
+
+    pipeline = deque()                  # holds the last PIPELINE_K batches
+    train_step = 0                      # optimizer steps; LR warmup keys on this
+
+    for step in range(200):
+        problems, answers = next_batch(BATCH)   # Polaris-53K, difficulty &lt;= 3/8
+        prompts = [render(p) for p in problems]
+
+        # 1. Sample from an inference checkpoint of the current weights
+        ckpt = model.save_weights(f"sample_{step}", mode="inference")
+        groups = session.sample(prompts=prompts, base_model=MODEL,
+                                checkpoint=ckpt, num_samples=GROUP,
+                                max_tokens=MAX_TOKENS, stop=["&lt;|im_end|&gt;"])
+
+        # 2. Grade, normalize advantages, drop zero-variance groups, build CISPO data
+        rewards = [[grade(s.text, a) for s in g] for g, a in zip(groups, answers)]
+        advs = advantages(rewards)
+
+        # A group where every sample earned the same reward has all-zero
+        # advantages -&gt; no learning signal. Skip it (ScaleRL).
+        keep = [any(a != 0.0 for a in g) for g in advs]
+        data = build_cispo_data(
+            [p for p, k in zip(prompts, keep) if k],
+            [g for g, k in zip(groups,  keep) if k],
+            [a for a, k in zip(advs,    keep) if k],
+        )
+        pipeline.append(data)
+
+        # 3. Train once PIPELINE_K batches are queued, with a warmed-up LR
+        if len(pipeline) &gt;= PIPELINE_K:
+            model.forward_backward(data=pipeline.popleft(), loss_fn="cispo", eps_max=EPS_MAX)
+            model.optim_step(
+                lr=lr_at(train_step), grad_clip_norm=1.0,
+                beta1=0.9, beta2=0.95, eps=1e-15, weight_decay=0.01,  # ScaleRL Adam
+            )
+            train_step += 1
+
+    model.save_weights("final")</code></pre>
+        </div>
+
+        <!-- Reward chart -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title"><span class="dot"></span>reward/mean · first 200 steps · &lt;$1,000 run</div>
+            <div class="chart-legend">
+              <span><span class="swatch raw"></span>raw</span>
+              <span><span class="swatch smooth"></span>ema</span>
+            </div>
+          </div>
+          <svg class="chart-svg" id="rewardChart" viewBox="0 0 760 300" preserveAspectRatio="none" role="img" aria-label="Mean reward rising from about 0.12 to about 0.55 over the first 200 training steps."></svg>
+          <div class="chart-foot">scalerl.py · Qwen3.6 35B · LoRA rank 8 · lr 1e-4 · CISPO · hover to inspect any step</div>
+        </div>
+
+        <p class="paper-ref">
+          Devvrit Khatri, Lovish Madaan, Rishabh Tiwari, Rachit Bansal, Sai Surya Duvvuri, Manzil Zaheer,
+          Inderjit S. Dhillon, David Brandfonbrener, Rishabh Agarwal.
+          <em>The Art of Scaling Reinforcement Learning Compute for LLMs.</em>
+          <a href="https://arxiv.org/abs/2510.13786" target="_blank" rel="noopener">arXiv:2510.13786</a> (2025).
+        </p>
+      </div>
+          </div>
+        </details>
+        <details class="resource lab-disclosure" id="pricing" data-href="/pricing">
+          <summary><span>River Cloud Token Pricing</span><span class="resource-plus" aria-hidden="true">+</span></summary>
+          <div class="resource-body"><p class="resource-intro">Training and inference on River Cloud are billed per token. For deployment on your own GPUs, <a href="#contact" data-interest="cluster">contact us about on-prem pricing</a>.</p>
+      <p class="mobile-scroll-hint">Swipe to compare token prices <span aria-hidden="true">→</span></p>
+      <section class="price-scroll" aria-label="River Cloud token prices" tabindex="0">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th scope="col">Model</th>
+              <th scope="col">Context</th>
+              <th scope="col">Prompt</th>
+              <th scope="col">Cached</th>
+              <th scope="col">Completion</th>
+              <th scope="col">Training</th>
+            </tr>
+          </thead>
+          <tbody data-pricing-rows="training" data-pricing-context>
+            <tr><td class="price-status" colspan="6">Loading prices&hellip;</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <p class="sr-only" role="status" data-pricing-status></p>
+      <noscript><p class="price-foot">Prices load with JavaScript. Turn it on, or <a href="#contact">ask our team</a> for current rates.</p></noscript>
+      <p class="price-foot">
+        Prices in USD per 1M tokens · Preview rates, subject to change<br />
+        Checkpoint storage billed at $0.10 / GB / month · Longer context lengths and additional models are priced on request — <a href="#contact" style="border-bottom:1px solid currentColor">talk to our team</a>
+      </p>
+          </div>
+        </details>
+      </div>
+      </div>
+    </section>
+    <section class="vision-bridge" aria-labelledby="vision-bridge-heading">
+      <div class="vision-film">
+        <!-- The Vision page's night river as a seamless 26-second loop recorded from its shader: a live frame here flashed
+             as the page scrolled past (its render loop pauses off screen). api-experience.js plays it only while on screen. -->
+        <video class="vision-film-sky vision-film-clip" src="/assets/vision-sky-loop.mp4" poster="/assets/vision-sky-loop.jpg" muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true"></video>
+      </div>
+      <div>
+        <h2 id="vision-bridge-heading">Intelligence you own,<br /><em>at every layer.</em></h2>
+        <p>We’re building a future where your AI learns from you, works for you, and belongs to you—from how it learns to the hardware it runs on. River’s training and inference platform is one part of that larger vision.</p>
+        <a class="page-cta vision-bridge-cta" href="/vision">Explore our vision <span aria-hidden="true">›</span></a>
+      </div>
+    </section>
+    <section class="closing-section interest-section" id="contact" aria-labelledby="contact-heading">
+      <div class="interest-intro">
+        <p class="eyebrow">Talk to our team</p>
+        <h2 id="contact-heading">What will you build<br /><em>with River?</em></h2>
+        <p>Bring your team’s AI to River Cloud or run River Cluster on your own GPUs. Tell us a little about your plans, and we’ll help you get started.</p>
+        <p class="interest-direct">Prefer email? <a href="/cdn-cgi/l/email-protection#ef8e9f86af9d86998a9dc18e86"><span class="__cf_email__" data-cfemail="83e2f3eac3f1eaf5e6f1ade2ea">[email&#160;protected]</span></a></p>
+      </div>
+      <div class="interest-panel">
+        <div id="interest-embed" class="interest-embed">
+          <noscript><p>Please email <a href="mailto:api@river.ai">api@river.ai</a> to get in touch, or enable JavaScript to use this form.</p></noscript>
+          <p class="interest-privacy">We’ll use these details to respond to your inquiry. <a href="/privacy-policy">Privacy policy</a></p>
+        </div>
+        <p id="interest-error" class="interest-error" role="alert" hidden></p>
+        <div id="interest-success" class="interest-success" hidden>
+          <span class="interest-success-mark" aria-hidden="true">✓</span>
+          <h3 tabindex="-1">Thanks for reaching out.</h3>
+          <p>Your request is with the River team. We’ll follow up by email.</p>
+          <a class="text-link" href="https://docs.river.ai">Explore the docs <span aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    (function () {
+      // ── Copy buttons ─────────────────────────────────────────────────
+      function wireCopy(btn, getText) {
+        btn.addEventListener("click", function () {
+          var text = getText();
+          var done = function () {
+            var prev = btn.textContent;
+            btn.textContent = "Copied";
+            setTimeout(function () { btn.textContent = prev; }, 1400);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, done);
+          } else {
+            done();
+          }
+        });
+      }
+      document.querySelectorAll(".code-copy").forEach(function (btn) {
+        wireCopy(btn, function () {
+          return btn.closest(".code-window").querySelector("code").textContent;
+        });
+      });
+      document.querySelectorAll(".install-copy").forEach(function (btn) {
+        wireCopy(btn, function () { return btn.getAttribute("data-copy"); });
+      });
+
+      // ── Lightweight Python syntax highlighting ───────────────────────
+      var KEYWORDS = new Set(("import from as with for in if elif else return def class while " +
+        "continue break and or not None True False lambda yield try except finally raise " +
+        "global nonlocal pass assert is del await async").split(" "));
+      var BUILTINS = new Set(("range len float int str list dict set sum max min zip map " +
+        "enumerate print open all any sorted abs round").split(" "));
+
+      function esc(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+      function highlight(src) {
+        var re = /(#[^\n]*)|("""[\s\S]*?"""|'''[\s\S]*?'''|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')|(\b\d+\.?\d*(?:[eE]-?\d+)?\b)|([A-Za-z_]\w*)/g;
+        var out = "", last = 0, m;
+        while ((m = re.exec(src))) {
+          out += esc(src.slice(last, m.index));
+          last = re.lastIndex;
+          if (m[1]) out += '<span class="tok-com">' + esc(m[1]) + "</span>";
+          else if (m[2]) out += '<span class="tok-str">' + esc(m[2]) + "</span>";
+          else if (m[3]) out += '<span class="tok-num">' + esc(m[3]) + "</span>";
+          else {
+            var w = m[4];
+            if (KEYWORDS.has(w)) out += '<span class="tok-kw">' + w + "</span>";
+            else if (w === "self") out += '<span class="tok-self">' + w + "</span>";
+            else if (BUILTINS.has(w)) out += '<span class="tok-fn">' + w + "</span>";
+            else if (src[re.lastIndex] === "(") out += '<span class="tok-fn">' + w + "</span>";
+            else out += w;
+          }
+        }
+        out += esc(src.slice(last));
+        return out;
+      }
+      document.querySelectorAll('pre[data-lang="python"] code').forEach(function (el) {
+        el.innerHTML = highlight(el.textContent);
+      });
+
+      // ── Reward charts ────────────────────────────────────────────────
+      function drawChart(svg, raw, smooth) {
+        if (!svg || !raw.length) return;
+        var W = 760, H = 300, PL = 44, PR = 12, PT = 14, PB = 28;
+        var iw = W - PL - PR, ih = H - PT - PB;
+        var N = raw.length;
+        var main = raw;
+        if (smooth) {
+          var ema = [], a = 0.12, acc = raw[0];
+          for (var j = 0; j < N; j++) { acc = a * raw[j] + (1 - a) * acc; ema.push(acc); }
+          main = ema;
+        }
+        var mx = Math.max.apply(null, raw);
+        var yMax = Math.min(1, Math.ceil((mx + 1e-9) / 0.2) * 0.2);
+        if (yMax < 0.2) yMax = 0.2;
+        function X(i) { return PL + (i / (N - 1)) * iw; }
+        function Y(v) { return PT + (1 - v / yMax) * ih; }
+        function path(a2) {
+          return a2.map(function (v, i) { return (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1); }).join(" ");
+        }
+        var fillId = svg.id + "Fill";
+        var parts = [
+          '<defs><linearGradient id="' + fillId + '" x1="0" y1="0" x2="0" y2="1">' +
+          '<stop offset="0%" stop-color="rgba(30,108,196,0.18)"/>' +
+          '<stop offset="100%" stop-color="rgba(30,108,196,0)"/></linearGradient></defs>'
+        ];
+        for (var t = 0; t < yMax - 1e-9; t += 0.2) {
+          var ty = Y(t).toFixed(1);
+          parts.push('<line class="chart-grid-line" x1="' + PL + '" y1="' + ty + '" x2="' + (W - PR) + '" y2="' + ty + '"/>');
+          parts.push('<text class="chart-axis-label" x="' + (PL - 8) + '" y="' + (parseFloat(ty) + 3) + '" text-anchor="end">' + t.toFixed(1) + '</text>');
+        }
+        [0, 1, 2, 3, 4].forEach(function (k) {
+          var st = Math.round(k / 4 * (N - 1));
+          parts.push('<text class="chart-axis-label" x="' + X(st).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle">' + st + '</text>');
+        });
+        parts.push('<path class="chart-area" style="fill:url(#' + fillId + ')" d="' + path(main) + ' L' + X(N - 1).toFixed(1) + ' ' + Y(0).toFixed(1) + ' L' + X(0).toFixed(1) + ' ' + Y(0).toFixed(1) + ' Z"/>');
+        if (smooth) parts.push('<path class="chart-raw" d="' + path(raw) + '"/>');
+        parts.push('<path class="chart-smooth" d="' + path(main) + '"/>');
+        parts.push('<line class="chart-guide" x1="0" y1="' + PT + '" x2="0" y2="' + (PT + ih) + '"/>');
+        parts.push('<circle class="chart-dot" r="4.5" cx="-10" cy="-10"/>');
+        svg.innerHTML = parts.join("");
+
+        var card = svg.closest(".chart-card");
+        var guide = svg.querySelector(".chart-guide");
+        var marker = svg.querySelector(".chart-dot");
+        var tip = document.createElement("div");
+        tip.className = "chart-tip";
+        card.appendChild(tip);
+
+        function scrub(e) {
+          var r = svg.getBoundingClientRect();
+          if (!r.width) return;
+          var sx = r.width / W, sy = r.height / H;
+          var userX = (e.clientX - r.left) / sx;
+          var ti = Math.max(0, Math.min(1, (userX - PL) / iw));
+          var i = Math.round(ti * (N - 1));
+          var vx = X(i), vy = Y(main[i]);
+          guide.setAttribute("x1", vx); guide.setAttribute("x2", vx);
+          marker.setAttribute("cx", vx); marker.setAttribute("cy", vy);
+          card.classList.add("scrub");
+          tip.textContent = "step " + i + " \u00b7 " + main[i].toFixed(3);
+          var cr = card.getBoundingClientRect();
+          tip.style.left = (r.left - cr.left + vx * sx) + "px";
+          tip.style.top = (r.top - cr.top + vy * sy) + "px";
+        }
+        svg.addEventListener("pointermove", scrub);
+        svg.addEventListener("pointerdown", scrub);
+        svg.addEventListener("pointerleave", function () { card.classList.remove("scrub"); });
+      }
+
+      // scalerl: real reward/mean per step (from reward_mean.csv)
+      var SCALERL_REWARD = [0.0169, 0.0404, 0.0078, 0.0404, 0.056, 0.0117, 0.0365, 0.0091, 0.026, 0.0352, 0.0104, 0.0039, 0.0195, 0.0716, 0.0339, 0.0417, 0.0273, 0.0703, 0.0104, 0.0417, 0.0378, 0.0951, 0.0156, 0.0638, 0.0651, 0.0326, 0.0534, 0.0625, 0.0951, 0.0521, 0.0208, 0.0273, 0.0938, 0.1107, 0.0521, 0.0195, 0.0326, 0.0612, 0.0495, 0.0716, 0.1432, 0.1094, 0.0417, 0.0898, 0.112, 0.1602, 0.1263, 0.1953, 0.1693, 0.0703, 0.1016, 0.082, 0.1237, 0.1758, 0.1328, 0.2474, 0.1693, 0.2031, 0.2826, 0.3242, 0.2812, 0.1914, 0.3151, 0.2292, 0.3138, 0.3164, 0.3138, 0.388, 0.4414, 0.3685, 0.4115, 0.5026, 0.4648, 0.4883, 0.4518, 0.4479, 0.5234, 0.4505, 0.5781, 0.3841, 0.4557, 0.5208, 0.5156, 0.4661, 0.5143, 0.4909, 0.4544, 0.3945, 0.5495, 0.5638, 0.5924, 0.4453, 0.5156, 0.4844, 0.556, 0.4388, 0.5651, 0.5365, 0.5169, 0.5052, 0.5195, 0.4596, 0.4049, 0.513, 0.556, 0.5573, 0.5221, 0.4635, 0.5521, 0.5534, 0.5872, 0.5586, 0.526, 0.6211, 0.388, 0.6029, 0.6146, 0.5807, 0.4349, 0.5182, 0.5495, 0.5, 0.5573, 0.5638, 0.5638, 0.5312, 0.5143, 0.5964, 0.4701, 0.5391, 0.5859, 0.6263, 0.6719, 0.599, 0.5, 0.5755, 0.724, 0.4544, 0.4844, 0.5443, 0.5951, 0.5391, 0.5833, 0.5521, 0.5469, 0.6589, 0.5547, 0.5729, 0.6107, 0.5781, 0.4805, 0.5951, 0.612, 0.5807, 0.5924, 0.6016, 0.5599, 0.4857, 0.5104, 0.6302, 0.4674, 0.7109, 0.5339, 0.5078, 0.569, 0.6341, 0.5768, 0.5677, 0.5729, 0.5833, 0.526, 0.6068, 0.5742, 0.5339, 0.5352, 0.5456, 0.6263, 0.5898, 0.5378, 0.5339, 0.6302, 0.5286, 0.5768, 0.5326, 0.5924, 0.5898, 0.6732, 0.6224, 0.4596, 0.6133, 0.4857, 0.4935, 0.5807, 0.6029, 0.5833, 0.5391, 0.6745, 0.4766, 0.5482, 0.5964, 0.6172];
+      // rl_loop (Kimi-K2.6-NVFP4 toy run): reward per step (reward_total_r1h4djp6.csv)
+      var RL_REWARD = [0.1484, 0.1768, 0.2334, 0.2734, 0.3076, 0.4502, 0.5596, 0.6348, 0.7754, 0.8447, 0.9053, 0.9404, 0.9336, 0.9648, 0.9561, 0.9658, 0.958, 0.9541, 0.9707, 0.9746, 0.959, 0.9473, 0.9531, 0.9736, 0.9688, 0.9619, 0.9688, 0.9678, 0.9678];
+      drawChart(document.getElementById("rewardChart"), SCALERL_REWARD, true);
+      drawChart(document.getElementById("rlChart"), RL_REWARD, false);
+    })();
+  </script>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="wordmark" aria-label="River.ai home">
+          <svg class="logo" viewBox="51 75 709 176" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M290 96.9999C290 137.317 257.344 170.066 216.875 170.066H160L166.216 145.171C168.44 136.265 176.441 130.016 185.62 130.016H216.875C235.169 130.015 250 115.222 250 96.9741V93.005C250 91.3462 251.346 90.0022 253.005 90.005L287.005 90.0613C288.66 90.064 290 91.4064 290 93.0613V96.9999Z" fill="currentColor"/><path d="M51.0004 163.066C51.0004 122.75 83.6561 90.0004 124.125 90.0002H176.159C178.11 90.0002 179.542 91.8337 179.069 93.7269L171.514 123.989C170.624 127.551 167.424 130.051 163.752 130.051H124.125C105.831 130.051 91.0004 144.844 91.0004 163.092V167.033C91.0004 168.69 89.6572 170.033 88.0004 170.033H54.0004C52.3435 170.033 51.0004 168.69 51.0004 167.033V163.066Z" fill="currentColor"/><path d="M51.0002 243.334C51.0002 203.017 83.6559 170.268 124.125 170.268L160 170L151.496 204.017C150.614 207.543 147.467 210.031 143.833 210.076L124.125 210.318C105.831 210.319 91.0002 225.112 91.0002 243.36V247.329C91.0002 248.988 89.654 250.332 87.9952 250.329L53.9952 250.273C52.3403 250.27 51.0002 248.928 51.0002 247.273V243.334Z" fill="currentColor"/><path d="M290 177C290 217.317 257.344 250.066 216.875 250.066H140L145.27 228.96C148.05 217.827 158.051 210.016 169.525 210.016H216.875C235.169 210.015 250 195.222 250 176.974V173.005C250 171.346 251.346 170.002 253.005 170.005L287.005 170.061C288.66 170.064 290 171.406 290 173.061V177Z" fill="currentColor"/><path d="M360.143 240V177.852C360.143 139.753 379.907 120.465 410.148 120.465H412.529V143.087H410.148C393.004 143.087 383.479 154.278 383.479 177.852V240H360.143ZM424.5 90.2246C424.5 81.8905 430.929 75.9376 438.787 75.9376C446.645 75.9376 452.836 82.3668 452.836 90.2246C452.836 98.0825 446.645 104.512 438.787 104.512C430.929 104.512 424.5 98.0825 424.5 90.2246ZM427.119 240V120.942H450.455V240H427.119ZM505.391 240L457.529 120.942H482.056L517.059 209.759L552.3 120.942H576.826L528.726 240H505.391ZM635.06 119.037C666.016 119.037 695.542 142.372 696.494 178.328C696.494 182.376 696.256 185.948 695.78 189.043H599.581C601.486 206.902 616.011 219.284 635.06 219.284C646.728 219.284 656.253 215.236 663.634 207.378L691.494 207.616C681.017 228.332 659.586 241.905 635.775 241.905C602.2 242.619 573.864 213.807 574.579 180.709C573.864 147.611 601.962 118.322 635.06 119.037ZM599.581 169.994H671.492C666.968 153.564 652.681 141.658 635.775 141.658C617.678 141.658 604.105 153.087 599.581 169.994ZM707.096 240V177.852C707.096 139.753 726.86 120.465 757.101 120.465H759.482V143.087H757.101C739.956 143.087 730.432 154.278 730.432 177.852V240H707.096Z" fill="currentColor"/></svg>
+        </a>
+        <div class="tag">Intelligence that flows with you</div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/">Platform</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="https://docs.river.ai">Documentation</a></li>
+          <li><a href="/changelog">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/vision">Our Vision</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/security">Security</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://discord.gg/YjK48AuA8n" target="_blank" rel="noopener">Discord</a></li>
+          <li><a href="https://x.com/river_ai_inc" target="_blank" rel="noopener">X</a></li>
+          <li><a href="https://www.linkedin.com/company/river-ai-official/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <span>© 2026 River AI Inc.</span>
+    </div>
+  </footer>
+</body>
+</html>

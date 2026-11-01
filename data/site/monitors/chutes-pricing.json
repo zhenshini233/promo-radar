@@ -1,0 +1,54 @@
+{
+ "provider": "Chutes",
+ "label": "pricing",
+ "url": "https://chutes.ai/pricing",
+ "slug": "chutes-pricing",
+ "promo_keywords": "free tier",
+ "last_checked_at": "2026-11-01T17:32:30Z",
+ "last_changed_at": "2026-11-01T17:24:45Z",
+ "notes": "SSR，free tier 声明在静态 HTML",
+ "monitored": true,
+ "band": "-----------------------------1",
+ "checked_days": 1,
+ "covered_by": [
+  "openrouter",
+  "modelsdev"
+ ],
+ "history": [
+  {
+   "checked_at": "2026-11-01T12:29:38Z",
+   "promo_keywords": "free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T12:39:06Z",
+   "promo_keywords": "free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T12:42:37Z",
+   "promo_keywords": "free tier",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-01T13:55:03Z",
+   "promo_keywords": "free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T14:08:06Z",
+   "promo_keywords": "free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:24:45Z",
+   "promo_keywords": "free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-01T17:32:30Z",
+   "promo_keywords": "free tier",
+   "changed": 0
+  }
+ ]
+}

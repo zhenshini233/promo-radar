@@ -1,0 +1,97 @@
+# promo-radar 配置
+# 所有时间相关阈值单位为天（除 hackernews.lookback_hours）
+
+[general]
+# 数据目录（相对本文件所在目录）：radar.db / digest.html / atom.xml
+data_dir = "data"
+# 超过 N 天未再见到的条目标记为 expired（只归档，不删除）
+expire_days = 45
+# 打分阈值：总分 >= 阈值视为促销条目入库；低于则丢弃
+promo_threshold = 4.0
+
+[proxy]
+# 本地代理（大陆网络抓 linux.do 必需），例 "http://127.0.0.1:7890"
+# 留空 = 使用环境变量 HTTP_PROXY/HTTPS_PROXY；GitHub Actions 上无需代理
+# 环境变量 RADAR_PROXY 优先级最高
+# 本地开发：复制本文件为 config.local.toml（gitignore），填入代理与 key，代码自动优先读取
+url = ""
+# 这些域名绕过代理直连（对代理节点 TLS 不稳的站点）
+bypass = ["artificialanalysis.ai"]
+
+[notify.telegram]
+enabled = false
+# 留空时可用环境变量 RADAR_TG_TOKEN / RADAR_TG_CHAT_ID
+bot_token = ""
+chat_id = ""
+
+[sources.aicredits]
+enabled = true
+url = "https://aicredits.dev/llms-full.txt"
+
+[sources.linuxdo]
+enabled = true
+feeds = [
+    "https://linux.do/c/welfare/36.rss",
+    "https://linux.do/tag/ai.rss",
+]
+
+[sources.hackernews]
+enabled = true
+# Algolia 不支持 OR 组合，每个 query 单独请求后合并
+queries = ['"free credits"', '"free trial credits"', '"signup bonus"', '"free tier"']
+# 只看最近 N 小时的新帖（相对上次成功抓取时间）
+lookback_hours = 36
+
+[sources.watchlist]
+enabled = true
+# 并发抓取线程数（种子批 25+ 服务商，并发 8 约 40 秒）
+max_workers = 8
+# aicredits 条目的 Source Link 新域名自动收编进 providers.toml
+auto_enroll = true
+# 促销关键词命中才算事件（正则，大小写不敏感）；留空用内置默认
+keywords = []
+
+[sources.openrouter]
+# OpenRouter 公开 models API（免鉴权）：供应商的 :free 模型数量 0 → N 时产生事件
+enabled = true
+url = "https://openrouter.ai/api/v1/models"
+
+[sources.modelsdev]
+# models.dev 供应商名录（api.json 免 key）：新 provider 入库 → 事件
+enabled = true
+url = "https://models.dev/api.json"
+
+[sources.mnfst]
+# awesome-free-llm-apis 的 data.json（11.9k star）；raw.githubusercontent 需代理
+enabled = true
+url = "https://raw.githubusercontent.com/mnfst/awesome-free-llm-apis/main/data.json"
+
+[sources.freetoken]
+# FreeToken 中文免费额度清单 providers.json；raw.githubusercontent 需代理
+enabled = true
+url = "https://raw.githubusercontent.com/AIPMAndy/FreeToken/main/data/providers.json"
+
+[sources.litellm]
+# litellm 价格库 diff：新增免费模型 / 输入价降幅 ≥ drop_threshold → 事件
+enabled = true
+url = "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json"
+drop_threshold = 0.5
+
+[sources.aa_providers]
+# Artificial Analysis 官方 API（免费 key）：https://artificialanalysis.ai/api-reference
+# 新模型厂商上榜时产生事件；已实测 key 并启用（2026-11-01）
+enabled = true
+url = "https://artificialanalysis.ai/api/v2/data/llms/models"
+# 留空时可用环境变量 RADAR_AA_KEY
+# ⚠️ 若把仓库推到 GitHub，请清空此处、改用 Actions secret RADAR_AA_KEY
+api_key = ""
+
+[sources.reddit]
+# v2 计划：官方 OAuth（需注册 script 类型 app）；公开 JSON 已对数据中心 IP 封锁
+enabled = false
+
+# 额外关键词规则（追加到内置规则之后）：pattern 为正则，大小写不敏感
+[[keywords]]
+pattern = '留\s*id.{0,8}送'
+weight = 2.5
+label = "留ID送额度"
