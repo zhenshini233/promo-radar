@@ -38,7 +38,7 @@ SOURCE_TYPES = {
 
 SOURCE_BLURBS = {
     "aicredits": "人工筛选的免费额度目录（存量档案）；新目录条目入库，新域名自动收编进厂商监控",
-    "linuxdo": "中文社区羊毛首发（本地需海外节点；Actions 部署直连正常）",
+    "linuxdo": "中文社区羊毛首发（linux.do 对数据中心 IP 风控，直连/Actions 均 403；需自建网络环境）",
     "hackernews": "英文一手发布监控（Show HN 与 free credits 类帖）",
     "openrouter": "供应商在 OpenRouter 挂出 :free 免费模型时产生条目",
     "modelsdev": "models.dev 名录出现新供应商时产生条目",

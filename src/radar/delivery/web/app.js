@@ -173,7 +173,7 @@
             && Object.keys(st.amounts).length === 0 && Object.keys(st.statuses).length === 0 && !st.qd) {
           var id = sel[0];
           var oc = originCounts.value;
-          if (id === "linuxdo") return "Linux.do 当前网络不可达（本地需要可用节点；Actions 部署后正常），恢复后国内活动会出现在这里。";
+          if (id === "linuxdo") return "Linux.do 对服务器/数据中心 IP 全部风控（本地与 Actions 均 403），恢复后国内活动会出现在这里。";
           if (id === "litellm") return "价格库是发现雷达：" + ((DATA.catalog_stats || {}).litellm || 0).toLocaleString("en-US") + " 个模型价格基线已建立，出现新免费模型或大幅降价时这里才会出现条目。";
           return "该来源是发现型数据源：登记行业现状、只在出现新变化时产生条目，其覆盖的厂商见「厂商」页。";
         }
