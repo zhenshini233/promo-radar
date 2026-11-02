@@ -4,12 +4,12 @@
  "url": "https://snowflake.com",
  "slug": "snowflake-com-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:49:44Z",
- "last_changed_at": "2026-11-01T17:49:44Z",
+ "last_checked_at": "2026-11-02T03:31:27Z",
+ "last_changed_at": "2026-11-02T03:31:27Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "-----------------------------0",
- "checked_days": 1,
+ "band": "----------------------------00",
+ "checked_days": 2,
  "covered_by": [
   "aicredits",
   "litellm",
@@ -58,6 +58,11 @@
   },
   {
    "checked_at": "2026-11-01T17:49:44Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-02T03:31:27Z",
    "promo_keywords": "",
    "changed": 1
   }

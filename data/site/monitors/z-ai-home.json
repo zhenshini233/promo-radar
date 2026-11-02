@@ -4,12 +4,12 @@
  "url": "https://z.ai",
  "slug": "z-ai-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-01T17:49:42Z",
+ "last_checked_at": "2026-11-02T03:31:26Z",
  "last_changed_at": "2026-11-01T10:46:30Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "-----------------------------0",
- "checked_days": 1,
+ "band": "----------------------------00",
+ "checked_days": 2,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -60,6 +60,11 @@
   },
   {
    "checked_at": "2026-11-01T17:49:42Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-02T03:31:26Z",
    "promo_keywords": "",
    "changed": 0
   }
