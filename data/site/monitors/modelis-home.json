@@ -4,18 +4,23 @@
  "url": "https://modelishub.com",
  "slug": "modelis-home",
  "promo_keywords": "free tier",
- "last_checked_at": "2026-11-01T14:08:07Z",
+ "last_checked_at": "2026-11-03T03:31:23Z",
  "last_changed_at": "2026-11-01T14:08:07Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "----------------------------1-",
- "checked_days": 1,
+ "band": "---------------------------1-1",
+ "checked_days": 2,
  "covered_by": [
   "modelsdev"
  ],
  "history": [
   {
    "checked_at": "2026-11-01T14:08:07Z",
+   "promo_keywords": "free tier",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-03T03:31:23Z",
    "promo_keywords": "free tier",
    "changed": 0
   }

@@ -4,12 +4,12 @@
  "url": "https://civo.com",
  "slug": "civo-com-home",
  "promo_keywords": "$250 free credit;;$250 in free credit;;free credit",
- "last_checked_at": "2026-11-02T03:31:27Z",
+ "last_checked_at": "2026-11-03T03:31:21Z",
  "last_changed_at": "2026-11-01T10:46:31Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "----------------------------11",
- "checked_days": 2,
+ "band": "---------------------------111",
+ "checked_days": 3,
  "covered_by": [
   "aicredits"
  ],
@@ -56,6 +56,11 @@
   },
   {
    "checked_at": "2026-11-02T03:31:27Z",
+   "promo_keywords": "$250 free credit;;$250 in free credit;;free credit",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-03T03:31:21Z",
    "promo_keywords": "$250 free credit;;$250 in free credit;;free credit",
    "changed": 0
   }

@@ -4,12 +4,12 @@
  "url": "https://groq.com/",
  "slug": "groq-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-02T03:31:26Z",
- "last_changed_at": "2026-11-02T03:31:26Z",
+ "last_checked_at": "2026-11-03T03:31:21Z",
+ "last_changed_at": "2026-11-03T03:31:21Z",
  "notes": "",
  "monitored": true,
- "band": "----------------------------00",
- "checked_days": 2,
+ "band": "---------------------------000",
+ "checked_days": 3,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -66,6 +66,11 @@
   },
   {
    "checked_at": "2026-11-02T03:31:26Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-03T03:31:21Z",
    "promo_keywords": "",
    "changed": 1
   }

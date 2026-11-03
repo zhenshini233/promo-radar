@@ -4,12 +4,12 @@
  "url": "https://mistral.ai/pricing",
  "slug": "mistral-pricing",
  "promo_keywords": "",
- "last_checked_at": "2026-11-02T03:31:27Z",
+ "last_checked_at": "2026-11-03T03:31:22Z",
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "Free 计划 + Experiment 免费 API 层（需手机验证免绑卡）",
  "monitored": true,
- "band": "----------------------------00",
- "checked_days": 2,
+ "band": "---------------------------000",
+ "checked_days": 3,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -67,6 +67,11 @@
   },
   {
    "checked_at": "2026-11-02T03:31:27Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-03T03:31:22Z",
    "promo_keywords": "",
    "changed": 0
   }
