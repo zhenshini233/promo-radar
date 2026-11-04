@@ -4,12 +4,12 @@
  "url": "https://morphllm.com/",
  "slug": "morph-home",
  "promo_keywords": "free tier",
- "last_checked_at": "2026-11-03T03:31:22Z",
- "last_changed_at": "2026-11-03T03:31:22Z",
+ "last_checked_at": "2026-11-04T03:30:29Z",
+ "last_changed_at": "2026-11-04T03:30:29Z",
  "notes": "免费层 200 次/月 + WarpGrep 每月 10 美元免费算力",
  "monitored": true,
- "band": "---------------------------111",
- "checked_days": 3,
+ "band": "--------------------------1111",
+ "checked_days": 4,
  "covered_by": [
   "openrouter",
   "modelsdev",
@@ -68,6 +68,11 @@
   },
   {
    "checked_at": "2026-11-03T03:31:22Z",
+   "promo_keywords": "free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-04T03:30:29Z",
    "promo_keywords": "free tier",
    "changed": 1
   }

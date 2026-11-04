@@ -4,12 +4,12 @@
  "url": "https://www.volcengine.com/product/ark",
  "slug": "volcengine-ark-ark",
  "promo_keywords": "",
- "last_checked_at": "2026-11-03T03:31:22Z",
- "last_changed_at": "2026-11-03T03:31:22Z",
+ "last_checked_at": "2026-11-04T03:30:29Z",
+ "last_changed_at": "2026-11-04T03:30:29Z",
  "notes": "新用户免费推理试用额度 + Managed Agents 赠 30h 运行时",
  "monitored": true,
- "band": "---------------------------000",
- "checked_days": 3,
+ "band": "--------------------------0000",
+ "checked_days": 4,
  "covered_by": [
   "modelsdev",
   "litellm"
@@ -67,6 +67,11 @@
   },
   {
    "checked_at": "2026-11-03T03:31:22Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-04T03:30:29Z",
    "promo_keywords": "",
    "changed": 1
   }

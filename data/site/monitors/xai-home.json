@@ -4,12 +4,12 @@
  "url": "https://x.ai/",
  "slug": "xai-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-03T03:31:22Z",
- "last_changed_at": "2026-11-03T03:31:22Z",
+ "last_checked_at": "2026-11-04T03:30:29Z",
+ "last_changed_at": "2026-11-04T03:30:29Z",
  "notes": "第三方称新账号 $25 + data sharing $150/月；官网反爬强，可能频繁抓取失败",
  "monitored": true,
- "band": "---------------------------000",
- "checked_days": 3,
+ "band": "--------------------------0000",
+ "checked_days": 4,
  "covered_by": [
   "openrouter",
   "modelsdev",
@@ -68,6 +68,11 @@
   },
   {
    "checked_at": "2026-11-03T03:31:22Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-04T03:30:29Z",
    "promo_keywords": "",
    "changed": 1
   }

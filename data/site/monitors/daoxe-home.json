@@ -4,12 +4,12 @@
  "url": "https://daoxe.com",
  "slug": "daoxe-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-03T03:31:23Z",
- "last_changed_at": "2026-11-01T14:08:07Z",
+ "last_checked_at": "2026-11-04T03:30:30Z",
+ "last_changed_at": "2026-11-04T03:30:30Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "---------------------------000",
- "checked_days": 3,
+ "band": "--------------------------0000",
+ "checked_days": 4,
  "covered_by": [
   "modelsdev"
  ],
@@ -48,6 +48,11 @@
    "checked_at": "2026-11-03T03:31:23Z",
    "promo_keywords": "",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-04T03:30:30Z",
+   "promo_keywords": "",
+   "changed": 1
   }
  ]
 }

@@ -4,12 +4,12 @@
  "url": "https://www.upstage.ai/pricing/api",
  "slug": "upstage-pricing",
  "promo_keywords": "",
- "last_checked_at": "2026-11-03T03:31:22Z",
- "last_changed_at": "2026-11-01T11:22:07Z",
+ "last_checked_at": "2026-11-04T03:30:29Z",
+ "last_changed_at": "2026-11-04T03:30:29Z",
  "notes": "Solar API 预付 credits；另有非营利免费计划",
  "monitored": true,
- "band": "---------------------------000",
- "checked_days": 3,
+ "band": "--------------------------0000",
+ "checked_days": 4,
  "covered_by": [
   "openrouter",
   "modelsdev",
@@ -70,6 +70,11 @@
    "checked_at": "2026-11-03T03:31:22Z",
    "promo_keywords": "",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-04T03:30:29Z",
+   "promo_keywords": "",
+   "changed": 1
   }
  ]
 }

@@ -1,0 +1,23 @@
+{
+ "provider": "IndiaAI",
+ "label": "home",
+ "url": "https://indiaai.gov.in",
+ "slug": "indiaai-home",
+ "promo_keywords": "",
+ "last_checked_at": "2026-11-04T03:30:30Z",
+ "last_changed_at": "2026-11-04T03:30:30Z",
+ "notes": "auto-enrolled from brands 2026-11-01",
+ "monitored": true,
+ "band": "-----------------------------0",
+ "checked_days": 1,
+ "covered_by": [
+  "aicredits"
+ ],
+ "history": [
+  {
+   "checked_at": "2026-11-04T03:30:30Z",
+   "promo_keywords": "",
+   "changed": 0
+  }
+ ]
+}

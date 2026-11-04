@@ -4,12 +4,12 @@
  "url": "https://inference.net",
  "slug": "inference-net-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-03T03:31:21Z",
- "last_changed_at": "2026-11-03T03:31:21Z",
+ "last_checked_at": "2026-11-04T03:30:28Z",
+ "last_changed_at": "2026-11-04T03:30:28Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "---------------------------000",
- "checked_days": 3,
+ "band": "--------------------------0000",
+ "checked_days": 4,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -68,6 +68,11 @@
   },
   {
    "checked_at": "2026-11-03T03:31:21Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-04T03:30:28Z",
    "promo_keywords": "",
    "changed": 1
   }

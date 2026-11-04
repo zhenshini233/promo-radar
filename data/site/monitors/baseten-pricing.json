@@ -3,13 +3,13 @@
  "label": "pricing",
  "url": "https://www.baseten.co/pricing/",
  "slug": "baseten-pricing",
- "promo_keywords": "free credits",
- "last_checked_at": "2026-11-03T03:31:21Z",
- "last_changed_at": "2026-11-03T03:31:21Z",
+ "promo_keywords": "",
+ "last_checked_at": "2026-11-04T03:30:28Z",
+ "last_changed_at": "2026-11-04T03:30:28Z",
  "notes": "",
  "monitored": true,
- "band": "---------------------------111",
- "checked_days": 3,
+ "band": "--------------------------1110",
+ "checked_days": 4,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -70,6 +70,11 @@
   {
    "checked_at": "2026-11-03T03:31:21Z",
    "promo_keywords": "free credits",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-04T03:30:28Z",
+   "promo_keywords": "",
    "changed": 1
   }
  ]

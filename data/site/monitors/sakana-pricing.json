@@ -4,12 +4,12 @@
  "url": "https://console.sakana.ai/pricing",
  "slug": "sakana-pricing",
  "promo_keywords": "free tier",
- "last_checked_at": "2026-11-03T03:31:22Z",
+ "last_checked_at": "2026-11-04T03:30:29Z",
  "last_changed_at": "2026-11-02T03:31:27Z",
  "notes": "新上线开发者平台，盯 promo 上线",
  "monitored": true,
- "band": "---------------------------111",
- "checked_days": 3,
+ "band": "--------------------------1111",
+ "checked_days": 4,
  "covered_by": [
   "openrouter",
   "modelsdev"
@@ -67,6 +67,11 @@
   },
   {
    "checked_at": "2026-11-03T03:31:22Z",
+   "promo_keywords": "free tier",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-04T03:30:29Z",
    "promo_keywords": "free tier",
    "changed": 0
   }

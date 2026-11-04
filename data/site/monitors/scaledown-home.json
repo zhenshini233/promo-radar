@@ -4,12 +4,12 @@
  "url": "https://scaledown.ai/",
  "slug": "scaledown-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-03T03:31:22Z",
+ "last_checked_at": "2026-11-04T03:30:29Z",
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "新账号送 5000 万 tokens（第三方称或为发布期促销）",
  "monitored": true,
- "band": "---------------------------000",
- "checked_days": 3,
+ "band": "--------------------------0000",
+ "checked_days": 4,
  "covered_by": [
   "openrouter",
   "litellm"
@@ -67,6 +67,11 @@
   },
   {
    "checked_at": "2026-11-03T03:31:22Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-04T03:30:29Z",
    "promo_keywords": "",
    "changed": 0
   }
