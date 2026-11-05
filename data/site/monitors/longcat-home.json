@@ -4,12 +4,12 @@
  "url": "https://longcat.chat/",
  "slug": "longcat-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-04T03:30:29Z",
+ "last_checked_at": "2026-11-05T03:30:21Z",
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "美团；初始额度 500 万 tokens/天，反馈可提至 1.2 亿/天",
  "monitored": true,
- "band": "--------------------------0000",
- "checked_days": 4,
+ "band": "-------------------------00000",
+ "checked_days": 5,
  "covered_by": [
   "modelsdev",
   "aa_providers"
@@ -72,6 +72,11 @@
   },
   {
    "checked_at": "2026-11-04T03:30:29Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-05T03:30:21Z",
    "promo_keywords": "",
    "changed": 0
   }

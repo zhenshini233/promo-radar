@@ -4,12 +4,12 @@
  "url": "https://fastrouter.ai",
  "slug": "fastrouter-home",
  "promo_keywords": "free credits",
- "last_checked_at": "2026-11-04T03:30:29Z",
- "last_changed_at": "2026-11-04T03:30:29Z",
+ "last_checked_at": "2026-11-05T03:30:22Z",
+ "last_changed_at": "2026-11-05T03:30:22Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "--------------------------1111",
- "checked_days": 4,
+ "band": "-------------------------11111",
+ "checked_days": 5,
  "covered_by": [
   "modelsdev"
  ],
@@ -51,6 +51,11 @@
   },
   {
    "checked_at": "2026-11-04T03:30:29Z",
+   "promo_keywords": "free credits",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-05T03:30:22Z",
    "promo_keywords": "free credits",
    "changed": 1
   }

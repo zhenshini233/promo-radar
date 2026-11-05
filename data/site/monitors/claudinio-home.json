@@ -4,12 +4,12 @@
  "url": "https://claudin.io",
  "slug": "claudinio-home",
  "promo_keywords": "$5 credits;;$5 in credits;;$5.00 credit;;free credit;;free credits;;free tier",
- "last_checked_at": "2026-11-04T03:30:30Z",
+ "last_checked_at": "2026-11-05T03:30:22Z",
  "last_changed_at": "2026-11-01T14:08:07Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "--------------------------1111",
- "checked_days": 4,
+ "band": "-------------------------11111",
+ "checked_days": 5,
  "covered_by": [
   "modelsdev"
  ],
@@ -51,6 +51,11 @@
   },
   {
    "checked_at": "2026-11-04T03:30:30Z",
+   "promo_keywords": "$5 credits;;$5 in credits;;$5.00 credit;;free credit;;free credits;;free tier",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-05T03:30:22Z",
    "promo_keywords": "$5 credits;;$5 in credits;;$5.00 credit;;free credit;;free credits;;free tier",
    "changed": 0
   }

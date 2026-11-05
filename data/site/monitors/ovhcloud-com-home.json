@@ -4,12 +4,12 @@
  "url": "https://ovhcloud.com",
  "slug": "ovhcloud-com-home",
  "promo_keywords": "$100 credit;;$200 in free credits;;$300 credit;;free credits",
- "last_checked_at": "2026-11-04T03:30:28Z",
- "last_changed_at": "2026-11-01T10:46:31Z",
+ "last_checked_at": "2026-11-05T03:30:21Z",
+ "last_changed_at": "2026-11-05T03:30:21Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "--------------------------1111",
- "checked_days": 4,
+ "band": "-------------------------11111",
+ "checked_days": 5,
  "covered_by": [
   "aicredits",
   "litellm"
@@ -74,6 +74,11 @@
    "checked_at": "2026-11-04T03:30:28Z",
    "promo_keywords": "$100 credit;;$200 in free credits;;$300 credit;;free credits",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-05T03:30:21Z",
+   "promo_keywords": "$100 credit;;$200 in free credits;;$300 credit;;free credits",
+   "changed": 1
   }
  ]
 }

@@ -4,12 +4,12 @@
  "url": "https://river.ai",
  "slug": "river-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-04T03:30:27Z",
+ "last_checked_at": "2026-11-05T03:30:19Z",
  "last_changed_at": "2026-11-01T10:03:18Z",
  "notes": "xAI 联合创始人创办；曾送 $25（见 aicredits），官网 promo 出现/消失都是事件",
  "monitored": true,
- "band": "--------------------------0000",
- "checked_days": 4,
+ "band": "-------------------------00000",
+ "checked_days": 5,
  "covered_by": [],
  "history": [
   {
@@ -69,6 +69,11 @@
   },
   {
    "checked_at": "2026-11-04T03:30:27Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-05T03:30:19Z",
    "promo_keywords": "",
    "changed": 0
   }

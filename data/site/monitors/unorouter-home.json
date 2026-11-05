@@ -4,12 +4,12 @@
  "url": "https://unorouter.com",
  "slug": "unorouter-home",
  "promo_keywords": "free credit;;free tier",
- "last_checked_at": "2026-11-04T03:30:30Z",
- "last_changed_at": "2026-11-04T03:30:30Z",
+ "last_checked_at": "2026-11-05T03:30:23Z",
+ "last_changed_at": "2026-11-05T03:30:23Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "--------------------------1111",
- "checked_days": 4,
+ "band": "-------------------------11111",
+ "checked_days": 5,
  "covered_by": [
   "modelsdev"
  ],
@@ -51,6 +51,11 @@
   },
   {
    "checked_at": "2026-11-04T03:30:30Z",
+   "promo_keywords": "free credit;;free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-05T03:30:23Z",
    "promo_keywords": "free credit;;free tier",
    "changed": 1
   }

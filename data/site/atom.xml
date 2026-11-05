@@ -2,68 +2,68 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>promo-radar: AI API 促销活动</title>
   <id>urn:promo-radar:feed</id>
-  <updated>2026-11-04T03:30:31Z</updated>
+  <updated>2026-11-05T03:30:23Z</updated>
   <entry>
     <id>urn:promo-radar:deal:4a15b49cd76615d6</id>
     <title>Leonardo AI $5 Free API Credits</title>
     <link href="https://leonardo.ai/api" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Leonardo AI $5 free API credits (one-time) + 150 fast tokens/day on main platform — Leonardo AI gives every new API account **$5 in free credits** for AI image and video generation through its API. No credit card required to claim. The main platform also offers **150 free daily tokens** (non-API usage) on the Free plan, enough for ~6-12 image generations per day depending on settin</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:a284d221934b777a</id>
     <title>Anthropic Claude API - $5 Free Credits</title>
     <link href="https://console.anthropic.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Anthropic Claude API $5 free credits (no credit card required) — New developer accounts on [console.anthropic.com](https://console.anthropic.com) can claim **$5 in free API credits** by verifying a phone number during signup. No credit card is required. The credits work across all available Claude models, including Haiku, Sonnet, and Opus. With $5 you can run rou</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:cdbc2f4026c37fae</id>
     <title>Vultr Free Trial Credits - Up to $300</title>
     <link href="https://www.vultr.com/coupons" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Vultr Free Trial Credits Up to $300 in free credits (30-day validity) or up to $100 deposit match (12-month validity) — Vultr offers multiple promo codes for new customers with up to **$300 in free credits**. The best option depends on your needs: the **FLY300VULTR** code gives $300 valid for 30 days, while the **VULTRMATCH** deposit-match code doubles your first deposit (up to $100 matched) with 12-month validity. N</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:812ac7c4c34b7dab</id>
     <title>AI21 Labs $10 Free Trial Credits</title>
     <link href="https://www.ai21.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AI21 Labs $10 free credits, valid 3 months. 200 RPM rate limit. — AI21 Labs hands you $10 in free credits to try their Jamba family of language models -- hybrid Mamba-Transformer architecture with 256K context windows. No credit card required. Credits are valid for 3 months. Jamba models are particularly strong at long-context tasks and are ~30% more token-efficie</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:0a923439c37532ec</id>
     <title>Anyscale Free Signup Credits - $100</title>
     <link href="https://www.anyscale.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Anyscale Free Signup Credits $100 in platform credits (covers compute incl. CPU + NVIDIA T4/L4/A10G/A100/H100/H200 GPUs) — Anyscale (the company behind **Ray**, run by Ray's original creators) offers **$100 in free credits** to every new account on its Unified Compute Platform — a fully managed, serverless Ray environment for distributed training, batch inference, and online inference. Credits cover **any compute on the</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:629420a40c23bbb8</id>
     <title>DeepInfra: $5 free credits + $5/mo recurring; up to 1B tokens for startups</title>
     <link href="https://deepinfra.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] DeepInfra $5 signup credit + $5/month recurring free credit; up to 1,000,000,000 free tokens via DeepStart startup program — DeepInfra is an OpenAI-compatible inference platform for open-source LLMs, embeddings, image, and audio models. New accounts get **$5 in free credits on signup with no credit card required**, plus a **$5/month recurring free allocation** to try any open-source model on the platform. Approved early-s</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:5eff2cb948e876e0</id>
     <title>Deepgram $200 Free Speech API Credits</title>
     <link href="https://deepgram.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Deepgram $200 free credits (never expire). ~25,000+ min transcription at PAYG rates. — Deepgram gives every new user $200 in free credits for their speech-to-text, text-to-speech, voice agent, and audio intelligence APIs. No credit card required. Credits never expire. At pay-as-you-go rates, that's roughly 25,000+ minutes of transcription or 6.6M+ characters of text-to-speech.</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f2e6809c5c2f29ff</id>
     <title>Novita AI - $10 Free Credits for New Users</title>
     <link href="https://novita.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Novita AI $10 in free credits — New users signing up for Novita AI receive **$10 in free credits** to explore 200+ AI model APIs, including LLMs, image generation, video generation, audio, and embeddings. The platform offers an **OpenAI-compatible API**, so you can switch from OpenAI with minimal code changes. No credit card is re</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:545bd5508b0ffa5a</id>
     <title>Fireworks AI - $1 Free Credits for New Users</title>
     <link href="https://fireworks.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Fireworks AI $1 in free credits — Fireworks AI gives every new user **$1 in free credits** to explore their inference platform — no credit card required. The platform specializes in fast, optimized inference for open-source models including DeepSeek, Llama, Qwen, Mixtral, GLM, and many others, with serverless pricing starting at **$</summary>
   </entry>
   <entry>
@@ -84,28 +84,28 @@
     <id>urn:promo-radar:deal:65a12e8aef08ef24</id>
     <title>Civo $250 Free Trial Credit (Managed Kubernetes)</title>
     <link href="https://dashboard.civo.com/signup" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Civo $250 USD one-time credit (any Civo service) — Civo is a UK-based cloud-native specialist focused on **managed Kubernetes** (production-ready clusters in **under 90 seconds**), VMs, object storage, load balancers and managed databases. New accounts receive **$250 in free credit** that can be spent across any billable Civo service. The credit is </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:247f85cc2cfbb76c</id>
     <title>Linode (Akamai) $100 Free Trial Credit</title>
     <link href="https://www.linode.com/lp/free-credit-100" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Linode (Akamai) $100 credit for 60 days — Linode (now part of Akamai) offers **$100 in free credits valid for 60 days** to new customers. The credit covers most Linode services including Shared and Dedicated CPU instances, Kubernetes (LKE), Object Storage, Block Storage, and NodeBalancers. **GPU plans are excluded.** You can spin up to 20 V</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f6a3ca3bdf0ed401</id>
     <title>Oracle Cloud Free Trial - $300 Credits</title>
     <link href="https://www.oracle.com/cloud/free" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Oracle Cloud Free Trial $300 — New Oracle Cloud Infrastructure (OCI) customers receive **$300 in free credits valid for 30 days** to explore all eligible OCI services, including Generative AI, Compute, Autonomous Database, and networking. After the trial, your account transitions to **Always Free** tier with 20+ services at no co</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:2fbed75cf657da3f</id>
     <title>Google Cloud Free Trial - $300 Credits</title>
     <link href="https://cloud.google.com/free" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Google Cloud Free Trial $300 — New Google Cloud customers get **$300 in free credits valid for 91 days** to explore virtually all GCP services — including Vertex AI, Gemini API, Compute Engine, BigQuery, and Cloud Storage. Your billing account auto-closes when credits run out or the 91 days expire. **You will not be charged** unl</summary>
   </entry>
   <entry>
@@ -140,63 +140,63 @@
     <id>urn:promo-radar:deal:54aea81e85dc7cc9</id>
     <title>MiniMax Hailuo 2.3: Daily free credits for video generation</title>
     <link href="https://platform.minimax.io/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] MiniMax Hailuo 2.3 Web/app: ~500 signup credits + daily bonus (~50-80 credits, ~2-3 short 768p watermarked clips/day). API (platform.minimax.io): launch-period free trial credits — exact daily allocation not officially documented; plan to top up for production use. — MiniMax (the Chinese AI lab behind Hailuo and Talkie) lets you try its **Hailuo 2.3** and **Hailuo 2.3-Fast** text/image-to-video models for free in two ways: a **one-time ~500 credit signup bonus + daily bonus credits**</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:43b219a00da65c60</id>
     <title>Inference.net: $25 free credits for OSS-model inference</title>
     <link href="https://inference.net/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Inference.net $25 in free credits (one-time, on signup) — Inference.net hands every new account **$25 in free credits** to use against its OpenAI-compatible serverless inference API for open-source LLMs and vision-language models (Gemma 3, GPT-OSS 120B, NVIDIA Nemotron, plus Inference.net's own Schematron/ClipTagger families). Marketing promises rates up t</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:5fc6a783b7988e40</id>
     <title>Thunder Compute Free GPU Credits</title>
     <link href="https://www.thundercompute.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $20 free credits + up to $50 match on first purchase (up to $70 total value) — Thunder Compute is a Y Combinator-backed GPU cloud platform offering some of the cheapest on-demand GPU pricing available. New users get **$20 in free credits** on signup, plus a **100% match on your first credit purchase up to $50** -- so buy $50, get $100 total. Per-minute billing, no contracts, n</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:65b82bfbc494e9a8</id>
     <title>SiliconFlow Free Model Inference</title>
     <link href="https://www.siliconflow.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $1 free credits on signup. Free model access: 50 RPD (upgradeable to 1,000 RPD). Paid models from $0.05/M tokens. — SiliconFlow is a Chinese AI infrastructure platform offering **free inference for select smaller models** and extremely competitive pricing across 100+ open-source and commercial models. New users get **$1 in free credits** on signup. The platform provides an **OpenAI-compatible API** supporting tex</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:51cc0e9df4b517e0</id>
     <title>SambaNova Developer Tier - $5 Free Credits</title>
     <link href="https://cloud.sambanova.ai/plans" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] SambaNova Developer Tier $5 in free credits (~30M+ tokens on Llama 8B, 500M+ tokens on cheapest models) — SambaNova Cloud gives every new developer **$5 in free credits** (roughly 30 million tokens on Llama 3.1 8B) to explore their ultra-fast inference platform. SambaNova runs open-source models like DeepSeek, Llama, and Qwen on custom RDU hardware, delivering inference speeds up to 10x faster than GPU-</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:3ad3be50b69f3b37</id>
     <title>Oracle Academy Cloud Program - $300 Credits</title>
     <link href="https://academy.oracle.com/en/solutions-cloud-program.html" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Oracle Academy Cloud Program $300 in cloud credits for 365 days + Always Free tier (unlimited duration) — Students and educators at Oracle Academy member institutions get **$300 in free Oracle Cloud credits valid for 365 days** plus permanent access to Always Free tier resources. Unlike the standard Oracle Cloud Free Trial (which gives the same $300 but expires in 30 days), the Academy program extends t</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:878ad3e1e477b3b9</id>
     <title>Creator AI — free AI content suite for YouTubers (500 free credits/mo, dubbing included)</title>
     <link href="https://trycreatorai.com" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Creator AI 500 free credits/month — **Who is this for?** YouTubers who want one AI assistant for the whole content pipeline instead of juggling separate tools. No credit card required to sign up. **What exactly is free?** The Starter plan is free forever and includes 500 monthly credits, usable across the full feature set: video ideas</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:68f994d28f61467f</id>
     <title>Sarvam AI: ₹1,000 free API credits (22 Indian languages STT/TTS/translation)</title>
     <link href="https://www.sarvam.ai/api-pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Sarvam AI ₹1,000 free credits on signup (₹100 floor per docs); credits never expire — Sarvam AI is **India's sovereign full-stack AI platform** specializing in **22 officially recognized Indian languages**. Every new developer account gets **₹1,000 in free credits** (per the public pricing page) usable across speech-to-text, text-to-speech, translation, transliteration, chat completi</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d5ed5d970826b355</id>
     <title>Mixedbread: $5 one-time free credits, no credit card</title>
     <link href="https://www.mixedbread.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Mixedbread $5 one-time credits, 100 RPM, 10 stores, 3 workspace users — Mixedbread (Berlin-based AI search/retrieval platform — best known for the open-source `mxbai-embed-large` and `mxbai-rerank` model families) offers a **Starter** tier with **$5 one-time credits** and **no credit card required** to sign up. The credits are spent against usage-based pricing for embed</summary>
   </entry>
   <entry>
@@ -217,148 +217,155 @@
     <id>urn:promo-radar:deal:c2f89321327f9453</id>
     <title>UpCloud Free Trial - $250 Credits</title>
     <link href="https://upcloud.com/docs/getting-started/free-trial" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] UpCloud Free Trial Up to $250 (or EUR 250) in free credits, trial period varies (3-30 days depending on promotion) — UpCloud is a Finnish cloud provider offering a **free trial with up to $250 in credits** (or EUR 250 in EU). The trial period and credit amount can vary by promotion — the standard offer is a **3-day trial**, though promotional periods of 7 or 30 days have been observed. UpCloud is known for high-pe</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:bdb5fb14fccf2049</id>
     <title>Oracle Cloud Always Free Tier</title>
     <link href="https://www.oracle.com/cloud/free" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Perpetual free compute, database, and storage resources (no dollar value; usage-limited). Additionally $300 in trial credits for 30 days. — Google Cloud provides **perpetual free usage** of 25+ products with monthly limits that reset every billing cycle. Unlike the $300 trial (which expires after 91 days), the Always Free tier **never expires** and continues even after upgrading to a paid account. These limits are per billing account, n</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:59c30ed3740d31af</id>
     <title>AWS Free Tier - Up to $200 Credits (2025+)</title>
     <link href="https://aws.amazon.com/free" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AWS Free Tier Up to $200 ($100 signup + $100 onboarding tasks) — New AWS customers (accounts created after July 15, 2025) receive **up to $200 in credits**: $100 on signup plus $100 earned by completing 5 onboarding tasks ($20 each). You choose between a **Free plan** (zero-charge guarantee, 6 months) or a **Paid plan** (pay-as-you-go after credits). Credit card </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e6347e7c922d1427</id>
     <title>Alibaba Cloud Free Trial - Up to $1,700</title>
     <link href="https://www.alibabacloud.com/en/free" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Alibaba Cloud Free Trial Up to $1,700 (individuals) or $8,500 (enterprises) — New Alibaba Cloud users get **up to $1,700 in free trial credits** (individuals) or **$8,500** (verified enterprises) across **80+ products** spanning compute, storage, networking, security, big data, and AI. The ECS (Elastic Compute Service) free trial is valid for **up to 12 months**; other PAYG p</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:c709918e0bba0c5e</id>
     <title>AssemblyAI: $50 Free Transcription Credits on Signup</title>
     <link href="https://www.assemblyai.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AssemblyAI $50 one-time credit (~333 h Universal-2 STT, ~238 h Universal-3 Pro STT) — AssemblyAI gives every new developer **$50 in free API credits** the moment you sign up — **no credit card required**. The credit covers all of AssemblyAI's speech AI: pre-recorded Speech-to-Text, real-time streaming STT, Speech Understanding (speaker diarization, summarization, sentiment, topic det</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:2267c142a6783266</id>
     <title>SambaNova Cloud - Free API Access</title>
     <link href="https://cloud.sambanova.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] SambaNova Cloud $5 free credit (3-month expiry) + ongoing rate-limited Free Tier (40 RPD, 200K TPD) — SambaNova Cloud offers **free API access** to top open-source models including DeepSeek R1, DeepSeek V3, Llama 4 Maverick, Qwen 3, and more — powered by SambaNova's custom RDU chips that deliver inference speeds up to **10x faster than GPUs**. No credit card is required to start. New accounts receiv</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:39ddbf0ce923ddb9</id>
     <title>Zeabur Free Plan + $5/mo Trial Credit</title>
     <link href="https://zeabur.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Zeabur Free Plan + $5/month credit (Free Trial Plan, 1 vCPU / 2 GB per service) + 14-day free trial of Dev Plan — Zeabur is a Singapore/Asia-focused **PaaS** (think Railway/Render alternative) that gives every account a **Free Trial Plan with $5 of monthly credit and no credit card required**. It is enough to run a small personal project (1 vCPU / 2 GB RAM per service, free regions only) — perfect for vibe-codi</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d2b7666ce51c7ba5</id>
     <title>Render Free Hosting Tier</title>
     <link href="https://render.com/docs/free" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  750 free instance hours/month, free static hosting, 1 GB PostgreSQL (30-day expiry), free Key Value (ephemeral) — Render offers a solid free tier for deploying web apps, static sites, PostgreSQL databases, and Redis (Key Value) instances. No credit card required. Auto-deploys from Git (GitHub/GitLab). Great for side projects, portfolio sites, and MVPs -- but be aware of idle spin-down behavior and the 30-day Po</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:dd0da8c9c5e5a410</id>
     <title>NVIDIA NIM Free API Access</title>
     <link href="https://build.nvidia.com/models" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free rate-limited API access to 213+ models. Self-hosting on up to 2 nodes / 16 GPUs for dev/test. — NVIDIA provides free access to **213+ AI models** through their NIM (NVIDIA Inference Microservices) platform at [build.nvidia.com](https://build.nvidia.com). The free tier uses **rate limits** (not credits) for prototyping and development. Available models include DeepSeek V3.2, Llama 3.1, Mistral,</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:036bd19ff76af93c</id>
     <title>Koyeb Serverless Free Tier</title>
     <link href="https://www.koyeb.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  1 free web service (512 MB RAM, 0.1 vCPU) + 1 free Postgres database (1 GB, 5 hrs/month) + 5 custom domains — Koyeb offers a forever-free Starter plan with one free web service and one free PostgreSQL database. No credit card required. Unlike Render's free tier, Koyeb's free web service never expires and you will never be charged for it. Apps support scale-to-zero. Good for deploying small APIs, bots, and s</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:7722f26f0095c00c</id>
     <title>Gemini API Free Tier (Google AI Studio)</title>
     <link href="https://ai.google.dev/gemini-api/docs/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free ongoing: 5-15 RPM, 100-1,000 RPD depending on model. 1M token context window. All Gemini models included. — Google offers **completely free access** to its Gemini model family via API -- no credit card required. This includes Gemini 2.5 Pro (their most capable model), Gemini 2.5 Flash, Flash-Lite, and open models like Gemma 3. All models support a **1M token context window** on the free tier. The catch: r</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b4cdca452d95069f</id>
     <title>ElevenLabs Free Text-to-Speech API</title>
     <link href="https://elevenlabs.io/pricing/api" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  10,000 characters/month (~10 min audio). 2,500 char/request limit. No commercial use. — ElevenLabs offers one of the best text-to-speech APIs on the market, and their free tier gives you 10,000 characters per month (~10 minutes of audio). No credit card required. Supports dozens of languages with natural-sounding voices. The catch: no commercial use and no voice cloning on the free pla</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f1620a97469cce88</id>
     <title>Codesphere Free GPU Workspace</title>
     <link href="https://codesphere.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  1 free GPU workspace with 20 GB storage (shared GPU, unlimited hours but auto-shutdown after 60 min idle) — Codesphere offers **one free GPU workspace** per user with 20 GB of storage and a shared GPU — no credit card required. Unlike notebook-only platforms (Colab, Kaggle), Codesphere gives you a full cloud development environment where you can run any workload, not just Jupyter notebooks. The free tier </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:53a3b0b7ad475cd2</id>
     <title>Replicate - Free Generations for New Users</title>
     <link href="https://replicate.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Replicate Limited free runs on select models (exact number not publicly disclosed), then pay-as-you-go — Replicate gives new users a **limited number of free runs** on select AI models with **no credit card required** — just sign up with GitHub, Google, or email and start generating. The free tier covers popular image, video, and utility models from their "Try for Free" collection. After your free runs</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:8c1de7a537dc2fef</id>
     <title>Perplexity Education Plan - Free Pro for Students</title>
     <link href="https://www.perplexity.ai/education" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Perplexity Education Plan 12 months of Perplexity Pro ($240 value) including $5/month API credits. Extendable up to 18 months via referral program. — Verified students and educators at accredited institutions get **12 months of Perplexity Pro completely free** — a $240 value. No credit card required. No auto-billing. After 12 months your account simply downgrades to the free tier. Includes unlimited Pro Search, advanced AI model access (GPT-5, Cl</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:8110df1fc65900a4</id>
     <title>Mistral AI La Plateforme - Free Tier</title>
     <link href="https://console.mistral.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Mistral AI La Plateforme Rate-limited free usage (~1 RPS, ~500K tokens/min, up to ~1B tokens/month per model) — Mistral AI offers a **free Experiment plan** on La Plateforme (their serverless API platform) that lets you use all Mistral models for experimentation and prototyping. **No credit card required** — just a verified phone number. Rate limits are restrictive (approximately **1 request/second per model*</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:83c9d6759cc9190a</id>
     <title>IBM watsonx.ai Lite Plan (Free Tier)</title>
     <link href="https://www.ibm.com/products/watsonx-ai/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  20 CUH/month + 300,000 tokens/month — Always-free tier for IBM's enterprise AI platform providing **20 Capacity Unit Hours (CUH) per month** for ML workloads and **300,000 tokens per month** for foundation model inference. No credit card charge -- identity verification only. Includes access to IBM Granite models, Meta Llama, Mistral, an</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:abba749de67a643b</id>
     <title>Groq Free Tier - LPU-Powered Inference</title>
     <link href="https://console.groq.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Groq Free Tier Rate-limited free usage (varies by model; ~30 RPM, ~6K-12K TPM, ~100K-500K TPD) — Groq offers a **permanent free tier** for its LPU (Language Processing Unit) powered inference API. Sign up at [console.groq.com](https://console.groq.com), get an API key instantly, and start calling models with **no credit card required**. The free tier gives you access to all supported models — i</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:634cdf590adf5f93</id>
     <title>Google Colab Free Tier - T4 GPU Access</title>
     <link href="https://colab.research.google.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Google Colab Free Tier Free T4 GPU access with dynamic usage limits; ~12-hour max sessions, ~15-30 GPU hours/week — Google Colab gives you a **free browser-based Jupyter notebook** with access to an **NVIDIA T4 GPU** (16 GB VRAM) and optional **TPU** runtime -- no credit card, no signup form, no approval queue. Just sign in with any Google account and start running Python. Sessions last up to **12 hours**, you ge</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:5f59172cf18bacaf</id>
     <title>GitHub Models - Free Prototyping Tier</title>
     <link href="https://github.com/marketplace/models" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] GitHub Models Rate-limited free access (e.g., 50 requests/day for GPT-4o High tier; 150 requests/day for Low tier models) — GitHub Models gives every GitHub user **free, rate-limited access to 40+ AI models** from OpenAI, Meta, DeepSeek, Mistral, Microsoft, Cohere, xAI, and AI21 Labs. No credit card, no Azure account, no separate API key signup — just your GitHub login. The free tier is designed for **prototyping and exp</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f1702183b4390951</id>
     <title>Cohere Trial API Key - 1,000 Calls/Month</title>
     <link href="https://dashboard.cohere.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cohere Trial API Key 1,000 API calls per month across all endpoints — Cohere gives every new account a **free Trial API key** with **1,000 API calls per month** across all endpoints — Chat (Command R+, Command A), Embed 4, Rerank 3.5, and more. No credit card required. The trial key has the same model access as a paid Production key; the only differences are rate limi</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:deal:da96316736f87f26</id>
+    <title>[OrcaRouter] 页面出现促销信号: free credits</title>
+    <link href="https://orcarouter.ai" />
+    <updated>2026-11-05T03:30:23Z</updated>
+    <summary>[watchlist] OrcaRouter — ion: color .15s .landing-root .hero-link:hover color: var(--l-blue) / Risk-reducer microcopy directly under the CTA row (free credits / no card / fast setup). Quiet by design — it reassures without competing with the primary button. / .landing-root .hero-cta-mic…</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:622770ae2c4c7656</id>
@@ -392,365 +399,372 @@
     <id>urn:promo-radar:deal:b7417d079056a8fc</id>
     <title>Verda (formerly DataCrunch) Content Creator Free Credits</title>
     <link href="https://docs.verda.com/resources/obtaining-free-credits" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Variable, non-expiring credits scaled to content quality (no published amount) — **Verda** (the Finnish/European GPU cloud that rebranded from **DataCrunch** in 2026) gives **free, non-expiring GPU compute credits** to people who publish a quality blog post or YouTube video about using the platform. There is no fixed payout — the amount scales with the depth and quality of your </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:7790ed62ddf6e524</id>
     <title>Stability AI: 25 free credits on new account (image/audio APIs)</title>
     <link href="https://platform.stability.ai/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Stability AI 25 free credits one-time ($0.25 of API usage; ~3 Ultra images / ~8 Core images / 1 Stable Audio clip) — Stability AI's developer platform ([platform.stability.ai](https://platform.stability.ai/)) grants every new account **25 free credits** to test SD3.5, Stable Image Ultra/Core, Stable Audio 2.5, and the rest of the REST API lineup. At **1 credit = $0.01**, that is $0.25 of credit — enough for ~3 ima</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:7185a08518b20623</id>
     <title>ClickHouse Cloud for YC - $10,000 in credits</title>
     <link href="https://clickhouse.com/deals/ycombinator" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] ClickHouse Cloud for YC $10,000 (YC, 24 months) + Basic Support + 1-hour expert training + joint promotion / $400 (AWS Activate Exclusive Offer) / $300 standard 30-day free trial — **$10,000 in ClickHouse Cloud credits valid for 24 months** for current Y Combinator portfolio companies, plus ClickHouse Basic Support, a one-hour expert training session, and joint promotion (blog post, social channels, speaking opportunities at community events). If you are not a YC company, the </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:c79881c15f9ea2e0</id>
     <title>YC AI Student Starter Pack ($25K+ in Credits)</title>
     <link href="https://www.ycombinator.com/blog/the-yc-ai-student-starter-pack" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $25,000+ combined ($10K AWS, $10K Azure, $2.5K OpenAI, $2.5K xAI, $500 Anthropic, + devtool credits) — Y Combinator has partnered with **nearly two dozen companies** to offer students **$25,000+ in free credits** for cloud infrastructure, AI models, and developer tools. The pack includes **$10K AWS + $10K Azure** cloud credits, **$5K+ in AI model credits** (OpenAI, Anthropic, xAI), plus generous cred</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:90de22fd3db783b1</id>
     <title>Tencent Cloud Free Tier</title>
     <link href="https://www.tencentcloud.com/act/pro/FreeTier" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Multiple always-free services (VPC, Monitor, CloudAudit, 10K TRTC min/mo) + 3-6 month compute/storage/serverless trials + up to $300 welcome voucher — Tencent Cloud offers a mix of **always-free services** and **time-limited free trials** for new users. The always-free tier includes core networking (VPC, VPN), monitoring (Cloud Monitor), and auditing (CloudAudit). Trial offerings include a CVM compute instance, 50 GB of cloud object storage for 6 </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:bf3ccfc3818233b3</id>
     <title>OVHcloud AI Endpoints Free Tier</title>
     <link href="https://www.ovhcloud.com/en/public-cloud/ai-endpoints" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free trial credit (1 month). 4 permanently free models (SDXL, Riva TTS, Qwen3Guard). 40+ models total. — OVHcloud, a European cloud provider, offers serverless access to 40+ open-source AI models via API. Several models are completely free (image generation, TTS, content moderation), while LLMs are available at low per-token pricing with a free trial credit for new accounts. All data is hosted in the E</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:23d6da7ef56cf527</id>
     <title>Nebius AI Studio Free Credits</title>
     <link href="https://nebius.com/ai-studio" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free credits on signup for 60+ models. Startup programs: $5K-$150K. — Nebius AI Studio (now branded as **Token Factory**) gives new users free credits to explore **60+ open-source models** via an **OpenAI-compatible API**. The platform supports text, multimodal, embedding, image generation, and safety models from providers like Meta (Llama), DeepSeek, Qwen, and Mistra</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:5cbe29e6c7fc37b1</id>
     <title>Hetzner Cloud Free Credits - EUR 20</title>
     <link href="https://www.hetzner.com/cloud" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Hetzner Cloud Free Credits EUR 20 free credits (referral) + up to EUR 50 per published community tutorial — Hetzner Cloud offers **EUR 20 in free credits** for new customers who sign up through a referral link. Credits are valid until the end of the month following activation. Hetzner is known for aggressive pricing -- their cheapest VPS starts at EUR 3.49/mo, so EUR 20 gets you several months of small-in</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e5bdb3c47293abb0</id>
     <title>fal.ai Free Credits for Image/Video Generation</title>
     <link href="https://fal.ai/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free credits on signup (amount varies). 600+ models. Pay-per-use from $0.01/image. — fal.ai is a **generative AI API platform** offering **600+ models** for image, video, 3D, and audio generation with a **pay-per-use** pricing model. New users get **free credits** to explore the platform (exact amount varies by promotional period). The platform is developer-focused with fast inferen</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:ed3ad0e2c3418990</id>
     <title>ElevenLabs AI Student Pack ($1,500+ in Credits)</title>
     <link href="https://aistudentpack.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $1,500+ combined value across 16 tools (mix of free subscriptions, credits, and discounts) — The **AI Student Pack** by ElevenLabs bundles **$1,500+ in free credits and discounts across 16 AI tools** — covering voice synthesis, note-taking, presentations, AI coding, video generation, and more. It is one of the highest-value student bundles in the AI space. **Volume 1 is fully claimed.** Vol</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:3aeb6ea48065016d</id>
     <title>OpenAI for Startups - $2,500-$5,000 Credits</title>
     <link href="https://openai.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] OpenAI for Startups $2,500-$5,000 (varies by partner channel) — OpenAI for Startups gives VC-backed founders **$2,500–$5,000 in API credits**, rate limit upgrades, 1:1 time with OpenAI solutions engineers, exclusive events, and a direct line to the OpenAI Startup team. The credit amount depends on which partner channel you use: **$2,500 via Ramp** or **$5,000 vi</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:da92f63125e25a71</id>
     <title>Lambda Labs Research Grant - Up to $5,000</title>
     <link href="https://lambda.ai/research" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Lambda Labs Research Grant Up to $5,000 in cloud credits — Lambda Labs offers **up to $5,000 in cloud credits** to qualifying academic researchers through its Research Grant program. There is **no general-purpose free trial or free tier** for regular users — this is a competitive, application-based grant. Recipients get access to Lambda's GPU cloud instance</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:ad7021d1614871d5</id>
     <title>Microsoft Azure Free Account - $200 Credits</title>
     <link href="https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Microsoft Azure Free Account $200 (30 days) + 12 months free services + 65+ always-free services — New Azure customers receive **$200 in credits for 30 days**, plus **12 months of free access** to 20+ popular services and **65+ always-free services**. Credits can be applied to any eligible Azure service including compute, databases, and AI services.</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:14d4c44c96595b24</id>
     <title>Databricks for Startups - $50,000 Credits</title>
     <link href="https://www.databricks.com/product/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Databricks for Startups $50,000 — Databricks for Startups provides **up to $50,000 in Databricks credits** for VC-funded, data-driven startups, plus **free business-tier technical support** and access to marketing and customer networks. Credits cover Databricks compute (clusters, jobs), SQL warehouses, Mosaic AI Model Serving, noteb</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:41676381003addf6</id>
     <title>Cloudflare for Startups - Seed ($100,000)</title>
     <link href="https://www.cloudflare.com/forstartups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cloudflare for Startups $100,000 — Seed-funded startups affiliated with a Cloudflare-approved VC or accelerator can receive **$100,000 in credits** covering the full Cloudflare Developer Platform and up to **three enterprise-level domains** with CDN, WAF, DDoS protection, DNS, and Zero Trust features. Credits are valid for **1 year o</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:9912d4e3705cc79c</id>
     <title>Cloudflare for Startups - High-Growth ($250,000)</title>
     <link href="https://www.cloudflare.com/forstartups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cloudflare for Startups $250,000 — Cloudflare's top-tier startup program provides **$250,000 in credits valid for 1 year** to high-growth startups building on the Cloudflare Developer Platform. This is the highest of four tiers ($5K / $25K / $100K / $250K) and targets startups affiliated with Tier 1 VCs or accelerators, participants </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:94c80e00343135d7</id>
     <title>Yandex Cloud Startup Credits ($5,000 / $20,000)</title>
     <link href="https://yandex.cloud/en/cloud-credits-for-trial" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Yandex Cloud Startup Credits ($5,000 / $5,000 (6 months, Start tier) or $20,000 (12 months, Develop tier) — Yandex Cloud's startup program offers tiered grants gated by **Technology Readiness Level (TRL)**: **$5,000 for 6 months** for early-stage teams (Start tier, TRL up to ~6 / pre-seed) or **$20,000 for 12 months** for scaling startups (Develop tier, seed to Series A). Credits cover the full Yandex Clo</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:99bf2dcdcd848ec9</id>
     <title>SuperGrok 2 months free for .edu students</title>
     <link href="https://grok.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  2 months of SuperGrok Premium free (~$60 value) — Students with a valid **.edu email** get **2 months of SuperGrok** (xAI's premium tier) at **no cost**. **No credit card required** for the trial. After the 2 months, the regular SuperGrok price is **$30/month** unless you cancel. SuperGrok unlocks unlimited prompts, the latest **Grok 4** model, **D</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:da8e102ec0fcc674</id>
     <title>Tripo AI: 2,000 free API credits on signup + 300/month on Basic plan</title>
     <link href="https://www.tripo3d.ai/api" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Tripo AI 2,000 one-time API credits ($20) + 300 credits/month on Basic plan; up to 5,000 + 10,000 bonus credits for Tripo Game Hub developers — Tripo AI is a **text-to-3D and image-to-3D model generation platform** with an OpenAPI for developers. Every new account gets **2,000 free API credits** the first time it generates an API key (worth **$20** at the standard rate of $0.01 per credit). On top of that, the **Basic web/Studio plan is fre</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e3baff2068586038</id>
     <title>Shadeform Free API Tier (GPU Marketplace)</title>
     <link href="https://www.shadeform.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free API tier: 10 API calls/day, 1 GPU instance max, 5-day max duration. GPU usage itself is paid (underlying provider rate + 6-12% Shadeform markup). — **Shadeform** is a **GPU cloud marketplace** ("Kayak for GPUs") that exposes **30+ underlying GPU providers** (Lambda Labs, Nebius, Crusoe, RunPod, CoreWeave, Vultr, DigitalOcean, Vast.AI, TensorDock, plus limited GCP/Azure access) behind **a single unified API and dashboard**. The Free API tier let</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:3f4145a820b33f76</id>
     <title>Jina AI: 10M free tokens shared across embeddings, reranker, reader, classifier</title>
     <link href="https://jina.ai/embeddings" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Jina AI 10,000,000 tokens shared across Embeddings, Reranker, Reader, Classifier and Fine-tuning APIs — Jina AI gives every new user **10 million free tokens** via an auto-generated API key — no credit card required. The same key works across **all Search Foundation products**: Embeddings, Reranker, Reader, Classifier and Fine-tuning. Tokens are pooled, so you decide how to spend them. Reader API even</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b7c673f8bb14a463</id>
     <title>Saturn Cloud Free GPU Plan - 150 Hours/Month</title>
     <link href="https://saturncloud.io/plans/saturn_cloud_plans" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Saturn Cloud Free GPU Plan 150 hours/month compute (GPU T4 16GB + CPU, shared pool) — Saturn Cloud offers a **free Hosted plan with 150 hours of compute per month**, covering both CPU and GPU instances. You get access to **NVIDIA T4 GPUs (16 GB VRAM)** through browser-based JupyterLab, along with Dask clusters for distributed computing. No credit card required. The platform supports </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:edb48dc44bdc3ae5</id>
     <title>Pollinations AI Free API (No Signup Required)</title>
     <link href="https://pollinations.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free Flux images (unlimited). Registered free tier: 1.5 Pollen/week. Anonymous: ~1 req/15 sec. — Pollinations is an open-source AI platform based in Berlin that lets you generate images, text, audio, and video via API -- with zero signup required for basic use. You can hit their endpoints directly with a URL. Free Flux image generation is unlimited and always free. For text and other models, yo</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6e1d14d5120efe45</id>
     <title>OpenRouter Free Models</title>
     <link href="https://openrouter.ai/collections/free-models" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  29+ free models. 20 req/min, 50 req/day (or 1,000/day with $10+ credits on account). — OpenRouter gives you a single OpenAI-compatible API endpoint to access 29+ free AI models -- including DeepSeek, Gemini, Llama 3.3, Qwen3, Mistral, and more. No credit card needed. Free models are community-funded and rotated; append `:free` to any supported model ID to use it at zero cost.</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:ea87e608fd2625ae</id>
     <title>Cohere Catalyst Grants (Free API Credits for Research)</title>
     <link href="https://cohere.com/research/grants" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free Cohere API credits (amount varies by project scope and needs) — Cohere Labs (formerly Cohere For AI) provides free API credits to academic researchers, civic institutions, and public-benefit organizations through their Catalyst Grants program. The credits give you production-level access to Cohere's full model suite -- Command, Aya, Embed, and Rerank -- so you c</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b7332ece8edf85a7</id>
     <title>Beam Cloud Free GPU Tier - 10 Hours Serverless GPU</title>
     <link href="https://www.beam.cloud/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Beam Cloud Free GPU Tier 10 hours free GPU compute on signup, up to 3 concurrent applications — Beam Cloud is an **open-source serverless GPU platform** (powered by the [beta9 runtime](https://github.com/beam-cloud/beta9)) that gives you **10 free GPU compute hours on signup**. No credit card required. The platform supports T4, A10G, RTX 4090, A100, and H100 GPUs with **pay-per-second billing*</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6696b95afb54623f</id>
     <title>Modal Startup Credits - Up to $25,000</title>
     <link href="https://modal.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Modal Startup Credits Up to $25,000 (varies by tier: $5K bootstrapped, $25K seed-to-Series-A, custom for Series B+) — Modal offers **up to $25,000 in free serverless GPU compute credits** for early-stage AI startups through its startup program. Credits cover GPU, CPU, and memory usage on Modal's serverless platform, which handles AI inference, fine-tuning, batch processing, and training workloads. Beyond credits, a</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:981a460b0f04ce6c</id>
     <title>Modal - $30/Month Free Compute Credits</title>
     <link href="https://modal.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Modal $30/month in free compute credits — Modal gives every Starter plan user **$30 in free compute credits each month** with no monthly fee and no credit card required. You pay only for actual compute time — by the CPU cycle, billed per second — so bursty workloads like inference, batch jobs, and fine-tuning cost a fraction of what reserve</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:1bba6cf139e8a3ae</id>
     <title>Microsoft Imagine Cup - Azure Credits for Student Competitors</title>
     <link href="https://imaginecup.microsoft.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Microsoft Imagine Cup $1,000 in Azure credits + $2,500 in OpenAI credits (qualifying teams); up to $5,000 Azure credits for semifinalists/MVPs; cash prizes up to $100,000 — Student teams competing in Microsoft's annual **Imagine Cup** competition receive **$1,000 in Azure credits** and **$2,500 in OpenAI credits** through the Microsoft for Startups Founders Hub -- with no credit card required. Semifinalists unlock an additional **$4,000 in Azure credits** (Founders Hub</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:edc72ff28333f3b6</id>
     <title>Kaggle Free GPU &amp; TPU - 30 Hours/Week</title>
     <link href="https://www.kaggle.com/code" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Kaggle Free GPU &amp; TPU 30 hours/week GPU + 20–30 hours/week TPU (floating quota) — Kaggle (owned by Google) gives every verified account holder **free weekly access to NVIDIA GPUs and Google TPU v3-8 accelerators** through browser-based Jupyter notebooks. No credit card is required. You get **30 hours/week of GPU time** and a **separate 20–30 hours/week of TPU time** (Kaggle uses </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:358fed209939dc2e</id>
     <title>Hugging Face - Free Inference API Credits</title>
     <link href="https://huggingface.co/inference-api" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Hugging Face ~$0.10/month in free inference credits (subject to change) — Every Hugging Face user receives **$0.10/month in free inference credits** (subject to change) to experiment with Inference Providers — a unified API that routes requests to 200+ models across 18+ inference partners. No credit card required. Free users cannot continue past their monthly credit limit</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6fad2744a9720402</id>
     <title>Google for Startups Cloud Program - Start Tier ($2,000)</title>
     <link href="https://cloud.google.com/startup" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Google for Startups Cloud Program $2,000 — Pre-funded startups can get **up to $2,000 in Google Cloud credits valid for 1 year** through the Google for Startups Cloud Program Start tier. This is designed for early-stage founders who have not yet raised equity funding and want to get started building on GCP and Firebase. No credit card hold o</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:363dc1b5565e273a</id>
     <title>Google Cloud Teaching &amp; Learning Credits</title>
     <link href="https://cloud.google.com/edu/students" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $50 per student per course; $100 per faculty member per course — Faculty at accredited higher education institutions can apply for **free Google Cloud credits** to distribute to students enrolled in their courses. Students receive **$50 in GCP credits** (faculty get **$100**) via coupon codes redeemable at the Google Cloud Console. **No credit card required.** Cr</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6b16758ba87ce356</id>
     <title>DeepSeek - 5 Million Free Tokens for New Users</title>
     <link href="https://platform.deepseek.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] DeepSeek 5 million tokens (~$8.40 value) — New users who register on the DeepSeek API platform receive **5 million free tokens** (approximately **$8.40 value**) valid for **30 days**. No credit card required. The API gives access to DeepSeek-V3.2 in both chat and reasoning modes via an OpenAI-compatible interface. On top of the API credits, </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e90c2eeb2c9e8eed</id>
     <title>Cloudflare Workers AI - 10,000 Free Neurons/Day</title>
     <link href="https://developers.cloudflare.com/workers-ai" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cloudflare Workers AI 10,000 Neurons/day (daily reset at 00:00 UTC) — Cloudflare Workers AI gives you **10,000 free Neurons per day** to run AI models on Cloudflare's global edge network — no credit card required, no time limit. Neurons measure GPU compute across all model types (LLMs, image generation, embeddings, speech-to-text, text-to-speech, and more). With the f</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:407cc94d3047c376</id>
     <title>Cloudflare for Startups - Bootstrapped ($5,000)</title>
     <link href="https://www.cloudflare.com/forstartups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cloudflare for Startups $5,000 — Bootstrapped and stealth-mode startups can get **$5,000 in Cloudflare credits** valid for one year (or until consumed) by applying with the promo code **BOOTSTRAPPED**. Credits cover pay-as-you-go developer platform services like Workers, Pages, R2, D1, Images, Stream, Queues, and Durable Objects. O</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:0bc493698f8208f0</id>
     <title>Cerebras Inference - Free 1M Tokens/Day</title>
     <link href="https://inference.cerebras.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cerebras Inference 1 million tokens per day — Cerebras offers **1 million free tokens per day** through its Inference API, running on proprietary Wafer-Scale Engine (WSE-3) hardware. No credit card required, no waitlist (fully open since June 2025). The API is **OpenAI-compatible** — swap the base URL to `https://api.cerebras.ai/v1` and use you</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:490c9ed00f40f6f7</id>
     <title>Azure for Students - $100/Year (No Credit Card)</title>
     <link href="https://azure.microsoft.com/en-us/free/students" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Azure for Students $100 per year (renewable annually while enrolled) — Verified students at accredited institutions get **$100 in Azure credits for 12 months** with **no credit card required**. The offer is renewable annually as long as you remain enrolled. You also get access to **25+ free Azure services** (compute, storage, databases, AI/ML) and **software downloads*</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:2937c0ed8edb46b4</id>
     <title>Yandex Cloud 60-Day Free Trial</title>
     <link href="https://yandex.cloud/en/docs/getting-started/free-trial/concepts/quickstart" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $50 USD (non-residents) / ₽4,000 (residents) initial grant for 60 days — Yandex Cloud's introductory **free trial** credits a one-time grant to your first billing account that is valid for **60 days**. For non-residents of the Russian Federation the grant is **at least $50 USD** (split as **$15 for Yandex Compute Cloud** and **$35 for everything else**); residents get **</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f8fbf3833450ab6f</id>
     <title>TensorWave Open Source Developer Program (up to $250K AMD GPU Credits)</title>
     <link href="https://go.tensorwave.com/open-source-developer-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Up to $250,000 in MI300X compute credits per developer (sized to the proposal; multiple proposals allowed) — TensorWave gives **up to $250,000 in free compute credits on AMD Instinct MI300X** GPUs to developers who add or improve AMD GPU support in open-source AI/ML projects (think kernels, frameworks, training/inference stacks, devtools). It is a **proposal-based grant**, not a self-serve free tier — you </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d46480d866dd5610</id>
     <title>NVIDIA-hosted Kimi K2.5 / K2.6: free chat + API key, no payment details</title>
     <link href="https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] NVIDIA-hosted Kimi K2.5 / K2.6 Free OpenAI-compatible API access to Kimi K2.5 and K2.6 (plus 100+ other models) at ~40 requests/minute. No token cap, no expiry. — Moonshot's own platform at [platform.moonshot.ai](https://platform.moonshot.ai/) requires a **$1 minimum top-up** before you can issue an API key — there is no truly free tier. NVIDIA solves that for you: it hosts Moonshot's flagship **Kimi K2.5** (and the newer **Kimi K2.6**) on its [build.nvidia.c</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e1e2a5abb5614ec0</id>
     <title>IONOS Cloud $200 / 30-Day Free Trial</title>
     <link href="https://www.ionos.com/cloud/free-cloud-server" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] IONOS Cloud $200 (capped at €500) for 30 days on Compute Engine + $100 first-month credit on Managed Kubernetes — German cloud provider IONOS gives new business customers a **$200 starting credit (capped at €500)** for a **30-day free trial** of its IaaS platform — Compute Engine, Object Storage, networking, and Managed Kubernetes. The trial includes up to **8 vCPU cores, 20 GB RAM, 600 GB SSD/HDD storage, and </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:36e6c9398b3fe959</id>
     <title>Genesis Cloud $100 Referral Credit (Free GPU Hours)</title>
     <link href="https://www.genesiscloud.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Genesis Cloud $100 referral credit (≈50-1,250 GPU hours depending on GPU SKU). The widely-quoted '166 GPU hours' is legacy framing. — Genesis Cloud is a European GPU cloud (HQ Berlin, data centers in Iceland and Norway, plus US) that powers large fleets of NVIDIA H100, H200, B200, RTX 4090, RTX 3090, and RTX 3080 instances. There is **no standing automatic free trial credit** on the Genesis Cloud website today — the realistic path</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d82a19ab2902cac0</id>
     <title>Exoscale 20 EUR/CHF Free Trial Credit</title>
     <link href="https://www.exoscale.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  20 EUR / 20 CHF welcome credit — **Exoscale** is a Swiss-headquartered, fully European-owned public cloud (8 zones across Switzerland, Germany, Austria and Bulgaria) built for teams that need GDPR + Swiss data-protection compliance without touching US hyperscalers. Every new account is **automatically credited 20 EUR or 20 CHF** (d</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b0762c235bd1ac5a</id>
     <title>Vultr Free Tier Program</title>
     <link href="https://www.vultr.com/free-tier-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  1 free cloud compute VM (1 vCPU, 512 MB RAM, 10 GB SSD, 2 TB bandwidth) — Vultr offers a **permanently free cloud compute VM** through their Free Tier Program. The instance includes 1 vCPU, 512 MB RAM, 10 GB SSD, an IPv4 address, and 2 TB of monthly bandwidth. Currently available in **Miami, Seattle, and Frankfurt** data centers. Access is granted through a weighted rando</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:752f675c3a79b8c6</id>
     <title>Venice AI Free Tier (Privacy-First)</title>
     <link href="https://venice.ai/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  10-25 text prompts/day, 15 image prompts/day, 2 base AI models. Zero data logging. — Venice AI is a **privacy-first AI platform** that offers a free tier with **10-25 text prompts/day** and **15 image generations/day** using open-weight models — with **zero data logging** and no account required. All prompts are processed privately with requests routed anonymously through decentrali</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:fe8499eefd30d953</id>
     <title>Railway Free Trial Credits</title>
     <link href="https://railway.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $5 one-time trial credit (30 days) + $1/month ongoing on Free plan — Railway is a modern PaaS for deploying apps, databases, and services from Git with minimal config. New accounts get a **$5 one-time trial credit** for 30 days, then revert to the Free plan with **$1/month** in ongoing credit. Supports Node.js, Python, Go, Rust, Ruby, and more. Also offers one-click </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b5852d4123a88a44</id>
     <title>Kluster.ai Free Batch Inference Tier</title>
     <link href="https://www.kluster.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free tier: up to 1,000 batch requests/file, 100MB max file size. Promotional credits periodically available. — Kluster.ai is an AI cloud platform specializing in **batch inference** for open-source models like **DeepSeek-R1**, **Llama 4 Maverick/Scout**, and **Qwen3**. The free tier supports up to **1,000 batch requests per file** with a 100MB max file size. The platform also offers adaptive real-time infere</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:afb658f5c030ea87</id>
     <title>Hyperbolic Free Tier AI Inference</title>
     <link href="https://www.hyperbolic.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Basic tier: free (60 RPM) + $1 promotional credit. Pro tier ($5 deposit): 600 RPM. 25+ models at up to 80% less cost. — Hyperbolic is an **open-access AI cloud** offering serverless inference at up to **80% less cost** than traditional providers. The Basic tier starts **free** with a **$1 promotional credit** (phone verification required) and **60 RPM** rate limits. The platform supports **25+ models** across text, i</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b6369a32ee503bc1</id>
     <title>Cloudflare Workers Paid Plan Free for Students (1 Year)</title>
     <link href="https://www.cloudflare.com/students" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  1 year of Workers Paid plan free (valued $60/year) -- includes 10M Workers requests/month, KV, Durable Objects, Containers, Vectorize, and more — Cloudflare gives US university students with a .edu email one full year of the Workers Paid plan at no cost (normally $5/month). This includes massively upgraded limits on Workers, KV, Durable Objects, and more compared to the free tier. If you're building serverless apps, APIs, or AI-powered tools </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b380aaaf10d76f03</id>
     <title>Paperspace Gradient Free Tier (by DigitalOcean)</title>
     <link href="https://www.paperspace.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free GPU notebooks (M4000 8GB VRAM reliably; higher-end GPUs subject to availability); 5GB persistent storage; 6-hour sessions with unlimited restarts — Paperspace Gradient (now part of DigitalOcean) offers **free GPU-powered Jupyter notebooks** for machine learning experimentation. The free tier includes access to NVIDIA GPUs — the reliably available **Quadro M4000 (8 GB VRAM)** plus nominally free Ampere GPUs (A4000, A5000, A6000) that are heavily</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:1f84f6e8874b841b</id>
     <title>JetBrains Student Pack + AI Free Tier</title>
     <link href="https://www.jetbrains.com/academy/student-pack" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Full JetBrains All Products Pack (normally ~$289/year for individuals) plus AI Free tier with unlimited local code completion and limited cloud AI credits — Students and teachers at accredited educational institutions get **free access to all JetBrains professional IDEs** — IntelliJ IDEA Ultimate, PyCharm Professional, WebStorm, CLion, Rider, PhpStorm, DataGrip, RubyMine, GoLand, RustRover, and DataSpell — plus .NET tools like ReSharper. The license is </summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:deal:e9a1fceb15ac1174</id>
+    <title>[litellm] 价格大降 85%: bedrock/us-gov-east-1/amazon.titan-embed-text-v2:0（bedrock）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-05T03:26:53Z</updated>
+    <summary>[litellm] bedrock — bedrock/us-gov-east-1/amazon.titan-embed-text-v2:0 输入价 2.00e-07 → 3.00e-08 $/token（降 85%）。大幅降价常伴随官方促销或竞争拉新。</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d07ae1be25879d2a</id>
@@ -770,637 +784,623 @@
     <id>urn:promo-radar:deal:2b9ecd56cc996487</id>
     <title>OpenAI NextGenAI Consortium ($50M for Universities)</title>
     <link href="https://openai.com/index/introducing-nextgenai" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Varies by institution; total $50M pool. Example: Texas A&amp;M received $50K cash + $100K API credits. — OpenAI's **NextGenAI** is a first-of-its-kind consortium with 15 leading research institutions, backed by **$50 million in research grants, compute funding, and API credits**. The program gives partner universities prepaid access to OpenAI's platform, enabling faculty and students to train, fine-tun</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:4c33d75fa30477d8</id>
     <title>Notion Plus Free for Students &amp; Educators</title>
     <link href="https://www.notion.com/product/notion-for-education" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free Notion Plus plan (normally $10/month) + 50% off Notion AI add-on (~$5/month instead of $10/month). Student orgs get free Plus with unlimited members. — Notion offers its **Plus plan completely free** to individual students and teachers at accredited colleges and universities. This is the full Plus plan (normally $10/month) with unlimited pages, blocks, file uploads, and 30-day version history. Students and educators also get **50% off the Notion AI</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f36640b2d7fcaced</id>
     <title>Nebius AI Lift Program - Up to $150,000</title>
     <link href="https://nebius.com/startup-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Nebius AI Lift Program Up to $150,000 cloud credits + $10,000 inference credits (AI Lift); $5,000 free credits (AI Explorer tier) — Nebius AI Cloud's **AI Lift program** offers NVIDIA Inception member startups **up to $150,000 in cloud credits** plus **$10,000 in inference credits**. Announced at NVIDIA GTC 2025, the program provides priority access to H100, H200, and early access to NVIDIA Blackwell (B200/GB200) GPUs. Nebius op</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d434fd6eeb1a74b5</id>
     <title>Hugging Face ZeroGPU for Spaces - Free H200 GPU Access</title>
     <link href="https://huggingface.co/docs/hub/en/spaces-zerogpu" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Hugging Face ZeroGPU for Spaces Free GPU allocation for Gradio Spaces (NVIDIA H200, 70-141GB VRAM). Free accounts: 3.5 min/day. PRO: 25 min/day. — ZeroGPU is Hugging Face's **dynamic GPU sharing system** that allocates NVIDIA H200 GPUs to Gradio-based Spaces on demand. Instead of renting a dedicated GPU 24/7, your app grabs a powerful H200 slice when it needs compute and releases it immediately after. Free accounts get **3.5 minutes of daily G</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:827430b09b372ccd</id>
     <title>Hugging Face Classrooms (Free ML Platform for Education)</title>
     <link href="https://huggingface.co/classrooms" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free classroom workspace + dataset/model hosting + Accelerated Inference API + free courses and educator toolkit (8 languages) — Hugging Face Classrooms gives teachers and students **free collaborative workspaces** for machine learning on the Hugging Face Hub. Instructors create a classroom, invite students, and everyone can upload datasets, train models, build demos, and deploy -- all hosted for free. Classrooms also get **f</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:a93ab92d1e7edc9c</id>
     <title>Google Colab Pro Free for US Students &amp; Faculty</title>
     <link href="https://blog.google/products-and-platforms/products/education/colab-higher-education" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  1 year of Colab Pro (normally $11.99/month, ~$144/year value) — Google offers **free 1-year Colab Pro subscriptions** to students and faculty at US-based higher education institutions. This is the full Colab Pro plan (normally $11.99/month, ~$144/year value) with premium GPU access (T4, L4, A100), extended session runtimes, increased memory, and a monthly allowa</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:a391bea76960da1d</id>
     <title>Fluidstack Startup GPU Credits - Up to $100,000</title>
     <link href="https://www.fluidstack.io/nvidia_inception_offering" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Fluidstack Startup GPU Credits Up to $100,000 in GPU compute credits (covers compute, storage, and network) — Fluidstack offers **up to $100,000 in compute credits** for NVIDIA Inception member startups, covering H100, H200, and A100 GPU usage. Credits also cover storage and network costs, so you can scale from prototype to production without surprise charges. Fluidstack aggregates underutilized GPUs from d</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:795d74aac297a2f9</id>
     <title>Databricks Free Edition &amp; University Alliance</title>
     <link href="https://www.databricks.com/university" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free access to full Databricks platform (Free Edition) + free courses + 25% off certifications — Databricks offers its full Data Intelligence Platform free to everyone (students, hobbyists, professionals) through Databricks Free Edition -- no cloud account or credit card needed. For students at 1,200+ partner universities, the University Alliance program adds structured learning paths, certific</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d9f52a0a6c0807e4</id>
     <title>Cursor Pro Free for Students (1 Year)</title>
     <link href="https://cursor.com/students" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  1 year of Cursor Pro (valued $240/year) with 500 fast premium requests/month — Cursor offers verified students **1 full year of Cursor Pro** completely free — the same $20/month plan that professional developers pay for, a **$240 value**. You get **500 fast premium requests per month** with access to top AI models (Claude, GPT, Gemini), plus unlimited slow requests. Verified t</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:36596860ec63dcc1</id>
     <title>Coze Free Plan (ByteDance)</title>
     <link href="https://www.coze.com/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  10 daily message credits (~100 GPT-3.5 messages or ~5 GPT-4o messages per day) — ByteDance's **Coze** is a no-code AI agent/chatbot building platform with a free plan that includes **10 daily message credits** and access to models like GPT-3.5, GPT-4o, and Gemini. You can build chatbots and AI agents using a visual builder with **60+ plugins**, then deploy them to **Discord, Tel</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:58ac598432473d7b</id>
     <title>Cohere For AI Scholars Program (Paid Research Fellowship)</title>
     <link href="https://cohere.com/research/scholars-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Competitive full-time salary + large-scale compute access + mentorship for 8 months — The Cohere For AI (now Cohere Labs) Scholars Program is an **8-month paid, remote-first research fellowship** for early-career ML researchers. Scholars receive a competitive salary, mentorship from Cohere's research team, and access to large-scale compute infrastructure. The program is designed to o</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:825ab7de8e955cb3</id>
     <title>Cerebrium Free Serverless GPU Credits - $10 Free + Up to $1,000 for Startups</title>
     <link href="https://www.cerebrium.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cerebrium Free Serverless GPU Credits $10 free GPU credits (up to $1,000 for qualified startups). 9 GPU types from T4 ($0.59/hr) to H200 ($3.30/hr). — Cerebrium is a **serverless AI infrastructure platform** (YC-backed) that gives new accounts **$10 in free GPU credits** with access to **9 GPU types from T4 to H200**. The platform features **pay-per-second billing** with no idle costs, cold starts as low as 2-4 seconds, and automatic scaling from </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:be7c30aef4221c2a</id>
     <title>AMD Developer Cloud - Free MI300X GPU Hours</title>
     <link href="https://www.amd.com/en/developer/resources/cloud-access/amd-developer-cloud.html" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AMD Developer Cloud 25 free hours MI300X GPU (192GB HBM3) + up to 50 bonus hours via ROCm Star cert. Credits expire 10 days from deposit. — The AMD Developer Cloud provides **free access to AMD Instinct MI300X GPUs with 192 GB HBM3 memory** -- one of the most powerful accelerators available. New developers get **25 free hours** of compute time, and you can earn up to **50 additional hours** by passing the ROCm Star Application Developer</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:079ada4f5be9f582</id>
     <title>Amazon AI PhD Fellowship ($68M Program)</title>
     <link href="https://www.amazon.science/news/amazon-launches-68-million-ai-phd-fellowship-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Full tuition + stipend + travel + AWS cloud credits (from $24M/year pool) + Amazon scientist mentorship — Amazon's $68 million AI PhD Fellowship funds over 100 doctoral students across 9 top US universities over two academic years (2025-2027). Fellows receive full tuition, a stipend, travel funding, AWS cloud credits, and one-on-one mentorship from Amazon senior scientists. This is a highly competitive,</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:23e73b55f76824c0</id>
     <title>xAI Grok API - $150/Month Data Sharing Credits</title>
     <link href="https://console.x.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] xAI Grok API $150/month (with data sharing opt-in) + $25 one-time signup credit — xAI offers **$25 in free promotional credits** to every new API account, plus an optional **$150/month in recurring credits** for teams that opt into irrevocable data sharing. The API gives access to the full Grok model family -- from the budget Grok 3 Mini ($0.10/M input) to the flagship Grok 4 ($3</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:605fecfd95958007</id>
     <title>Vercel AI Accelerator - $4M+ Combined Credits</title>
     <link href="https://vercel.com/ai-accelerator" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Vercel AI Accelerator $4M+ combined credits (Vercel + AWS + 20+ AI partners per cohort) — The Vercel AI Accelerator is a **six-week program for 40 selected AI startups** offering over **$4M in combined credits** from Vercel, v0, AWS, and 20+ AI platform partners. Every accepted team gets thousands of dollars in credits from each partner, with three Demo Day winners earning **$100K+ each*</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:9c1e2439036137a6</id>
     <title>Together AI Startup Accelerator - Up to $50,000</title>
     <link href="https://www.together.ai/startup-accelerator" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Together AI Startup Accelerator Up to $50,000 in platform credits (tiered: $15K / $30K / $50K based on funding stage) — Together AI offers a **selection-based accelerator program** providing up to **$50,000 in free platform credits** for AI-native startups. Credits cover serverless inference, fine-tuning, dedicated endpoints, and instant GPU clusters. The program is structured into **three funding-based tiers** (Buil</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:9848985976852cd1</id>
     <title>Snowflake for Startups - Credits Program</title>
     <link href="https://www.snowflake.com/en/why-snowflake/startup-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Snowflake for Startups 10% of annual commitment as free credits (e.g., $10K on a $100K contract) — Snowflake for Startups gives early-stage companies **free Snowflake credits equal to 10% of their annual commitment** (minimum $10K ACV), plus dedicated technical support, go-to-market resources, co-selling opportunities, and access to a global VC network. The program evolved from the earlier Powere</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6306d8248950445c</id>
     <title>Amazon SageMaker Studio Lab - Free ML Environment</title>
     <link href="https://studiolab.sagemaker.aws/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Amazon SageMaker Studio Lab 4 hours GPU/day + 8 hours CPU/day; 15GB persistent storage — Amazon SageMaker Studio Lab is a **completely free**, browser-based ML development environment powered by JupyterLab 4. It provides access to an **NVIDIA T4 GPU** (4 hours/day) and a **T3.xlarge CPU** (8 hours/day), **15 GB of persistent storage**, and pre-installed ML frameworks -- all without need</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:ac2a3fb6ebc29fb8</id>
     <title>RunPod New User Bonus Credits - $5-$500</title>
     <link href="https://www.runpod.io/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] RunPod New User Bonus Credits $5-$500 random bonus (after first $10 spend) — New RunPod users receive a **random credit bonus between $5 and $500** after their first $10 spend on the platform. RunPod offers per-second billing for GPU compute across Community Cloud (peer-hosted, cheaper) and Secure Cloud (enterprise data centers). No long-term contracts required — pure pay-as</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:9ebbda5f778ed655</id>
     <title>Perplexity Pro API Credit - $5/Month for Subscribers</title>
     <link href="https://www.perplexity.ai/settings/api" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Perplexity Pro API Credit $5/month in API credits (with Pro subscription); $50/month with Max subscription — Perplexity Pro subscribers ($20/month) receive **$5 in monthly API credits** on the first day of each month. The API provides access to the **Sonar model family** — search-augmented LLMs that combine web retrieval with language generation. Credits do not roll over; unused balance resets monthly. Stu</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6bf1c3d00107d6d7</id>
     <title>OpenAI Researcher Access Program - Up to $1,000</title>
     <link href="https://openai.com/form/researcher-access-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] OpenAI Researcher Access Program Up to $1,000 (some grants may exceed this for larger projects) — The OpenAI Researcher Access Program provides **up to $1,000 in API credits** for researchers studying responsible AI deployment, risk mitigation, and societal impacts. Credits are valid for **12 months** and can be used with any of OpenAI's publicly available API models — including GPT-4.1, GPT-5 f</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:ef38f83f3620f4a3</id>
     <title>NVIDIA Inception Program - Up to $100K+ Credits</title>
     <link href="https://www.nvidia.com/en-us/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] NVIDIA Inception Program Up to $100,000 (AWS) + up to $150,000 (Nebius) + $10,000 DLI training + 30% off DGX Cloud + GPU discounts — NVIDIA Inception is a **free virtual accelerator program** for AI startups, with no equity, fees, or cohort deadlines. It provides access to **up to $100,000 in AWS cloud credits** (via AWS Activate), **up to $150,000 in Nebius cloud credits**, **30% off DGX Cloud**, **$10,000 in Deep Learning Insti</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e044c54ffd9d5e73</id>
     <title>NVIDIA Graduate Fellowship - $60,000</title>
     <link href="https://research.nvidia.com/graduate-fellowships" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] NVIDIA Graduate Fellowship Up to $60,000 per academic year — The NVIDIA Graduate Fellowship Program awards **up to $60,000** to PhD students conducting research relevant to accelerated computing and NVIDIA technologies. Now in its 25th year, the program has awarded over 200 grants worth more than $7.3 million since 2002. The fellowship includes a **mandatory </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:bd3dff6d3e0a50bf</id>
     <title>NVIDIA Academic Grant Program - 30,000 H100 GPU Hours</title>
     <link href="https://www.nvidia.com/en-us/industries/higher-education-research/academic-grant-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] NVIDIA Academic Grant Program Up to 30,000 H100 80GB GPU hours + optional physical hardware (up to 8 RTX PRO 6000 GPUs or 2 DGX Spark supercomputers depending on research area) — NVIDIA's Academic Grant Program provides **free cloud GPU hours, physical GPU hardware, and software grants** to academic researchers at accredited institutions. Depending on your research area, you can receive **up to 30,000 NVIDIA H100 80GB GPU hours**, up to **8 RTX PRO 6000 GPUs**, or up to **2 </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:30e3edbfaad621a1</id>
     <title>Microsoft for Startups - YC Partnership ($350,000)</title>
     <link href="https://www.microsoft.com/en-us/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Microsoft for Startups $350,000 in Azure credits + $2,500 OpenAI credits + software licenses — Y Combinator batch companies get **$350,000 in Azure credits** through a special Microsoft partnership launched in November 2023. This is one of the largest cloud credit packages available to YC startups -- significantly more than the standard $150,000 (now $100,000) investor-track offer. Credits co</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:eaff2b096aeb70e4</id>
     <title>Microsoft for Startups - Investor Offer ($150,000)</title>
     <link href="https://learn.microsoft.com/en-us/microsoft-for-startups/benefits" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Microsoft for Startups Up to $150,000 in Azure credits (starting at $100,000, unlockable with qualifying usage) + Microsoft 365, Dynamics 365, Power Platform, GitHub Enterprise, and Visual Studio licenses — Startups backed by an investor in the **Microsoft for Startups Investor Network** can receive up to **$150,000 in Azure credits**, starting at $100,000 with the ability to unlock more by demonstrating active usage of qualifying Azure services. The program also includes **50 seats </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:17c2a0a71a0aa6f0</id>
     <title>Microsoft for Startups Founders Hub - Basic ($5,000)</title>
     <link href="https://www.microsoft.com/en-us/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Microsoft for Startups Founders Hub $5,000 in Azure credits (starts at $1,000, unlocks to $5,000 after business verification) — Microsoft for Startups Founders Hub gives early-stage founders **up to $5,000 in Azure credits** through a self-service path that requires no VC backing, no accelerator affiliation, and no equity. You start with **$1,000 for 90 days** just by signing in with LinkedIn, then unlock up to **$5,000 for </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:bb92211d4291359a</id>
     <title>Lightning AI Free Plan - 22 GPU Hours/Month</title>
     <link href="https://lightning.ai/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Lightning AI Free Plan 15 monthly credits (~22 GPU hours/month on T4); 10 GB free Drive storage; 100 GB Studio storage — Lightning AI offers a **free cloud-based AI development platform** with access to modern NVIDIA GPUs (T4, L4, A10G, L40S). Free users receive **15 monthly Lightning credits** (each credit is worth approximately $1), which translates to roughly **22 hours of T4 GPU time per month**. The platform prov</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:4aaa973388809178</id>
     <title>Lepton AI / NVIDIA DGX Cloud Lepton - Free Plan</title>
     <link href="https://www.lepton.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Lepton AI / NVIDIA DGX Cloud Lepton Free plan with up to 48 CPUs + 2 GPUs concurrently, 1 GB storage free, 10 GB network egress free, serverless endpoints at pay-per-token rates — Lepton AI (now **NVIDIA DGX Cloud Lepton**) offers a free Basic Plan with **no subscription fees** and pay-as-you-go pricing. The free plan includes up to **48 CPUs and 2 GPUs concurrently** in a single workspace. The platform provides serverless endpoints for popular open-source LLMs with **OpenAI-</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b87187782ced0267</id>
     <title>IBM Academic Initiative &amp; SkillsBuild</title>
     <link href="https://www.ibm.com/academic" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free IBM software suite, IBM Cloud trial (6-12 months), 1,000+ courses, and digital credentials — IBM offers **two interconnected free programs** for students and educators at accredited institutions: **IBM SkillsBuild Technology Access** (formerly IBM Academic Initiative) provides free downloads of full-version IBM software, IBM Cloud trial accounts with feature codes, and development tools. **</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:c67a5b5131a6b447</id>
     <title>Google for Startups Cloud Program - Scale Tier ($200,000)</title>
     <link href="https://cloud.google.com/startup/benefits" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Google for Startups Cloud Program Up to $200,000 (up to $350,000 for AI-first startups) — Equity-funded startups (pre-seed to Series A) can get up to **$200,000 in Google Cloud and Firebase credits** over two years through the Google for Startups Cloud Program Scale tier. **Year 1** covers **100% of usage up to $100,000**. **Year 2** reimburses **20% of the previous month's usage**, up t</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f5be7e33ab2712f1</id>
     <title>Google Cloud Research Credits - Up to $5,000</title>
     <link href="https://edu.google.com/intl/ALL_us/programs/credits/research" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Google Cloud Research Credits Up to $1,000 (PhD students, renewable annually) or $5,000 (faculty/postdocs/nonprofit researchers, one-time) — Google Cloud offers **free cloud credits for academic researchers** at accredited institutions worldwide. PhD students can receive **up to $1,000** (renewable annually), while faculty, postdocs, and nonprofit researchers can receive **up to $5,000** (one-time). Credits cover virtually any GCP servic</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:08fe218d8566f08f</id>
     <title>GitHub Student Developer Pack - $500+ Value</title>
     <link href="https://education.github.com/pack" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] GitHub Student Developer Pack $500+ combined value across all partner offers — The GitHub Student Developer Pack bundles **80+ professional developer tools and cloud credits** into a single free package for verified students. Highlights include **GitHub Copilot Pro** (normally $10/month), **$200 in DigitalOcean credits**, **$100 in Azure credits**, **JetBrains IDE subscription</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:2333c157432802eb</id>
     <title>DigitalOcean Hatch Startup Program - $100,000</title>
     <link href="https://www.digitalocean.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] DigitalOcean Hatch Startup Program $100,000 in compute credits (12 months) + 3 months free GPU usage — The DigitalOcean Hatch program (now branded as "DigitalOcean Startups") gives qualified early-stage startups **up to $100,000 in compute credits over 12 months**, plus **3 months of free GPU usage**, **15 months of Standard-tier support**, marketplace exposure to 600K+ customers, and a welcome kit p</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:8675fee98b04fc2b</id>
     <title>Cloudflare for Startups - Growth ($25,000)</title>
     <link href="https://www.cloudflare.com/forstartups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Cloudflare for Startups $25,000 — Funded startups receive **$25,000 in Cloudflare credits valid for 1 year** covering the full Developer Platform (Workers, R2, D1, Pages, Durable Objects, Queues) plus **up to three Enterprise-level domains** with advanced WAF, DDoS protection, and CDN. This is the second tier of four in Cloudflare's</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:188c1f07ad25f1e1</id>
     <title>ChatGPT Edu - Institutional AI Access</title>
     <link href="https://openai.com/chatgpt/education" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] ChatGPT Edu Full ChatGPT access including GPT-5.2, GPT-4.1 mini, o3, o4-mini, Study Mode, Custom GPTs, and agent capabilities (institution-funded, no cost to individual students) — ChatGPT Edu is OpenAI's university-focused deployment of ChatGPT, giving students and faculty access to advanced AI models with enterprise-grade security and privacy. **If your university has a ChatGPT Edu license, you get full access at no personal cost** — the institution pays. Conversations and d</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:570d7ffc77b7a3d5</id>
     <title>AWS Educate - Free Cloud Training &amp; Credits for Students</title>
     <link href="https://aws.amazon.com/education/awseducate" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AWS Educate Up to $100 in promotional credits (students) or $200 (educators) + free hands-on labs and training — AWS Educate gives students and educators **free access to cloud computing training**, hands-on labs, digital badges, and AWS promotional credits -- all **without a credit card**. Learners as young as 13 can register with just an email address. The program focuses on guided career pathways, sandbox-s</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b28d6aa8a02f8668</id>
     <title>AWS Activate for Y Combinator - $500,000</title>
     <link href="https://aws.amazon.com/startups/credits" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AWS Activate for Y Combinator $500,000 (~$200K cloud + ~$300K Trainium/Inferentia AI silicon) — Y Combinator batch companies receive one of the most generous cloud credit packages available through any accelerator: **up to $500,000 in AWS credits**, split between general cloud credits and AI-specific compute credits for AWS Trainium and Inferentia silicon. Credits are redeemable across **200+ </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:da6ed0dce17db11b</id>
     <title>AWS Activate - Portfolio Package ($100,000)</title>
     <link href="https://aws.amazon.com/startups/credits" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AWS Activate $100,000 — Provider-backed startups can receive **up to $100,000 in AWS Activate Credits** covering 200+ eligible AWS services, including compute (EC2, ECS, EKS), databases (RDS, DynamoDB), storage (S3), AI/ML (SageMaker, Bedrock), and analytics. To qualify, your startup must be affiliated with an **Activate P</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:5f344db40d135c17</id>
     <title>AWS Activate - Generative AI Tier ($300,000)</title>
     <link href="https://aws.amazon.com/startups/credits" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AWS Activate $300,000 — AWS Activate offers an elevated credit tier of **up to $300,000** for AI startups building foundation models. These credits are redeemable across 200+ AWS services including **Amazon Bedrock** (with third-party models from Anthropic, Meta, Mistral, Cohere, and others), plus compute-heavy workloads o</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6f666b995939ab6e</id>
     <title>AWS Activate - Founders Package ($1,000)</title>
     <link href="https://aws.amazon.com/activate/activate-landing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] AWS Activate $1,000 in AWS credits + $350 in Developer Support credits — Self-funded and bootstrapped startups can get **$1,000 in AWS credits** plus **$350 in Developer Support credits** through the AWS Activate Founders Package. Credits cover 200+ AWS services including compute (EC2, Lambda), storage (S3), databases (RDS, DynamoDB), and AI/ML services like **Amazon Bed</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:9fcfa3866117534c</id>
     <title>Anthropic Startup Program (Anthology Fund) - $25,000</title>
     <link href="https://claude.com/programs/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $25,000 in Claude API credits — Early-stage AI startups can receive **$25,000 in Claude API credits** through Anthropic's startup ecosystem, which consists of two distinct programs: the **Anthology Fund** (a $100M venture fund with Menlo Ventures that also invests $100K+ into companies) and the broader **VC Partner Program** (API </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f8b43849abefb941</id>
     <title>Anthropic Fellows Program 2026 - Funded AI Safety Research</title>
     <link href="https://alignment.anthropic.com/2025/anthropic-fellows-program-2026" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Anthropic Fellows Program 2026 $3,850/week stipend + ~$15,000/month compute budget — Four-month funded research fellowship for engineers and researchers working on Anthropic's highest-priority AI safety and security questions. Fellows receive a **$3,850/week stipend** (or equivalent in GBP/CAD), approximately **$15,000/month in compute funding**, direct 1:1 mentorship from Anthropic</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:ba89735fdb5078b4</id>
     <title>Anthropic AI for Science Program - Up to $20,000</title>
     <link href="https://www.anthropic.com/ai-for-science-program-rules" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Anthropic AI for Science Program Up to $20,000 in API credits over 6 months — Anthropic offers **up to $20,000 in API credits over 6 months** to researchers at recognized institutions working on high-impact scientific projects. The program emphasizes biology and life sciences but accepts applications from chemistry, medicine, environmental science, physics, computer science, </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:67e5db1efe8de785</id>
     <title>Alibaba Cloud Model Studio - Free Token Quota</title>
     <link href="https://www.alibabacloud.com/help/en/model-studio/new-free-quota" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Alibaba Cloud Model Studio 1,000,000 tokens per model (text/code/vision/reasoning), 100 images (image gen), 50 seconds (video gen), 2,000-10,000 characters (TTS) — First-time activators of **Alibaba Cloud Model Studio** (Singapore region) receive a **free token quota for every available model** — typically **1 million tokens per model**, valid for **90 days**. The quota covers the full Qwen model family (text, vision, code, reasoning, multimodal, image generat</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f96cb18195044710</id>
     <title>LLM Benchmark</title>
     <link href="https://llmbenchmark.ai" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] — LLM Benchmark (llmbenchmark.ai) is a free LLM leaderboard that collects public LLM benchmarks in one place for developers and teams who pick a model for real work. It ranks models overall and by category: coding, agentic work, reasoning, math, knowledge and web design, so you can compare LLMs on the</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:a742a5f267225072</id>
     <title>boostmyagents — Community-funded AI credits for open-source developers</title>
     <link href="https://boostmyagents.com" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] boostmyagents $5 + boosts — **Let your community cover your AI coding costs.** **boostmyagents** gives eligible new developers $5 in welcome capacity for Claude Code and compatible Anthropic clients, with ongoing support through direct community boosts and a shared pool. - _Who it’s for_: Open-source developers aged 18+ in the</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:58c948bb30a96e23</id>
     <title>Google for Startups Cloud Program — up to $350,000 AI credits</title>
     <link href="https://cloud.google.com/startup/ai" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Google for Startups Cloud Program Up to $350,000 USD in Google Cloud credits over 2 years for qualifying AI startups — AI-first startups building on Vertex AI or Gemini can receive **up to $350,000 in Google Cloud credits over 2 years** through the AI Track of the Google for Startups Cloud Program. Year 1 covers **100% of eligible Google Cloud usage up to $250,000**. Year 2 covers **20% of usage up to an additional </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:3f74fddbf8647fa0</id>
     <title>CLAUDE API Tokens with max amount of free ai credits supported</title>
     <link href="https://github.com/hahsanayub" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] — I am student and for FYP regarding AI I need Claude credits whatever max fill is available per month</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:a5b0e0ab6d3e63b6</id>
     <title>BoringWay</title>
     <link href="https://industrial-sha-256-mining.ai.studio/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  300 — https://industrial-sha-256-mining.ai.studio/ https://industrial-sha-256-mining.ai.studio/https://industrial-sha-256-mining.ai.studio/https://industrial-sha-256-mining.ai.studio/https://industrial-sha-256-mining.ai.studio/https://industrial-sha-256-mining.ai.studio/https://industrial-sha-256-mining.a</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d3066e0ad555b2c3</id>
     <title>Helyx AI - Multiple models with 1 API - 100k free tokens per day</title>
     <link href="https://helyxai.space" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Helyx AI 100k tokens/Day — Helyx AI is designed for developers, students, startups, businesses, and AI enthusiasts who want access to multiple leading AI models through a single API. Instead of integrating with different AI providers separately, users can access a wide range of language and multimodal models from one platform</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:60fae955cb2d1af5</id>
     <title>Z.AI: GLM-4.5-Flash, GLM-4.7-Flash and GLM-4.6V-Flash 100% free via API</title>
     <link href="https://docs.z.ai/guides/overview/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Z.AI Unlimited usage of GLM-4.5-Flash, GLM-4.7-Flash, and GLM-4.6V-Flash at $0/1M tokens for input, cached input, cached storage and output. Concurrency-limited (not RPM/TPM-limited). — Z.AI (Zhipu AI's international platform, the company behind ChatGLM) exposes **three "Flash" models priced at $0** for input, cached input, cached storage AND output tokens. There is **no monthly cap, no credit balance to top up, and no card required** to use them. The endpoint is **OpenAI-compatibl</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:4a71c062f0d0adf6</id>
     <title>Voyage AI: 200M free embedding tokens (per account)</title>
     <link href="https://docs.voyageai.com/docs/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Voyage AI 200M free tokens per account per model on flagship embeddings and rerankers (voyage-4-large/4/4-lite, voyage-context-3, voyage-code-3, rerank-2.5/2.5-lite); 50M per model on legacy specialized models; 200M text tokens + 150B pixels for multimodal models — [Voyage AI](https://docs.voyageai.com/) — acquired by **MongoDB** in early 2024 and now branded **Voyage AI by MongoDB** — gives every new account **200 million free tokens per model** on its flagship embeddings and rerank</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:35df7bc1f52b0129</id>
     <title>UK Sovereign AI Fund - up to £20M equity + 1M GPU hours + fast-track visas</title>
     <link href="https://sovereignai.gov.uk/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] UK Sovereign AI Fund £1M-£20M equity + up to 1,000,000 GPU hours + 10 fast-track visas + £1M-£9M Strategic Assets grants — The **UK Sovereign AI Fund** is a **£500 million government-backed venture capital unit** launched on **16 April 2026** by Technology Secretary Liz Kendall to back British AI startups and reduce the UK's reliance on foreign hyperscalers. It combines four instruments in a single application: **equity</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:8eeb12ff0b80855a</id>
     <title>Accelerate Programme Winter School for AI (Cambridge + Turing + NVIDIA)</title>
     <link href="https://www.turing.ac.uk/events/accelerate-science-winter-school-ai" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free 4-day residential programme + accommodation + some meals + CSD3/PEARL HPC access during workshops — **Free intensive 4-day winter school** in Generative AI for final-year UK undergraduates from any discipline, run by the **Accelerate Programme for Scientific Discovery** at the University of Cambridge in collaboration with the **Alan Turing Institute**, **Oxford Research Software Engineering**, and</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:084b0e441e2cf0b2</id>
     <title>Trelis AI Grants (up to $500)</title>
     <link href="https://trelis.com/trelis-ai-grants" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Trelis AI Grants (up to Up to $500 per quarter (grant, equity-free); optional $10,000 SAFE investment track requires incorporation — **Trelis Research** runs a small, founder-friendly grant program awarding **up to $500 per quarter** (equity-free) to **individuals** who are pushing forward the practical use of open AI models — training, fine-tuning, inferencing, or building tooling around model deployment. Applications are **roll</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f243caaf5218344c</id>
     <title>Stripe Atlas - $2,500 Stripe credits + $50K+ partner perks (incl. AI credits)</title>
     <link href="https://stripe.com/atlas/perks" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Stripe Atlas $2,500 Stripe credits + $50,000+ partner perks (incl. ~$5K AWS, $500 Anthropic, up to $2,500 OpenAI, $10K DigitalOcean, 30-90% HubSpot, etc.) — Incorporate a Delaware **C-Corp or LLC via Stripe Atlas** for a **$500 one-time fee** and unlock **$2,500 in Stripe processing credits** plus **$50,000+ in partner perks** including **AWS ($5,000)**, **Anthropic ($500 Claude API + highest rate limits)**, **OpenAI (up to $2,500 in API credits)**, **H</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:9b9de890f79b2521</id>
     <title>Speechmatics: 480 free minutes/month of transcription</title>
     <link href="https://www.speechmatics.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Speechmatics 480 minutes/month STT (batch + real-time) + ~1M characters/month TTS — Speechmatics is a UK-built **enterprise-grade speech-to-text** platform known for its accuracy on accents, multiple speakers, and noisy audio. The free plan gives every account **480 transcription minutes (8 hours) per month**, refreshed monthly, across **all 55+ supported languages** with **speaker</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:9670f385f01d882f</id>
     <title>Singapore Enterprise Compute Initiative - up to SGD 350K cloud credits</title>
     <link href="https://www.disg.gov.sg/enterprise-compute-initiative" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Singapore Enterprise Compute Initiative Up to S$105K consulting support + S$200K–S$350K cloud credits (stretch up to S$1.9M with Oracle private cloud or S$700K Azure agentic AI track) — The **Enterprise Compute Initiative (ECI)** is a **S$150 million** government-backed programme run by **Digital Industry Singapore (DISG)** — a joint office of EDB, Enterprise Singapore, and IMDA — announced at Singapore's FY2025 Budget. It pairs Singapore-registered enterprises with one of four maj</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:b11f14dbbba5c46d</id>
     <title>Sentry for Startups - $5,000 in error monitoring credits</title>
     <link href="https://sentry.io/for/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Sentry for Startups Up to $5,000 in credits + priority support — Up to **$5,000 in Sentry credits** (valid 12 months) plus **priority support** for early-stage startups using Sentry's error monitoring, performance/tracing, session replay, and logging products. Approved startups also get branded merch. Designed for serious founders shipping a real product — side p</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6f6428388eab232d</id>
     <title>Sarvam Startup Program - 6-12 months of API credits</title>
     <link href="https://www.sarvam.ai/startup-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Sarvam Startup Program 6-12 months of Sarvam API credits (allocation sized to projected usage; not publicly disclosed) — Sarvam AI (India's full-stack sovereign AI platform, valued at ~$1.5B) launched the **Sarvam Startup Program** on **March 5, 2026** to back early-stage AI builders in India. Selected startups get **6-12 months of API credits** (sized to their projected usage) across Sarvam's full API stack — Speech-</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:c3b6fb31c7fb2c80</id>
     <title>RunPod Startup Program - up to $25K bonus GPU credits</title>
     <link href="https://www.runpod.io/startup-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] RunPod Startup Program $1,000 free (Starter) or $25,000 bonus on $50,000 commit ($75K total, Growth) — The **RunPod Startup Program** is RunPod's official credit program for AI startups, available in two tiers. **Starter** gives you **$1,000 in free GPU credits** with self-serve onboarding — aimed at pre-Series A teams with a working product. **Growth** is a paid commit-and-match deal: pay **$50,000 </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d2a57685e54e50ca</id>
     <title>Render Startup Program - up to $100K in deploy credits</title>
     <link href="https://render.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Render Startup Program $5,000 (Build) / $10,000 (&lt;$1M raised) / $25,000 ($1M+ raised) / $100,000 (AI Scale tier with $2.5M+ raised) — Render's Startup Program offers **tiered cloud credits ($5K to $100K)** for VC- or accelerator-backed startups to deploy and scale on Render's PaaS (web services, background workers, cron jobs, Postgres, key-value, AI workloads, agent infrastructure). All credits are valid for **1 year from approval</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:70e921dbf3eb0835</id>
     <title>Recraft: 30 free image/vector credits per day</title>
     <link href="https://www.recraft.ai/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Recraft 30 credits/day (~900/month) shared across web UI and API + up to 4,000 referral credits — Recraft's **Free plan** gives every account **30 credits per day**, refreshed every 24 hours. Credits can be spent on raster image generation, vector generation, mockups, AI edits (modify region, erase, recolor, upscale, vectorize, background removal). The same credit balance powers both the **Recra</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:96fca4ddf11b6c2b</id>
     <title>Prime Intellect Fast Compute Grants ($500-$100K)</title>
     <link href="https://www.primeintellect.ai/" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  $500 - $100,000 in Prime Intellect compute credits — **Prime Intellect** runs **Fast Compute Grants** — a rolling, low-bureaucracy grant program awarding **$500-$100,000 in compute credits** on its GPU platform to researchers and builders working on open-source / decentralized AI. The program was launched in 2024 to back "ambitious open-source AI rese</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:ed56d57cae85593f</id>
     <title>PostHog for Startups - $50,000 in product analytics credits</title>
     <link href="https://posthog.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] PostHog for Startups $50,000 PostHog credits + founder merch + partner perks (Incident.io $1.5K, Speakeasy 50% off, Chroma $5K) — **$50,000 in PostHog credits valid for 12 months**, plus a free founder merch pack, partner perks (Incident.io, Speakeasy, Chroma), and the PMF book by PostHog co-founder James Hawkins. Credits cover almost the entire PostHog stack: product analytics, web analytics, session replay, feature flags, A/</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:bf5cf4d06664e8db</id>
     <title>Pinecone for Startups - free Standard Tier + Pro Support</title>
     <link href="https://www.pinecone.io/startup-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Pinecone for Startups Free Standard Tier (waives $70/mo base) + Pro Support + dedicated Slack + variable usage credits (commonly cited as ~$5K bootstrapped / up to ~$150K funded — not officially published) — **Pinecone for Startups** gives qualifying early-stage companies free access to Pinecone's **Standard Tier** (normally $70/month base fee) plus **Pro Support**, deployment in any cloud/region, **RBAC**, **Backups**, **Import**, **Prometheus Metrics**, a **dedicated Slack channel*</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:61173861e1f62a8c</id>
     <title>Pawsey Summer Internship - paid HPC/AI internship + Setonix supercomputer allocation</title>
     <link href="https://pawsey.org.au/supercomputing/training/summer-internships" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Pawsey Summer Internship Paid 12-week stipend (~AUD $8K-$12K, co-funded) + allocation on Setonix (AMD MI250X GPU cluster) + 1-week pre-internship workshop — The **Pawsey Summer Internship Program** is a 12-week **paid internship** (late November to mid-February, with a 2-week shutdown over the end-of-year holidays) at the **Pawsey Supercomputing Research Centre** in Perth, Western Australia. Interns work on real AI/ML/HPC research projects under a domai</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6b72ebf65a3937bc</id>
     <title>Open Telekom Cloud / T Cloud Public - €250 Starter Credit</title>
     <link href="https://public.t-cloud.com/en" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Open Telekom Cloud / T Cloud Public €250 starter credit — Deutsche Telekom's sovereign European public cloud (rebranded from **Open Telekom Cloud** to **T Cloud Public** in 2026) gives new **business** customers a **€250 starter credit** when they redeem the voucher code at booking. The credit is valid for **2 months from contract conclusion** and the vouc</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:813471959590731d</id>
     <title>Notion for Startups - 6 months free Business plan + Notion AI</title>
     <link href="https://www.notion.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Notion for Startups Up to 6 months free of Notion Business plan + Notion AI (~$12,000 value at 100 seats); 3 months without a partner; 1 month for smaller/unverified applicants — Notion for Startups gives qualifying early-stage companies **up to 6 months free of the Notion Business plan with Notion AI included**. Three tiers exist depending on how you apply: **6 months** for startups referred by a partner VC/accelerator, **3 months** for non-partner startups building scalabl</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e14e04b4e2b09c18</id>
     <title>Northflank Free Developer Sandbox (2 Services + Database)</title>
     <link href="https://northflank.com/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  2 services + 2 cron jobs + 1 database + 1 BYOC cluster, always-on, ~10 GB egress, ~1M HTTP req/month, 10 GB logs, 10 GB metrics — Northflank's **Developer Sandbox** is a permanently free plan aimed at hobby projects, prototypes, and trying the platform. You get **2 services**, **2 cron jobs**, **1 database/addon**, and **up to 1 BYOC cluster** — meaning you can either run on Northflank's managed cloud or connect your own AWS /</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:5c461e06a4156cd1</id>
     <title>Neon Startup Program - up to $100K in serverless Postgres credits</title>
     <link href="https://neon.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Neon Startup Program Up to $100,000 in Neon credits (actual grant varies by stage and projected scale) — Up to **$100,000 in Neon credits over 12 months** for serverless Postgres workloads — production databases, dev/preview environments, branching, read replicas, autoscaling, and scale-to-zero. Bundled with **engineer support during onboarding**, **early access to new features**, **priority support**,</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:70a23de0ad976a0d</id>
     <title>Nebius Research Credits Program</title>
     <link href="https://nebius.com/nebius-research-credits-program" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Up to 8 GPUs for 1 year + up to 10M Token Factory inference tokens (proposal-dependent) — Nebius (European AI-native cloud, NASDAQ: NBIS) awards **GPU cloud credits and Token Factory inference tokens** to academic researchers. The headline allocation is **up to 8 GPUs for one full year** for training/HPC workloads, plus **up to 10M tokens** for inference via Nebius Token Factory (60+ ope</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:c5b649622ac0fabd</id>
     <title>NAIRR Pilot - National AI Research Resource (graduate students eligible)</title>
     <link href="https://nairrpilot.org/opportunities/allocations" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] NAIRR Pilot 12-month allocations on NAIRR resources (GPU compute, foundation model API credits, datasets); Start-Up class up to 2,000 GPU-hours / 480,000 SUs for 3 months — The **National AI Research Resource (NAIRR) Pilot** is a federal program (NSF + DOE + NIH + DARPA + 26 partners including NVIDIA, Microsoft, AWS, Anthropic, OpenAI, Hugging Face) connecting US-based researchers and educators to **AI compute, datasets, and foundation models** at no cost. Graduate stu</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:75e4a4f14ea5166f</id>
     <title>MongoDB for Startups - up to $5,000 in Atlas credits</title>
     <link href="https://www.mongodb.com/solutions/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] MongoDB for Startups Up to $5,000 Atlas credits + Voyage AI tokens + partner credits (Fireworks AI, Temporal) + 1:1 technical advisor — **MongoDB for Startups** gives early-stage companies up to **$5,000 in MongoDB Atlas credits** (50% more than the prior cap, after the program's October 2025 expansion), plus **Voyage AI tokens** for embeddings/reranking, a **1:1 technical advisor session**, and **matching credits** at partner stack</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:4d6ed5ca4c965cbe</id>
     <title>Mistral AI Startup Program (Mistralship) - up to $30K credits</title>
     <link href="https://mistral.ai/contact" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Mistral AI Startup Program (Mistralship) Up to €30,000 (~$30,000) in La Plateforme API credits + 1:1 Solutions &amp; Science team support + early model access — Mistral AI's startup program — originally launched as **Mistralship** in late 2024 — gives selected early-stage startups up to **€30,000 (~$30,000) in La Plateforme API credits**, plus 1:1 support from Mistral's Solutions &amp; Science team and early access to new models. The original first cohort (10 s</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:fb615da7075bae31</id>
     <title>Le Chat Student (50%+ off Le Chat Pro)</title>
     <link href="https://help.mistral.ai/en/articles/347553-as-a-student-am-i-eligible-for-a-discount-on-le-chat-pro" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  ~53% off Le Chat Pro — roughly $7.04/month vs $14.99/month (renewable yearly while enrolled) — Mistral AI's **Le Chat Student** plan gives verified students **all the features of Le Chat Pro at ~53% off** — roughly **$7.04/month** instead of $14.99/month. Verification is automatic for recognized **.edu / institutional email domains**, with a manual review path available if your school's domai</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:eef82eefa489a524</id>
     <title>Meshy: 100 free 3D-generation credits per month (web only)</title>
     <link href="https://www.meshy.ai/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Meshy 100 credits/month (~5 fully textured 3D models) + bonus credits for community sharing — Meshy is one of the leading AI 3D model generators (text-to-3D, image-to-3D, AI texturing, auto-rigging, animation). Its **Free plan** gives every account **100 credits per month**, resetting at **00:00 UTC on the 1st of each month**. With each full Text-to-3D or Image-to-3D generation costing **20 </summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:68b720b3e443e6d6</id>
     <title>Lovable Pro 50% off for students</title>
     <link href="https://lovable.dev/students" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  50% off Lovable Pro ($25/mo → $12.50/mo); includes 100 monthly + 5 daily credits — Lovable (AI app/website builder) offers **50% off Lovable Pro** for verified students and teachers — bringing the price down from **$25/month to ~$12.50/month**. Verification is handled via **SheerID** using your educational email or student ID. The discount applies for **one year** and is renewable</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:4b691eaa91fe57a4</id>
     <title>Linear for Startups - up to 6 months free</title>
     <link href="https://linear.app/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Linear for Startups Up to 6 months free on Basic ($10/user/mo) or Business ($16/user/mo) plans — Linear's Startup Program gives qualifying early-stage startups **up to 6 months of free access** to Linear's paid plans (currently **Basic** at $10/user/mo or **Business** at $16/user/mo). Access is gated behind a **partner referral code** — you have to come in through one of Linear's 900+ partner a</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d2931f5d2acce3b4</id>
     <title>LangSmith for Startups - $10K in Scale Tier credits</title>
     <link href="https://www.langchain.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] LangSmith for Startups Scale Tier: $10,000 LangSmith credits (1 year; 2 years for Y Combinator). Build Tier: discounted seat pricing only (no dollar credits). — **LangSmith for Startups** (run by **LangChain**) gives early-stage AI startups discounted access to LangSmith — LangChain's LLM observability, tracing, evaluation, and agent-deployment platform. Two tracks: - **Scale Tier** — **$10,000 in LangSmith credits valid 1 year** (**2 years** for Y Combinat</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:a55bd4f7f2db8752</id>
     <title>IndiaAI Mission - State-Backed AI Startup Funding + Subsidized GPU Pool (38,000+ GPUs)</title>
     <link href="https://indiaai.gov.in/hub/indiaai-startup-financing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] IndiaAI Mission Subsidised GPU compute (₹65/hr A100, ₹92/hr H100; 40% standard / 100% for selected foundational-model builders) on 38,000+ GPU pool + risk capital via Startup Financing Pillar + access to $1.1B state-backed VC Fund of Funds. — The **IndiaAI Mission** is a ₹10,371.92 crore (~$1.25 B) Government of India programme run by **MeitY (IndiaAI Independent Business Division)**. It bundles two big things builders care about: (1) heavily **subsidised AI compute** on a national p</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:df2d9bcea760a643</id>
     <title>HubSpot for Startups - up to 90% off CRM/marketing tools</title>
     <link href="https://www.hubspot.com/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] HubSpot for Startups Up to 90% off year 1, 50% off year 2, 25% off year 3+ on Pro/Enterprise Hubs (top tier) — or 30% / 15% on Bootstrap tier without a partner — **HubSpot for Startups** offers eligible early-stage companies a tapered, multi-year discount on HubSpot's Professional and Enterprise plans across **Marketing Hub, Sales Hub, Service Hub, Content Hub, Operations Hub, and Commerce Hub** (plus the underlying Smart CRM and Breeze AI agents). The headl</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:d49d478a3f7a83b2</id>
     <title>Huawei Cloud Free Packages (12 Months for New Users)</title>
     <link href="https://activity.huaweicloud.com/intl/en-us/free_packages" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Always-free services (10+) + time-limited free packages (1 month / 1,500 hours / 8,760 hours / 12 months depending on product) on ECS, RDS, OBS, EVS, EIP, DCS, etc. — Huawei Cloud's international site offers a mix of **always-free services** (Auto Scaling, DNS, IAM, Cloud Trace, AOM 1.0, SWR container repository, RFS, SMS, Cloud Eye, 500 Mbit/s Anti-DDoS) plus **time-limited free packages** (typically 1 month, 1,500 hours, or 12 months) on selected compute, stora</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:6babbdd0b70a1d90</id>
     <title>HOSTKEY GPU Grant for Scientific Projects</title>
     <link href="https://hostkey.com/about-us/grants-for-scientific-projects-and-startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits]  Free dedicated GPU server (NVIDIA A100 80GB, H100, or RTX-class) for declared project duration. Configuration depends on proposal. — **HOSTKEY** (EU/Netherlands-based bare-metal &amp; GPU hosting provider) runs a recurring **GPU Grant Program** that awards **free GPU server time** to academic researchers, data scientists, and prospective startups working in AI, machine learning, big data, robotics, voice recognition, medical diagnost</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:f0cc4769c2303000</id>
     <title>Grafana for Startups - up to $100K in Grafana Cloud credits</title>
     <link href="https://grafana.com/about/grafana-for-startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Grafana for Startups Up to $100,000 in Grafana Cloud credits + 24/7 support + 20% post-credit discount — Grafana Labs gives qualifying early-stage startups **up to $100,000 in Grafana Cloud credits** for **12 months (or until the next funding round, whichever comes first)** plus **24/7 Grafana support** and a **guaranteed 20% discount off list prices** on whatever you keep using after the credits run o</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:5795bd23d6b0fb85</id>
     <title>Gladia: 10 free hours of transcription per month</title>
     <link href="https://www.gladia.io/pricing" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] Gladia 10 hours/month of async or real-time transcription, all features included — [Gladia](https://www.gladia.io/) is a French/EU speech-to-text API built around the **Solaria-1** model. The free **Starter** tier gives every account **10 hours of transcription per month** (resets monthly) with **all core features enabled** — async + real-time, automatic language detection, speake</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:69e18a1536a55747</id>
     <title>EuroHPC AI Factories - free access for academic AI research</title>
     <link href="https://www.eurohpc-ju.europa.eu/ai-factories/ai-factories-access-modes_en" />
-    <updated>2026-11-04T03:26:52Z</updated>
+    <updated>2026-11-05T03:26:48Z</updated>
     <summary>[aicredits] EuroHPC AI Factories Playground: small entry-level allocation (1-3 months). Fast Lane: up to 50,000 GPU-hours (1-3 months). Large Scale: &gt;50,000 GPU-hours, up to 4,644,864 GPU-h on MareNostrum5 ACC (3-12 months). AI for Science: free allocation, project-dependent. — **EuroHPC AI Factories** offer **free access to European supercomputers** (LUMI, Discoverer, MareNostrum5, Leonardo and others) for AI training, fine-tuning, and inference. There are **two tracks**: an **Industrial Innova</summary>
-  </entry>
-  <entry>
-    <id>urn:promo-radar:deal:a0f43e9d05fc2942</id>
-    <title>Datadog for Startups - up to $100K in observability credits</title>
-    <link href="https://www.datadoghq.com/partner/datadog-for-startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
-    <summary>[aicredits] Datadog for Startups $30,000 - $100,000 in Datadog Pro credit — Datadog for Startups (DDFS) provides eligible early-stage companies with **$30,000 to $100,000 in Datadog Pro credit** for **one year or until their next round of funding** (whichever comes first). The credit covers the full Datadog observability and security platform with no watered-down tiers. The</summary>
-  </entry>
-  <entry>
-    <id>urn:promo-radar:deal:fcf188e21a178a9d</id>
-    <title>CoreWeave Startup Accelerator - GPU cloud credits + discounts</title>
-    <link href="https://www.coreweave.com/solutions/startups" />
-    <updated>2026-11-04T03:26:52Z</updated>
-    <summary>[aicredits] CoreWeave Startup Accelerator Variable — CoreWeave Cloud credits + compute discounts (amount not publicly disclosed, negotiated per startup) — CoreWeave runs a **Startup Accelerator Program** that gives accepted companies **CoreWeave Cloud credits plus additional discounts** on GPU compute. The exact credit amount is **not published** — it is negotiated per-startup based on stage, workload, and consumption commitment. There are **no applic</summary>
   </entry>
 </feed>
