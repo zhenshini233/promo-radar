@@ -4,12 +4,12 @@
  "url": "https://elevenlabs.io",
  "slug": "elevenlabs-io-home",
  "promo_keywords": "free credits",
- "last_checked_at": "2026-11-05T03:30:21Z",
- "last_changed_at": "2026-11-05T03:30:21Z",
+ "last_checked_at": "2026-11-06T03:30:27Z",
+ "last_changed_at": "2026-11-06T03:30:27Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "-------------------------11111",
- "checked_days": 5,
+ "band": "------------------------111111",
+ "checked_days": 6,
  "covered_by": [
   "aicredits",
   "openrouter"
@@ -77,6 +77,11 @@
   },
   {
    "checked_at": "2026-11-05T03:30:21Z",
+   "promo_keywords": "free credits",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-06T03:30:27Z",
    "promo_keywords": "free credits",
    "changed": 1
   }

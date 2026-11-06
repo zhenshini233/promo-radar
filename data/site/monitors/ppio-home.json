@@ -4,12 +4,12 @@
  "url": "https://ppinfra.com/",
  "slug": "ppio-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-05T03:30:20Z",
- "last_changed_at": "2026-11-05T03:30:20Z",
+ "last_checked_at": "2026-11-06T03:30:26Z",
+ "last_changed_at": "2026-11-06T03:30:26Z",
  "notes": "派欧云，linux.do 促销常客",
  "monitored": true,
- "band": "-------------------------00000",
- "checked_days": 5,
+ "band": "------------------------000000",
+ "checked_days": 6,
  "covered_by": [],
  "history": [
   {
@@ -74,6 +74,11 @@
   },
   {
    "checked_at": "2026-11-05T03:30:20Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-06T03:30:26Z",
    "promo_keywords": "",
    "changed": 1
   }

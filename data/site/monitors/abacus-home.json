@@ -4,12 +4,12 @@
  "url": "https://abacus.ai",
  "slug": "abacus-home",
  "promo_keywords": "free tier",
- "last_checked_at": "2026-11-05T03:30:22Z",
- "last_changed_at": "2026-11-03T03:31:23Z",
+ "last_checked_at": "2026-11-06T03:30:28Z",
+ "last_changed_at": "2026-11-06T03:30:28Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "-------------------------11111",
- "checked_days": 5,
+ "band": "------------------------111111",
+ "checked_days": 6,
  "covered_by": [
   "modelsdev"
  ],
@@ -58,6 +58,11 @@
    "checked_at": "2026-11-05T03:30:22Z",
    "promo_keywords": "free tier",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-06T03:30:28Z",
+   "promo_keywords": "free tier",
+   "changed": 1
   }
  ]
 }

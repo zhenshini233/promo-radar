@@ -4,12 +4,12 @@
  "url": "https://venice.ai",
  "slug": "venice-ai-home",
  "promo_keywords": "$1 in credits;;$225 in credits;;$75 in credits;;free tier",
- "last_checked_at": "2026-11-05T03:30:21Z",
- "last_changed_at": "2026-11-05T03:30:21Z",
+ "last_checked_at": "2026-11-06T03:30:26Z",
+ "last_changed_at": "2026-11-06T03:30:26Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "-------------------------11111",
- "checked_days": 5,
+ "band": "------------------------111111",
+ "checked_days": 6,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -78,6 +78,11 @@
   },
   {
    "checked_at": "2026-11-05T03:30:21Z",
+   "promo_keywords": "$1 in credits;;$225 in credits;;$75 in credits;;free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-06T03:30:26Z",
    "promo_keywords": "$1 in credits;;$225 in credits;;$75 in credits;;free tier",
    "changed": 1
   }

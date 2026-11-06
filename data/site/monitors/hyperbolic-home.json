@@ -4,12 +4,12 @@
  "url": "https://hyperbolic.ai",
  "slug": "hyperbolic-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-05T03:30:19Z",
- "last_changed_at": "2026-11-03T03:31:21Z",
+ "last_checked_at": "2026-11-06T03:30:25Z",
+ "last_changed_at": "2026-11-06T03:30:25Z",
  "notes": "SSR，当前无静态 promo 文案，纳入监控等其上线",
  "monitored": true,
- "band": "-------------------------00000",
- "checked_days": 5,
+ "band": "------------------------000000",
+ "checked_days": 6,
  "covered_by": [
   "aicredits",
   "litellm"
@@ -79,6 +79,11 @@
    "checked_at": "2026-11-05T03:30:19Z",
    "promo_keywords": "",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-06T03:30:25Z",
+   "promo_keywords": "",
+   "changed": 1
   }
  ]
 }

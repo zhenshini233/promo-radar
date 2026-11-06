@@ -4,12 +4,12 @@
  "url": "https://hpc-ai.com",
  "slug": "hpc-ai-home",
  "promo_keywords": "$10 credit;;$15 credit;;$5.00 free credits;;free credits",
- "last_checked_at": "2026-11-05T03:30:23Z",
- "last_changed_at": "2026-11-04T03:30:30Z",
+ "last_checked_at": "2026-11-06T03:30:29Z",
+ "last_changed_at": "2026-11-06T03:30:29Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "-------------------------11111",
- "checked_days": 5,
+ "band": "------------------------111111",
+ "checked_days": 6,
  "covered_by": [
   "aicredits",
   "modelsdev"
@@ -59,6 +59,11 @@
    "checked_at": "2026-11-05T03:30:23Z",
    "promo_keywords": "$10 credit;;$15 credit;;$5.00 free credits;;free credits",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-06T03:30:29Z",
+   "promo_keywords": "$10 credit;;$15 credit;;$5.00 free credits;;free credits",
+   "changed": 1
   }
  ]
 }

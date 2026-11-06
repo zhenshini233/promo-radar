@@ -4,12 +4,12 @@
  "url": "https://agnes-ai.com",
  "slug": "agnes-ai-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-05T03:30:22Z",
+ "last_checked_at": "2026-11-06T03:30:28Z",
  "last_changed_at": "2026-11-05T03:30:22Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "-------------------------00000",
- "checked_days": 5,
+ "band": "------------------------000000",
+ "checked_days": 6,
  "covered_by": [
   "modelsdev"
  ],
@@ -58,6 +58,11 @@
    "checked_at": "2026-11-05T03:30:22Z",
    "promo_keywords": "",
    "changed": 1
+  },
+  {
+   "checked_at": "2026-11-06T03:30:28Z",
+   "promo_keywords": "",
+   "changed": 0
   }
  ]
 }

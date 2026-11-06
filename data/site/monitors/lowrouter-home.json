@@ -4,12 +4,12 @@
  "url": "https://lowrouter.ai",
  "slug": "lowrouter-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-05T03:30:22Z",
- "last_changed_at": "2026-11-04T03:30:29Z",
+ "last_checked_at": "2026-11-06T03:30:27Z",
+ "last_changed_at": "2026-11-06T03:30:27Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "-------------------------00000",
- "checked_days": 5,
+ "band": "------------------------000000",
+ "checked_days": 6,
  "covered_by": [
   "modelsdev"
  ],
@@ -58,6 +58,11 @@
    "checked_at": "2026-11-05T03:30:22Z",
    "promo_keywords": "",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-06T03:30:27Z",
+   "promo_keywords": "",
+   "changed": 1
   }
  ]
 }

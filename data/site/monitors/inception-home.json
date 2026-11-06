@@ -4,12 +4,12 @@
  "url": "https://inceptionlabs.ai/",
  "slug": "inception-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-05T03:30:21Z",
+ "last_checked_at": "2026-11-06T03:30:27Z",
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "Mercury 3 全线 50% OFF 促销中；platform.inceptionlabs.ai",
  "monitored": true,
- "band": "-------------------------00000",
- "checked_days": 5,
+ "band": "------------------------000000",
+ "checked_days": 6,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -80,6 +80,11 @@
   },
   {
    "checked_at": "2026-11-05T03:30:21Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-06T03:30:27Z",
    "promo_keywords": "",
    "changed": 0
   }

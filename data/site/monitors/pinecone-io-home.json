@@ -4,12 +4,12 @@
  "url": "https://pinecone.io",
  "slug": "pinecone-io-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-05T03:30:20Z",
+ "last_checked_at": "2026-11-06T03:30:26Z",
  "last_changed_at": "2026-11-04T03:30:28Z",
  "notes": "auto-enrolled from aicredits 2026-11-01",
  "monitored": true,
- "band": "-------------------------00000",
- "checked_days": 5,
+ "band": "------------------------000000",
+ "checked_days": 6,
  "covered_by": [
   "aicredits"
  ],
@@ -76,6 +76,11 @@
   },
   {
    "checked_at": "2026-11-05T03:30:20Z",
+   "promo_keywords": "",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-06T03:30:26Z",
    "promo_keywords": "",
    "changed": 0
   }

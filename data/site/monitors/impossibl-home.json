@@ -4,12 +4,12 @@
  "url": "https://impossibl.com",
  "slug": "impossibl-home",
  "promo_keywords": "$1 in credits",
- "last_checked_at": "2026-11-05T03:30:23Z",
- "last_changed_at": "2026-11-05T03:30:23Z",
+ "last_checked_at": "2026-11-06T03:30:28Z",
+ "last_changed_at": "2026-11-06T03:30:28Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "-------------------------11111",
- "checked_days": 5,
+ "band": "------------------------111111",
+ "checked_days": 6,
  "covered_by": [
   "modelsdev"
  ],
@@ -56,6 +56,11 @@
   },
   {
    "checked_at": "2026-11-05T03:30:23Z",
+   "promo_keywords": "$1 in credits",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-06T03:30:28Z",
    "promo_keywords": "$1 in credits",
    "changed": 1
   }

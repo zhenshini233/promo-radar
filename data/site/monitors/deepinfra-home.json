@@ -4,12 +4,12 @@
  "url": "https://deepinfra.com",
  "slug": "deepinfra-home",
  "promo_keywords": "$1,000 in credits",
- "last_checked_at": "2026-11-05T03:30:19Z",
- "last_changed_at": "2026-11-05T03:30:19Z",
+ "last_checked_at": "2026-11-06T03:30:25Z",
+ "last_changed_at": "2026-11-06T03:30:25Z",
  "notes": "Next.js SSR，promo 文案在静态 HTML（如 DeepStart $1,000 credits），可 grep",
  "monitored": true,
- "band": "-------------------------11111",
- "checked_days": 5,
+ "band": "------------------------111111",
+ "checked_days": 6,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -79,6 +79,11 @@
   },
   {
    "checked_at": "2026-11-05T03:30:19Z",
+   "promo_keywords": "$1,000 in credits",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-06T03:30:25Z",
    "promo_keywords": "$1,000 in credits",
    "changed": 1
   }
