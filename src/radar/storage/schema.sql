@@ -1,4 +1,4 @@
--- promo-radar 数据库 schema（PRAGMA user_version = 4）
+-- promo-radar 数据库 schema（PRAGMA user_version = 7）
 
 CREATE TABLE IF NOT EXISTS deals (
     dedup_key          TEXT PRIMARY KEY,
@@ -57,7 +57,14 @@ CREATE TABLE IF NOT EXISTS snapshots (
     content_hash    TEXT NOT NULL,
     promo_keywords  TEXT DEFAULT '',
     last_checked_at TEXT NOT NULL,
-    last_changed_at TEXT NOT NULL
+    last_changed_at TEXT NOT NULL,
+    -- 连续抓取失败次数：>=3 时熔断 7 天，成功后清零（防止 360 页里少数
+    -- 死链每轮都重试，把整轮拖到 CI 超时）
+    fail_count      INTEGER NOT NULL DEFAULT 0,
+    last_error      TEXT NOT NULL DEFAULT '',
+    -- 分层调度：1 每日 / 2 每周 / 3 每月；next_check_at 为空时按域名 hash 错峰
+    tier            INTEGER NOT NULL DEFAULT 2,
+    next_check_at   TEXT NOT NULL DEFAULT ''
 );
 
 -- 每轮每页一条，支撑 dashboard 的"信号历史条形带"（upptime 模式）
@@ -83,4 +90,50 @@ CREATE TABLE IF NOT EXISTS feedback (
     note      TEXT DEFAULT '',
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL
+);
+
+-- v7：Provider 实体（厂商宇宙落库）。旧表不变，deals/snapshots 仍按 provider 文本关联。
+CREATE TABLE IF NOT EXISTS providers (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    slug             TEXT NOT NULL UNIQUE,
+    name             TEXT NOT NULL,
+    category         TEXT NOT NULL DEFAULT 'unknown',
+    regions          TEXT NOT NULL DEFAULT '[]',
+    relevance        REAL NOT NULL DEFAULT 0,
+    confidence       TEXT NOT NULL DEFAULT 'low',
+    status           TEXT NOT NULL DEFAULT 'in_universe'
+                     CHECK (status IN ('in_universe', 'monitored', 'pending', 'ignored', 'retired')),
+    vendor_like      INTEGER NOT NULL DEFAULT 1,
+    brand_key        TEXT NOT NULL DEFAULT '',
+    parent_id        INTEGER,
+    first_seen_at    TEXT NOT NULL DEFAULT '',
+    last_verified_at TEXT NOT NULL DEFAULT '',
+    updated_at       TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS idx_providers_status ON providers (status);
+CREATE INDEX IF NOT EXISTS idx_providers_category ON providers (category);
+
+-- 一个注册域只属于一个 primary provider；子品牌不重复占域名。
+CREATE TABLE IF NOT EXISTS provider_domains (
+    domain      TEXT PRIMARY KEY,
+    provider_id INTEGER NOT NULL,
+    is_primary  INTEGER NOT NULL DEFAULT 1
+);
+CREATE INDEX IF NOT EXISTS idx_provider_domains_pid ON provider_domains (provider_id);
+
+-- 来源写法 / 旧名 / 模型前缀 → 统一到 provider。
+CREATE TABLE IF NOT EXISTS provider_aliases (
+    alias       TEXT PRIMARY KEY,
+    provider_id INTEGER NOT NULL,
+    kind        TEXT NOT NULL DEFAULT 'name'
+);
+CREATE INDEX IF NOT EXISTS idx_provider_aliases_pid ON provider_aliases (provider_id);
+
+-- 该厂商被哪些发现来源收录。
+CREATE TABLE IF NOT EXISTS provider_sources (
+    provider_id   INTEGER NOT NULL,
+    source        TEXT NOT NULL,
+    first_seen_at TEXT NOT NULL DEFAULT '',
+    last_seen_at  TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (provider_id, source)
 );

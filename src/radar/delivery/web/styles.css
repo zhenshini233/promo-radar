@@ -17,6 +17,8 @@
   --neutral-bg: #f1efee; --neutral-fg: #57534e;
   --band-empty: #f1efee;
   --band-clean: #e0ddd9;
+  --warn-bg: #fff4d6;  --warn-fg: #7a5200;
+  --danger-bg: #ffe4e4; --danger-fg: #8a1c1c;
   --side-w: 212px;
   --gutter: 24px;
 }
@@ -27,6 +29,8 @@
   --pos-bg: #17291d; --pos-fg: #86dfac; --neg-bg: #2d1616; --neg-fg: #f0a8a8;
   --neutral-bg: #262321; --neutral-fg: #a8a29e;
   --band-empty: #262321; --band-clean: #3b3735;
+  --warn-bg: #3a2c12; --warn-fg: #f0c674;
+  --danger-bg: #3a1a1a; --danger-fg: #f0a8a8;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -36,6 +40,8 @@
     --pos-bg: #17291d; --pos-fg: #86dfac; --neg-bg: #2d1616; --neg-fg: #f0a8a8;
     --neutral-bg: #262321; --neutral-fg: #a8a29e;
     --band-empty: #262321; --band-clean: #3b3735;
+    --warn-bg: #3a2c12; --warn-fg: #f0c674;
+    --danger-bg: #3a1a1a; --danger-fg: #f0a8a8;
   }
 }
 
@@ -336,3 +342,35 @@ footer a:hover { color: var(--accent); }
 .vchip a:hover { color: var(--accent); text-decoration: underline; }
 .stat-btn { width: 100%; text-align: left; padding: 0; }
 .stat-btn:hover .n { color: var(--accent); }
+
+/* 数据新鲜度横幅：抓取失败时在页面顶部显式提示，避免“看起来在更新” */
+.stale-banner {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px var(--gutter);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 600;
+}
+.stale-banner.warn { background: var(--warn-bg); color: var(--warn-fg); }
+.stale-banner.critical { background: var(--danger-bg); color: var(--danger-fg); }
+.stale-banner .t2 { font-weight: 400; opacity: .8; }
+
+/* serve 模式代理设置输入框 */
+.proxy-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+  padding: 7px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 12px;
+}

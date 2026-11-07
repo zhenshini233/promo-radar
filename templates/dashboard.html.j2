@@ -16,6 +16,15 @@
 </head>
 <body>
 
+{% if freshness and freshness.level != 'ok' %}
+<div class="stale-banner {{ freshness.level }}" role="status">
+  <span>{{ freshness.message }}</span>
+  {% if freshness.last_success_at %}
+  <span class="t2">最近成功：{{ freshness.last_success_at[:16].replace('T', ' ') }} UTC</span>
+  {% endif %}
+</div>
+{% endif %}
+
 <div id="app">
   <aside class="side">
     <div class="brand"><span class="mark" aria-hidden="true">PR</span> promo-radar</div>
@@ -117,7 +126,7 @@
             <th class="col-title">活动</th><th>厂商</th><th class="num">金额</th><th>绑卡</th>
             <th>状态</th><th class="num">匹配分</th><th>来源</th><th class="num">发现于</th>
           </tr></thead><tbody>
-          {% for d in new_deals[:50] %}
+          {% for d in new_deals[:30] %}
           <tr>
             <td class="col-title"><a href="{{ d.url }}" target="_blank" rel="noopener noreferrer">{{ d.title }}</a>
               {% if d.evidence %}<div class="t2">{{ d.evidence[:90] }}</div>{% endif %}</td>
@@ -158,7 +167,7 @@
         <thead><tr>
           <th class="col-title">厂商</th><th>每日记录</th><th>页面内容</th><th class="num">最近检查</th>
         </tr></thead><tbody id="mon-body">
-        {% for m in monitors %}
+        {% for m in monitors[:40] %}
         <tr data-mstate="{{ 'active' if m.promo_keywords else ('new' if m.checked_days is defined and m.checked_days is not none and m.checked_days < 3 else 'new') }}">
           <td class="col-title"><a href="{{ m.url }}" target="_blank" rel="noopener noreferrer">{{ m.provider }}</a>
             <span class="t2">{{ m.label }}</span></td>
@@ -167,6 +176,9 @@
           <td class="num">{{ m.last_checked_at[:16].replace('T', ' ') }}</td>
         </tr>
         {% endfor %}
+        {% if monitors|length > 40 %}
+        <tr><td colspan="4" class="t2" style="padding:20px">另有 {{ monitors|length - 40 }} 家厂商，启用 JavaScript 后查看完整列表</td></tr>
+        {% endif %}
         </tbody></table></div>
     </section>
 
@@ -178,12 +190,12 @@
       </div>
       <div class="table-wrap"><table>
         <thead><tr><th class="col-title">活动</th><th>厂商</th><th>来源</th><th class="num">最后更新</th></tr></thead>
-        <tbody id="archive-body">{% for d in expired_all[:200] %}
+        <tbody id="archive-body">{% for d in expired_all[:30] %}
           <tr><td class="col-title"><a href="{{ d.url }}" target="_blank" rel="noopener noreferrer">{{ d.title }}</a></td>
           <td>{{ d.provider or "—" }}</td>
           <td><span class="pill src">{{ d.source }}</span></td>
           <td class="num">{{ d.last_changed_at[:10] }}</td></tr>
-        {% endfor %}{% if not expired_all %}<tr><td colspan="4" class="t2" style="padding:20px">暂无已过期活动</td></tr>{% endif %}</tbody></table></div>
+        {% endfor %}{% if expired_all|length > 30 %}<tr><td colspan="4" class="t2" style="padding:20px">另有 {{ expired_all|length - 30 }} 条，启用 JavaScript 后查看</td></tr>{% elif not expired_all %}<tr><td colspan="4" class="t2" style="padding:20px">暂无已过期活动</td></tr>{% endif %}</tbody></table></div>
     </section>
   </main>
 </div>
@@ -215,6 +227,14 @@
       <button class="btn primary wide" :disabled="st.refreshing" @click="startRefresh">[[ st.refreshing ? '刷新中…' : '开始刷新' ]]</button>
       <div class="refresh-status">[[ st.refreshMsg ]]</div>
     </div>
+
+    <div class="side-block" v-if="st.serveMode">
+      <div class="side-title">代理</div>
+      <input class="proxy-input" type="text" v-model="st.proxyUrl" placeholder="留空 = 直连" aria-label="代理地址">
+      <button class="btn wide" :disabled="st.proxySaving" @click="saveProxy">[[ st.proxySaving ? '保存中…' : '保存并测试' ]]</button>
+      <div class="refresh-status">[[ st.proxyMsg ]]</div>
+    </div>
+
     <div class="side-block" v-else>
       <div class="side-title">手动刷新</div>
       <div class="refresh-status">本地运行 <b>radar serve</b> 后可用</div>
@@ -552,6 +572,7 @@
 </script>
 
 <script type="application/json" id="radar-data">{{ payload_json | safe }}</script>
+<script src="data.js"></script>
 <script src="vendor/vue.global.prod.js"></script>
 <script src="app.js"></script>
 </body>

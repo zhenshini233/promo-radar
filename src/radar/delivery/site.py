@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import xml.etree.ElementTree as ET
 from dataclasses import asdict
 from datetime import timedelta
@@ -25,7 +26,7 @@ from ..domain.coverage import (
     SOURCE_IDS, SOURCE_NAMES, SOURCE_TYPES, SOURCE_BLURBS,
     build_registries, covered_by, domain_norm, registry_sizes, vendor_links,
 )
-from ..domain.models import Deal, iso, utcnow
+from ..domain.models import Deal, iso, parse_iso, utcnow
 from ..infra.config import RadarConfig, load_providers
 from ..storage.repository import SqliteRepository
 
@@ -53,7 +54,7 @@ def _monitor_rows(repo: SqliteRepository, providers_file: Path, days: int = 30) 
         for h in repo.history_for(snap["url"], days=days + 5):
             day = h["checked_at"][:10]
             entry = by_day.setdefault(day, {"hits": set(), "changed": False})
-            entry["hits"].update(k for k in h["promo_keywords"].split(",") if k)
+            entry["hits"].update(k for k in h["promo_keywords"].split(";;") if k)
             entry["changed"] = entry["changed"] or bool(h["changed"])
         band = ""
         for i in range(days - 1, -1, -1):
@@ -119,6 +120,70 @@ def _catalog_stats(repo: SqliteRepository) -> dict:
     }
 
 
+def _compact_json(obj) -> str:
+    """紧凑 JSON：去掉 indent 的空白，站点体积可降 20% 以上。"""
+    return json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+
+
+# 首屏内联兜底的数据上限：全量数据放在 data.js，内联只保留可交互的最小集，
+# 避免 index.html 随 deals/厂商清单线性膨胀（P0-H：index < 200KB）。
+INLINE_DEAL_LIMIT = 60
+INLINE_MONITOR_LIMIT = 80
+
+
+def _inline_payload(payload: dict) -> dict:
+    """裁剪内联到 index.html 的载荷；全量仍写 data.json / data.js。"""
+    deals = payload.get("deals", [])
+    monitors = payload.get("monitors", [])
+    active = [d for d in deals if d.get("status") != "expired"][:INLINE_DEAL_LIMIT]
+    inline = dict(payload)
+    inline["deals"] = active
+    inline["monitors"] = monitors[:INLINE_MONITOR_LIMIT]
+    # 厂商清单占 80KB+，file:// 场景由 data.js 提供，内联不再重复
+    inline["source_vendors"] = {}
+    inline["inline_meta"] = {
+        "deals_total": len(deals),
+        "deals_inline": len(active),
+        "monitors_total": len(monitors),
+        "monitors_inline": len(inline["monitors"]),
+        "full_data": "data.js",
+    }
+    return inline
+
+
+def _freshness(repo: SqliteRepository, now, min_sources: int = 0) -> dict:
+    """数据新鲜度：以「最近一次全量健康抓取」为准，而不是本次构建时间。
+
+    否则抓取持续失败时 generated_at 会不断前移，站点看起来永远新鲜；
+    也不能把 `--only watchlist` 这类局部刷新算进来，否则单源成功会掩盖
+    全源故障（min_sources 由 config 的 full_run_min_sources 控制）。
+    """
+    last = repo.last_success_at(min_sources=min_sources)
+    if not last:
+        return {
+            "last_success_at": None,
+            "age_hours": None,
+            "level": "critical",
+            "message": "尚未成功完成一次全量抓取，当前内容来自历史数据。",
+        }
+    age = max(0.0, (now - parse_iso(last)).total_seconds() / 3600)
+    if age > 24:
+        level = "critical"
+        message = f"全量抓取已 {age / 24:.1f} 天未成功，当前内容可能已失效。"
+    elif age > 6:
+        level = "warn"
+        message = f"全量抓取已 {age:.0f} 小时未成功，请查看数据源状态。"
+    else:
+        level = "ok"
+        message = f"数据更新于 {age:.0f} 小时前（全量抓取）。"
+    return {
+        "last_success_at": last,
+        "age_hours": round(age, 1),
+        "level": level,
+        "message": message,
+    }
+
+
 def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
     now = utcnow()
     data = repo.digest_data(now)
@@ -139,6 +204,7 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
     }
     last_run = repo.last_run()
     feedback = repo.feedback_map()
+    freshness = _freshness(repo, now, cfg.general.full_run_min_sources)
 
     signal_pages = sum(1 for m in monitors if m["promo_keywords"])
     payload = {
@@ -166,20 +232,25 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
         },
         "source_order": list(SOURCE_IDS),
         "pending_enroll": json.loads(repo.get_state("enroll:pending") or "[]"),
+        "freshness": freshness,
     }
 
     site = cfg.data_dir / "site"
-    (site / "monitors").mkdir(parents=True, exist_ok=True)
+    site.mkdir(parents=True, exist_ok=True)
 
-    # data.json + 每监控页明细
-    (site / "data.json").write_text(
-        json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8"
+    # data.json：紧凑格式（HTTP 场景供前端按需加载）
+    full_json = _compact_json(payload)
+    (site / "data.json").write_text(full_json, encoding="utf-8")
+    # data.js：全量数据的脚本形态。file:// 下外部 <script> 可加载，
+    # 而 fetch(data.json) 会被 CORS 拦截，用它保证双击打开仍有完整功能。
+    (site / "data.js").write_text(
+        "window.__RADAR_FULL__=" + full_json + ";", encoding="utf-8"
     )
-    for m in monitors:
-        detail = {**m, "history": repo.history_for(m["url"], days=90)}
-        (site / "monitors" / f"{m['slug']}.json").write_text(
-            json.dumps(detail, ensure_ascii=False, indent=1), encoding="utf-8"
-        )
+
+    # v1 遗留：每页明细 JSON 从未被前端加载，停止生成并清理旧文件
+    stale_monitors = site / "monitors"
+    if stale_monitors.exists():
+        shutil.rmtree(stale_monitors, ignore_errors=True)
 
     _write_atom(site / "atom.xml", data["new_deals"], now)
 
@@ -190,11 +261,12 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    inline_json = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
+    inline_json = _compact_json(_inline_payload(payload)).replace("</", "<\\/")
     html = env.get_template("dashboard.html.j2").render(
         generated_at=iso(now),
         payload_json=inline_json,
         kpis=payload["kpis"],
+        freshness=freshness,
         last_run=last_run,
         sources=repo.latest_source_runs(),
         new_deals=data["new_deals"],

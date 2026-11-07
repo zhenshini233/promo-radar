@@ -8,7 +8,8 @@ from pathlib import Path
 
 from .delivery.notify import push_new_deals
 from .delivery.site import build_site
-from .infra.config import load_config, load_providers
+from .infra.config import load_config
+from .infra.providers_store import ProviderStoreError, append_provider_entries
 from .pipeline.runner import run
 from .storage.repository import SqliteRepository
 
@@ -23,11 +24,15 @@ def _print_report(report) -> None:
         )
     print(
         f"\n合计: 新增 {len(report.new_deals)} 条，归档过期 {report.expired_count} 条"
+        f"，源成功率 {report.success_rate:.0%}"
     )
+    if report.failing_sources:
+        detail = ", ".join(f"{k}×{v}" for k, v in sorted(report.failing_sources.items()))
+        print(f"连续失败的源: {detail}")
     for deal in report.new_deals[:10]:
         print(f"  + {deal.title[:70]} ({deal.source})")
     if len(report.new_deals) > 10:
-        print(f"  ... 共 {len(report.new_deals)} 条，详见 digest.html")
+        print(f"  ... 共 {len(report.new_deals)} 条，详见站点 dashboard")
 
 
 def cmd_run(args) -> int:
@@ -71,26 +76,30 @@ def cmd_report(args) -> int:
 
 def cmd_add_provider(args) -> int:
     cfg = load_config(args.config)
-    existing = {p["name"].lower() for p in load_providers(cfg.providers_file)}
-    if args.name.lower() in existing:
-        print(f"错误: {args.name} 已存在于 providers.toml", file=sys.stderr)
-        return 1
-
     urls = list(args.url)
     if not urls:
         print("错误: 至少提供一个 --url", file=sys.stderr)
         return 1
 
-    lines = [f"\n[[provider]]", f'name = "{args.name}"', "urls = ["]
-    for i, url in enumerate(urls):
-        label = args.label[i] if i < len(args.label) else "home"
-        lines.append(f'    {{ label = "{label}", url = "{url}" }},')
-    lines.append("]")
-    if args.note:
-        lines.append(f'notes = "{args.note}"')
-
-    with open(cfg.providers_file, "a", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+    entry = {
+        "name": args.name,
+        "urls": [
+            {"label": args.label[i] if i < len(args.label) else "home", "url": url}
+            for i, url in enumerate(urls)
+        ],
+        "notes": args.note or "",
+    }
+    try:
+        added = append_provider_entries(cfg.providers_file, [entry])
+    except ProviderStoreError as e:
+        print(f"错误: {e}", file=sys.stderr)
+        return 1
+    if not added:
+        print(
+            f"错误: {args.name} 已存在，或其 URL 的域名已在监控清单中",
+            file=sys.stderr,
+        )
+        return 1
     print(f"已添加 {args.name}（{len(urls)} 个页面）到 {cfg.providers_file}")
     print("下次 radar run 时会先建立内容基线，之后变化才会产生事件。")
     return 0

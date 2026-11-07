@@ -17,12 +17,14 @@ from __future__ import annotations
 import hashlib
 import re
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timezone
-from urllib.parse import urlsplit
+from datetime import datetime, timedelta, timezone
 
 from ..infra.config import load_providers
 from ..infra.http import extract_text, get_text, loose_text
-from ..domain.models import RawItem, iso, utcnow
+from ..infra.providers_store import ProviderStoreError, append_provider_entries
+from ..domain.domains import registrable_domain
+from ..domain.enroll_rules import AUTO_BLOCKLIST as _AUTO_BLOCKLIST, enroll_allowed
+from ..domain.models import RawItem, iso, parse_iso, utcnow
 from .base import register_source
 
 DEFAULT_WATCH_KEYWORDS = [
@@ -38,17 +40,8 @@ DEFAULT_WATCH_KEYWORDS = [
     r"体验(卡|金|额度)",
 ]
 
-# 自动收编排除：内容/社区/基础设施域名（不提供模型 API 优惠，进监控只添噪）
-_AUTO_BLOCKLIST = {
-    "github.com", "youtube.com", "medium.com", "x.com", "twitter.com",
-    "discord.gg", "discord.com", "reddit.com", "huggingface.co",
-    "linkedin.com", "substack.com", "notion.site", "apple.com",
-    "ycombinator.com", "news.ycombinator.com", "aicredits.dev",
-    "aicredits.tech", "openrouter.ai", "artificialanalysis.ai",
-    # 政府/学术/公共机构域（aicredits 活动页常见，非模型厂商）
-    "gov.uk", "ac.uk", "org.uk", "gov.sg", "gov.in", "org.au",
-    "europa.eu", "edu.cn", "gov.cn",
-}
+# 自动收编排除清单已迁到 domain/enroll_rules（与盲区收编共用）；
+# _AUTO_BLOCKLIST 保留别名，避免外部引用失效。
 
 
 def _context_snippet(visible: str, regexes: list[re.Pattern], window: int = 120) -> str:
@@ -107,73 +100,106 @@ def _make_evidence(text: str, visible: str, regexes: list[re.Pattern], window: i
     return _clean_snippet(visible[:240])
 
 
-# 多段公共后缀（末两段不是注册域，需取末三段）：_registrable 防把
-# turing.ac.uk 收编成 "ac.uk" 这类垃圾条目
-_MULTI_SUFFIXES = {
-    "co.uk", "org.uk", "ac.uk", "gov.uk", "me.uk", "net.uk",
-    "com.au", "net.au", "org.au", "gov.au", "edu.au",
-    "co.jp", "ne.jp", "or.jp", "go.jp", "ac.jp",
-    "com.cn", "net.cn", "org.cn", "gov.cn", "edu.cn",
-    "com.hk", "org.hk", "gov.hk", "edu.hk",
-    "com.tw", "org.tw", "gov.tw", "edu.tw",
-    "co.kr", "or.kr", "go.kr", "ne.kr", "re.kr",
-    "com.sg", "org.sg", "gov.sg", "edu.sg",
-    "co.in", "net.in", "org.in", "gov.in", "edu.in",
-    "com.br", "com.mx", "com.ar", "com.tr", "co.za", "co.nz", "org.nz",
-}
-
-
+# 多段公共后缀逻辑已移到 domain.domains，供 providers_store 复用；
+# 保留 _registrable 名称兼容旧测试与 enroll.py 的 import。
 def _registrable(url: str) -> str | None:
     """URL → 注册域（去 www、取末两段；多段公共后缀取末三段）。非 http(s) 返回 None。"""
-    parts = urlsplit(url.strip())
-    if parts.scheme not in ("http", "https") or not parts.netloc:
-        return None
-    host = parts.netloc.split("@")[-1].split(":")[0].lower()
-    if host.startswith("www."):
-        host = host[4:]
-    labels = host.split(".")
-    if len(labels) < 2 or not labels[-1].isalpha():
-        return None
-    take = 3 if len(labels) >= 3 and ".".join(labels[-2:]) in _MULTI_SUFFIXES else 2
-    return ".".join(labels[-take:])
-
-
-def _known_domains(ctx) -> set[str]:
-    domains = set()
-    for p in load_providers(ctx.cfg.providers_file):
-        domains.add(p["name"].lower())
-        for u in p["urls"]:
-            d = _registrable(u["url"])
-            if d:
-                domains.add(d)
-    return domains
+    return registrable_domain(url)
 
 
 def auto_enroll_from_items(ctx, items: list[RawItem]) -> int:
     """把 items 里没见过的新域名追加进 providers.toml。返回收编数量。
 
-    幂等：域名已在 watchlist（按 name 或任意 URL 的注册域判断）则跳过。
+    幂等：name 或注册域已存在则跳过；写入走 providers_store 的锁 + 原子替换。
     """
     if not ctx.cfg.source("watchlist").get("auto_enroll", True):
         return 0
-    known = _known_domains(ctx)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    blocks: list[str] = []
+    entries: list[dict] = []
     for item in items:
         dom = _registrable(item.url)
-        if not dom or dom in known or dom in _AUTO_BLOCKLIST:
+        if not enroll_allowed(item.provider or dom or "", dom or "")[0]:
             continue
-        known.add(dom)
-        blocks.append(
-            f'\n[[provider]]\nname = "{dom}"\n'
-            f'urls = [\n    {{ label = "home", url = "https://{dom}" }},\n]\n'
-            f'notes = "auto-enrolled from {item.source} {today}"\n'
+        entries.append(
+            {
+                "name": dom,
+                "urls": [{"label": "home", "url": f"https://{dom}"}],
+                "notes": f"auto-enrolled from {item.source} {today}",
+            }
         )
-    if blocks:
-        with open(ctx.cfg.providers_file, "a", encoding="utf-8") as f:
-            f.write("\n".join(blocks))
-        print(f"[auto-enroll] 新收编 {len(blocks)} 个域名进 watchlist")
-    return len(blocks)
+    try:
+        added = append_provider_entries(ctx.cfg.providers_file, entries)
+    except ProviderStoreError as e:
+        print(f"[auto-enroll] 写入失败，跳过：{e}")
+        return 0
+    if added:
+        print(f"[auto-enroll] 新收编 {len(added)} 个域名进 watchlist")
+    return len(added)
+
+
+COOLDOWN_FAILS = 3
+COOLDOWN_DAYS = 7
+
+
+def _cooling_down(snapshot, url: str, now: datetime) -> bool:
+    """连续失败 >=3 次且 7 天内没有成功 → 熔断跳过本轮。"""
+    if not snapshot or int(snapshot.get("fail_count") or 0) < COOLDOWN_FAILS:
+        return False
+    try:
+        last = parse_iso(snapshot["last_checked_at"])
+    except (KeyError, ValueError, TypeError):
+        return False
+    if now - last >= timedelta(days=COOLDOWN_DAYS):
+        return False
+    print(f"[watchlist] 熔断跳过 {url}（连续失败 {snapshot['fail_count']} 次）")
+    return True
+
+
+def _resolve_tier(provider: dict, snapshot: dict | None) -> int:
+    """厂商分层：显式 tier 优先；有促销信号的每日；自动收编且从未建档的每月。"""
+    explicit = provider.get("tier")
+    if explicit in (1, 2, 3):
+        return int(explicit)
+    if snapshot and snapshot.get("promo_keywords"):
+        return 1
+    notes = (provider.get("notes") or "").lower()
+    if notes.startswith("auto-enrolled") and snapshot is None:
+        return 3
+    return 2
+
+
+def _slot(url: str, days: int) -> int:
+    """稳定分片：同一 URL 永远落在同一个 0..days-1 槽位。"""
+    return int(hashlib.sha1(url.encode("utf-8")).hexdigest(), 16) % max(1, days)
+
+
+def _is_due(snapshot, tier: int, url: str, now: datetime, intervals: dict[int, int]) -> bool:
+    """是否到本轮检查时间。
+
+    - 有 next_check_at：严格按时间；
+    - 无 schedule（旧库/首次）且有促销信号：立即复查；
+    - 其余：按 URL hash 错峰到周/月的某一天，避免首轮 400 页全量。
+    """
+    if snapshot and snapshot.get("next_check_at"):
+        try:
+            return parse_iso(snapshot["next_check_at"]) <= now
+        except (TypeError, ValueError):
+            return True
+    days = max(1, int(intervals[tier]))
+    if days <= 1:
+        return True
+    if snapshot and snapshot.get("promo_keywords"):
+        return True
+    return now.timetuple().tm_yday % days == _slot(url, days)
+
+
+def _next_check_at(
+    now: datetime, tier: int, url: str, intervals: dict[int, int], *, ok: bool
+) -> str:
+    days = max(1, int(intervals[tier])) if ok else 1
+    # 每日层只做 0..2h 抖动；周/月层分散到 0..23h，避免同一时刻洪峰
+    jitter_hours = _slot(url, 24) if days > 1 else _slot(url, 3)
+    return iso(now + timedelta(days=days, hours=jitter_hours))
 
 
 def _best_promo_phrase(hits: list[str]) -> str:
@@ -185,6 +211,19 @@ def _best_promo_phrase(hits: list[str]) -> str:
     return max(pool, key=len)
 
 
+def _has_strong_signal(hits: list[str]) -> bool:
+    """首次建档是否值得直接入库。
+
+    只认强信号（金额/credits/额度/注册/欢迎/赠送），不认 free tier / free trial
+    这类宽泛词，避免首轮把 400 个页面的“免费层”全部倒进库。
+    """
+    text = " ".join(hits).lower()
+    return any(
+        token in text
+        for token in ("$", "credit", "额度", "注册", "welcome", "signup", "bonus", "赠送", "免费领取")
+    )
+
+
 @register_source("watchlist")
 class WatchlistSource:
 
@@ -194,16 +233,65 @@ class WatchlistSource:
             return []
         patterns = ctx.cfg.watchlist_keywords or DEFAULT_WATCH_KEYWORDS
         regexes = [re.compile(p, re.IGNORECASE) for p in patterns]
-        max_workers = max(1, int(ctx.cfg.source("watchlist").get("max_workers", 8)))
+        conf = ctx.cfg.source("watchlist")
+        max_workers = max(1, int(conf.get("max_workers", 8)))
+        max_pages = max(1, int(conf.get("max_pages", 400)))
+        page_timeout = float(ctx.cfg.general.page_timeout)
+        intervals = {
+            1: max(1, int(conf.get("tier1_interval_days", 1))),
+            2: max(1, int(conf.get("tier2_interval_days", 7))),
+            3: max(1, int(conf.get("tier3_interval_days", 30))),
+        }
 
-        tasks = [(p, u) for p in providers if p["enabled"] for u in p["urls"]]
+        # 分层调度：只抓「到期」的页面。首轮/旧库按 URL hash 错峰到周/月，
+        # 有促销信号的页面优先立即复查，因此不再一次性打满 400 页。
+        now = utcnow()
+        candidates = []
+        cooling = 0
+        for p in providers:
+            if not p["enabled"]:
+                continue
+            for u in p["urls"]:
+                snap = ctx.state.get_snapshot(u["url"])
+                tier = _resolve_tier(p, snap)
+                if _cooling_down(snap, u["url"], now):
+                    cooling += 1
+                    continue
+                if not _is_due(snap, tier, u["url"], now, intervals):
+                    continue
+                candidates.append((p, u, tier, snap))
+
+        candidates.sort(key=lambda t: (
+            t[2],
+            0 if (t[3] or {}).get("promo_keywords") else 1,
+            t[0]["name"],
+            t[1]["label"],
+        ))
+        if len(candidates) > max_pages:
+            print(f"[watchlist] 到期页面 {len(candidates)} 超过上限 {max_pages}，本轮截断")
+            candidates = candidates[:max_pages]
+
+        if candidates:
+            t1 = sum(1 for c in candidates if c[2] == 1)
+            t2 = sum(1 for c in candidates if c[2] == 2)
+            t3 = len(candidates) - t1 - t2
+            print(
+                f"[watchlist] 到期 {len(candidates)} 页（T1 {t1} / T2 {t2} / T3 {t3}），"
+                f"熔断跳过 {cooling} 页"
+            )
+
+        tasks = [(p, u, tier) for p, u, tier, _ in candidates]
 
         def _fetch(task):
-            p, u = task
+            p, u, tier = task
             try:
-                return (p, u, get_text(ctx.http, u["url"]), None)
+                return (
+                    p, u, tier,
+                    get_text(ctx.http, u["url"], timeout=page_timeout, retries=1),
+                    None,
+                )
             except Exception as e:  # noqa: BLE001 - 页级失败不拖垮整个源
-                return (p, u, None, e)
+                return (p, u, tier, None, e)
 
         with ThreadPoolExecutor(max_workers=max_workers) as pool:
             fetched = list(pool.map(_fetch, tasks))
@@ -212,9 +300,20 @@ class WatchlistSource:
         attempts = len(fetched)
         successes = 0
         last_err: Exception | None = None
-        for p, u, text, err in fetched:
+        for p, u, tier, text, err in fetched:
             if err is not None:
                 last_err = err
+                failed_at = utcnow()
+                ctx.state.record_snapshot_failure(
+                    url=u["url"], provider=p["name"], label=u["label"],
+                    error=f"{type(err).__name__}: {err}", now=failed_at,
+                )
+                ctx.state.schedule_snapshot(
+                    url=u["url"], tier=tier,
+                    next_check_at=_next_check_at(
+                        failed_at, tier, u["url"], intervals, ok=False
+                    ),
+                )
                 print(f"[watchlist] {p['name']}/{u['label']} 抓取失败: {err}")
                 continue
             successes += 1
@@ -234,6 +333,25 @@ class WatchlistSource:
                 ctx.state.record_history(
                     url=u["url"], checked_at=iso(now), promo_keywords=";;".join(hits), changed=False,
                 )
+                ctx.state.schedule_snapshot(
+                    url=u["url"], tier=tier,
+                    next_check_at=_next_check_at(now, tier, u["url"], intervals, ok=True),
+                )
+                # 首次建档就命中强促销信号：直接产生事件，而不是等下次变化。
+                # 没有这一步，Featherless 这类“首页一直写着 $50 credits”的页面
+                # 永远不会入库（old is None 分支只建基线）。
+                if tier <= 2 and _has_strong_signal(hits):
+                    items.append(
+                        RawItem(
+                            source="watchlist",
+                            title=f"{p['name']} — {_best_promo_phrase(hits)}",
+                            url=u["url"],
+                            provider=p["name"],
+                            evidence="[首次建档] " + _make_evidence(text, visible, regexes),
+                            key_override=f"watchlist:{p['name']}:{u['label']}",
+                            force_keep=True,
+                        )
+                    )
                 continue
 
             changed = old["content_hash"] != digest
@@ -248,6 +366,10 @@ class WatchlistSource:
 
             old_hits = {k for k in old["promo_keywords"].split(";;") if k}
             event = decide_event(old_hits, set(hits))
+            ctx.state.schedule_snapshot(
+                url=u["url"], tier=tier,
+                next_check_at=_next_check_at(now, tier, u["url"], intervals, ok=True),
+            )
             if event == "none":
                 continue
 
@@ -272,6 +394,12 @@ class WatchlistSource:
                 ctx.state.mark_expired(make_key(_RI(source="watchlist", title="", key_override=key)))
                 print(f"[watchlist] {p['name']}/{u['label']} 促销文案消失，已归档对应 deal")
 
-        if attempts and successes == 0:
-            raise RuntimeError(f"watchlist: all {attempts} pages failed (last: {last_err})")
+        # 单页失败不再判整源死亡（360 页里少数站点超时是常态）；
+        # 成功率低于 50% 才视为源级故障，交给 runner 的故障隔离与告警。
+        if attempts and successes / attempts < 0.5:
+            raise RuntimeError(
+                f"watchlist: only {successes}/{attempts} pages succeeded (last: {last_err})"
+            )
+        if attempts == 0:
+            print("[watchlist] 本轮没有到期页面（或全部处于熔断期）")
         return items

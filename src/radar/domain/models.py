@@ -93,8 +93,17 @@ class RunReport:
     results: list[SourceResult] = field(default_factory=list)
     new_deals: list[Deal] = field(default_factory=list)
     expired_count: int = 0
+    # 源 → 最近连续失败次数（run 结束时从 source_runs 计算）
+    failing_sources: dict[str, int] = field(default_factory=dict)
 
     @property
     def ok(self) -> bool:
-        """至少一个源成功即视为本次运行成功。"""
+        """至少一个源成功即视为本次运行成功（CLI 退出码语义）。"""
         return any(r.status == "ok" for r in self.results)
+
+    @property
+    def success_rate(self) -> float:
+        """本轮成功源占比，用于过期门控与健康告警。"""
+        if not self.results:
+            return 0.0
+        return sum(1 for r in self.results if r.status == "ok") / len(self.results)

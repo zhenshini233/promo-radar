@@ -2693,3 +2693,204 @@ urls = [
     { label = "home", url = "https://disg.gov.sg" },
 ]
 notes = "auto-enrolled from aicredits 2026-11-01"
+
+[[provider]]
+name = "Black Forest Labs"
+tier = 1
+urls = [
+    { label = "home", url = "https://blackforestlabs.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Cirrascale"
+tier = 1
+urls = [
+    { label = "home", url = "https://www.cirrascale.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Decart"
+tier = 2
+urls = [
+    { label = "home", url = "https://decart.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "Featherless"
+tier = 1
+urls = [
+    { label = "home", url = "https://featherless.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Fish Audio"
+tier = 2
+urls = [
+    { label = "home", url = "https://fish.audio/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "HeyGen"
+tier = 2
+urls = [
+    { label = "home", url = "https://www.heygen.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "Inflection"
+tier = 2
+urls = [
+    { label = "home", url = "https://inflection.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "Krea"
+tier = 2
+urls = [
+    { label = "home", url = "https://www.krea.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "Mancer"
+tier = 1
+urls = [
+    { label = "home", url = "https://mancer.tech/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Phala"
+tier = 2
+urls = [
+    { label = "home", url = "https://phala.network/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "PrismML"
+tier = 2
+urls = [
+    { label = "home", url = "https://prismml.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "Respan"
+tier = 2
+urls = [
+    { label = "home", url = "https://respan.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "Runway"
+tier = 2
+urls = [
+    { label = "home", url = "https://runwayml.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "StreamLake"
+tier = 1
+urls = [
+    { label = "home", url = "https://www.streamlake.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Tenstorrent"
+tier = 2
+urls = [
+    { label = "home", url = "https://tenstorrent.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "AtlasCloud"
+tier = 1
+urls = [
+    { label = "home", url = "https://www.atlascloud.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Infermatic"
+tier = 1
+urls = [
+    { label = "home", url = "https://infermatic.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Ionstream"
+tier = 1
+urls = [
+    { label = "home", url = "https://ionstream.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "KT"
+tier = 3
+urls = [
+    { label = "home", url = "https://www.kt.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 3)"
+
+[[provider]]
+name = "Makora"
+tier = 2
+urls = [
+    { label = "home", url = "https://www.makora.com/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "PrimaLabs"
+tier = 1
+urls = [
+    { label = "home", url = "https://www.primalabs.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 1)"
+
+[[provider]]
+name = "Tensormesh"
+tier = 2
+urls = [
+    { label = "home", url = "https://tensormesh.ai/" },
+]
+notes = "from universe backfill 2026-11 (tier 2)"
+
+[[provider]]
+name = "Lightricks"
+tier = 2
+urls = [
+    { label = "home", url = "https://www.lightricks.com/" },
+]
+notes = "from HF outer scan 2026-11 (tier 2)"
+
+[[provider]]
+name = "Qdrant"
+tier = 2
+urls = [
+    { label = "home", url = "https://qdrant.tech/" },
+]
+notes = "from HF outer scan 2026-11 (tier 2)"
+
+[[provider]]
+name = "Red Hat AI"
+tier = 3
+urls = [
+    { label = "home", url = "https://www.redhat.com/en" },
+]
+notes = "from HF outer scan 2026-11 (tier 3)"
+

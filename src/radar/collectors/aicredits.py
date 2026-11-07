@@ -68,6 +68,8 @@ def parse_llms_full(text: str) -> list[RawItem]:
 
 @register_source("aicredits")
 class AICreditsSource:
+    # 全量快照：每轮返回完整目录，上游消失的条目应由 runner 归档
+    full_snapshot = True
 
     def fetch(self, ctx) -> list[RawItem]:
         url = ctx.cfg.source("aicredits").get("url", DEFAULT_URL)

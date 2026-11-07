@@ -12,3 +12,4 @@ data/
 
 # 本地配置（代理/密钥），自动优先于 config.toml
 config.local.toml
+providers.toml.lock

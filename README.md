@@ -42,14 +42,14 @@ src/radar/
 
 ```bash
 pip install -e .
-radar run            # 抓取全部源 + 生成 data/site/（index.html + data.json + monitors/ + atom.xml）
+radar run            # 抓取全部源 + 生成 data/site/（index.html + data.json + atom.xml）
 radar report         # 仅用已有数据重建站点
 radar add-provider <名> --url <页>   # 手动收编服务商
 ```
 
 大陆网络抓 linux.do / raw.githubusercontent 需配代理（config.toml `[proxy]`；本机已配 v2rayN 10808）。GitHub Actions 海外直连。
 
-打开 `data/site/index.html` 即是 dashboard：**双击本地可开**（数据内联，无 fetch 依赖），GitHub Pages 亦可托管。
+打开 `data/site/index.html` 即是 dashboard：**双击本地可开**。首屏内联只带 60 条活跃活动与 80 个监控页（兜底可交互），全量数据在同目录 `data.js`（外部脚本，file:// 不受 CORS 限制），`data.json` 供外部消费。index 体积稳定在 200KB 以内。
 
 ## Dashboard 功能
 
@@ -58,6 +58,23 @@ radar add-provider <名> --url <页>   # 手动收编服务商
 - **Watchlist 信号带**：每监控页 30 天逐日信号（金=有促销信号），有信号的排前面
 - **KPI 条**：活跃数 / 本周新增 / 有信号页数 / 历史入库
 - **亮暗双主题**：跟随系统 + 手动切换（记忆偏好）；无 JS 时 SSR 内容完整可读
+
+## 数据新鲜度与健康
+
+- 站点顶部横幅以**最近一次全量健康轮次**为基准：该轮至少 `full_run_min_sources`（默认 5）个源、且成功率 ≥80%；>6 小时黄色、>24 小时红色；从未成功则直接提示"尚未成功抓取"。`--only` 单源刷新不会把横幅刷绿，避免局部成功掩盖全源故障。
+- `source_runs` 记录每源每轮状态；CLI 会打印「连续失败的源」，站点"数据源"页可看成功率与失败原因。
+- watchlist 单页连续失败 3 次后熔断 7 天；**成功率 < 50% 才判源级故障**，个别死链不再拖垮整源。
+- 本轮源成功率 < 80% 时**跳过过期归档**，避免故障期把仍有效的活动批量标记过期。
+- `providers.toml` 的自动收编/手动添加统一走跨进程文件锁 + 原子替换，重复执行不会产生重复条目或半截文件。
+- 全量快照型源（aicredits）上游消失的条目会自动归档；解析出 0 条或条目数骤降 >50% 时拒绝归档，防止上游格式变更误伤。
+
+## 代理与并行
+
+- **代理自动探测**：`config.local.toml` 里配了代理但本机端口没开时，启动阶段会做一次 TCP 探测（默认 0.5s），不通就**自动直连**，不再让每个请求卡在超时上。探测结果会在 CLI 打印一次。
+- **代理设置面板**：`radar serve` 模式下，左侧栏「代理」可填写地址并保存（写入 `config.local.toml`，保留其余配置），保存后下一轮刷新自动生效；静态 Pages 模式不显示该面板。
+- **源级并行**：默认最多 5 个源同时抓取（`[general] max_source_workers`），每个源使用独立 HTTP client 与独立 SQLite 连接；打分/去重/落库仍在主线程串行，保证结果确定性。
+- **硬性总超时**：httpx 的 read timeout 是「每次 socket read」，慢站单请求可能拖到 30s+；现在每个请求额外有总 deadline（默认取 `http_timeout`），超时立即失败且**不再重试**，避免单源拖住整轮。
+- **watchlist 分层调度**：T1 每日（有促销信号或 `providers.toml` 显式 `tier = 1`）、T2 每周、T3 每月；首次/旧库按 URL hash 错峰到周/月的某一天，只抓到期的页面。实测首轮从 360 页降到 **91 页 / 40 秒**，次轮 44 页 / 22 秒。间隔可在 `[sources.watchlist] tier1_interval_days / tier2_interval_days / tier3_interval_days` 调整。
 
 ## Telegram 推送（可选）
 
@@ -75,11 +92,13 @@ gh secret set RADAR_TG_TOKEN     # 可选：Telegram 推送
 gh secret set RADAR_TG_CHAT_ID
 ```
 
-完成。workflow 自动：每天一轮（海外网络直连 linux.do）→ 数据与
-providers.toml commit 回仓库（持久化 + 去重历史 + 保活）→ dashboard 发布到
-gh-pages 分支。到仓库 **Settings → Pages → Branch 选 gh-pages** 开启，
-之后访问 `https://<你>.github.io/promo-radar/` 随时看盘。
-用量：每轮约 4 分钟 × 4 轮/天 ≈ 500 分钟/月，免费额度（2000/月）四倍冗余。
+完成。workflow 自动：每天一轮（海外网络直连 linux.do）→ `providers.toml`
+commit 回主分支（纯文本、可 review）→ SQLite 快照强制推送到独立 `data`
+分支（只保留最新，主分支不再膨胀）→ dashboard 发布到 `gh-pages` 分支。
+站点产物与每页明细 JSON 不再提交主分支。到仓库
+**Settings → Pages → Branch 选 gh-pages** 开启，之后访问
+`https://<你>.github.io/promo-radar/` 随时看盘。
+用量：每天 1 轮 × 3–8 分钟 ≈ 90–250 分钟/月，免费额度（2000/月）充裕。
 
 私有仓库免费版没有 Pages：要么"本地双击 data/site/index.html + Telegram 推送"，
 要么用 Cloudflare Pages（免费）连私有仓库、发布目录填 `data/site`。
@@ -119,11 +138,12 @@ dashboard 用 `caddy file-server --listen :80 --root data/site` 一行起。
 
 ## 设计原则
 
-源故障隔离 · 幂等（重复运行 0 新增）· 证据留存（每条 deal 带原文摘录与时间）· 只归档不删除 · 离线可测（真实响应 fixtures）· 配置驱动 · 零 npm
+源故障隔离 · 失败可见（新鲜度横幅 + 连续失败计数）· 幂等（重复运行 0 新增）· 证据留存（每条 deal 带原文摘录与时间）· 只归档不删除 · 离线可测（真实响应 fixtures）· 配置驱动 · 零 npm
 
 ## 已知边界
 
 - linux.do 大陆直连被 SNI 阻断，本地走代理（当前节点出口被 CF 挑战，换节点或交 Actions）
+- Artificial Analysis 旧端点 `/api/v2/data/llms/models` 已返回 410，需按官方文档更新 URL 或暂时关闭 `aa_providers`
 - Reddit 公开 JSON 封锁（v2 OAuth，桩已留）
 - JS 渲染站（systalyze 等 Framer 站）探测不到 → 人工月查
 - 多账号批量薅羊毛违反 ToS，本工具只收集公开信息

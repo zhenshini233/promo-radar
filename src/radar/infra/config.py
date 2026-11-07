@@ -19,14 +19,28 @@ class GeneralConfig:
     data_dir: str = "data"
     expire_days: int = 45
     promo_threshold: float = 4.0
+    # API/目录类请求超时（秒）；万级 JSON 与 RSS 需要留余量
+    http_timeout: float = 15.0
+    # 单页正文探测超时（秒）；首页不需要等 30 秒
+    page_timeout: float = 10.0
+    # 源成功率低于该值时，跳过本轮过期归档（防止故障期批量误伤）
+    expire_min_success_rate: float = 0.8
+    # 源级并行抓取的线程数（只并行网络 fetch，落库仍串行）
+    max_source_workers: int = 5
+    # 判定「全量轮次」的最少源数：低于该值的 --only 局部刷新不计入数据新鲜度，
+    # 否则单源成功会把全源故障掩盖成绿色横幅
+    full_run_min_sources: int = 5
 
 
 @dataclass
 class RadarConfig:
     root: Path
+    config_path: Path | None = None
     general: GeneralConfig = field(default_factory=GeneralConfig)
     proxy_url: str = ""
     proxy_bypass: list[str] = field(default_factory=list)
+    proxy_auto_detect: bool = True
+    proxy_detect_timeout: float = 0.5
     telegram_enabled: bool = False
     telegram_token: str = ""
     telegram_chat_id: str = ""
@@ -85,6 +99,11 @@ def load_config(path: str | Path | None = None) -> RadarConfig:
         data_dir=str(general_raw.get("data_dir", "data")),
         expire_days=int(general_raw.get("expire_days", 45)),
         promo_threshold=float(general_raw.get("promo_threshold", 4.0)),
+        http_timeout=float(general_raw.get("http_timeout", 15.0)),
+        page_timeout=float(general_raw.get("page_timeout", 10.0)),
+        expire_min_success_rate=float(general_raw.get("expire_min_success_rate", 0.8)),
+        max_source_workers=int(general_raw.get("max_source_workers", 5)),
+        full_run_min_sources=int(general_raw.get("full_run_min_sources", 5)),
     )
 
     proxy_raw = raw.get("proxy", {})
@@ -100,9 +119,12 @@ def load_config(path: str | Path | None = None) -> RadarConfig:
 
     return RadarConfig(
         root=path.resolve().parent,
+        config_path=path.resolve(),
         general=general,
         proxy_url=proxy_url,
         proxy_bypass=proxy_bypass,
+        proxy_auto_detect=bool(proxy_raw.get("auto_detect", True)),
+        proxy_detect_timeout=float(proxy_raw.get("detect_timeout", 0.5)),
         telegram_enabled=telegram_enabled,
         telegram_token=telegram_token,
         telegram_chat_id=telegram_chat_id,
@@ -119,6 +141,8 @@ def load_providers(path: Path) -> list[dict]:
     raw = tomllib.loads(path.read_text(encoding="utf-8"))
     providers = []
     for p in raw.get("provider", []):
+        raw_tier = p.get("tier")
+        tier = int(raw_tier) if isinstance(raw_tier, int) and raw_tier in (1, 2, 3) else None
         providers.append(
             {
                 "name": str(p.get("name", "")).strip(),
@@ -129,6 +153,7 @@ def load_providers(path: Path) -> list[dict]:
                 ],
                 "enabled": bool(p.get("enabled", True)),
                 "notes": str(p.get("notes", "")),
+                "tier": tier,
             }
         )
     return [p for p in providers if p["name"] and p["urls"]]

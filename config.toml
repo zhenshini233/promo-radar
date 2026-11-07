@@ -8,13 +8,26 @@ data_dir = "data"
 expire_days = 45
 # 打分阈值：总分 >= 阈值视为促销条目入库；低于则丢弃
 promo_threshold = 4.0
+# 请求超时（秒）：目录/API 与单页探测分开，避免个别慢站拖垮整轮
+http_timeout = 15.0
+page_timeout = 10.0
+# 源成功率低于该值时跳过本轮过期归档（防止抓取故障期批量误伤）
+expire_min_success_rate = 0.8
+# 源级并行抓取线程数（只并行网络 fetch，落库仍串行）
+max_source_workers = 5
+# 判定「全量轮次」的最少源数：--only 局部刷新低于该值时不更新数据新鲜度横幅
+full_run_min_sources = 5
 
 [proxy]
-# 本地代理，例 "http://127.0.0.1:7890"（注意：linux.do 对数据中心 IP 风控，Actions 上同样 403）
+# 本地代理，例 "http://127.0.0.1:7890"
 # 留空 = 使用环境变量 HTTP_PROXY/HTTPS_PROXY；GitHub Actions 上无需代理
 # 环境变量 RADAR_PROXY 优先级最高
 # 本地开发：复制本文件为 config.local.toml（gitignore），填入代理与 key，代码自动优先读取
 url = ""
+# 配置了代理但本机端口没开时，自动降级为直连（避免每个请求卡在超时上）
+auto_detect = true
+# 端口探测超时（秒）；探测失败只影响是否使用代理，不影响抓取
+detect_timeout = 0.5
 # 这些域名绕过代理直连（对代理节点 TLS 不稳的站点）
 bypass = ["artificialanalysis.ai"]
 
@@ -46,6 +59,12 @@ lookback_hours = 36
 enabled = true
 # 并发抓取线程数（种子批 25+ 服务商，并发 8 约 40 秒）
 max_workers = 8
+# 单轮最多抓取的页面数（超出按 providers.toml 顺序截断，防止 CI 超时）
+max_pages = 400
+# 分层调度间隔（天）：T1 每日 / T2 每周 / T3 每月；到期页面才会被抓取
+tier1_interval_days = 1
+tier2_interval_days = 7
+tier3_interval_days = 30
 # aicredits 条目的 Source Link 新域名自动收编进 providers.toml
 auto_enroll = true
 # 促销关键词命中才算事件（正则，大小写不敏感）；留空用内置默认

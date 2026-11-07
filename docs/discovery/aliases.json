@@ -1,0 +1,352 @@
+{
+  "version": 2,
+  "note": "aliases: 来源写法(norm) -> canonical slug；domains: canonical slug -> 注册域；names: 显示名；ignored: 非厂商/占位/匿名",
+  "aliases": {
+    "metallama": "meta",
+    "metaai": "meta",
+    "moonshotai": "moonshot",
+    "kimiforcoding": "moonshot",
+    "kimiforcodingkimicom": "moonshot",
+    "stepfunglobal": "stepfun",
+    "kimi": "moonshot",
+    "stepfunstepplan": "stepfun",
+    "stepfunstepplanglobal": "stepfun",
+    "voyageaibymongodb": "voyageai",
+    "voyage": "voyageai",
+    "googleaistudio": "google",
+    "claudeplatformonaws": "anthropic",
+    "amazonnova": "aws",
+    "amazon": "aws",
+    "bedrock": "aws",
+    "vertexai": "google",
+    "microsoft": "azure",
+    "azureai": "azure",
+    "azureaifoundry": "azure",
+    "tencent": "tencentcloud",
+    "baidu": "baidu",
+    "volcengine": "volcengine",
+    "wandb": "wandb",
+    "elevenlabs": "elevenlabs",
+    "runway": "runway",
+    "heygen": "heygen",
+    "fishaudio": "fishaudio",
+    "rekaai": "reka",
+    "arceeai": "arcee",
+    "nousresearch": "nous",
+    "friendliai": "friendli",
+    "lambdaai": "lambda",
+    "anyscale": "anyscale",
+    "ovhcloud": "ovhcloud",
+    "snowflake": "snowflake",
+    "cloudflare": "cloudflare",
+    "ollama": "ollama",
+    "phala": "phala",
+    "venice": "venice",
+    "nearai": "near",
+    "tenstorrent": "tenstorrent",
+    "cirrascale": "cirrascale",
+    "featherless": "featherless",
+    "inflection": "inflection",
+    "blackforestlabs": "blackforestlabs",
+    "krea": "krea",
+    "decart": "decart",
+    "respan": "respan",
+    "sourceful": "sourceful",
+    "mancer": "mancer",
+    "mancer2": "mancer",
+    "particleai": "particle",
+    "prismml": "prismml",
+    "streamlake": "streamlake",
+    "hostingerrouter": "hostinger",
+    "akashml": "akash",
+    "zerogpu": "huggingface",
+    "zai-org": "zai",
+    "facebook": "meta",
+    "facebookai": "meta",
+    "ibmgranite": "ibm"
+  },
+  "names": {
+    "ppio": "PPIO",
+    "a4f": "A4F",
+    "llm7": "LLM7",
+    "allenai": "Allen AI",
+    "deepcogito": "DeepCogito",
+    "kilocode": "Kilo Code",
+    "multiverse": "Multiverse Computing",
+    "opentelekomcloud": "OpenTelekomCloud",
+    "vercel": "Vercel AI Gateway",
+    "openrouter": "OpenRouter",
+    "huggingface": "Hugging Face",
+    "river": "River",
+    "systalyze": "Systalyze",
+    "targon": "Targon",
+    "gonka": "Gonka Broker",
+    "infermatic": "Infermatic",
+    "ionstream": "Ionstream",
+    "makora": "Makora",
+    "primalabs": "PrimaLabs",
+    "tensormesh": "Tensormesh",
+    "atlascloud": "AtlasCloud",
+    "seed": "ByteDance Seed",
+    "kt": "KT",
+    "qdrant": "Qdrant",
+    "lightricks": "Lightricks",
+    "redhat": "Red Hat AI",
+    "zai": "Z.AI",
+    "ibm": "IBM"
+  },
+  "domains": {
+    "meta": [
+      "meta.ai",
+      "llama.com"
+    ],
+    "moonshot": [
+      "moonshot.ai",
+      "kimi.com",
+      "kimi.ai"
+    ],
+    "stepfun": [
+      "stepfun.ai",
+      "stepfun.com"
+    ],
+    "voyageai": [
+      "voyageai.com"
+    ],
+    "google": [
+      "google.com",
+      "ai.google.dev",
+      "cloud.google.com"
+    ],
+    "anthropic": [
+      "anthropic.com"
+    ],
+    "aws": [
+      "aws.amazon.com",
+      "amazon.com"
+    ],
+    "azure": [
+      "azure.microsoft.com",
+      "ai.azure.com"
+    ],
+    "tencentcloud": [
+      "cloud.tencent.com",
+      "tencent.com"
+    ],
+    "baidu": [
+      "cloud.baidu.com",
+      "baidu.com"
+    ],
+    "volcengine": [
+      "volcengine.com"
+    ],
+    "wandb": [
+      "wandb.ai"
+    ],
+    "elevenlabs": [
+      "elevenlabs.io"
+    ],
+    "runway": [
+      "runwayml.com"
+    ],
+    "heygen": [
+      "heygen.com"
+    ],
+    "fishaudio": [
+      "fish.audio"
+    ],
+    "reka": [
+      "reka.ai"
+    ],
+    "arcee": [
+      "arcee.ai"
+    ],
+    "nous": [
+      "nousresearch.com"
+    ],
+    "friendli": [
+      "friendli.ai"
+    ],
+    "lambda": [
+      "lambda.ai"
+    ],
+    "anyscale": [
+      "anyscale.com"
+    ],
+    "ovhcloud": [
+      "ovhcloud.com"
+    ],
+    "snowflake": [
+      "snowflake.com"
+    ],
+    "cloudflare": [
+      "cloudflare.com"
+    ],
+    "ollama": [
+      "ollama.com"
+    ],
+    "phala": [
+      "phala.network"
+    ],
+    "venice": [
+      "venice.ai"
+    ],
+    "near": [
+      "near.ai"
+    ],
+    "tenstorrent": [
+      "tenstorrent.com"
+    ],
+    "cirrascale": [
+      "cirrascale.com"
+    ],
+    "featherless": [
+      "featherless.ai"
+    ],
+    "inflection": [
+      "inflection.ai"
+    ],
+    "blackforestlabs": [
+      "blackforestlabs.ai"
+    ],
+    "krea": [
+      "krea.ai"
+    ],
+    "decart": [
+      "decart.ai"
+    ],
+    "respan": [
+      "respan.ai"
+    ],
+    "sourceful": [
+      "sourceful.com"
+    ],
+    "mancer": [
+      "mancer.tech"
+    ],
+    "particle": [
+      "particle.ai"
+    ],
+    "prismml": [
+      "prismml.com"
+    ],
+    "streamlake": [
+      "streamlake.com"
+    ],
+    "hostinger": [
+      "hostinger.com"
+    ],
+    "akash": [
+      "akash.network"
+    ],
+    "huggingface": [
+      "huggingface.co"
+    ],
+    "river": [
+      "river.ai"
+    ],
+    "systalyze": [
+      "systalyze.com"
+    ],
+    "targon": [
+      "targon.com"
+    ],
+    "ppio": [
+      "ppinfra.com"
+    ],
+    "a4f": [
+      "a4f.co"
+    ],
+    "gonka": [
+      "gonkabroker.com"
+    ],
+    "llm7": [
+      "llm7.io"
+    ],
+    "allenai": [
+      "allenai.org"
+    ],
+    "deepcogito": [
+      "deepcogito.com"
+    ],
+    "kilocode": [
+      "kilocode.ai"
+    ],
+    "multiverse": [
+      "multiversecomputing.com"
+    ],
+    "opentelekomcloud": [
+      "open-telekom-cloud.com"
+    ],
+    "vercel": [
+      "vercel.com"
+    ],
+    "openrouter": [
+      "openrouter.ai"
+    ],
+    "infermatic": [
+      "infermatic.ai"
+    ],
+    "ionstream": [
+      "ionstream.ai"
+    ],
+    "makora": [
+      "makora.com"
+    ],
+    "primalabs": [
+      "primalabs.ai"
+    ],
+    "tensormesh": [
+      "tensormesh.ai"
+    ],
+    "atlascloud": [
+      "atlascloud.ai"
+    ],
+    "seed": [
+      "seed.bytedance.com"
+    ],
+    "kt": [
+      "kt.com"
+    ],
+    "qdrant": [
+      "qdrant.tech"
+    ],
+    "lightricks": [
+      "lightricks.com"
+    ],
+    "redhat": [
+      "redhat.com"
+    ],
+    "zai": [
+      "z.ai"
+    ],
+    "ibm": [
+      "ibm.com"
+    ]
+  },
+  "ignored": {
+    "fakeprovider": "测试占位",
+    "stealth": "匿名/占位，无实体",
+    "unbiased": "匿名/占位，无实体",
+    "abliteration": "模型/技术名，不是厂商",
+    "anthraciteorg": "模型作者/社区组织，不提供托管 API",
+    "cognitivecomputations": "模型微调社区，不提供托管 API",
+    "gryphe": "模型作者，不提供托管 API",
+    "sao10k": "模型作者，不提供托管 API",
+    "thedrummer": "模型作者，不提供托管 API",
+    "undi95": "模型作者，不提供托管 API",
+    "inclusionai": "模型组织，未见独立自助 API",
+    "darkbloom": "模型作者/研究组织，未见独立自助 API",
+    "openinference": "OpenTelemetry 风格规范，不是厂商",
+    "servicenow": "企业软件，非 AI API",
+    "tii": "研究机构，非商业 API",
+    "openbmb": "开源模型组织，未见独立托管 API",
+    "eurohpcafifactories": "政府/学术资助联盟，非商业 API",
+    "paretoalpha": "同名公司，非 AI API",
+    "sailresearch": "域名待售，非厂商",
+    "perceptron": "域名待售，非厂商",
+    "strandsdecider": "域名待售，非厂商",
+    "sourceful": "视觉 AI 设计工具，非模型 API/算力",
+    "hostinger": "主机商 AI 建站，非模型 API",
+    "salesforce": "企业 CRM，非模型 API/算力"
+  }
+}

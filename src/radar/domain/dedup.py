@@ -52,7 +52,8 @@ def title_similarity(a: str, b: str) -> float:
 
 def make_key(item: RawItem) -> str:
     """稳定 key：key_override > 规范化 URL > source+标题 hash。"""
-    basis = item.key_override or canonical_url(item.url) if item.url else None
+    # 注意括号：无 URL 时也必须保留 key_override（运算符优先级曾是 bug）
+    basis = item.key_override or (canonical_url(item.url) if item.url else None)
     if not basis:
         basis = f"{item.source}:{norm_title(item.title)}"
     return hashlib.sha1(basis.encode("utf-8")).hexdigest()

@@ -16,17 +16,15 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 
-from ..collectors.watchlist import _AUTO_BLOCKLIST, _registrable
+from ..collectors.watchlist import _registrable
 from ..domain.brands import BRANDS
+from ..domain.enroll_rules import enroll_allowed
 from ..domain.coverage import _keys_match, build_registries, domain_norm, norm
 from ..infra.config import RadarConfig, load_providers
+from ..infra.providers_store import ProviderStoreError, append_provider_entries
 from ..storage.repository import SqliteRepository
 
 PENDING_STATE_KEY = "enroll:pending"
-
-
-def _escape(s: str) -> str:
-    return (s or "").replace("\\", "\\\\").replace('"', "'")
 
 
 def compute_enroll_plan(
@@ -104,27 +102,36 @@ def auto_enroll_blindspots(cfg: RadarConfig, repo: SqliteRepository) -> tuple[in
     modelsdev = json.loads(md_raw) if md_raw else {}
     entries, pending = compute_enroll_plan(registries, tracked, modelsdev, dict(BRANDS))
 
-    known = {p["name"].lower() for p in load_providers(cfg.providers_file)}
-    for u in (u for p in load_providers(cfg.providers_file) for u in p["urls"]):
-        d = _registrable(u["url"])
-        if d:
-            known.add(d)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
-    blocks: list[str] = []
+    payload: list[dict] = []
+    skipped: list[str] = []
     for e in entries:
         dom = _registrable(e["url"])
-        if dom in known or dom in _AUTO_BLOCKLIST or e["name"].lower() in known:
+        if not dom:
             continue
-        known.add(dom)
-        blocks.append(
-            f'\n[[provider]]\nname = "{_escape(e["name"])}"\n'
-            f'urls = [\n    {{ label = "{e["label"]}", url = "{_escape(e["url"])}" }},\n]\n'
-            f'notes = "auto-enrolled from {e["source"]} {today}"\n'
+        # 相关性闸门：有 Provider 实体时按 category/relevance 判定，
+        # 无实体时退回名称启发式。存量监控清单不受影响，只拦截新收编。
+        allowed, reason = enroll_allowed(e["name"], dom, repo.provider_for_domain(dom))
+        if not allowed:
+            skipped.append(f"{dom}({reason})")
+            continue
+        payload.append(
+            {
+                "name": e["name"] or dom,
+                "urls": [{"label": e["label"], "url": e["url"]}],
+                "notes": f"auto-enrolled from {e['source']} {today}",
+            }
         )
-    if blocks:
-        with open(cfg.providers_file, "a", encoding="utf-8") as f:
-            f.write("\n".join(blocks))
+
+    try:
+        added = append_provider_entries(cfg.providers_file, payload)
+    except ProviderStoreError as exc:
+        print(f"[auto-enroll] providers.toml 写入失败，跳过本轮收编：{exc}")
+        added = []
+
+    if skipped:
+        preview = ", ".join(skipped[:5]) + ("…" if len(skipped) > 5 else "")
+        print(f"[auto-enroll] 相关性闸门拦截 {len(skipped)} 个候选：{preview}")
 
     repo.set_state(PENDING_STATE_KEY, json.dumps(pending, ensure_ascii=False))
-    return len(blocks), pending
+    return len(added), pending

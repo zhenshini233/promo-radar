@@ -7,7 +7,9 @@
 
   var dataEl = document.getElementById("radar-data");
   if (!dataEl || !window.Vue) return; // Vue 缺失时保留 SSR 内容
-  var DATA = JSON.parse(dataEl.textContent);
+  // 全量由 data.js 提供（file:// 与 HTTP 都可用）；内联 JSON 只是兜底子集，
+  // 保证 data.js 加载失败时页面仍可交互。
+  var DATA = window.__RADAR_FULL__ || JSON.parse(dataEl.textContent);
   var DEALS = DATA.deals || [];
   var MONITORS = DATA.monitors || [];
 
@@ -53,6 +55,7 @@
         monFilter: "all", coverSource: "全部",
         monQ: "", monQd: "", monPage: 1, monPageSize: 30,
         serveMode: false, refreshing: false, refreshMsg: "",
+        proxyUrl: "", proxyMsg: "", proxySaving: false,
         refreshSel: {}, expandedVendors: null,
         votes: {}, feedbackMsg: "",
       });
@@ -372,6 +375,29 @@
         });
       }
 
+      // ---------- 代理设置（serve 模式） ----------
+      function saveProxy() {
+        st.proxySaving = true;
+        st.proxyMsg = "保存中…";
+        fetch("/api/proxy", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: st.proxyUrl.trim(), auto_detect: true }),
+        }).then(function (r) {
+          return r.json().then(function (j) {
+            if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
+            return j;
+          });
+        }).then(function (j) {
+          st.proxyUrl = j.url || "";
+          st.proxyMsg = j.message || "已保存";
+        }).catch(function (e) {
+          st.proxyMsg = "保存失败：" + e.message;
+        }).then(function () {
+          st.proxySaving = false;
+        });
+      }
+
       // ---------- 反馈（serve 模式） ----------
       function voteOf(d) { return st.votes[d.dedup_key] || d.vote || ""; }
       function sendFeedback(d, vote) {
@@ -418,7 +444,15 @@
         } catch (e) {}
         // serve 模式探测：有后端才显示手动刷新
         fetch("/api/status").then(function (r) { return r.ok ? r.json() : null; }).then(function (s) {
-          if (s) { st.serveMode = true; if (s.running) { st.refreshing = true; } }
+          if (s) {
+            st.serveMode = true;
+            if (s.running) { st.refreshing = true; }
+            fetch("/api/proxy").then(function (r) { return r.ok ? r.json() : null; }).then(function (p) {
+              if (!p) return;
+              st.proxyUrl = p.url || "";
+              if (p.url && !p.available) st.proxyMsg = "当前代理端口不可达，运行时会自动直连";
+            }).catch(function () {});
+          }
         }).catch(function () {});
       });
 
@@ -442,7 +476,7 @@
         goMonitors: goMonitors, emptyHint: emptyHint,
         coverChips: coverChips,
         sourceCards: sourceCards, srcSummary: srcSummary,
-        startRefresh: startRefresh,
+        startRefresh: startRefresh, saveProxy: saveProxy,
         sendFeedback: sendFeedback, voteOf: voteOf,
         feedbackStats: DATA.feedback_stats || { total: 0, up: 0, down: 0, snooze: 0 },
         toggleVendors: toggleVendors, sourceVendors: DATA.source_vendors || {},

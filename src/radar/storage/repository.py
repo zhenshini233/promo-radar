@@ -18,9 +18,10 @@ from pathlib import Path
 from typing import Protocol, runtime_checkable
 
 from ..domain.dedup import find_fuzzy_match, make_key, norm_title
+from ..domain.domains import registrable_domain
 from ..domain.models import Deal, RunReport, ScoredItem, iso, utcnow
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 7
 _SCHEMA_PATH = Path(__file__).parent / "schema.sql"
 
 
@@ -61,24 +62,57 @@ class StateStore(Protocol):
 
     def record_history(self, *, url: str, checked_at: str, promo_keywords: str, changed: bool) -> None: ...
 
+    def record_snapshot_failure(
+        self, *, url: str, provider: str, label: str, error: str, now
+    ) -> None: ...
+
+    def schedule_snapshot(
+        self, *, url: str, tier: int, next_check_at: str
+    ) -> None: ...
+
+    def provider_stats(self) -> dict: ...
+
 
 class SqliteRepository(StateStore):
-    def __init__(self, db_path: Path):
-        db_path = Path(db_path)
-        db_path.parent.mkdir(parents=True, exist_ok=True)
-        self.conn = sqlite3.connect(db_path)
+    def __init__(self, db_path: Path, *, init: bool = True):
+        """init=False：只开连接，不建表/不迁移。
+
+        源级并行抓取时每个 worker 线程需要独立 SQLite 连接（sqlite3 默认
+        禁止跨线程复用连接），由主线程先完成初始化，worker 连接只读写。
+        """
+        self.db_path = Path(db_path)
+        self.db_path.parent.mkdir(parents=True, exist_ok=True)
+        self.conn = sqlite3.connect(self.db_path)
         self.conn.row_factory = sqlite3.Row
-        self.conn.execute("PRAGMA journal_mode=WAL")
-        version = self.conn.execute("PRAGMA user_version").fetchone()[0]
-        self.conn.executescript(_SCHEMA_PATH.read_text(encoding="utf-8"))
-        if version < SCHEMA_VERSION:
-            if version >= 1:  # 旧库升级：补 matched 列（新库已在 DDL 里）
-                try:
-                    self.conn.execute("ALTER TABLE deals ADD COLUMN matched TEXT NOT NULL DEFAULT '[]'")
-                except sqlite3.OperationalError:
-                    pass  # 列已存在
-            self.conn.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
-        self.conn.commit()
+        self.conn.execute("PRAGMA busy_timeout=5000")
+        if init:
+            self.conn.execute("PRAGMA journal_mode=WAL")
+            version = self.conn.execute("PRAGMA user_version").fetchone()[0]
+            self.conn.executescript(_SCHEMA_PATH.read_text(encoding="utf-8"))
+            if version < SCHEMA_VERSION:
+                self._migrate(version)
+                self.conn.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
+            self.conn.commit()
+
+    def _migrate(self, version: int) -> None:
+        """按版本补齐新增列；CREATE TABLE IF NOT EXISTS 不会改旧表结构。"""
+        if version and version < 4:
+            self._add_column("deals", "matched", "TEXT NOT NULL DEFAULT '[]'")
+        if version < 5:
+            self._add_column("snapshots", "fail_count", "INTEGER NOT NULL DEFAULT 0")
+            self._add_column("snapshots", "last_error", "TEXT NOT NULL DEFAULT ''")
+        if version < 6:
+            self._add_column("snapshots", "tier", "INTEGER NOT NULL DEFAULT 2")
+            self._add_column("snapshots", "next_check_at", "TEXT NOT NULL DEFAULT ''")
+        if version < 7:
+            # v7 只新增 providers / provider_domains / provider_aliases / provider_sources，
+            # 由 schema.sql 的 CREATE TABLE IF NOT EXISTS 完成；旧表不加列。
+            pass
+
+    def _add_column(self, table: str, name: str, ddl: str) -> None:
+        cols = {r["name"] for r in self.conn.execute(f"PRAGMA table_info({table})")}
+        if name not in cols:
+            self.conn.execute(f"ALTER TABLE {table} ADD COLUMN {name} {ddl}")
 
     def close(self) -> None:
         self.conn.close()
@@ -330,6 +364,11 @@ class SqliteRepository(StateStore):
         self.conn.commit()
         return cur.rowcount > 0
 
+    def mark_expired_resolved(self, key: str) -> bool:
+        """按 dedup key 归档；若该 key 已被模糊合并为别名，归档其主条目。"""
+        master = self.resolve_alias(key)
+        return self.mark_expired(master or key)
+
     def digest_data(self, now) -> dict:
         c7 = iso(now - timedelta(days=7))
         c30 = iso(now - timedelta(days=30))
@@ -385,8 +424,8 @@ class SqliteRepository(StateStore):
         self.conn.execute(
             """
             INSERT INTO snapshots (url, provider, label, content_hash, promo_keywords,
-                                   last_checked_at, last_changed_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+                                   last_checked_at, last_changed_at, fail_count, last_error)
+            VALUES (?, ?, ?, ?, ?, ?, ?, 0, '')
             ON CONFLICT(url) DO UPDATE SET
                 provider = excluded.provider,
                 label = excluded.label,
@@ -395,9 +434,40 @@ class SqliteRepository(StateStore):
                 last_checked_at = excluded.last_checked_at,
                 last_changed_at = CASE WHEN snapshots.content_hash != excluded.content_hash
                                        THEN excluded.last_checked_at
-                                       ELSE snapshots.last_changed_at END
+                                       ELSE snapshots.last_changed_at END,
+                fail_count = 0,
+                last_error = ''
             """,
             (url, provider, label, content_hash, promo_keywords, now_s, now_s),
+        )
+        self.conn.commit()
+
+    def record_snapshot_failure(
+        self, *, url: str, provider: str, label: str, error: str, now
+    ) -> None:
+        """记录一次页面抓取失败；成功抓取会由 upsert_snapshot 清零。"""
+        now_s = iso(now)
+        self.conn.execute(
+            """
+            INSERT INTO snapshots (url, provider, label, content_hash, promo_keywords,
+                                   last_checked_at, last_changed_at, fail_count, last_error)
+            VALUES (?, ?, ?, '', '', ?, ?, 1, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                provider = excluded.provider,
+                label = excluded.label,
+                fail_count = snapshots.fail_count + 1,
+                last_error = excluded.last_error,
+                last_checked_at = excluded.last_checked_at
+            """,
+            (url, provider, label, now_s, now_s, (error or "")[:300]),
+        )
+        self.conn.commit()
+
+    def schedule_snapshot(self, *, url: str, tier: int, next_check_at: str) -> None:
+        """写入分层与下次检查时间（分层调度核心状态）。"""
+        self.conn.execute(
+            "UPDATE snapshots SET tier = ?, next_check_at = ? WHERE url = ?",
+            (int(tier), next_check_at, url),
         )
         self.conn.commit()
 
@@ -415,6 +485,21 @@ class SqliteRepository(StateStore):
         )
         self.conn.commit()
         return cur.rowcount
+
+    def prune_orphan_snapshots(self, valid_urls: set[str]) -> int:
+        """删除不在 providers.toml 中的快照及其历史。
+
+        valid_urls 为空视为配置读取异常（或用户清空了 watchlist），此时不删，
+        避免一次误操作把全部历史清空。
+        """
+        if not valid_urls:
+            return 0
+        rows = self.conn.execute("SELECT url FROM snapshots").fetchall()
+        orphans = [r["url"] for r in rows if r["url"] not in valid_urls]
+        if not orphans:
+            return 0
+        self.remove_snapshots(orphans)
+        return len(orphans)
 
     def record_history(self, *, url: str, checked_at: str, promo_keywords: str, changed: bool) -> None:
         self.conn.execute(
@@ -480,6 +565,172 @@ class SqliteRepository(StateStore):
             "SELECT * FROM source_runs WHERE run_id = ? ORDER BY rowid", (run["id"],)
         ).fetchall()
         return {"run": dict(run), "sources": [dict(s) for s in sources]}
+
+    def last_success_at(self, min_sources: int = 0) -> str | None:
+        """最近一次「基本健康」的抓取时间，用于判断数据新鲜度。
+
+        口径：错误源 <= 20%（errors*5 <= total），且至少一个源成功。
+        min_sources > 0 时还要求该轮源数达到阈值，用于区分「全量轮次」与
+        `--only` 局部刷新：否则单源成功会把全源故障掩盖成绿色横幅。
+        不用「全源成功」，否则一个长期失效的源（如 AA 410）会让站点永远红色。
+        """
+        row = self.conn.execute(
+            """
+            SELECT MAX(r.finished_at) AS t
+            FROM runs r
+            WHERE (
+                SELECT COUNT(*) FROM source_runs sr3 WHERE sr3.run_id = r.id
+            ) >= ?
+              AND (
+                SELECT COUNT(*) FROM source_runs sr
+                WHERE sr.run_id = r.id AND sr.status = 'error'
+            ) < (
+                SELECT COUNT(*) FROM source_runs sr4 WHERE sr4.run_id = r.id
+            )
+              AND (
+                SELECT COUNT(*) FROM source_runs sr
+                WHERE sr.run_id = r.id AND sr.status = 'error'
+              ) * 5 <= (
+                SELECT COUNT(*) FROM source_runs sr2 WHERE sr2.run_id = r.id
+            )
+            """,
+            (max(1, min_sources),),
+        ).fetchone()
+        return row["t"] if row and row["t"] else None
+
+    def consecutive_failures(self, limit: int = 5) -> dict[str, int]:
+        """每个源最近连续失败的次数（只看最近 limit 条运行记录）。"""
+        rows = self.conn.execute(
+            "SELECT source, status FROM ("
+            "  SELECT source, status, row_number() OVER"
+            "    (PARTITION BY source ORDER BY rowid DESC) AS rn"
+            "  FROM source_runs"
+            ") WHERE rn <= ? ORDER BY source, rn",
+            (limit,),
+        ).fetchall()
+        out: dict[str, int] = {}
+        done: set[str] = set()
+        for r in rows:
+            src = r["source"]
+            if src in done:
+                continue
+            if r["status"] == "error":
+                out[src] = out.get(src, 0) + 1
+            else:
+                done.add(src)
+        return out
+
+    # ---------- providers ----------
+
+    def provider_for_domain(self, domain: str) -> dict | None:
+        """按注册域查 Provider 实体（自动收编闸门用）；未命中返回 None。"""
+        if not domain:
+            return None
+        row = self.conn.execute(
+            "SELECT p.* FROM providers p"
+            " JOIN provider_domains d ON d.provider_id = p.id"
+            " WHERE d.domain = ?",
+            (domain,),
+        ).fetchone()
+        return dict(row) if row else None
+
+    def provider_stats(self) -> dict:
+        """Provider 实体的覆盖口径：ignored 不进分母，coverage = monitored / universe。"""
+        row = self.conn.execute(
+            "SELECT COUNT(*) AS total,"
+            " SUM(CASE WHEN status = 'monitored' THEN 1 ELSE 0 END) AS monitored,"
+            " SUM(CASE WHEN status = 'ignored' THEN 1 ELSE 0 END) AS ignored,"
+            " SUM(CASE WHEN status = 'in_universe' THEN 1 ELSE 0 END) AS in_universe"
+            " FROM providers"
+        ).fetchone()
+        total = row["total"] or 0
+        ignored = row["ignored"] or 0
+        monitored = row["monitored"] or 0
+        universe = total - ignored
+        return {
+            "total": total,
+            "monitored": monitored,
+            "ignored": ignored,
+            "in_universe": row["in_universe"] or 0,
+            "universe": universe,
+            "coverage": (monitored / universe) if universe else 0.0,
+        }
+
+    def provider_page_stats(self, limit: int = 20) -> dict:
+        """只读：用注册域把 snapshots 关联到 provider。
+
+        SQLite 没有可注册域函数，且 `url LIKE '%' || domain || '%'` 会误配
+        （notexample.com 命中 example.com），因此关联放在 Python 层做。
+        """
+        providers = {
+            r["id"]: dict(r)
+            for r in self.conn.execute(
+                "SELECT id, slug, name, category, status FROM providers"
+            )
+        }
+        by_domain = {
+            r["domain"]: r["provider_id"]
+            for r in self.conn.execute("SELECT domain, provider_id FROM provider_domains")
+        }
+        pages = self.conn.execute(
+            "SELECT url, provider, label, tier FROM snapshots"
+        ).fetchall()
+
+        linked_ids: set[int] = set()
+        ignored_pages = 0
+        by_cat: dict[str, dict] = {}
+        mismatch: list[dict] = []
+        unlinked: list[dict] = []
+        for p in pages:
+            dom = registrable_domain(p["url"])
+            pid = by_domain.get(dom) if dom else None
+            prov = providers.get(pid) if pid is not None else None
+            if prov is None:
+                unlinked.append({"url": p["url"], "provider": p["provider"]})
+                continue
+            if prov["status"] == "ignored":
+                ignored_pages += 1
+                continue
+            linked_ids.add(pid)
+            bucket = by_cat.setdefault(prov["category"], {"pages": 0, "providers": set()})
+            bucket["pages"] += 1
+            bucket["providers"].add(pid)
+            if norm_title(prov["name"]) != norm_title(p["provider"] or ""):
+                mismatch.append({
+                    "url": p["url"],
+                    "snapshot_provider": p["provider"],
+                    "provider": prov["name"],
+                })
+
+        universe_ids = {pid for pid, v in providers.items() if v["status"] != "ignored"}
+        missing = [
+            {
+                "slug": providers[pid]["slug"],
+                "name": providers[pid]["name"],
+                "status": providers[pid]["status"],
+            }
+            for pid in sorted(universe_ids - linked_ids)
+        ]
+        total = len(pages)
+        linked = sum(b["pages"] for b in by_cat.values())
+        return {
+            "total_pages": total,
+            "linked_pages": linked,
+            "unlinked_pages": total - linked - ignored_pages,
+            "ignored_pages": ignored_pages,
+            "link_rate": (linked / total) if total else 0.0,
+            "providers_with_pages": len(linked_ids),
+            "providers_without_pages": len(missing),
+            "by_category": {
+                k: {"pages": v["pages"], "providers": len(v["providers"])}
+                for k, v in sorted(by_cat.items(), key=lambda x: -x[1]["pages"])
+            },
+            "mismatch_total": len(mismatch),
+            "mismatch": mismatch[:limit],
+            "unlinked_total": len(unlinked),
+            "unlinked_samples": unlinked[:limit],
+            "missing_samples": missing[:limit],
+        }
 
     # ---------- feedback ----------
 

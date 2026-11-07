@@ -12,6 +12,7 @@ import httpx
 
 from ..domain.models import Deal
 from ..infra.config import RadarConfig
+from ..infra.proxy import effective_proxy
 
 MAX_LEN = 3800  # 留出余量，Telegram 上限 4096
 
@@ -57,7 +58,12 @@ def push_new_deals(cfg: RadarConfig, deals: list[Deal]) -> tuple[bool, str]:
         return False, "telegram disabled or not configured"
 
     ok, errors = True, []
-    with httpx.Client(timeout=30.0, proxy=cfg.proxy_url or None, trust_env=True) as client:
+    proxy = effective_proxy(
+        cfg.proxy_url,
+        auto_detect=cfg.proxy_auto_detect,
+        timeout=cfg.proxy_detect_timeout,
+    )
+    with httpx.Client(timeout=30.0, proxy=proxy or None, trust_env=True) as client:
         for msg in _format_deals(deals):
             try:
                 resp = client.post(

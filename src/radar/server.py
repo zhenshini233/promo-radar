@@ -16,6 +16,8 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from .infra.config import load_config, load_providers
+from .infra.local_config import LocalConfigError, read_proxy, update_proxy
+from .infra.proxy import is_proxy_available
 from .pipeline.runner import run
 from .storage.repository import SqliteRepository
 
@@ -36,6 +38,9 @@ def _build_site(cfg) -> None:
 
 def _refresh_worker(cfg, sources: list[str] | None) -> None:
     try:
+        # 重新加载配置：代理面板保存后无需重启 serve 即可生效
+        if getattr(cfg, "config_path", None):
+            cfg = load_config(cfg.config_path)
         repo = SqliteRepository(cfg.data_dir / "radar.db")
         try:
             run(cfg, repo, only=sources or None)
@@ -68,7 +73,8 @@ class RadarHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
-        if self.path.split("?")[0] == "/api/status":
+        path = self.path.split("?")[0]
+        if path == "/api/status":
             last = None
             repo = SqliteRepository(self.cfg.data_dir / "radar.db")
             try:
@@ -77,6 +83,9 @@ class RadarHandler(SimpleHTTPRequestHandler):
                 repo.close()
             self._json({"running": _state["running"], "error": _state["error"],
                         "finished_at": _state["finished_at"], "last": last})
+            return
+        if path == "/api/proxy":
+            self._handle_proxy_get()
             return
         super().do_GET()
 
@@ -88,7 +97,54 @@ class RadarHandler(SimpleHTTPRequestHandler):
         if path == "/api/feedback":
             self._handle_feedback()
             return
+        if path == "/api/proxy":
+            self._handle_proxy_save()
+            return
         self._json({"error": "not found"}, 404)
+
+    def _local_proxy_path(self):
+        return self.cfg.root / "config.local.toml"
+
+    def _proxy_payload(self) -> dict:
+        info = read_proxy(self._local_proxy_path())
+        if not info.get("url") and self.cfg.proxy_url:
+            info["url"] = self.cfg.proxy_url
+            info["source"] = "config.toml / 环境变量"
+        else:
+            info["source"] = "config.local.toml"
+        info["available"] = (
+            is_proxy_available(info["url"], timeout=self.cfg.proxy_detect_timeout)
+            if info.get("url") else True
+        )
+        info["auto_detect"] = bool(info.get("auto_detect", True))
+        return info
+
+    def _handle_proxy_get(self):
+        self._json(self._proxy_payload())
+
+    def _handle_proxy_save(self):
+        length = int(self.headers.get("Content-Length") or 0)
+        body = json.loads(self.rfile.read(length) or b"{}") if length else {}
+        url = str(body.get("url") or "").strip()
+        auto_detect = bool(body.get("auto_detect", True))
+        try:
+            saved = update_proxy(self._local_proxy_path(), url, auto_detect)
+        except LocalConfigError as e:
+            self._json({"error": str(e)}, 400)
+            return
+
+        available = (
+            is_proxy_available(saved["url"], timeout=self.cfg.proxy_detect_timeout)
+            if saved["url"] else True
+        )
+        if not saved["url"]:
+            message = "已清空代理，后续运行使用直连。"
+        elif available:
+            message = "已保存，代理端口可达；下一轮刷新生效。"
+        else:
+            message = "已保存，但代理端口当前不可达；运行时会自动改为直连。"
+        self._json({"ok": True, "url": saved["url"], "auto_detect": saved["auto_detect"],
+                    "available": available, "message": message})
 
     def _handle_refresh(self):
         if _state["running"]:
