@@ -93,8 +93,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   background: var(--surface); font-size: 12px; display: inline-flex; align-items: center; justify-content: center;
 }
 .btn:hover { border-color: var(--ink); }
-.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.btn.primary:hover { opacity: 0.9; }
+.btn.primary { background: var(--surface); color: var(--accent); border-color: var(--accent); }
+.btn.primary:hover { background: var(--accent-pale); }
+.btn.primary:disabled { opacity: 0.5; cursor: default; }
 .btn.wide { width: 100%; }
 .refresh-status { font-size: 11px; color: var(--muted); padding: 0 6px; min-height: 14px; line-height: 1.5; }
 
@@ -130,6 +131,7 @@ h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin: 0; line
 .ov-row:first-child { border-top: none; }
 .ov-amount { flex: none; width: 130px; font-weight: 600; color: var(--accent); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ov-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ov-empty { padding: 14px; font-size: 12px; color: var(--muted); line-height: 1.6; }
 
 /* 控制行 */
 .controls { margin-top: 18px; border-bottom: 1px solid var(--line); }

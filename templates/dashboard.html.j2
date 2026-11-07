@@ -260,6 +260,50 @@
           </div>
         </div>
       </div>
+      <div class="ov-grid" style="margin-top:20px">
+        <div>
+          <h2 class="section-h2">反馈闭环</h2>
+          <div class="list-box">
+            <div v-if="feedbackStats.total === 0" class="ov-empty">
+              还没有反馈。去「活动」页给误报点 👎，给已薅的点 👍——这里会显示哪个源在制造噪音。
+            </div>
+            <template v-else>
+              <div class="ov-row">
+                <span class="ov-amount num">👍</span>
+                <span class="ov-title">有价值 / 已薅</span>
+                <span class="pill card-no">[[ feedbackStats.up ]]</span>
+              </div>
+              <div class="ov-row">
+                <span class="ov-amount num">👎</span>
+                <span class="ov-title">误报</span>
+                <span class="pill card-yes">[[ feedbackStats.down ]]</span>
+              </div>
+              <div class="ov-row">
+                <span class="ov-amount num">💤</span>
+                <span class="ov-title">暂时不关心</span>
+                <span class="pill">[[ feedbackStats.snooze ]]</span>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div>
+          <h2 class="section-h2">误报率 · 按来源</h2>
+          <div class="list-box">
+            <div v-if="Object.keys(feedbackStats.by_source || {}).length === 0" class="ov-empty">
+              点过 👎 后，这里会列出每个来源的误报数，用来调 scoring 权重。
+            </div>
+            <div v-for="(counts, src) in feedbackStats.by_source" :key="src" class="ov-row">
+              <span class="ov-amount num">[[ srcName(src) ]]</span>
+              <span class="ov-title">
+                👍 [[ counts.up || 0 ]] · 👎 [[ counts.down || 0 ]] · 💤 [[ counts.snooze || 0 ]]
+              </span>
+              <span class="pill" :class="(counts.down || 0) > (counts.up || 0) ? 'card-yes' : 'card-no'">
+                误报率 [[ Math.round((counts.down || 0) / ((counts.up || 0) + (counts.down || 0) + (counts.snooze || 0)) * 100) ]]%
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     {# ---------- 活动 ---------- #}
