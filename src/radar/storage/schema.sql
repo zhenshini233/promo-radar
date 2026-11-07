@@ -1,4 +1,4 @@
--- promo-radar 数据库 schema（PRAGMA user_version = 7）
+-- promo-radar 数据库 schema（PRAGMA user_version = 8）
 
 CREATE TABLE IF NOT EXISTS deals (
     dedup_key          TEXT PRIMARY KEY,
@@ -137,3 +137,28 @@ CREATE TABLE IF NOT EXISTS provider_sources (
     last_seen_at  TEXT NOT NULL DEFAULT '',
     PRIMARY KEY (provider_id, source)
 );
+
+-- v8：Offer 层。offer = 厂商的一个促销活动；deals 是它的证据。
+CREATE TABLE IF NOT EXISTS offers (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    provider_id   INTEGER,
+    title         TEXT NOT NULL,
+    amount_hint   TEXT NOT NULL DEFAULT '',
+    status        TEXT NOT NULL DEFAULT 'active'
+                  CHECK (status IN ('active', 'expired', 'unknown')),
+    first_seen_at TEXT NOT NULL DEFAULT '',
+    last_seen_at  TEXT NOT NULL DEFAULT '',
+    dedup_key     TEXT NOT NULL UNIQUE
+);
+CREATE INDEX IF NOT EXISTS idx_offers_provider ON offers (provider_id);
+CREATE INDEX IF NOT EXISTS idx_offers_status ON offers (status);
+
+CREATE TABLE IF NOT EXISTS offer_evidence (
+    offer_id  INTEGER NOT NULL,
+    deal_key  TEXT NOT NULL,
+    url       TEXT NOT NULL DEFAULT '',
+    source    TEXT NOT NULL DEFAULT '',
+    seen_at   TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (offer_id, deal_key)
+);
+CREATE INDEX IF NOT EXISTS idx_offer_evidence_offer ON offer_evidence (offer_id);

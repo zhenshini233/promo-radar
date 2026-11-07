@@ -21,7 +21,7 @@ from ..domain.dedup import find_fuzzy_match, make_key, norm_title
 from ..domain.domains import registrable_domain
 from ..domain.models import Deal, RunReport, ScoredItem, iso, utcnow
 
-SCHEMA_VERSION = 7
+SCHEMA_VERSION = 8
 _SCHEMA_PATH = Path(__file__).parent / "schema.sql"
 
 
@@ -107,6 +107,9 @@ class SqliteRepository(StateStore):
         if version < 7:
             # v7 只新增 providers / provider_domains / provider_aliases / provider_sources，
             # 由 schema.sql 的 CREATE TABLE IF NOT EXISTS 完成；旧表不加列。
+            pass
+        if version < 8:
+            # v8 只新增 offers / offer_evidence，同样由 schema.sql 建表。
             pass
 
     def _add_column(self, table: str, name: str, ddl: str) -> None:
@@ -756,6 +759,30 @@ class SqliteRepository(StateStore):
             })
         out.sort(key=lambda x: (-x["providers"], x["category"]))
         return out
+
+    def offer_stats(self) -> dict:
+        """Offer 层统计：活动数、状态、多来源合并数、未匹配厂商数。"""
+        row = self.conn.execute(
+            "SELECT COUNT(*) AS total,"
+            " SUM(CASE WHEN status = 'active' THEN 1 ELSE 0 END) AS active,"
+            " SUM(CASE WHEN status = 'expired' THEN 1 ELSE 0 END) AS expired,"
+            " SUM(CASE WHEN provider_id IS NULL THEN 1 ELSE 0 END) AS unmatched"
+            " FROM offers"
+        ).fetchone()
+        evidence = self.conn.execute("SELECT COUNT(*) AS n FROM offer_evidence").fetchone()["n"]
+        merged = self.conn.execute(
+            "SELECT COUNT(*) AS n FROM ("
+            " SELECT offer_id FROM offer_evidence GROUP BY offer_id HAVING COUNT(*) > 1"
+            ")"
+        ).fetchone()["n"]
+        return {
+            "total": row["total"] or 0,
+            "active": row["active"] or 0,
+            "expired": row["expired"] or 0,
+            "unmatched": row["unmatched"] or 0,
+            "evidence": evidence,
+            "merged": merged,
+        }
 
     # ---------- feedback ----------
 
