@@ -8,7 +8,7 @@
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "Tinker 按 token 付费，盯免费层上线",
  "monitored": true,
- "band": "-----------------------------0",
+ "band": "-----------------------0------",
  "checked_days": 1,
  "covered_by": [
   "openrouter",

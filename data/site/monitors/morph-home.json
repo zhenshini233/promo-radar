@@ -8,7 +8,7 @@
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "免费层 200 次/月 + WarpGrep 每月 10 美元免费算力",
  "monitored": true,
- "band": "-----------------------------1",
+ "band": "-----------------------1------",
  "checked_days": 1,
  "covered_by": [
   "openrouter",

@@ -8,7 +8,7 @@
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "每月自动加 5 美元 credit，免绑卡（页面实锤，力度最大）",
  "monitored": true,
- "band": "-----------------------------1",
+ "band": "-----------------------1------",
  "checked_days": 1,
  "covered_by": [
   "openrouter"

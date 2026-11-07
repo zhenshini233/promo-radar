@@ -189,6 +189,13 @@ select.picker {
 .card .meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
 .card .meta .provider { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 45%; }
 .card .meta .date { margin-left: auto; font-variant-numeric: tabular-nums; }
+.card .meta .fb { display: inline-flex; gap: 2px; }
+.fb-btn {
+  background: transparent; border: 1px solid var(--line); border-radius: 4px;
+  padding: 0 5px; cursor: pointer; font-size: 12px; line-height: 1.5; opacity: 0.45;
+}
+.fb-btn:hover { opacity: 1; }
+.fb-btn.on { opacity: 1; background: var(--accent-pale); border-color: var(--accent); }
 
 /* 状态胶囊 */
 .pill {

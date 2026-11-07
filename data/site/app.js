@@ -54,6 +54,7 @@
         monQ: "", monQd: "", monPage: 1, monPageSize: 30,
         serveMode: false, refreshing: false, refreshMsg: "",
         refreshSel: {}, expandedVendors: null,
+        votes: {}, feedbackMsg: "",
       });
 
       // ---------- 工具 ----------
@@ -173,7 +174,7 @@
             && Object.keys(st.amounts).length === 0 && Object.keys(st.statuses).length === 0 && !st.qd) {
           var id = sel[0];
           var oc = originCounts.value;
-          if (id === "linuxdo") return "Linux.do 当前网络不可达（本地需要可用节点；Actions 部署后正常），恢复后国内活动会出现在这里。";
+          if (id === "linuxdo") return "Linux.do 对服务器/数据中心 IP 全部风控（本地与 Actions 均 403），恢复后国内活动会出现在这里。";
           if (id === "litellm") return "价格库是发现雷达：" + ((DATA.catalog_stats || {}).litellm || 0).toLocaleString("en-US") + " 个模型价格基线已建立，出现新免费模型或大幅降价时这里才会出现条目。";
           return "该来源是发现型数据源：登记行业现状、只在出现新变化时产生条目，其覆盖的厂商见「厂商」页。";
         }
@@ -371,6 +372,23 @@
         });
       }
 
+      // ---------- 反馈（serve 模式） ----------
+      function voteOf(d) { return st.votes[d.dedup_key] || d.vote || ""; }
+      function sendFeedback(d, vote) {
+        if (!st.serveMode) {
+          st.feedbackMsg = "反馈仅在 radar serve 模式下可用（双击 file:// 或 Pages 为静态托管，无后端写入）";
+          return;
+        }
+        var next = voteOf(d) === vote ? "" : vote; // 再点一次同 vote = 清除
+        fetch("/api/feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: d.dedup_key, vote: next }),
+        }).then(function (r) { return r.json(); }).then(function () {
+          st.votes[d.dedup_key] = next;
+        }).catch(function (e) { st.feedbackMsg = "反馈失败：" + e; });
+      }
+
       // 防抖搜索
       var qt = null, mqt = null;
       watch(function () { return st.q; }, function (v) {
@@ -425,6 +443,8 @@
         coverChips: coverChips,
         sourceCards: sourceCards, srcSummary: srcSummary,
         startRefresh: startRefresh,
+        sendFeedback: sendFeedback, voteOf: voteOf,
+        feedbackStats: DATA.feedback_stats || { total: 0, up: 0, down: 0, snooze: 0 },
         toggleVendors: toggleVendors, sourceVendors: DATA.source_vendors || {},
         pendingEnroll: DATA.pending_enroll || [],
       };
