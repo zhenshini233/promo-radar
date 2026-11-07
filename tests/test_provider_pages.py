@@ -50,3 +50,23 @@ def test_empty_snapshots(tmp_path):
     s = repo.provider_page_stats()
     assert s["total_pages"] == 0
     assert s["link_rate"] == 0.0
+
+
+def test_category_stats_excludes_ignored(tmp_path):
+    repo = SqliteRepository(tmp_path / "radar.db")
+    for slug, name, cat, status in (
+        ("openai", "OpenAI", "model_lab", "monitored"),
+        ("foo", "Foo", "unknown", "in_universe"),
+        ("bar", "Bar", "app", "ignored"),
+    ):
+        repo.conn.execute(
+            "INSERT INTO providers (slug, name, category, status) VALUES (?, ?, ?, ?)",
+            (slug, name, cat, status),
+        )
+    repo.conn.commit()
+
+    stats = {x["category"]: x for x in repo.provider_category_stats()}
+    assert stats["model_lab"]["providers"] == 1
+    assert stats["model_lab"]["coverage"] == 1.0
+    assert stats["unknown"]["in_universe"] == 1
+    assert "app" not in stats

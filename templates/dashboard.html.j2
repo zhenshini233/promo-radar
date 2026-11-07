@@ -281,6 +281,21 @@
         </div>
       </div>
       <div class="ov-grid" style="margin-top:20px">
+        <div style="grid-column:1/-1">
+          <h2 class="section-h2">分类覆盖 <small>按 Provider 实体</small></h2>
+          <div class="list-box">
+            <div v-if="providerCategories.length === 0" class="ov-empty">
+              还没有 Provider 实体数据。先运行 universe → annotate → import 三个脚本。
+            </div>
+            <div v-for="c in providerCategories" :key="c.category" class="ov-row">
+              <span class="ov-amount num">[[ c.category ]]</span>
+              <span class="ov-title">[[ c.monitored ]] / [[ c.providers ]] 监控 · [[ c.pages ]] 页 · 盲区 [[ c.in_universe ]]</span>
+              <span class="pill" :class="c.coverage >= 0.9 ? 'card-no' : 'card-yes'">[[ Math.round(c.coverage * 100) ]]%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ov-grid" style="margin-top:20px">
         <div>
           <h2 class="section-h2">反馈闭环</h2>
           <div class="list-box">

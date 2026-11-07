@@ -42,10 +42,11 @@
 
 ## P1：可用性
 
-### 4. dashboard 分类视图
+### 4. dashboard 分类视图 ✅
 
-- 按 `category` / `regions` 展示：Provider 数、页数、覆盖率、盲区。
-- 数据已就绪（`provider_stats` / `provider_page_stats`），只差渲染。
+- 总览页新增“分类覆盖”区块：category、监控数/Provider 数、页数、盲区、覆盖率。
+- 数据来自 `repo.provider_category_stats()`，随 `data.json` 下发。
+- 当前最低：unknown 67%、model_lab 78%、inference 92%。
 
 ### 5. snapshots ↔ provider_id
 

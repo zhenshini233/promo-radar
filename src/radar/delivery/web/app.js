@@ -479,6 +479,7 @@
         startRefresh: startRefresh, saveProxy: saveProxy,
         sendFeedback: sendFeedback, voteOf: voteOf,
         feedbackStats: DATA.feedback_stats || { total: 0, up: 0, down: 0, snooze: 0 },
+        providerCategories: DATA.provider_categories || [],
         toggleVendors: toggleVendors, sourceVendors: DATA.source_vendors || {},
         pendingEnroll: DATA.pending_enroll || [],
       };

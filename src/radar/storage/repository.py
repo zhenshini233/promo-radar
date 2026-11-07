@@ -732,6 +732,31 @@ class SqliteRepository(StateStore):
             "missing_samples": missing[:limit],
         }
 
+    def provider_category_stats(self) -> list[dict]:
+        """按 category 汇总 Provider/监控/页数，盲区 = in_universe。"""
+        page_map = self.provider_page_stats(limit=0)["by_category"]
+        rows = self.conn.execute(
+            "SELECT category, COUNT(*) AS providers,"
+            " SUM(CASE WHEN status = 'monitored' THEN 1 ELSE 0 END) AS monitored,"
+            " SUM(CASE WHEN status = 'in_universe' THEN 1 ELSE 0 END) AS in_universe"
+            " FROM providers WHERE status != 'ignored' GROUP BY category"
+        ).fetchall()
+        out: list[dict] = []
+        for r in rows:
+            prov = r["providers"] or 0
+            mon = r["monitored"] or 0
+            page = page_map.get(r["category"], {})
+            out.append({
+                "category": r["category"],
+                "providers": prov,
+                "monitored": mon,
+                "in_universe": r["in_universe"] or 0,
+                "pages": page.get("pages", 0),
+                "coverage": (mon / prov) if prov else 0.0,
+            })
+        out.sort(key=lambda x: (-x["providers"], x["category"]))
+        return out
+
     # ---------- feedback ----------
 
     def record_feedback(self, dedup_key: str, vote: str, note: str = "", now=None) -> None:
