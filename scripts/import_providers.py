@@ -19,8 +19,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from radar.domain.domains import registrable_domain  # noqa: E402
 from radar.domain.models import iso, utcnow  # noqa: E402
-from radar.infra.config import load_config  # noqa: E402
+from radar.infra.config import load_config, load_providers  # noqa: E402
 from radar.storage.repository import SqliteRepository  # noqa: E402
 
 SRC = ROOT / "data/universe/universe_annotated_v0.json"
@@ -29,6 +30,10 @@ OUT_MD = ROOT / "data/universe/provider_import.md"
 
 def _slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", (value or "").lower()).strip("-")
+
+
+def _norm(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", (value or "").lower())
 
 
 def _pick_slug(conn, rep: dict) -> str:
@@ -56,8 +61,9 @@ def _alias_tokens(rec: dict) -> set[str]:
     return out
 
 
-def import_records(conn, entries: list[dict], now=None) -> dict:
+def import_records(conn, entries: list[dict], now=None, watch_domains=None) -> dict:
     now_s = iso(now or utcnow())
+    watch_domains = watch_domains or {}
     # 宇宙是全量输入，重建而不是增量：避免归并规则变化后残留旧行。
     for table in ("provider_sources", "provider_aliases", "provider_domains", "providers"):
         conn.execute(f"DELETE FROM {table}")
@@ -71,7 +77,7 @@ def import_records(conn, entries: list[dict], now=None) -> dict:
 
     stats = {
         "providers": 0, "monitored": 0, "ignored": 0, "in_universe": 0,
-        "domains": 0, "aliases": 0, "sources": 0,
+        "domains": 0, "aliases": 0, "sources": 0, "watch_domains": 0,
     }
     conflicts = {"domain": [], "alias": [], "slug": []}
 
@@ -131,6 +137,17 @@ def import_records(conn, entries: list[dict], now=None) -> dict:
         if not sources and rep.get("monitored"):
             sources["watchlist"] = now_s
 
+        # 用 watchlist 的 URL 补 Provider 域名：宇宙里只有 8 条有快照但缺域名。
+        if watch_domains:
+            matched: set[str] = set()
+            for key in (_norm(rep["name"]), _norm(rep.get("brand_key")), _norm(rep.get("slug"))):
+                if key and watch_domains.get(key):
+                    matched = watch_domains[key]
+                    break
+            if matched - domains:
+                domains |= matched
+                stats["watch_domains"] += 1
+
         for d in sorted(domains):
             owner = conn.execute(
                 "SELECT provider_id FROM provider_domains WHERE domain = ?", (d,)
@@ -178,7 +195,14 @@ def main() -> None:
     cfg = load_config()
     repo = SqliteRepository(cfg.data_dir / "radar.db")
     data = json.loads(SRC.read_text(encoding="utf-8"))
-    result = import_records(repo.conn, data["entries"])
+    providers = load_providers(cfg.providers_file)
+    watch_domains: dict[str, set[str]] = {}
+    for p in providers:
+        doms = {registrable_domain(u["url"]) for u in p.get("urls") or []}
+        doms.discard(None)
+        if doms:
+            watch_domains.setdefault(_norm(p["name"]), set()).update(doms)
+    result = import_records(repo.conn, data["entries"], watch_domains=watch_domains)
     sql = repo.provider_stats()
     stats = result["stats"]
     conflicts = result["conflicts"]
@@ -201,6 +225,7 @@ def main() -> None:
         f"| in_universe | {stats['in_universe']} |",
         f"| ignored（非厂商） | {stats['ignored']} |",
         f"| provider_domains | {stats['domains']} |",
+        f"| 其中 watchlist 补域名 | {stats['watch_domains']} |",
         f"| provider_aliases | {stats['aliases']} |",
         f"| provider_sources | {stats['sources']} |\n",
         "## 覆盖率对账\n",

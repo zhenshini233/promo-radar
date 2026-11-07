@@ -40,8 +40,8 @@ docs/
 | ├ in_universe | 32 |
 | └ ignored | 9 |
 | Provider 覆盖率 | 91.4% |
-| 监控页 | 345 |
-| 页 ↔ Provider 关联率 | 92.2% |
+| 监控页 | 377 |
+| 页 ↔ Provider 关联率 | 96.0% |
 | 数据库 schema | v7 |
 | 测试 | 106 通过 |
 

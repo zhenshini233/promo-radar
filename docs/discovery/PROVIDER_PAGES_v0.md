@@ -7,29 +7,29 @@
 
 | 指标 | 数值 |
 |---|---:|
-| 监控页总数 | 345 |
-| 已关联 | 318 |
-| 关联率 | 92.2% |
-| 未关联 | 19 |
+| 监控页总数 | 377 |
+| 已关联 | 362 |
+| 关联率 | 96.0% |
+| 未关联 | 7 |
 | 关联到非厂商（ignored） | 8 |
-| 有页的 Provider | 297 |
-| 无页的 Provider | 73 |
+| 有页的 Provider | 337 |
+| 无页的 Provider | 33 |
 
 ## 按分类
 
 | 分类 | 页数 | Provider 数 |
 |---|---:|---:|
-| inference | 86 | 83 |
-| model_lab | 49 | 39 |
-| cloud | 46 | 42 |
-| gpu | 39 | 37 |
-| app | 32 | 31 |
-| ai_infra | 25 | 24 |
-| aggregator | 21 | 21 |
-| unknown | 14 | 14 |
+| inference | 95 | 91 |
+| model_lab | 58 | 47 |
+| cloud | 50 | 45 |
+| gpu | 42 | 40 |
+| app | 38 | 37 |
+| ai_infra | 33 | 31 |
+| aggregator | 22 | 22 |
+| unknown | 18 | 18 |
 | relay | 6 | 6 |
 
-## 名称不一致（91，Top 30）
+## 名称不一致（97，Top 30）
 
 | URL | snapshots.provider | 关联 Provider |
 |---|---|---|
@@ -64,68 +64,56 @@
 | https://ionos.com | ionos.com | IONOS Cloud |
 | https://hubspot.com | hubspot.com | HubSpot for Startups |
 
-## 未关联（19，Top 30）
+## 未关联（7，Top 30）
 
 | URL | snapshots.provider |
 |---|---|
-| https://cloud.siliconflow.cn/pricing | SiliconFlow |
-| https://www.parasail.io/ | Parasail |
 | https://mimo.mi.com/ | Xiaomi-MiMo |
-| https://www.liquid.ai/pricing | Liquid |
-| https://dev.writer.com/ | Writer |
-| https://aionlabs.ai/pricing | Aion-Labs |
-| https://moondream.ai/ | Moondream |
-| https://scaledown.ai/ | Scaledown |
-| https://elorian.ai/ | Elorian |
-| https://typesafe.ai/ | Typesafe |
-| https://relace.io/ | Relace |
-| https://github.com | Vercel AI Gateway |
 | https://openrouter.ai | OpenRouter |
 | https://huggingface.co | Hugging Face |
 | https://ovh.net | OVHcloud AI Endpoints |
 | https://www.chinamobileltd.com | 中国移动 |
-| https://neon.tech | Neon |
 | https://www.openbmb.cn | OpenBMB |
 | https://www.tii.ae | TII（阿布扎比技术创新院） |
 
-## 无监控页的 Provider（73，Top 30）
+## 无监控页的 Provider（33，Top 30）
 
 | 名称 | slug | 状态 |
 |---|---|---|
-| OCI Generative AI | oracle | monitored |
-| OpenAI | openai | monitored |
-| Xiaomi | xiaomi | monitored |
-| Genesis Cloud | genesiscloud-com | monitored |
-| Infer by Flow7 | flow7 | monitored |
-| kluster.ai | kluster | monitored |
-| KT | kt | monitored |
-| Lightricks | lightricks | monitored |
-| Makora | makora | monitored |
-| Phala | phala | monitored |
-| Pioneer | pioneer | monitored |
-| Prismml | prismml | monitored |
-| routing.run | routingrun | monitored |
-| scaledown | scaledown | monitored |
-| SenseNova (China) | sensenova | monitored |
-| Systalyze | systalyze | monitored |
-| Tensormesh | tensormesh | monitored |
-| Vultr | vultr | monitored |
-| Clarifai | clarifai | monitored |
-| aion-labs | aion | monitored |
-| moondream | moondream | monitored |
-| Parasail | parasail | monitored |
-| relace | relace | monitored |
-| writer | writer | monitored |
-| aistudentpack.com | aistudentpack | monitored |
-| AMD | amd | monitored |
-| Fishaudio | fishaudio | monitored |
-| Heygen | heygen | monitored |
-| Leonardo AI | leonardo | monitored |
-| lovable.dev | lovable | monitored |
+| Wandb | wandb | monitored |
+| Avian | avian | in_universe |
+| clf_ai_gateway | clfaigateway | in_universe |
+| Cosine | cosine | in_universe |
+| Crucible | crucible | in_universe |
+| DekaLLM | dekallm | in_universe |
+| Inferact vLLM | inferact | in_universe |
+| inferenceapis | inferenceapis | in_universe |
+| llamagate | llamagate | in_universe |
+| Mara | mara | in_universe |
+| ModelRun | modelrun | in_universe |
+| nex-agi | nexagi | in_universe |
+| NextBit | nextbit | in_universe |
+| openinfer | openinfer | in_universe |
+| Pearl Research | pearlresearch | in_universe |
+| prism | prism | in_universe |
+| publicai | publicai | in_universe |
+| Quiver | quiver | in_universe |
+| recursive | recursive | in_universe |
+| refuseless | refuseless | in_universe |
+| sail | sail | in_universe |
+| Switchpoint | switchpoint | in_universe |
+| xingchen-agi | xingchen | in_universe |
+| aiand | aiand | in_universe |
+| Ant Digital | antdigital | in_universe |
+| dots-studio | dotsstudio | in_universe |
+| eu_jev | eujev | in_universe |
+| laya | laya | in_universe |
+| lemonade | lemonade | in_universe |
+| nace | nace | in_universe |
 
 ## 结论
 
-- 关联率 **92.2%**，说明 Provider 实体与监控页已可对账。
+- 关联率 **96.0%**，说明 Provider 实体与监控页已可对账。
 - 未关联页通常是：无官网条目、促销/活动页、域名未进 provider_domains。
 - 名称不一致不代表错，多为来源写法差异（如 OpenAI / openai）。
 - 下一步可把关联结果做成 dashboard 分组，或迁移 snapshots.provider_id。
