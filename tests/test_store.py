@@ -142,3 +142,49 @@ def test_digest_data_sections(tmp_path):
     assert len(data["new_deals"]) == 1
     assert data["total_deals"] == 1 and data["active_deals"] == 1
     assert data["needs_review"] == []
+
+
+def test_feedback_upsert_and_clear(tmp_path):
+    store = _store(tmp_path)
+    now = utcnow()
+    deal, _ = store.upsert_scored(_scored(), now)
+    key = deal.dedup_key
+
+    store.record_feedback(key, "up")
+    assert store.feedback_map() == {key: "up"}
+
+    # 改主意：覆盖
+    store.record_feedback(key, "down")
+    assert store.feedback_map() == {key: "down"}
+
+    # 空 vote = 清除
+    store.record_feedback(key, "")
+    assert store.feedback_map() == {}
+
+
+def test_feedback_rejects_bad_vote(tmp_path):
+    store = _store(tmp_path)
+    try:
+        store.record_feedback("k", "banana")
+    except ValueError:
+        return
+    raise AssertionError("bad vote should raise")
+
+
+def test_feedback_stats_aggregates_by_source(tmp_path):
+    store = _store(tmp_path)
+    now = utcnow()
+    d1, _ = store.upsert_scored(_scored(_item(source="linuxdo")), now)
+    d2, _ = store.upsert_scored(
+        _scored(_item(title="HN 同款", url="https://hn.com/x", source="hackernews")), now
+    )
+    store.record_feedback(d1.dedup_key, "up")
+    store.record_feedback(d1.dedup_key, "down")  # 覆盖，不算两条
+    store.record_feedback(d2.dedup_key, "up")
+
+    stats = store.feedback_stats()
+    assert stats["total"] == 2
+    assert stats["up"] == 1
+    assert stats["down"] == 1
+    assert stats["by_source"]["linuxdo"]["down"] == 1
+    assert stats["by_source"]["hackernews"]["up"] == 1

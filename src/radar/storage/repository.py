@@ -20,7 +20,7 @@ from typing import Protocol, runtime_checkable
 from ..domain.dedup import find_fuzzy_match, make_key, norm_title
 from ..domain.models import Deal, RunReport, ScoredItem, iso, utcnow
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 _SCHEMA_PATH = Path(__file__).parent / "schema.sql"
 
 
@@ -480,6 +480,60 @@ class SqliteRepository(StateStore):
             "SELECT * FROM source_runs WHERE run_id = ? ORDER BY rowid", (run["id"],)
         ).fetchall()
         return {"run": dict(run), "sources": [dict(s) for s in sources]}
+
+    # ---------- feedback ----------
+
+    def record_feedback(self, dedup_key: str, vote: str, note: str = "", now=None) -> None:
+        """upsert：同一 deal 只留最新一次反馈；vote 传空串/None = 清除反馈。"""
+        if vote not in ("up", "down", "snooze", ""):
+            raise ValueError(f"bad vote: {vote!r}")
+        now_s = iso(now or utcnow())
+        if not vote:
+            self.conn.execute("DELETE FROM feedback WHERE dedup_key = ?", (dedup_key,))
+            self.conn.commit()
+            return
+        self.conn.execute(
+            """
+            INSERT INTO feedback (dedup_key, vote, note, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?)
+            ON CONFLICT(dedup_key) DO UPDATE SET
+                vote = excluded.vote,
+                note = excluded.note,
+                updated_at = excluded.updated_at
+            """,
+            (dedup_key, vote, note, now_s, now_s),
+        )
+        self.conn.commit()
+
+    def feedback_map(self) -> dict[str, str]:
+        """{dedup_key: vote}，dashboard 渲染时合并进 deal dict。"""
+        rows = self.conn.execute("SELECT dedup_key, vote FROM feedback").fetchall()
+        return {r["dedup_key"]: r["vote"] for r in rows}
+
+    def feedback_stats(self) -> dict:
+        """按来源统计 up/down/snooze 数量，用于关键词复盘面板。"""
+        row = self.conn.execute(
+            "SELECT "
+            " SUM(CASE WHEN vote='up' THEN 1 ELSE 0 END) AS up,"
+            " SUM(CASE WHEN vote='down' THEN 1 ELSE 0 END) AS down,"
+            " SUM(CASE WHEN vote='snooze' THEN 1 ELSE 0 END) AS snooze,"
+            " COUNT(*) AS total FROM feedback"
+        ).fetchone()
+        by_source = self.conn.execute(
+            "SELECT d.source AS source, f.vote AS vote, COUNT(*) AS n"
+            " FROM feedback f JOIN deals d ON d.dedup_key = f.dedup_key"
+            " GROUP BY d.source, f.vote"
+        ).fetchall()
+        per_source: dict[str, dict[str, int]] = {}
+        for r in by_source:
+            per_source.setdefault(r["source"], {})[r["vote"]] = r["n"]
+        return {
+            "up": row["up"] or 0,
+            "down": row["down"] or 0,
+            "snooze": row["snooze"] or 0,
+            "total": row["total"] or 0,
+            "by_source": per_source,
+        }
 
     # ---------- kv state ----------
 

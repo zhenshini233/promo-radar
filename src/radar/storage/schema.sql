@@ -1,4 +1,4 @@
--- promo-radar 数据库 schema（PRAGMA user_version = 3）
+-- promo-radar 数据库 schema（PRAGMA user_version = 4）
 
 CREATE TABLE IF NOT EXISTS deals (
     dedup_key          TEXT PRIMARY KEY,
@@ -73,4 +73,14 @@ CREATE INDEX IF NOT EXISTS idx_history_url_time ON snapshot_history (url, checke
 CREATE TABLE IF NOT EXISTS state (
     key   TEXT PRIMARY KEY,
     value TEXT NOT NULL
+);
+
+-- 用户对 deal 的反馈：up=已薅/有价值，down=误报，snooze=暂时不关心。
+-- 一个 deal 只留最新一次反馈（可改主意），用于反哺 scoring 与关键词复盘。
+CREATE TABLE IF NOT EXISTS feedback (
+    dedup_key TEXT PRIMARY KEY,
+    vote      TEXT NOT NULL CHECK (vote IN ('up', 'down', 'snooze')),
+    note      TEXT DEFAULT '',
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
 );

@@ -316,6 +316,11 @@
               <span class="provider" v-if="d.provider">[[ d.provider ]]</span>
               <span class="pill src">[[ srcName(d.source) ]]<template v-if="d.also_seen_in.length"> / [[ d.also_seen_in.map(srcName).join(' / ') ]]</template></span>
               <span class="date num">[[ d.first_seen_at.slice(0, 10) ]]</span>
+              <span class="fb" v-if="st.serveMode">
+                <button class="fb-btn" :class="{on: voteOf(d)==='up'}" title="已薅/有价值" @click="sendFeedback(d, 'up')">👍</button>
+                <button class="fb-btn" :class="{on: voteOf(d)==='down'}" title="误报" @click="sendFeedback(d, 'down')">👎</button>
+                <button class="fb-btn" :class="{on: voteOf(d)==='snooze'}" title="暂时不关心" @click="sendFeedback(d, 'snooze')">💤</button>
+              </span>
             </div>
           </article>
         </div>

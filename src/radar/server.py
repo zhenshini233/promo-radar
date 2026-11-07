@@ -81,9 +81,16 @@ class RadarHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
-        if self.path.split("?")[0] != "/api/refresh":
-            self._json({"error": "not found"}, 404)
+        path = self.path.split("?")[0]
+        if path == "/api/refresh":
+            self._handle_refresh()
             return
+        if path == "/api/feedback":
+            self._handle_feedback()
+            return
+        self._json({"error": "not found"}, 404)
+
+    def _handle_refresh(self):
         if _state["running"]:
             self._json({"running": True, "message": "上一轮刷新仍在进行"})
             return
@@ -101,6 +108,25 @@ class RadarHandler(SimpleHTTPRequestHandler):
         _state["started_at"] = _dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         threading.Thread(target=_refresh_worker, args=(self.cfg, sources), daemon=True).start()
         self._json({"started": True, "sources": sources or "all"})
+
+    def _handle_feedback(self):
+        length = int(self.headers.get("Content-Length") or 0)
+        body = json.loads(self.rfile.read(length) or b"{}") if length else {}
+        key = (body.get("key") or "").strip()
+        vote = (body.get("vote") or "").strip()
+        note = (body.get("note") or "").strip()
+        if not key:
+            self._json({"error": "missing key"}, 400)
+            return
+        if vote not in ("up", "down", "snooze", ""):
+            self._json({"error": f"bad vote: {vote}"}, 400)
+            return
+        repo = SqliteRepository(self.cfg.data_dir / "radar.db")
+        try:
+            repo.record_feedback(key, vote, note=note)
+        finally:
+            repo.close()
+        self._json({"ok": True, "key": key, "vote": vote})
 
 
 def make_server(cfg, host: str = "127.0.0.1", port: int = 8790) -> ThreadingHTTPServer:

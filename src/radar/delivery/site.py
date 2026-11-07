@@ -138,6 +138,7 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
         for sid in SOURCE_IDS
     }
     last_run = repo.last_run()
+    feedback = repo.feedback_map()
 
     signal_pages = sum(1 for m in monitors if m["promo_keywords"])
     payload = {
@@ -150,13 +151,14 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
             "monitors": len(monitors),
             "signal_pages": signal_pages,
         },
-        "deals": [_deal_dict(d) for d in deals],
+        "deals": [{**_deal_dict(d), "vote": feedback.get(d.dedup_key, "")} for d in deals],
         "monitors": monitors,
         "last_run": last_run,
         "source_runs": repo.latest_source_runs(),
         "catalog_stats": _catalog_stats(repo),
         "source_vendors": source_vendors,
         "registry_sizes": registry_sizes(registries),
+        "feedback_stats": repo.feedback_stats(),
         # 源元数据唯一来源是 coverage.py，前端不再手抄
         "source_meta": {
             sid: {"name": SOURCE_NAMES[sid], "type": SOURCE_TYPES[sid], "blurb": SOURCE_BLURBS[sid]}

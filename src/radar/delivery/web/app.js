@@ -54,6 +54,7 @@
         monQ: "", monQd: "", monPage: 1, monPageSize: 30,
         serveMode: false, refreshing: false, refreshMsg: "",
         refreshSel: {}, expandedVendors: null,
+        votes: {}, feedbackMsg: "",
       });
 
       // ---------- 工具 ----------
@@ -371,6 +372,23 @@
         });
       }
 
+      // ---------- 反馈（serve 模式） ----------
+      function voteOf(d) { return st.votes[d.dedup_key] || d.vote || ""; }
+      function sendFeedback(d, vote) {
+        if (!st.serveMode) {
+          st.feedbackMsg = "反馈仅在 radar serve 模式下可用（双击 file:// 或 Pages 为静态托管，无后端写入）";
+          return;
+        }
+        var next = voteOf(d) === vote ? "" : vote; // 再点一次同 vote = 清除
+        fetch("/api/feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: d.dedup_key, vote: next }),
+        }).then(function (r) { return r.json(); }).then(function () {
+          st.votes[d.dedup_key] = next;
+        }).catch(function (e) { st.feedbackMsg = "反馈失败：" + e; });
+      }
+
       // 防抖搜索
       var qt = null, mqt = null;
       watch(function () { return st.q; }, function (v) {
@@ -425,6 +443,8 @@
         coverChips: coverChips,
         sourceCards: sourceCards, srcSummary: srcSummary,
         startRefresh: startRefresh,
+        sendFeedback: sendFeedback, voteOf: voteOf,
+        feedbackStats: DATA.feedback_stats || { total: 0, up: 0, down: 0, snooze: 0 },
         toggleVendors: toggleVendors, sourceVendors: DATA.source_vendors || {},
         pendingEnroll: DATA.pending_enroll || [],
       };
