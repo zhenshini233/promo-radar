@@ -12,6 +12,11 @@ dependencies = [
     "trafilatura>=1.12",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+]
+
 [project.scripts]
 radar = "radar.cli:main"
 

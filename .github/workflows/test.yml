@@ -1,0 +1,25 @@
+name: test
+
+# 代码改动护栏：push 到 main / PR 时跑 pytest。
+# 定时抓取、数据 commit（带 [skip ci]）走 radar.yml，互不干扰。
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -e ".[dev]"
+
+      - name: pytest
+        run: pytest -q
