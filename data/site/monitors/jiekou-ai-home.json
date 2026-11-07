@@ -4,12 +4,12 @@
  "url": "https://jiekou.ai",
  "slug": "jiekou-ai-home",
  "promo_keywords": "$1 in free credits;;free credits",
- "last_checked_at": "2026-11-06T03:30:29Z",
- "last_changed_at": "2026-11-06T03:30:29Z",
+ "last_checked_at": "2026-11-07T03:29:56Z",
+ "last_changed_at": "2026-11-07T03:29:56Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "------------------------111111",
- "checked_days": 6,
+ "band": "-----------------------1111111",
+ "checked_days": 7,
  "covered_by": [
   "modelsdev"
  ],
@@ -61,6 +61,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:29Z",
+   "promo_keywords": "$1 in free credits;;free credits",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-07T03:29:56Z",
    "promo_keywords": "$1 in free credits;;free credits",
    "changed": 1
   }

@@ -4,12 +4,12 @@
  "url": "https://modal.com/pricing",
  "slug": "modal-pricing",
  "promo_keywords": "free credit;;free credits",
- "last_checked_at": "2026-11-06T03:30:25Z",
- "last_changed_at": "2026-11-06T03:30:25Z",
+ "last_checked_at": "2026-11-07T03:29:53Z",
+ "last_changed_at": "2026-11-07T03:29:53Z",
  "notes": "",
  "monitored": true,
- "band": "------------------------111111",
- "checked_days": 6,
+ "band": "-----------------------1111111",
+ "checked_days": 7,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -83,6 +83,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:25Z",
+   "promo_keywords": "free credit;;free credits",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-07T03:29:53Z",
    "promo_keywords": "free credit;;free credits",
    "changed": 1
   }

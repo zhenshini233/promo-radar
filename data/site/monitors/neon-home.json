@@ -4,12 +4,12 @@
  "url": "https://neon.tech",
  "slug": "neon-home",
  "promo_keywords": "free tier",
- "last_checked_at": "2026-11-06T03:30:29Z",
- "last_changed_at": "2026-11-06T03:30:29Z",
+ "last_checked_at": "2026-11-07T03:29:56Z",
+ "last_changed_at": "2026-11-07T03:29:56Z",
  "notes": "auto-enrolled from brands 2026-11-01",
  "monitored": true,
- "band": "------------------------111111",
- "checked_days": 6,
+ "band": "-----------------------1111111",
+ "checked_days": 7,
  "covered_by": [
   "aicredits",
   "modelsdev"
@@ -57,6 +57,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:29Z",
+   "promo_keywords": "free tier",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-07T03:29:56Z",
    "promo_keywords": "free tier",
    "changed": 1
   }

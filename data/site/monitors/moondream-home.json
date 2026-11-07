@@ -4,12 +4,12 @@
  "url": "https://moondream.ai/",
  "slug": "moondream-home",
  "promo_keywords": "$5 in credits",
- "last_checked_at": "2026-11-06T03:30:27Z",
+ "last_checked_at": "2026-11-07T03:29:55Z",
  "last_changed_at": "2026-11-01T11:22:07Z",
  "notes": "每月自动加 5 美元 credit，免绑卡（页面实锤，力度最大）",
  "monitored": true,
- "band": "------------------------111111",
- "checked_days": 6,
+ "band": "-----------------------1111111",
+ "checked_days": 7,
  "covered_by": [
   "openrouter"
  ],
@@ -81,6 +81,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:27Z",
+   "promo_keywords": "$5 in credits",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-07T03:29:55Z",
    "promo_keywords": "$5 in credits",
    "changed": 0
   }

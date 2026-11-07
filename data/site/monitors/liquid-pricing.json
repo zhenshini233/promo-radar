@@ -4,12 +4,12 @@
  "url": "https://www.liquid.ai/pricing",
  "slug": "liquid-pricing",
  "promo_keywords": "$2 in free credit;;free credit",
- "last_checked_at": "2026-11-06T03:30:27Z",
- "last_changed_at": "2026-11-06T03:30:27Z",
+ "last_checked_at": "2026-11-07T03:29:54Z",
+ "last_changed_at": "2026-11-07T03:29:54Z",
  "notes": "新组织送 2 美元 credit（页面实锤）",
  "monitored": true,
- "band": "------------------------111111",
- "checked_days": 6,
+ "band": "-----------------------1111111",
+ "checked_days": 7,
  "covered_by": [
   "openrouter",
   "modelsdev",
@@ -83,6 +83,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:27Z",
+   "promo_keywords": "$2 in free credit;;free credit",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-07T03:29:54Z",
    "promo_keywords": "$2 in free credit;;free credit",
    "changed": 1
   }

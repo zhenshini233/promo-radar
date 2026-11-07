@@ -4,12 +4,12 @@
  "url": "https://www.ai21.com/",
  "slug": "ai21-home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-06T03:30:27Z",
- "last_changed_at": "2026-11-06T03:30:27Z",
+ "last_checked_at": "2026-11-07T03:29:55Z",
+ "last_changed_at": "2026-11-07T03:29:55Z",
  "notes": "Jamba 系列；AA 交叉比对发现的盲区",
  "monitored": true,
- "band": "------------------------000000",
- "checked_days": 6,
+ "band": "-----------------------0000000",
+ "checked_days": 7,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -65,6 +65,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:27Z",
+   "promo_keywords": "",
+   "changed": 1
+  },
+  {
+   "checked_at": "2026-11-07T03:29:55Z",
    "promo_keywords": "",
    "changed": 1
   }

@@ -4,12 +4,12 @@
  "url": "https://ainetcafe.com",
  "slug": "ainetcafe-home",
  "promo_keywords": "免费额度",
- "last_checked_at": "2026-11-06T03:30:28Z",
+ "last_checked_at": "2026-11-07T03:29:55Z",
  "last_changed_at": "2026-11-01T14:08:07Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "------------------------11-111",
- "checked_days": 5,
+ "band": "-----------------------11-1111",
+ "checked_days": 6,
  "covered_by": [
   "modelsdev"
  ],
@@ -56,6 +56,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:28Z",
+   "promo_keywords": "免费额度",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-07T03:29:55Z",
    "promo_keywords": "免费额度",
    "changed": 0
   }

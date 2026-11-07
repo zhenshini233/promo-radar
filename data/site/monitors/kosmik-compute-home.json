@@ -4,12 +4,12 @@
  "url": "https://koscompute.com",
  "slug": "kosmik-compute-home",
  "promo_keywords": "free credits",
- "last_checked_at": "2026-11-06T03:30:28Z",
+ "last_checked_at": "2026-11-07T03:29:55Z",
  "last_changed_at": "2026-11-01T14:08:08Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "------------------------111111",
- "checked_days": 6,
+ "band": "-----------------------1111111",
+ "checked_days": 7,
  "covered_by": [
   "modelsdev"
  ],
@@ -61,6 +61,11 @@
   },
   {
    "checked_at": "2026-11-06T03:30:28Z",
+   "promo_keywords": "free credits",
+   "changed": 0
+  },
+  {
+   "checked_at": "2026-11-07T03:29:55Z",
    "promo_keywords": "free credits",
    "changed": 0
   }

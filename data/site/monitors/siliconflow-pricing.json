@@ -4,12 +4,12 @@
  "url": "https://cloud.siliconflow.cn/pricing",
  "slug": "siliconflow-pricing",
  "promo_keywords": "$1 credit",
- "last_checked_at": "2026-11-06T03:30:26Z",
+ "last_checked_at": "2026-11-07T03:29:53Z",
  "last_changed_at": "2026-11-06T03:30:26Z",
  "notes": "硅基流动，国内促销文化浓",
  "monitored": true,
- "band": "------------------------111111",
- "checked_days": 6,
+ "band": "-----------------------1111111",
+ "checked_days": 7,
  "covered_by": [
   "aicredits",
   "openrouter",
@@ -87,6 +87,11 @@
    "checked_at": "2026-11-06T03:30:26Z",
    "promo_keywords": "$1 credit",
    "changed": 1
+  },
+  {
+   "checked_at": "2026-11-07T03:29:53Z",
+   "promo_keywords": "$1 credit",
+   "changed": 0
   }
  ]
 }

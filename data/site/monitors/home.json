@@ -4,12 +4,12 @@
  "url": "https://www.aliyun.com",
  "slug": "home",
  "promo_keywords": "",
- "last_checked_at": "2026-11-06T03:30:29Z",
+ "last_checked_at": "2026-11-07T03:29:56Z",
  "last_changed_at": "2026-11-06T03:30:29Z",
  "notes": "auto-enrolled from brands 2026-11-01",
  "monitored": true,
- "band": "------------------------100000",
- "checked_days": 6,
+ "band": "-----------------------1000000",
+ "checked_days": 7,
  "covered_by": [],
  "history": [
   {
@@ -56,6 +56,11 @@
    "checked_at": "2026-11-06T03:30:29Z",
    "promo_keywords": "",
    "changed": 1
+  },
+  {
+   "checked_at": "2026-11-07T03:29:56Z",
+   "promo_keywords": "",
+   "changed": 0
   }
  ]
 }

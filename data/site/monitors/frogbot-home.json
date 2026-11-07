@@ -4,12 +4,12 @@
  "url": "https://frogbot.ai",
  "slug": "frogbot-home",
  "promo_keywords": "$140 credit",
- "last_checked_at": "2026-11-06T03:30:28Z",
- "last_changed_at": "2026-11-05T03:30:22Z",
+ "last_checked_at": "2026-11-07T03:29:55Z",
+ "last_changed_at": "2026-11-07T03:29:55Z",
  "notes": "auto-enrolled from models.dev catalog cross-ref 2026-11-01",
  "monitored": true,
- "band": "------------------------001111",
- "checked_days": 6,
+ "band": "-----------------------0011111",
+ "checked_days": 7,
  "covered_by": [
   "modelsdev"
  ],
@@ -63,6 +63,11 @@
    "checked_at": "2026-11-06T03:30:28Z",
    "promo_keywords": "$140 credit",
    "changed": 0
+  },
+  {
+   "checked_at": "2026-11-07T03:29:55Z",
+   "promo_keywords": "$140 credit",
+   "changed": 1
   }
  ]
 }
