@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>promo-radar: AI API 促销活动</title>
   <id>urn:promo-radar:feed</id>
-  <updated>2026-11-07T15:48:24Z</updated>
+  <updated>2026-11-07T16:02:56Z</updated>
   <entry>
     <id>urn:promo-radar:deal:4a15b49cd76615d6</id>
     <title>Leonardo AI $5 Free API Credits</title>
@@ -68,14 +68,14 @@
   </entry>
   <entry>
     <id>urn:promo-radar:deal:c82e420d9c3d4c91</id>
-    <title>[Cerebras] 页面出现促销信号: $5 in free credit, free credit</title>
+    <title>Cerebras — $5 in free credit</title>
     <link href="https://www.cerebras.ai/inference" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] Cerebras $5 — d for everyone—from startups to global enterprises. Free Trial Get started with $5 in free credit after creating an account. Prototype prompts, agents, and real-time apps before you spend a dollar. Get API Key Develop…</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:aa471b8678d8e61f</id>
-    <title>[meshy.ai] 页面出现促销信号: free credit, free credits, free tier, signup bonus</title>
+    <title>meshy.ai — free credits</title>
     <link href="https://meshy.ai" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] meshy.ai — Title Log in or sign up in seconds VariantB Description Sign up and claim 100 free credits Title One step from your 3D model FooterTerms By continuing, you agree to our t u003clink1 u003eTerm…</summary>
@@ -110,28 +110,28 @@
   </entry>
   <entry>
     <id>urn:promo-radar:deal:2042768d04401ee2</id>
-    <title>[helyxai.space] 页面出现促销信号: $10 free credit, $10 in free credit, free credit</title>
+    <title>helyxai.space — $10 in free credit</title>
     <link href="https://helyxai.space" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] helyxai.space $10 — Helyx AI | $10 Free Credit on Signup &amp; 50+ Top Tier AI Models .skip-link position: absolute left: -9999px top: 0 z-index: 100 background: #1…</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:38955070100398bc</id>
-    <title>[civo.com] 页面出现促销信号: $250 free credit, $250 in free credit, free credit</title>
+    <title>civo.com — $250 in free credit</title>
     <link href="https://civo.com" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] civo.com $250 — ivo? acceptedAnswer @type Answer text Sign up for a Civo account and you’ll get $250 in free credit to explore our platform for a full month. No lock-ins. No legalese. Just the fastest way to work on the cloud’s bright…</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:e5e014db09b12f62</id>
-    <title>[ovhcloud.com] 页面出现促销信号: $100 credit, $200 in free credits, $300 credit, free credits</title>
+    <title>ovhcloud.com — $200 in free credits</title>
     <link href="https://ovhcloud.com" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] ovhcloud.com $100 — ation Cloud Databases Cloud Analytics Pay-As-You-Go Create your first project - $200 in free credits OVHcloud Enterprise Solutions for Your Business Whether you need to manage cost, infrastructure capacity, and agility o…</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:7e73e326a081396a</id>
-    <title>[Liquid] 页面出现促销信号: $2 in free credit, free credit</title>
+    <title>Liquid — $2 in free credit</title>
     <link href="https://www.liquid.ai/pricing" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] Liquid $2 — MTok Image Input $0.10 / MTok Cached input $0.02 / MTok Output — Available on $2 in free credit for every new organization Start free on Liquid Console $2 in free credit for every new organization Start free on Liqu…</summary>
@@ -201,7 +201,7 @@
   </entry>
   <entry>
     <id>urn:promo-radar:deal:8e2a20b015c4527b</id>
-    <title>[venice.ai] 页面出现促销信号: $1 in credits, $225 in credits, $75 in credits, free tier</title>
+    <title>venice.ai — $225 in credits</title>
     <link href="https://venice.ai" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] venice.ai $1 — Pro All AI models (Pro &amp; Advanced) Unlimited text prompts 1,000 images per day $1 in credits per month Hi-res upscaling and watermark removal Character creation API access Pro+ Most Popular $68 /mo $816 Save $81…</summary>
@@ -355,21 +355,21 @@
   </entry>
   <entry>
     <id>urn:promo-radar:deal:7da3b21566a3f4e0</id>
-    <title>[Modal] 页面出现促销信号: free credit, free credits</title>
+    <title>Modal — free credits</title>
     <link href="https://modal.com/pricing" />
     <updated>2026-11-01T12:39:08Z</updated>
     <summary>[watchlist] Modal $0 — nd independent developers looking to level up. $0 + compute / month $30 / month free credits 3 workspace seats included 100 containers + 10 GPU concurrency Scheduled and Web Functions (limited) Real-time metrics…</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:00dd32cbdb4b05c8</id>
-    <title>[gladia.io] 页面出现促销信号: $3,000 in credits</title>
+    <title>gladia.io — $3,000 in credits</title>
     <link href="https://gladia.io" />
     <updated>2026-11-01T12:29:39Z</updated>
     <summary>[watchlist] gladia.io $3,000 — adia vs Deepgram → Gladia vs AssemblyAI → Gladia vs ElevenLabs → Startup Studio $3,000 in credits for startups 12 months of credits and a dedicated Field Developer Engineer for your startup → Use cases Meeting assista…</summary>
   </entry>
   <entry>
     <id>urn:promo-radar:deal:4333fe1376aef9fc</id>
-    <title>[DeepInfra] 页面出现促销信号: $1,000 in credits</title>
+    <title>DeepInfra — $1,000 in credits</title>
     <link href="https://deepinfra.com" />
     <updated>2026-11-01T12:29:39Z</updated>
     <summary>[watchlist] DeepInfra $1,000 — ootnote at NVIDIA Nemotron 3 Ultra cached-input prices ($0.10/M). Your grant is $1,000 in credits, spendable across the Nemotron family at list prices — output and uncached input draw it down faster. Valid for 12 mont…</summary>

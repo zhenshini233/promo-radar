@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T15:48:24Z",
+ "generated_at": "2026-11-07T16:02:56Z",
  "kpis": {
   "total_deals": 208,
   "active_deals": 208,
@@ -12,7 +12,7 @@
   {
    "dedup_key": "c82e420d9c3d4c910d47c241bfbb5e4adc6f60c3",
    "source": "watchlist",
-   "title": "[Cerebras] 页面出现促销信号: $5 in free credit, free credit",
+   "title": "Cerebras — $5 in free credit",
    "url": "https://www.cerebras.ai/inference",
    "provider": "Cerebras",
    "amount_hint": "$5",
@@ -35,7 +35,7 @@
   {
    "dedup_key": "aa471b8678d8e61f0bb1a238e9d55465a4851a11",
    "source": "watchlist",
-   "title": "[meshy.ai] 页面出现促销信号: free credit, free credits, free tier, signup bonus",
+   "title": "meshy.ai — free credits",
    "url": "https://meshy.ai",
    "provider": "meshy.ai",
    "amount_hint": null,
@@ -58,7 +58,7 @@
   {
    "dedup_key": "2042768d04401ee2bd96e8f9044dc6b7754f58cb",
    "source": "watchlist",
-   "title": "[helyxai.space] 页面出现促销信号: $10 free credit, $10 in free credit, free credit",
+   "title": "helyxai.space — $10 in free credit",
    "url": "https://helyxai.space",
    "provider": "helyxai.space",
    "amount_hint": "$10",
@@ -80,7 +80,7 @@
   {
    "dedup_key": "38955070100398bcbcbb97f1c0026951bd1091ed",
    "source": "watchlist",
-   "title": "[civo.com] 页面出现促销信号: $250 free credit, $250 in free credit, free credit",
+   "title": "civo.com — $250 in free credit",
    "url": "https://civo.com",
    "provider": "civo.com",
    "amount_hint": "$250",
@@ -102,7 +102,7 @@
   {
    "dedup_key": "e5e014db09b12f62d281e346ad01b96b66dcba72",
    "source": "watchlist",
-   "title": "[ovhcloud.com] 页面出现促销信号: $100 credit, $200 in free credits, $300 credit, free credits",
+   "title": "ovhcloud.com — $200 in free credits",
    "url": "https://ovhcloud.com",
    "provider": "ovhcloud.com",
    "amount_hint": "$100",
@@ -124,7 +124,7 @@
   {
    "dedup_key": "7e73e326a081396a5a8aeb060b02b2f1e56d19fb",
    "source": "watchlist",
-   "title": "[Liquid] 页面出现促销信号: $2 in free credit, free credit",
+   "title": "Liquid — $2 in free credit",
    "url": "https://www.liquid.ai/pricing",
    "provider": "Liquid",
    "amount_hint": "$2",
@@ -146,7 +146,7 @@
   {
    "dedup_key": "8e2a20b015c4527bd9ad2a72fcb540619a4c3bca",
    "source": "watchlist",
-   "title": "[venice.ai] 页面出现促销信号: $1 in credits, $225 in credits, $75 in credits, free tier",
+   "title": "venice.ai — $225 in credits",
    "url": "https://venice.ai",
    "provider": "venice.ai",
    "amount_hint": "$1",
@@ -168,7 +168,7 @@
   {
    "dedup_key": "7da3b21566a3f4e0f0f8aae9e8e5754f93cb32ac",
    "source": "watchlist",
-   "title": "[Modal] 页面出现促销信号: free credit, free credits",
+   "title": "Modal — free credits",
    "url": "https://modal.com/pricing",
    "provider": "Modal",
    "amount_hint": "$0",
@@ -189,7 +189,7 @@
   {
    "dedup_key": "00dd32cbdb4b05c8f102149320807a348453ad1f",
    "source": "watchlist",
-   "title": "[gladia.io] 页面出现促销信号: $3,000 in credits",
+   "title": "gladia.io — $3,000 in credits",
    "url": "https://gladia.io",
    "provider": "gladia.io",
    "amount_hint": "$3,000",
@@ -210,7 +210,7 @@
   {
    "dedup_key": "4333fe1376aef9fc74fd132fc1154c1d7ee9e760",
    "source": "watchlist",
-   "title": "[DeepInfra] 页面出现促销信号: $1,000 in credits",
+   "title": "DeepInfra — $1,000 in credits",
    "url": "https://deepinfra.com",
    "provider": "DeepInfra",
    "amount_hint": "$1,000",
@@ -9834,247 +9834,247 @@
  ],
  "last_run": {
   "run": {
-   "id": 21,
-   "started_at": "2026-11-01T17:46:06Z",
-   "finished_at": "2026-11-01T17:49:46Z",
+   "id": 22,
+   "started_at": "2026-11-07T15:50:48Z",
+   "finished_at": "2026-11-07T15:58:51Z",
    "new_deals": 0,
    "updated_deals": 0,
-   "errors": 1,
+   "errors": 10,
    "expired": 0
   },
   "sources": [
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "aicredits",
-    "status": "ok",
-    "fetched": 200,
-    "kept": 200,
+    "status": "error",
+    "fetched": 0,
+    "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 347
+    "error": "RuntimeError: GET https://aicredits.dev/llms-full.txt failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9099
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "linuxdo",
     "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "RuntimeError: GET https://linux.do/c/welfare/36.rss failed after 3 attempts: Client error '403 Forbidden' for url 'https://linux.do/c/welfare/36.rss'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-    "elapsed_ms": 3227
+    "error": "RuntimeError: GET https://linux.do/c/welfare/36.rss failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9043
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "hackernews",
-    "status": "ok",
-    "fetched": 1,
+    "status": "error",
+    "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 701
+    "error": "RuntimeError: GET https://hn.algolia.com/api/v1/search_by_date?query=%22free+credits%22&tags=story&hitsPerPage=50&numericFilters=created_at_i%3E1793551571 failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9101
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "openrouter",
-    "status": "ok",
+    "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 106
+    "error": "RuntimeError: GET https://openrouter.ai/api/v1/models failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9060
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "modelsdev",
-    "status": "ok",
+    "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 419
+    "error": "RuntimeError: GET https://models.dev/api.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9092
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "mnfst",
-    "status": "ok",
+    "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 32
+    "error": "RuntimeError: GET https://raw.githubusercontent.com/mnfst/awesome-free-llm-apis/main/data.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9067
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "freetoken",
-    "status": "ok",
+    "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 69
+    "error": "RuntimeError: GET https://raw.githubusercontent.com/AIPMAndy/FreeToken/main/data/providers.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9064
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "litellm",
-    "status": "ok",
+    "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 58
+    "error": "RuntimeError: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+    "elapsed_ms": 9085
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "watchlist",
-    "status": "ok",
+    "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 214385
+    "error": "RuntimeError: watchlist: all 360 pages failed (last: GET https://disg.gov.sg failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。)",
+    "elapsed_ms": 409276
    },
    {
-    "run_id": 21,
+    "run_id": 22,
     "source": "aa_providers",
-    "status": "ok",
+    "status": "error",
     "fetched": 0,
     "kept": 0,
     "new": 0,
     "updated": 0,
-    "error": "",
-    "elapsed_ms": 347
+    "error": "HTTPStatusError: Client error '410 Gone' for url 'https://artificialanalysis.ai/api/v2/data/llms/models'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410",
+    "elapsed_ms": 511
    }
   ]
  },
  "source_runs": [
   {
-   "rid": 107,
-   "run_id": 21,
+   "rid": 117,
+   "run_id": 22,
    "source": "aa_providers",
-   "status": "ok",
+   "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 347
+   "error": "HTTPStatusError: Client error '410 Gone' for url 'https://artificialanalysis.ai/api/v2/data/llms/models'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410",
+   "elapsed_ms": 511
   },
   {
-   "rid": 98,
-   "run_id": 21,
+   "rid": 108,
+   "run_id": 22,
    "source": "aicredits",
-   "status": "ok",
-   "fetched": 200,
-   "kept": 200,
-   "new": 0,
-   "updated": 0,
-   "error": "",
-   "elapsed_ms": 347
-  },
-  {
-   "rid": 104,
-   "run_id": 21,
-   "source": "freetoken",
-   "status": "ok",
+   "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 69
+   "error": "RuntimeError: GET https://aicredits.dev/llms-full.txt failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9099
   },
   {
-   "rid": 100,
-   "run_id": 21,
-   "source": "hackernews",
-   "status": "ok",
-   "fetched": 1,
+   "rid": 114,
+   "run_id": 22,
+   "source": "freetoken",
+   "status": "error",
+   "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 701
+   "error": "RuntimeError: GET https://raw.githubusercontent.com/AIPMAndy/FreeToken/main/data/providers.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9064
   },
   {
-   "rid": 99,
-   "run_id": 21,
+   "rid": 110,
+   "run_id": 22,
+   "source": "hackernews",
+   "status": "error",
+   "fetched": 0,
+   "kept": 0,
+   "new": 0,
+   "updated": 0,
+   "error": "RuntimeError: GET https://hn.algolia.com/api/v1/search_by_date?query=%22free+credits%22&tags=story&hitsPerPage=50&numericFilters=created_at_i%3E1793551571 failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9101
+  },
+  {
+   "rid": 109,
+   "run_id": 22,
    "source": "linuxdo",
    "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "RuntimeError: GET https://linux.do/c/welfare/36.rss failed after 3 attempts: Client error '403 Forbidden' for url 'https://linux.do/c/welfare/36.rss'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
-   "elapsed_ms": 3227
+   "error": "RuntimeError: GET https://linux.do/c/welfare/36.rss failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9043
   },
   {
-   "rid": 105,
-   "run_id": 21,
+   "rid": 115,
+   "run_id": 22,
    "source": "litellm",
-   "status": "ok",
+   "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 58
+   "error": "RuntimeError: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9085
   },
   {
-   "rid": 103,
-   "run_id": 21,
+   "rid": 113,
+   "run_id": 22,
    "source": "mnfst",
-   "status": "ok",
+   "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 32
+   "error": "RuntimeError: GET https://raw.githubusercontent.com/mnfst/awesome-free-llm-apis/main/data.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9067
   },
   {
-   "rid": 102,
-   "run_id": 21,
+   "rid": 112,
+   "run_id": 22,
    "source": "modelsdev",
-   "status": "ok",
+   "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 419
+   "error": "RuntimeError: GET https://models.dev/api.json failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9092
   },
   {
-   "rid": 101,
-   "run_id": 21,
+   "rid": 111,
+   "run_id": 22,
    "source": "openrouter",
-   "status": "ok",
+   "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 106
+   "error": "RuntimeError: GET https://openrouter.ai/api/v1/models failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。",
+   "elapsed_ms": 9060
   },
   {
-   "rid": 106,
-   "run_id": 21,
+   "rid": 116,
+   "run_id": 22,
    "source": "watchlist",
-   "status": "ok",
+   "status": "error",
    "fetched": 0,
    "kept": 0,
    "new": 0,
    "updated": 0,
-   "error": "",
-   "elapsed_ms": 214385
+   "error": "RuntimeError: watchlist: all 360 pages failed (last: GET https://disg.gov.sg failed after 3 attempts: [WinError 10061] 由于目标计算机积极拒绝，无法连接。)",
+   "elapsed_ms": 409276
   }
  ],
  "catalog_stats": {
