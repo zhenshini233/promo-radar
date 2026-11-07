@@ -5,46 +5,46 @@
 
 ## 摘要
 
-- 条目：**429**
-- 分类未知：**35**
+- 条目：**421**
+- 分类未知：**27**
 - 地区未知：**15**
-- 低置信：**26**
-- 非厂商（资助/活动/机构）：**11**
-- 同品牌重复条目：**50**（去重后 **379** 个厂商）
+- 低置信：**24**
+- 非厂商（资助/活动/机构）：**2**
+- 同品牌重复条目：**51**（去重后 **370** 个厂商）
 
 ## 分类分布
 
 | 分类 | 数量 | 占比 |
 |---|---:|---:|
-| inference | 109 | 25.4% |
-| model_lab | 76 | 17.7% |
-| cloud | 58 | 13.5% |
-| gpu | 46 | 10.7% |
-| app | 41 | 9.6% |
-| ai_infra | 35 | 8.2% |
-| unknown | 35 | 8.2% |
-| aggregator | 23 | 5.4% |
+| inference | 109 | 25.9% |
+| model_lab | 77 | 18.3% |
+| cloud | 58 | 13.8% |
+| gpu | 46 | 10.9% |
+| app | 40 | 9.5% |
+| ai_infra | 35 | 8.3% |
+| unknown | 27 | 6.4% |
+| aggregator | 23 | 5.5% |
 | relay | 6 | 1.4% |
 
 ## 主地区分布
 
 | 地区 | 数量 |
 |---|---:|
-| us | 259 |
-| cn | 49 |
-| eu | 49 |
-| global | 43 |
+| us | 257 |
+| cn | 50 |
+| eu | 48 |
+| global | 40 |
 | unknown | 15 |
-| apac | 14 |
+| apac | 11 |
 
 ## 相关性分桶
 
 | 区间 | 数量 |
 |---|---:|
-| 0.80+ | 285 |
+| 0.80+ | 286 |
 | 0.70-0.79 | 99 |
 | 0.60-0.69 | 26 |
-| 0.50-0.59 | 19 |
+| 0.50-0.59 | 10 |
 
 ## 低置信（需人工确认，Top 60）
 
@@ -67,7 +67,6 @@
 | elorian | — | unknown | unknown | openrouter |
 | aiand | — | unknown | unknown | litellm |
 | Ant Digital | — | unknown | unknown | openrouter |
-| blog.google | blog.google | unknown | global | aicredits |
 | eu_jev | — | unknown | unknown | litellm |
 | laya | — | unknown | unknown | litellm |
 | lemonade | — | unknown | unknown | litellm |
@@ -75,7 +74,6 @@
 | Parallel | — | unknown | unknown | openrouter |
 | pinstripes | — | unknown | unknown | litellm |
 | ricursiveai | — | unknown | unknown | openrouter |
-| Trelis AI Grants (up to | trelis.com | unknown | global | aicredits |
 
 ## 未知分类（Top 60）
 
@@ -101,18 +99,10 @@
 | elorian | — | unknown | openrouter |
 | aiand | — | unknown | litellm |
 | Ant Digital | — | unknown | openrouter |
-| Antler Disrupt | antler.co | global | aicredits |
-| blog.google | blog.google | global | aicredits |
 | eu_jev | — | unknown | litellm |
-| IndiaAI Mission | indiaai.gov.in | apac | aicredits |
 | laya | — | unknown | litellm |
 | lemonade | — | unknown | litellm |
 | nace | — | unknown | litellm |
-| NAIRR Pilot | nairrpilot.org | us | aicredits |
 | Parallel | — | unknown | openrouter |
-| Pawsey Summer Internship | pawsey.org.au | apac | aicredits |
 | pinstripes | — | unknown | litellm |
 | ricursiveai | — | unknown | openrouter |
-| Singapore Enterprise Compute Initiative | disg.gov.sg | apac | aicredits |
-| Trelis AI Grants (up to | trelis.com | global | aicredits |
-| UK Sovereign AI Fund | sovereignai.gov.uk | eu | aicredits |

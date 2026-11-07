@@ -10,7 +10,7 @@
 - 架构：七层 / 三闭环 / 演进式方案（`ARCHITECTURE_REVIEW.md`）
 - 宇宙：4+1 来源聚合、别名归一、补盲、外圈扫描（`UNIVERSE_REPORT_v1.md`）
 - 标注：category / regions / relevance + 品牌归并（`ANNOTATION_RULES_v0.md`）
-- 实体：v7 四表，379 Provider，覆盖率 91.4%（`PROVIDER_ENTITY_v0.md`）
+- 实体：v7 四表，370 Provider，覆盖率 91.4%（`PROVIDER_ENTITY_v0.md`）
 - 关联：345 页，关联率 92.2%（`PROVIDER_PAGES_v0.md`）
 
 ---
@@ -26,13 +26,13 @@
   3. 抓取一轮，成功页写内容，失败页也落快照（`fail_count`）。
 - **验收**：`monitored` 有页率 **99.7%**（337/338），关联率 92.2% → **96.0%**。
 
-### 2. 处理 7 个未关联监控页
+### 2. 处理未关联监控页 ✅（7 → 2）
 
-- **现状**：377 页中 362 已关联，7 未关联，8 关联到已忽略厂商。
+- **现状**：366 页中 364 已关联；2 个未关联是 OpenRouter / Hugging Face（来源自身，宇宙有意排除）；已忽略厂商关联 0。
 - **动作**：补 `aliases.json` 的域名，或把页面标 `ignored` 后移出 watchlist。
 - **验收**：未关联页 < 5%，且每一条有理由。
 
-### 3. 移除 9 个非厂商监控页
+### 3. 移除非厂商监控页 ✅（9 → 0）
 
 - **现状**：NAIRR Pilot、Antler Disrupt、Stripe Atlas、UK Sovereign AI Fund 等仍在 `providers.toml`。
 - **动作**：从 watchlist 删除（DB 里已是 `ignored`）。

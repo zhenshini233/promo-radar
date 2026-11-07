@@ -7,11 +7,11 @@
 
 | 指标 | 数值 |
 |---|---:|
-| 监控页总数 | 377 |
-| 已关联 | 362 |
-| 关联率 | 96.0% |
-| 未关联 | 7 |
-| 关联到非厂商（ignored） | 8 |
+| 监控页总数 | 366 |
+| 已关联 | 364 |
+| 关联率 | 99.5% |
+| 未关联 | 2 |
+| 关联到非厂商（ignored） | 0 |
 | 有页的 Provider | 337 |
 | 无页的 Provider | 33 |
 
@@ -20,8 +20,8 @@
 | 分类 | 页数 | Provider 数 |
 |---|---:|---:|
 | inference | 95 | 91 |
-| model_lab | 58 | 47 |
-| cloud | 50 | 45 |
+| model_lab | 59 | 47 |
+| cloud | 51 | 45 |
 | gpu | 42 | 40 |
 | app | 38 | 37 |
 | ai_infra | 33 | 31 |
@@ -29,7 +29,7 @@
 | unknown | 18 | 18 |
 | relay | 6 | 6 |
 
-## 名称不一致（97，Top 30）
+## 名称不一致（99，Top 30）
 
 | URL | snapshots.provider | 关联 Provider |
 |---|---|---|
@@ -64,17 +64,12 @@
 | https://ionos.com | ionos.com | IONOS Cloud |
 | https://hubspot.com | hubspot.com | HubSpot for Startups |
 
-## 未关联（7，Top 30）
+## 未关联（2，Top 30）
 
 | URL | snapshots.provider |
 |---|---|
-| https://mimo.mi.com/ | Xiaomi-MiMo |
 | https://openrouter.ai | OpenRouter |
 | https://huggingface.co | Hugging Face |
-| https://ovh.net | OVHcloud AI Endpoints |
-| https://www.chinamobileltd.com | 中国移动 |
-| https://www.openbmb.cn | OpenBMB |
-| https://www.tii.ae | TII（阿布扎比技术创新院） |
 
 ## 无监控页的 Provider（33，Top 30）
 
@@ -113,7 +108,7 @@
 
 ## 结论
 
-- 关联率 **96.0%**，说明 Provider 实体与监控页已可对账。
+- 关联率 **99.5%**，说明 Provider 实体与监控页已可对账。
 - 未关联页通常是：无官网条目、促销/活动页、域名未进 provider_domains。
 - 名称不一致不代表错，多为来源写法差异（如 OpenAI / openai）。
 - 下一步可把关联结果做成 dashboard 分组，或迁移 snapshots.provider_id。

@@ -173,7 +173,8 @@
       "anyscale.com"
     ],
     "ovhcloud": [
-      "ovhcloud.com"
+      "ovhcloud.com",
+      "ovh.net"
     ],
     "snowflake": [
       "snowflake.com"
@@ -321,6 +322,9 @@
     ],
     "ibm": [
       "ibm.com"
+    ],
+    "xiaomi": [
+      "mi.com"
     ]
   },
   "ignored": {

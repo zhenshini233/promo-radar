@@ -6,6 +6,7 @@
 # ---------- 已验证事件的一号梯队 ----------
 
 [[provider]]
+
 name = "DeepInfra"
 urls = [
     { label = "home", url = "https://deepinfra.com" },
@@ -14,6 +15,7 @@ urls = [
 notes = "Next.js SSR，promo 文案在静态 HTML（如 DeepStart $1,000 credits），可 grep"
 
 [[provider]]
+
 name = "Chutes"
 urls = [
     { label = "home", url = "https://chutes.ai" },
@@ -22,6 +24,7 @@ urls = [
 notes = "SSR，free tier 声明在静态 HTML"
 
 [[provider]]
+
 name = "Novita"
 urls = [
     { label = "pricing", url = "https://novita.ai/pricing" },
@@ -29,6 +32,7 @@ urls = [
 notes = "Next.js；首页 promo 信号弱，盯 /pricing"
 
 [[provider]]
+
 name = "River"
 urls = [
     { label = "home", url = "https://river.ai" },
@@ -36,6 +40,7 @@ urls = [
 notes = "xAI 联合创始人创办；曾送 $25（见 aicredits），官网 promo 出现/消失都是事件"
 
 [[provider]]
+
 name = "Hyperbolic"
 urls = [
     { label = "home", url = "https://hyperbolic.ai" },
@@ -43,6 +48,7 @@ urls = [
 notes = "SSR，当前无静态 promo 文案，纳入监控等其上线"
 
 [[provider]]
+
 name = "Systalyze"
 enabled = false
 urls = [
@@ -53,92 +59,113 @@ notes = "Framer 建 JS 渲染，脚本抓不到正文 → 每月人工看一次 
 # ---------- 主流推理服务商（种子批，URL 已验证 200） ----------
 
 [[provider]]
+
 name = "Together"
 urls = [ { label = "pricing", url = "https://www.together.ai/pricing" } ]
 
 [[provider]]
+
 name = "Fireworks"
 urls = [ { label = "pricing", url = "https://fireworks.ai/pricing" } ]
 
 [[provider]]
+
 name = "Groq"
 urls = [ { label = "home", url = "https://groq.com/" } ]
 
 [[provider]]
+
 name = "Cerebras"
 urls = [ { label = "inference", url = "https://www.cerebras.ai/inference" } ]
 
 [[provider]]
+
 name = "SambaNova"
 urls = [ { label = "home", url = "https://sambanova.ai/" } ]
 
 [[provider]]
+
 name = "Replicate"
 urls = [ { label = "pricing", url = "https://replicate.com/pricing" } ]
 
 [[provider]]
+
 name = "Baseten"
 urls = [ { label = "pricing", url = "https://www.baseten.co/pricing/" } ]
 
 [[provider]]
+
 name = "RunPod"
 urls = [ { label = "pricing", url = "https://www.runpod.io/pricing" } ]
 
 [[provider]]
+
 name = "Modal"
 urls = [ { label = "pricing", url = "https://modal.com/pricing" } ]
 
 [[provider]]
+
 name = "SiliconFlow"
 urls = [ { label = "pricing", url = "https://cloud.siliconflow.cn/pricing" } ]
 notes = "硅基流动，国内促销文化浓"
 
 [[provider]]
+
 name = "Parasail"
 urls = [ { label = "home", url = "https://www.parasail.io/" } ]
 
 [[provider]]
+
 name = "Targon"
 urls = [ { label = "home", url = "https://targon.com/" } ]
 
 [[provider]]
+
 name = "Kluster"
 urls = [ { label = "home", url = "https://kluster.ai/" } ]
 
 [[provider]]
+
 name = "Lambda"
 urls = [ { label = "home", url = "https://lambda.ai/" } ]
 
 [[provider]]
+
 name = "Nebius"
 urls = [ { label = "home", url = "https://nebius.com/" } ]
 notes = "AI Studio 推理服务"
 
 [[provider]]
+
 name = "NanoGPT"
 urls = [ { label = "home", url = "https://nano-gpt.com/" } ]
 notes = "linux.do 常见便宜聚合，常有充值促销"
 
 [[provider]]
+
 name = "PPIO"
 urls = [ { label = "home", url = "https://ppinfra.com/" } ]
 notes = "派欧云，linux.do 促销常客"
 
 [[provider]]
+
 name = "BigModel"
 urls = [ { label = "pricing", url = "https://open.bigmodel.cn/pricing" } ]
 notes = "智谱开放平台，GLM flash 系免费"
 
 [[provider]]
+
 name = "Moonshot"
 urls = [ { label = "pricing", url = "https://platform.moonshot.cn/pricing" } ]
 
 [[provider]]
+
 name = "A4F"
 urls = [ { label = "home", url = "https://a4f.co/" } ]
 notes = "聚合网关，注册送额度文化"
 
 [[provider]]
+
 name = "llmbenchmark.ai"
 urls = [
     { label = "home", url = "https://llmbenchmark.ai" },
@@ -147,6 +174,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "boostmyagents.com"
 urls = [
     { label = "home", url = "https://boostmyagents.com" },
@@ -155,6 +183,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "trycreatorai.com"
 urls = [
     { label = "home", url = "https://trycreatorai.com" },
@@ -163,6 +192,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "google.com"
 urls = [
     { label = "home", url = "https://google.com" },
@@ -171,6 +201,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "ai.studio"
 urls = [
     { label = "home", url = "https://ai.studio" },
@@ -179,6 +210,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "helyxai.space"
 urls = [
     { label = "home", url = "https://helyxai.space" },
@@ -187,6 +219,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "zeabur.com"
 urls = [
     { label = "home", url = "https://zeabur.com" },
@@ -195,6 +228,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "z.ai"
 urls = [
     { label = "home", url = "https://z.ai" },
@@ -203,6 +237,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "yandex.cloud"
 urls = [
     { label = "home", url = "https://yandex.cloud" },
@@ -211,6 +246,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "grok.com"
 urls = [
     { label = "home", url = "https://grok.com" },
@@ -219,6 +255,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "voyageai.com"
 urls = [
     { label = "home", url = "https://voyageai.com" },
@@ -227,6 +264,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "verda.com"
 urls = [
     { label = "home", url = "https://verda.com" },
@@ -235,6 +273,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "tripo3d.ai"
 urls = [
     { label = "home", url = "https://tripo3d.ai" },
@@ -243,14 +282,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
-name = "trelis.com"
-urls = [
-    { label = "home", url = "https://trelis.com" },
-]
-notes = "auto-enrolled from aicredits 2026-11-01"
 
-
-[[provider]]
 name = "tensorwave.com"
 urls = [
     { label = "home", url = "https://tensorwave.com" },
@@ -259,14 +291,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
-name = "stripe.com"
-urls = [
-    { label = "home", url = "https://stripe.com" },
-]
-notes = "auto-enrolled from aicredits 2026-11-01"
 
-
-[[provider]]
 name = "stability.ai"
 urls = [
     { label = "home", url = "https://stability.ai" },
@@ -275,6 +300,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "speechmatics.com"
 urls = [
     { label = "home", url = "https://speechmatics.com" },
@@ -283,6 +309,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "shadeform.ai"
 urls = [
     { label = "home", url = "https://shadeform.ai" },
@@ -291,6 +318,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "sentry.io"
 urls = [
     { label = "home", url = "https://sentry.io" },
@@ -299,6 +327,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "sarvam.ai"
 urls = [
     { label = "home", url = "https://sarvam.ai" },
@@ -307,6 +336,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "render.com"
 urls = [
     { label = "home", url = "https://render.com" },
@@ -315,6 +345,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "recraft.ai"
 urls = [
     { label = "home", url = "https://recraft.ai" },
@@ -323,6 +354,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "primeintellect.ai"
 urls = [
     { label = "home", url = "https://primeintellect.ai" },
@@ -331,6 +363,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "posthog.com"
 urls = [
     { label = "home", url = "https://posthog.com" },
@@ -339,6 +372,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "pinecone.io"
 urls = [
     { label = "home", url = "https://pinecone.io" },
@@ -347,6 +381,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "t-cloud.com"
 urls = [
     { label = "home", url = "https://t-cloud.com" },
@@ -355,6 +390,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "notion.com"
 urls = [
     { label = "home", url = "https://notion.com" },
@@ -363,6 +399,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "northflank.com"
 urls = [
     { label = "home", url = "https://northflank.com" },
@@ -371,6 +408,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "neon.com"
 urls = [
     { label = "home", url = "https://neon.com" },
@@ -379,14 +417,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
-name = "nairrpilot.org"
-urls = [
-    { label = "home", url = "https://nairrpilot.org" },
-]
-notes = "auto-enrolled from aicredits 2026-11-01"
 
-
-[[provider]]
 name = "nvidia.com"
 urls = [
     { label = "home", url = "https://nvidia.com" },
@@ -395,6 +426,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "mongodb.com"
 urls = [
     { label = "home", url = "https://mongodb.com" },
@@ -403,6 +435,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "mixedbread.com"
 urls = [
     { label = "home", url = "https://mixedbread.com" },
@@ -411,6 +444,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "mistral.ai"
 urls = [
     { label = "home", url = "https://mistral.ai" },
@@ -419,6 +453,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "minimax.io"
 urls = [
     { label = "home", url = "https://minimax.io" },
@@ -427,6 +462,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "meshy.ai"
 urls = [
     { label = "home", url = "https://meshy.ai" },
@@ -435,6 +471,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "lovable.dev"
 urls = [
     { label = "home", url = "https://lovable.dev" },
@@ -443,6 +480,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "linear.app"
 urls = [
     { label = "home", url = "https://linear.app" },
@@ -451,6 +489,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "langchain.com"
 urls = [
     { label = "home", url = "https://langchain.com" },
@@ -459,6 +498,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "jina.ai"
 urls = [
     { label = "home", url = "https://jina.ai" },
@@ -467,6 +507,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "ionos.com"
 urls = [
     { label = "home", url = "https://ionos.com" },
@@ -475,6 +516,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "inference.net"
 urls = [
     { label = "home", url = "https://inference.net" },
@@ -483,6 +525,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "hubspot.com"
 urls = [
     { label = "home", url = "https://hubspot.com" },
@@ -491,6 +534,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "huaweicloud.com"
 urls = [
     { label = "home", url = "https://huaweicloud.com" },
@@ -499,6 +543,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "hostkey.com"
 urls = [
     { label = "home", url = "https://hostkey.com" },
@@ -507,6 +552,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "grafana.com"
 urls = [
     { label = "home", url = "https://grafana.com" },
@@ -515,6 +561,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "gladia.io"
 urls = [
     { label = "home", url = "https://gladia.io" },
@@ -523,6 +570,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "genesiscloud.com"
 urls = [
     { label = "home", url = "https://genesiscloud.com" },
@@ -531,6 +579,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "exoscale.com"
 urls = [
     { label = "home", url = "https://exoscale.com" },
@@ -539,6 +588,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "datadoghq.com"
 urls = [
     { label = "home", url = "https://datadoghq.com" },
@@ -547,6 +597,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "coreweave.com"
 urls = [
     { label = "home", url = "https://coreweave.com" },
@@ -555,6 +606,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "convex.dev"
 urls = [
     { label = "home", url = "https://convex.dev" },
@@ -563,6 +615,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "clickhouse.com"
 urls = [
     { label = "home", url = "https://clickhouse.com" },
@@ -571,6 +624,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "civo.com"
 urls = [
     { label = "home", url = "https://civo.com" },
@@ -579,6 +633,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "cartesia.ai"
 urls = [
     { label = "home", url = "https://cartesia.ai" },
@@ -587,6 +642,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "bolt.new"
 urls = [
     { label = "home", url = "https://bolt.new" },
@@ -595,6 +651,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "assemblyai.com"
 urls = [
     { label = "home", url = "https://assemblyai.com" },
@@ -603,6 +660,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "anyscale.com"
 urls = [
     { label = "home", url = "https://anyscale.com" },
@@ -611,14 +669,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
-name = "antler.co"
-urls = [
-    { label = "home", url = "https://antler.co" },
-]
-notes = "auto-enrolled from aicredits 2026-11-01"
 
-
-[[provider]]
 name = "akash.network"
 urls = [
     { label = "home", url = "https://akash.network" },
@@ -627,6 +678,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "cncf.io"
 urls = [
     { label = "home", url = "https://cncf.io" },
@@ -635,6 +687,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "windsurf.com"
 urls = [
     { label = "home", url = "https://windsurf.com" },
@@ -643,6 +696,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "vultr.com"
 urls = [
     { label = "home", url = "https://vultr.com" },
@@ -651,6 +705,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "v0.app"
 urls = [
     { label = "home", url = "https://v0.app" },
@@ -659,6 +714,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "venice.ai"
 urls = [
     { label = "home", url = "https://venice.ai" },
@@ -667,6 +723,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "vast.ai"
 urls = [
     { label = "home", url = "https://vast.ai" },
@@ -675,6 +732,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "upcloud.com"
 urls = [
     { label = "home", url = "https://upcloud.com" },
@@ -683,6 +741,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "thundercompute.com"
 urls = [
     { label = "home", url = "https://thundercompute.com" },
@@ -691,6 +750,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "tencentcloud.com"
 urls = [
     { label = "home", url = "https://tencentcloud.com" },
@@ -699,6 +759,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "siliconflow.com"
 urls = [
     { label = "home", url = "https://siliconflow.com" },
@@ -707,6 +768,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "scaleway.com"
 urls = [
     { label = "home", url = "https://scaleway.com" },
@@ -715,6 +777,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "saturncloud.io"
 urls = [
     { label = "home", url = "https://saturncloud.io" },
@@ -723,6 +786,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "railway.com"
 urls = [
     { label = "home", url = "https://railway.com" },
@@ -731,6 +795,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "pollinations.ai"
 urls = [
     { label = "home", url = "https://pollinations.ai" },
@@ -739,6 +804,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "ovhcloud.com"
 urls = [
     { label = "home", url = "https://ovhcloud.com" },
@@ -747,6 +813,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "openai.com"
 urls = [
     { label = "home", url = "https://openai.com" },
@@ -755,6 +822,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "linode.com"
 urls = [
     { label = "home", url = "https://linode.com" },
@@ -763,6 +831,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "leonardo.ai"
 urls = [
     { label = "home", url = "https://leonardo.ai" },
@@ -771,6 +840,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "koyeb.com"
 urls = [
     { label = "home", url = "https://koyeb.com" },
@@ -779,6 +849,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "hetzner.com"
 urls = [
     { label = "home", url = "https://hetzner.com" },
@@ -787,14 +858,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
-name = "blog.google"
-urls = [
-    { label = "home", url = "https://blog.google" },
-]
-notes = "auto-enrolled from aicredits 2026-11-01"
 
-
-[[provider]]
 name = "google.dev"
 urls = [
     { label = "home", url = "https://google.dev" },
@@ -803,6 +867,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "fluidstack.io"
 urls = [
     { label = "home", url = "https://fluidstack.io" },
@@ -811,6 +876,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "fal.ai"
 urls = [
     { label = "home", url = "https://fal.ai" },
@@ -819,6 +885,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "elevenlabs.io"
 urls = [
     { label = "home", url = "https://elevenlabs.io" },
@@ -827,6 +894,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "aistudentpack.com"
 urls = [
     { label = "home", url = "https://aistudentpack.com" },
@@ -835,6 +903,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "deepgram.com"
 urls = [
     { label = "home", url = "https://deepgram.com" },
@@ -843,6 +912,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "databricks.com"
 urls = [
     { label = "home", url = "https://databricks.com" },
@@ -851,6 +921,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "cursor.com"
 urls = [
     { label = "home", url = "https://cursor.com" },
@@ -859,6 +930,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "coze.com"
 urls = [
     { label = "home", url = "https://coze.com" },
@@ -867,6 +939,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "cohere.com"
 urls = [
     { label = "home", url = "https://cohere.com" },
@@ -875,6 +948,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "codesphere.com"
 urls = [
     { label = "home", url = "https://codesphere.com" },
@@ -883,6 +957,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "cloudflare.com"
 urls = [
     { label = "home", url = "https://cloudflare.com" },
@@ -891,6 +966,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "cerebrium.ai"
 urls = [
     { label = "home", url = "https://cerebrium.ai" },
@@ -899,6 +975,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "beam.cloud"
 urls = [
     { label = "home", url = "https://beam.cloud" },
@@ -907,6 +984,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "amd.com"
 urls = [
     { label = "home", url = "https://amd.com" },
@@ -915,6 +993,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "amazon.science"
 urls = [
     { label = "home", url = "https://amazon.science" },
@@ -923,6 +1002,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "ai21.com"
 urls = [
     { label = "home", url = "https://ai21.com" },
@@ -931,6 +1011,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "x.ai"
 urls = [
     { label = "home", url = "https://x.ai" },
@@ -939,6 +1020,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "vercel.com"
 urls = [
     { label = "home", url = "https://vercel.com" },
@@ -947,6 +1029,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "snowflake.com"
 urls = [
     { label = "home", url = "https://snowflake.com" },
@@ -955,6 +1038,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "sagemaker.aws"
 urls = [
     { label = "home", url = "https://sagemaker.aws" },
@@ -963,6 +1047,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "perplexity.ai"
 urls = [
     { label = "home", url = "https://perplexity.ai" },
@@ -971,6 +1056,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "paperspace.com"
 urls = [
     { label = "home", url = "https://paperspace.com" },
@@ -979,6 +1065,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "oracle.com"
 urls = [
     { label = "home", url = "https://oracle.com" },
@@ -987,6 +1074,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "microsoft.com"
 urls = [
     { label = "home", url = "https://microsoft.com" },
@@ -995,6 +1083,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "lightning.ai"
 urls = [
     { label = "home", url = "https://lightning.ai" },
@@ -1003,6 +1092,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "lepton.ai"
 urls = [
     { label = "home", url = "https://lepton.ai" },
@@ -1011,6 +1101,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "kaggle.com"
 urls = [
     { label = "home", url = "https://kaggle.com" },
@@ -1019,6 +1110,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "jetbrains.com"
 urls = [
     { label = "home", url = "https://jetbrains.com" },
@@ -1027,6 +1119,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "ibm.com"
 urls = [
     { label = "home", url = "https://ibm.com" },
@@ -1035,6 +1128,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "digitalocean.com"
 urls = [
     { label = "home", url = "https://digitalocean.com" },
@@ -1043,6 +1137,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "deepseek.com"
 urls = [
     { label = "home", url = "https://deepseek.com" },
@@ -1051,6 +1146,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "amazon.com"
 urls = [
     { label = "home", url = "https://amazon.com" },
@@ -1059,6 +1155,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "claude.com"
 urls = [
     { label = "home", url = "https://claude.com" },
@@ -1067,6 +1164,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "anthropic.com"
 urls = [
     { label = "home", url = "https://anthropic.com" },
@@ -1075,6 +1173,7 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 
 
 [[provider]]
+
 name = "alibabacloud.com"
 urls = [
     { label = "home", url = "https://alibabacloud.com" },
@@ -1085,161 +1184,193 @@ notes = "auto-enrolled from aicredits 2026-11-01"
 # notes 里的 promo 证据为核查当日页面文字；后续变化由 watchlist 自动跟踪
 
 [[provider]]
+
 name = "Z.ai"
 urls = [ { label = "home", url = "https://z.ai/" } ]
 notes = "GLM-4.7-Flash 免费档；国际版（国内 BigModel 已单独监控）"
 
 [[provider]]
+
 name = "DeepSeek"
 urls = [ { label = "platform", url = "https://platform.deepseek.com/" } ]
 notes = "核查日无注册福利，监控其上线"
 
 [[provider]]
+
 name = "MiniMax"
 urls = [ { label = "platform", url = "https://platform.minimax.io/" } ]
 notes = "国际版；核查日无注册福利"
 
 [[provider]]
+
 name = "NVIDIA-NIM"
 urls = [ { label = "build", url = "https://build.nvidia.com/" } ]
 notes = "Free inference + 注册 1000 credits 免绑卡（第三方证实）"
 
 [[provider]]
+
 name = "Xiaomi-MiMo"
 urls = [ { label = "home", url = "https://mimo.mi.com/" } ]
 notes = "MiMo-V2.5-TTS 价格限时免费"
 
 [[provider]]
+
 name = "Volcengine-Ark"
 urls = [ { label = "ark", url = "https://www.volcengine.com/product/ark" } ]
 notes = "新用户免费推理试用额度 + Managed Agents 赠 30h 运行时"
 
 [[provider]]
+
 name = "LongCat"
 urls = [ { label = "home", url = "https://longcat.chat/" } ]
 notes = "美团；初始额度 500 万 tokens/天，反馈可提至 1.2 亿/天"
 
 [[provider]]
+
 name = "Hunyuan-Studio"
 urls = [ { label = "home", url = "https://llm.hunyuan.tencent.com/" } ]
 notes = "腾讯混元开源平台 Hy AI Studio"
 
 [[provider]]
+
 name = "Kimi"
 urls = [ { label = "platform", url = "https://platform.kimi.ai/" } ]
 notes = "Moonshot 开放平台；国内历史送 ¥15 体验包"
 
 [[provider]]
+
 name = "xAI"
 urls = [ { label = "home", url = "https://x.ai/" } ]
 notes = "第三方称新账号 $25 + data sharing $150/月；官网反爬强，可能频繁抓取失败"
 
 [[provider]]
+
 name = "StepFun"
 urls = [ { label = "platform", url = "https://platform.stepfun.com/" } ]
 notes = "阶跃星辰；Builder Program"
 
 [[provider]]
+
 name = "Mistral"
 urls = [ { label = "pricing", url = "https://mistral.ai/pricing" } ]
 notes = "Free 计划 + Experiment 免费 API 层（需手机验证免绑卡）"
 
 [[provider]]
+
 name = "Perplexity"
 urls = [ { label = "pricing", url = "https://docs.perplexity.ai/getting-started/pricing" } ]
 notes = "历史 $5 已取消；现 $5/月随 Pro 订阅"
 
 [[provider]]
+
 name = "Liquid"
 urls = [ { label = "pricing", url = "https://www.liquid.ai/pricing" } ]
 notes = "新组织送 2 美元 credit（页面实锤）"
 
 [[provider]]
+
 name = "Sakana"
 urls = [ { label = "pricing", url = "https://console.sakana.ai/pricing" } ]
 notes = "新上线开发者平台，盯 promo 上线"
 
 [[provider]]
+
 name = "ThinkingMachines"
 urls = [ { label = "home", url = "https://thinkingmachines.ai/" } ]
 notes = "Tinker 按 token 付费，盯免费层上线"
 
 [[provider]]
+
 name = "Inception"
 urls = [ { label = "home", url = "https://inceptionlabs.ai/" } ]
 notes = "Mercury 3 全线 50% OFF 促销中；platform.inceptionlabs.ai"
 
 [[provider]]
+
 name = "Nous"
 urls = [ { label = "home", url = "https://nousresearch.com/" } ]
 notes = "portal 订阅制 + API pay-as-you-go"
 
 [[provider]]
+
 name = "Upstage"
 urls = [ { label = "pricing", url = "https://www.upstage.ai/pricing/api" } ]
 notes = "Solar API 预付 credits；另有非营利免费计划"
 
 [[provider]]
+
 name = "Reka"
 urls = [ { label = "home", url = "https://reka.ai/" } ]
 notes = "Reka Cloud 按用量付费"
 
 [[provider]]
+
 name = "Writer"
 urls = [ { label = "dev", url = "https://dev.writer.com/" } ]
 notes = "Palmyra API，核查日无免费额度"
 
 [[provider]]
+
 name = "Cohere"
 urls = [ { label = "pricing", url = "https://cohere.com/pricing" } ]
 notes = "Trial key 免费 1000 次/月（免绑卡）"
 
 [[provider]]
+
 name = "Aion-Labs"
 urls = [ { label = "pricing", url = "https://aionlabs.ai/pricing" } ]
 notes = "Free Tier 每日送 credit，免绑卡"
 
 [[provider]]
+
 name = "Moondream"
 urls = [ { label = "home", url = "https://moondream.ai/" } ]
 notes = "每月自动加 5 美元 credit，免绑卡（页面实锤，力度最大）"
 
 [[provider]]
+
 name = "Scaledown"
 urls = [ { label = "home", url = "https://scaledown.ai/" } ]
 notes = "新账号送 5000 万 tokens（第三方称或为发布期促销）"
 
 [[provider]]
+
 name = "Reflection"
 urls = [ { label = "home", url = "https://reflection.ai/" } ]
 notes = "公测期 API 完全免费 + 每日限额（官方 legal 页实锤）"
 
 [[provider]]
+
 name = "Morph"
 urls = [ { label = "home", url = "https://morphllm.com/" } ]
 notes = "免费层 200 次/月 + WarpGrep 每月 10 美元免费算力"
 
 [[provider]]
+
 name = "Inference.net"
 urls = [ { label = "pricing", url = "https://inference.net/pricing" } ]
 notes = "Growth 计划开户送 50 美元"
 
 [[provider]]
+
 name = "Particle"
 urls = [ { label = "pricing", url = "https://particle.ai/" } ]
 notes = "纯预付费，盯变化"
 
 [[provider]]
+
 name = "Elorian"
 urls = [ { label = "home", url = "https://elorian.ai/" } ]
 notes = "Glimpse 研究预览，无定价页，盯上线"
 
 [[provider]]
+
 name = "Typesafe"
 urls = [ { label = "home", url = "https://typesafe.ai/" } ]
 notes = "Jev 模型 early access，盯定价/促销"
 
 [[provider]]
+
 name = "Relace"
 urls = [ { label = "home", url = "https://relace.io/" } ]
 notes = "JS 应用抓取难；可联系获取免费 plan"
@@ -1247,26 +1378,31 @@ notes = "JS 应用抓取难；可联系获取免费 plan"
 # ---------- AA 交叉比对补盲（2026-11-01）：60 家 AA 厂商中未被 watchlist 覆盖、且有商业 API 的 ----------
 
 [[provider]]
+
 name = "AI21"
 urls = [ { label = "home", url = "https://www.ai21.com/" } ]
 notes = "Jamba 系列；AA 交叉比对发现的盲区"
 
 [[provider]]
+
 name = "Arcee"
 urls = [ { label = "home", url = "https://www.arcee.ai/" } ]
 notes = "小模型 specialist；AA 交叉比对发现的盲区"
 
 [[provider]]
+
 name = "Sarvam"
 urls = [ { label = "home", url = "https://www.sarvam.ai/" } ]
 notes = "印度 Sarvam AI；AA 交叉比对发现的盲区"
 
 [[provider]]
+
 name = "Prime-Intellect"
 urls = [ { label = "home", url = "https://primeintellect.ai/" } ]
 notes = "INTELLECT 系列 decentralized training；AA 交叉比对发现的盲区"
 
 [[provider]]
+
 name = "CloudFerro Sherlock"
 urls = [
     { label = "home", url = "https://cloudferro.com" },
@@ -1275,6 +1411,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Qiniu"
 urls = [
     { label = "home", url = "https://qiniu.com" },
@@ -1283,6 +1420,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Privatemode AI"
 urls = [
     { label = "home", url = "https://privatemode.ai" },
@@ -1291,6 +1429,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "DevPass (LLM Gateway)"
 urls = [
     { label = "home", url = "https://llmgateway.io" },
@@ -1299,6 +1438,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Wally"
 urls = [
     { label = "home", url = "https://runanywhere.ai" },
@@ -1307,6 +1447,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "evroc"
 urls = [
     { label = "home", url = "https://evroc.com" },
@@ -1315,6 +1456,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "ClinePass"
 urls = [
     { label = "home", url = "https://cline.bot" },
@@ -1323,6 +1465,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "SCNet Token Plan"
 urls = [
     { label = "home", url = "https://scnet.cn" },
@@ -1331,6 +1474,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Infomaniak"
 urls = [
     { label = "home", url = "https://infomaniak.com" },
@@ -1339,6 +1483,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "GitLab Duo"
 urls = [
     { label = "home", url = "https://gitlab.com" },
@@ -1347,6 +1492,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Melious"
 urls = [
     { label = "home", url = "https://melious.ai" },
@@ -1355,6 +1501,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "D.Run (China)"
 urls = [
     { label = "home", url = "https://d.run" },
@@ -1363,6 +1510,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Vancine"
 urls = [
     { label = "home", url = "https://vancine.com" },
@@ -1371,6 +1519,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "LowRouter"
 urls = [
     { label = "home", url = "https://lowrouter.ai" },
@@ -1379,6 +1528,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Ofox"
 urls = [
     { label = "home", url = "https://ofox.ai" },
@@ -1387,6 +1537,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Xiaomi Token Plan (Europe)"
 urls = [
     { label = "home", url = "https://xiaomimimo.com" },
@@ -1395,6 +1546,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "CoralBricks"
 urls = [
     { label = "home", url = "https://coralbricks.ai" },
@@ -1403,6 +1555,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Bothub"
 urls = [
     { label = "home", url = "https://bothub.ru" },
@@ -1411,6 +1564,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "TensorX"
 urls = [
     { label = "home", url = "https://tensorx.ai" },
@@ -1419,6 +1573,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "STACKIT"
 urls = [
     { label = "home", url = "https://stackit.cloud" },
@@ -1427,6 +1582,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Ollama Cloud"
 urls = [
     { label = "home", url = "https://ollama.com" },
@@ -1435,6 +1591,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "ainetcafe"
 urls = [
     { label = "home", url = "https://ainetcafe.com" },
@@ -1443,6 +1600,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Munito AI (EU)"
 urls = [
     { label = "home", url = "https://munito.ai" },
@@ -1451,6 +1609,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Umans AI"
 urls = [
     { label = "home", url = "https://umans.ai" },
@@ -1459,6 +1618,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "CommandCode"
 urls = [
     { label = "home", url = "https://commandcode.ai" },
@@ -1467,6 +1627,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "EmpirioLabs AI"
 urls = [
     { label = "home", url = "https://empiriolabs.ai" },
@@ -1475,6 +1636,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "MiniMax Token Plan (minimax.cn)"
 urls = [
     { label = "home", url = "https://minimaxi.com" },
@@ -1483,6 +1645,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "TokenRouter"
 urls = [
     { label = "home", url = "https://tokenrouter.com" },
@@ -1491,6 +1654,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Agnes AI"
 urls = [
     { label = "home", url = "https://agnes-ai.com" },
@@ -1499,6 +1663,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Atomic Chat"
 urls = [
     { label = "home", url = "https://atomic.chat" },
@@ -1507,6 +1672,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Pendra"
 urls = [
     { label = "home", url = "https://pendra.ai" },
@@ -1515,6 +1681,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "OpenCode"
 urls = [
     { label = "home", url = "https://opencode.ai" },
@@ -1523,6 +1690,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Wafer"
 urls = [
     { label = "home", url = "https://wafer.ai" },
@@ -1531,6 +1699,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "QiHang"
 urls = [
     { label = "home", url = "https://qhaigc.net" },
@@ -1539,6 +1708,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Zeldoc"
 urls = [
     { label = "home", url = "https://zeldoc.ai" },
@@ -1547,6 +1717,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "302.AI"
 urls = [
     { label = "home", url = "https://302.ai" },
@@ -1555,6 +1726,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "abliteration.ai"
 urls = [
     { label = "home", url = "https://abliteration.ai" },
@@ -1563,6 +1735,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Subconscious"
 urls = [
     { label = "home", url = "https://subconscious.dev" },
@@ -1571,6 +1744,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "AKI.IO"
 urls = [
     { label = "home", url = "https://aki.io" },
@@ -1579,6 +1753,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Inco"
 urls = [
     { label = "home", url = "https://inco.ai" },
@@ -1587,6 +1762,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Abacus"
 urls = [
     { label = "home", url = "https://abacus.ai" },
@@ -1595,6 +1771,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "AIHubMix"
 urls = [
     { label = "home", url = "https://aihubmix.com" },
@@ -1603,6 +1780,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "CoreWeave"
 urls = [
     { label = "home", url = "https://wandb.ai" },
@@ -1611,6 +1789,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Echo"
 urls = [
     { label = "home", url = "https://tracerml.ai" },
@@ -1619,6 +1798,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "klokintegration.se"
 urls = [
     { label = "home", url = "https://klokintegration.se" },
@@ -1627,6 +1807,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "QVAC"
 urls = [
     { label = "home", url = "https://npmjs.com" },
@@ -1635,6 +1816,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "KUAE Cloud Coding Plan"
 urls = [
     { label = "home", url = "https://mthreads.com" },
@@ -1643,6 +1825,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Clarifai"
 urls = [
     { label = "home", url = "https://clarifai.com" },
@@ -1651,6 +1834,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Vultr"
 urls = [
     { label = "home", url = "https://vultrinference.com" },
@@ -1659,6 +1843,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Inceptron"
 urls = [
     { label = "home", url = "https://inceptron.io" },
@@ -1667,6 +1852,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "LMStudio"
 urls = [
     { label = "home", url = "https://lmstudio.ai" },
@@ -1675,6 +1861,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "FastRouter"
 urls = [
     { label = "home", url = "https://fastrouter.ai" },
@@ -1683,6 +1870,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Charm Hyper"
 urls = [
     { label = "home", url = "https://charm.land" },
@@ -1691,6 +1879,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Tinfoil"
 urls = [
     { label = "home", url = "https://tinfoil.sh" },
@@ -1699,6 +1888,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Modelis"
 urls = [
     { label = "home", url = "https://modelishub.com" },
@@ -1707,6 +1897,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Mixlayer"
 urls = [
     { label = "home", url = "https://mixlayer.com" },
@@ -1715,6 +1906,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "FrogBot"
 urls = [
     { label = "home", url = "https://frogbot.ai" },
@@ -1723,6 +1915,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Vercel AI Gateway"
 urls = [
     { label = "home", url = "https://github.com" },
@@ -1731,6 +1924,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Bee by HEOSSI"
 urls = [
     { label = "home", url = "https://heossi.com" },
@@ -1739,6 +1933,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "TrustedRouter"
 urls = [
     { label = "home", url = "https://trustedrouter.com" },
@@ -1747,6 +1942,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Requesty"
 urls = [
     { label = "home", url = "https://requesty.ai" },
@@ -1755,6 +1951,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "IteraCompute"
 urls = [
     { label = "home", url = "https://iteracompute.com" },
@@ -1763,6 +1960,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Kenari"
 urls = [
     { label = "home", url = "https://kenari.id" },
@@ -1771,6 +1969,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "GMI Cloud"
 urls = [
     { label = "home", url = "https://gmicloud.ai" },
@@ -1779,6 +1978,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Pareto Inference"
 urls = [
     { label = "home", url = "https://paretoinference.com" },
@@ -1787,6 +1987,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Zenifra"
 urls = [
     { label = "home", url = "https://zenifra.com" },
@@ -1795,6 +1996,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "NEAR AI Cloud"
 urls = [
     { label = "home", url = "https://near.ai" },
@@ -1803,6 +2005,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Aixy"
 urls = [
     { label = "home", url = "https://aixy-gateway.com" },
@@ -1811,6 +2014,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "above.dev"
 urls = [
     { label = "home", url = "https://above.dev" },
@@ -1819,6 +2023,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "EBCloud"
 urls = [
     { label = "home", url = "https://ebtech.com" },
@@ -1827,6 +2032,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "OpenRouter"
 urls = [
     { label = "home", url = "https://openrouter.ai" },
@@ -1835,6 +2041,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Claudinio"
 urls = [
     { label = "home", url = "https://claudin.io" },
@@ -1843,6 +2050,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Hugging Face"
 urls = [
     { label = "home", url = "https://huggingface.co" },
@@ -1851,6 +2059,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Poolside"
 urls = [
     { label = "home", url = "https://poolside.ai" },
@@ -1859,6 +2068,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Pioneer"
 urls = [
     { label = "home", url = "https://pioneer.ai" },
@@ -1867,6 +2077,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "TokenGo"
 urls = [
     { label = "home", url = "https://tokengo.com" },
@@ -1875,6 +2086,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Model Oracle AI"
 urls = [
     { label = "home", url = "https://modeloracle.com" },
@@ -1883,6 +2095,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Merge Gateway"
 urls = [
     { label = "home", url = "https://merge.dev" },
@@ -1891,6 +2104,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Helicone"
 urls = [
     { label = "home", url = "https://helicone.ai" },
@@ -1899,6 +2113,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "LLM Tech"
 urls = [
     { label = "home", url = "https://llmtech.eu" },
@@ -1907,6 +2122,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Synthetic"
 urls = [
     { label = "home", url = "https://synthetic.new" },
@@ -1915,6 +2131,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Meganova"
 urls = [
     { label = "home", url = "https://meganova.ai" },
@@ -1923,6 +2140,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Jalapeno Cloud"
 urls = [
     { label = "home", url = "https://jalapeno-cloud.ai" },
@@ -1931,6 +2149,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "LucidQuery"
 urls = [
     { label = "home", url = "https://lucidquery.com" },
@@ -1939,6 +2158,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "DaoXE"
 urls = [
     { label = "home", url = "https://daoxe.com" },
@@ -1947,6 +2167,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Kilo Gateway"
 urls = [
     { label = "home", url = "https://kilo.ai" },
@@ -1955,6 +2176,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Moark"
 urls = [
     { label = "home", url = "https://moark.com" },
@@ -1963,6 +2185,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Cortecs"
 urls = [
     { label = "home", url = "https://cortecs.ai" },
@@ -1971,6 +2194,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Standard Compute"
 urls = [
     { label = "home", url = "https://standardcompute.com" },
@@ -1979,6 +2203,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Liquid Inference"
 urls = [
     { label = "home", url = "https://ai.exchange" },
@@ -1987,6 +2212,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "ai&"
 urls = [
     { label = "home", url = "https://aiand.com" },
@@ -1995,6 +2221,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Wallaby"
 urls = [
     { label = "home", url = "https://wallabytoken.com" },
@@ -2003,6 +2230,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "engy"
 urls = [
     { label = "home", url = "https://engy.ai" },
@@ -2011,6 +2239,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "OrcaRouter"
 urls = [
     { label = "home", url = "https://orcarouter.ai" },
@@ -2019,6 +2248,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "AnyAPI"
 urls = [
     { label = "home", url = "https://anyapi.ai" },
@@ -2027,6 +2257,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "FreeModel"
 urls = [
     { label = "home", url = "https://freemodel.dev" },
@@ -2035,6 +2266,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Berget.AI"
 urls = [
     { label = "home", url = "https://berget.ai" },
@@ -2043,6 +2275,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Ambient"
 urls = [
     { label = "home", url = "https://ambient.xyz" },
@@ -2051,6 +2284,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Eden AI"
 urls = [
     { label = "home", url = "https://edenai.co" },
@@ -2059,6 +2293,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Vivgrid"
 urls = [
     { label = "home", url = "https://vivgrid.com" },
@@ -2067,6 +2302,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "NeoSmith"
 urls = [
     { label = "home", url = "https://neosmith.ai" },
@@ -2075,6 +2311,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "SCX.ai"
 urls = [
     { label = "home", url = "https://scx.ai" },
@@ -2083,6 +2320,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "IO.NET"
 urls = [
     { label = "home", url = "https://io.net" },
@@ -2091,6 +2329,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Boundless"
 urls = [
     { label = "home", url = "https://boundless.network" },
@@ -2099,6 +2338,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "GreenPT"
 urls = [
     { label = "home", url = "https://greenpt.ai" },
@@ -2107,6 +2347,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Kosmik Compute"
 urls = [
     { label = "home", url = "https://koscompute.com" },
@@ -2115,6 +2356,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "LLMTR"
 urls = [
     { label = "home", url = "https://llmtr.com" },
@@ -2123,6 +2365,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Auriko"
 urls = [
     { label = "home", url = "https://auriko.ai" },
@@ -2131,6 +2374,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "SenseNova (China)"
 urls = [
     { label = "home", url = "https://sensenova.cn" },
@@ -2139,6 +2383,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Tempr Gateway"
 urls = [
     { label = "home", url = "https://temprhq.io" },
@@ -2147,6 +2392,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "The Grid AI"
 urls = [
     { label = "home", url = "https://thegrid.ai" },
@@ -2155,6 +2401,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "OpenReason"
 urls = [
     { label = "home", url = "https://openreason.app" },
@@ -2163,6 +2410,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "SAP AI Core"
 urls = [
     { label = "home", url = "https://sap.com" },
@@ -2171,6 +2419,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Impossibl"
 urls = [
     { label = "home", url = "https://impossibl.com" },
@@ -2179,6 +2428,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Infer by Flow7"
 urls = [
     { label = "home", url = "https://flow7.org" },
@@ -2187,6 +2437,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Vispark"
 urls = [
     { label = "home", url = "https://vispark.in" },
@@ -2195,6 +2446,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Jiekou.AI"
 urls = [
     { label = "home", url = "https://jiekou.ai" },
@@ -2203,6 +2455,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "UnoRouter"
 urls = [
     { label = "home", url = "https://unorouter.com" },
@@ -2211,6 +2464,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "ZenMux"
 urls = [
     { label = "home", url = "https://zenmux.ai" },
@@ -2219,6 +2473,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Blue Claw"
 urls = [
     { label = "home", url = "https://blueclaw.network" },
@@ -2227,6 +2482,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "HPC-AI"
 urls = [
     { label = "home", url = "https://hpc-ai.com" },
@@ -2235,6 +2491,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "DInference"
 urls = [
     { label = "home", url = "https://dinference.com" },
@@ -2243,6 +2500,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Xpersona"
 urls = [
     { label = "home", url = "https://xpersona.co" },
@@ -2251,6 +2509,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "AgentRouter"
 urls = [
     { label = "home", url = "https://agentrouter.org" },
@@ -2259,6 +2518,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Friendli"
 urls = [
     { label = "home", url = "https://friendli.ai" },
@@ -2267,6 +2527,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Neuralwatt"
 urls = [
     { label = "home", url = "https://neuralwatt.com" },
@@ -2275,6 +2536,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Hopper"
 urls = [
     { label = "home", url = "https://withhopper.com" },
@@ -2283,6 +2545,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Bailing"
 urls = [
     { label = "home", url = "https://yuque.com" },
@@ -2291,6 +2554,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "submodel"
 urls = [
     { label = "home", url = "https://gitbook.io" },
@@ -2299,6 +2563,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "CrossModel"
 urls = [
     { label = "home", url = "https://crossmodel.ai" },
@@ -2307,6 +2572,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "ModelScope"
 urls = [
     { label = "home", url = "https://modelscope.cn" },
@@ -2315,6 +2581,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "NaN"
 urls = [
     { label = "home", url = "https://nan.builders" },
@@ -2323,6 +2590,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "InferX"
 urls = [
     { label = "home", url = "https://inferx.net" },
@@ -2331,6 +2599,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "routing.run"
 urls = [
     { label = "home", url = "https://routing.run" },
@@ -2339,6 +2608,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Crusoe"
 urls = [
     { label = "home", url = "https://crusoecloud.com" },
@@ -2347,6 +2617,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "SaladCloud AI Gateway"
 urls = [
     { label = "home", url = "https://salad.com" },
@@ -2355,6 +2626,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Lilac"
 urls = [
     { label = "home", url = "https://getlilac.com" },
@@ -2363,6 +2635,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Poe"
 urls = [
     { label = "home", url = "https://poe.com" },
@@ -2371,6 +2644,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "RunInfra"
 urls = [
     { label = "home", url = "https://runinfra.ai" },
@@ -2379,6 +2653,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Opper"
 urls = [
     { label = "home", url = "https://opper.ai" },
@@ -2387,6 +2662,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "AI/ML API"
 urls = [
     { label = "home", url = "https://aimlapi.com" },
@@ -2395,6 +2671,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "AMD"
 urls = [
     { label = "home", url = "https://com.cn" },
@@ -2403,6 +2680,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Modular"
 urls = [
     { label = "home", url = "https://modular.com" },
@@ -2411,6 +2689,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Regolo AI"
 urls = [
     { label = "home", url = "https://regolo.ai" },
@@ -2419,6 +2698,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "AI-ROUTER"
 urls = [
     { label = "home", url = "https://ai-router.dev" },
@@ -2427,6 +2707,7 @@ notes = "auto-enrolled from models.dev catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Google Gemini"
 urls = [
     { label = "home", url = "https://googleapis.com" },
@@ -2435,6 +2716,7 @@ notes = "auto-enrolled from mnfst catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "Gonka Broker"
 urls = [
     { label = "home", url = "https://gonkabroker.com" },
@@ -2443,6 +2725,7 @@ notes = "auto-enrolled from mnfst catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "LLM7.io"
 urls = [
     { label = "home", url = "https://llm7.io" },
@@ -2451,6 +2734,7 @@ notes = "auto-enrolled from mnfst catalog cross-ref 2026-11-01"
 
 
 [[provider]]
+
 name = "OVHcloud AI Endpoints"
 urls = [
     { label = "home", url = "https://ovh.net" },
@@ -2458,6 +2742,7 @@ urls = [
 notes = "auto-enrolled from mnfst catalog cross-ref 2026-11-01"
 
 [[provider]]
+
 name = "阿里云（中国站）"
 urls = [
     { label = "home", url = "https://www.aliyun.com" },
@@ -2466,6 +2751,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Allen AI（AI2）"
 urls = [
     { label = "home", url = "https://allenai.org" },
@@ -2474,6 +2760,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "百度智能云"
 urls = [
     { label = "home", url = "https://cloud.baidu.com" },
@@ -2482,6 +2769,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Bespoke Labs"
 urls = [
     { label = "home", url = "https://bespokelabs.ai" },
@@ -2490,6 +2778,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "字节跳动"
 urls = [
     { label = "home", url = "https://www.bytedance.com" },
@@ -2498,14 +2787,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
-name = "中国移动"
-urls = [
-    { label = "home", url = "https://www.chinamobileltd.com" },
-]
-notes = "auto-enrolled from brands 2026-11-01"
 
-
-[[provider]]
 name = "Cognition（Devin）"
 urls = [
     { label = "home", url = "https://cognition.ai" },
@@ -2514,6 +2796,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "DeepCogito"
 urls = [
     { label = "home", url = "https://www.deepcogito.com" },
@@ -2522,6 +2805,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "GigaChat（Sber）"
 urls = [
     { label = "home", url = "https://giga.chat" },
@@ -2530,6 +2814,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Google Cloud 研究资助"
 urls = [
     { label = "home", url = "https://research.google/programs/credits/" },
@@ -2538,6 +2823,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Gradient"
 urls = [
     { label = "home", url = "https://gradient.ai" },
@@ -2546,6 +2832,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Kilo Code"
 urls = [
     { label = "home", url = "https://kilocode.ai" },
@@ -2554,6 +2841,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Libertai"
 urls = [
     { label = "home", url = "https://libertai.io" },
@@ -2562,6 +2850,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "美团"
 urls = [
     { label = "home", url = "https://about.meituan.com" },
@@ -2570,6 +2859,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Meta AI"
 urls = [
     { label = "home", url = "https://ai.meta.com" },
@@ -2578,6 +2868,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Meta Llama"
 urls = [
     { label = "home", url = "https://www.llama.com" },
@@ -2586,6 +2877,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Multiverse Computing"
 urls = [
     { label = "home", url = "https://multiversecomputing.com" },
@@ -2594,6 +2886,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Neon"
 urls = [
     { label = "home", url = "https://neon.tech" },
@@ -2602,6 +2895,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "NLPCloud"
 urls = [
     { label = "home", url = "https://nlpcloud.com" },
@@ -2610,6 +2904,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "Nscale"
 urls = [
     { label = "home", url = "https://www.nscale.com" },
@@ -2618,14 +2913,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
-name = "OpenBMB"
-urls = [
-    { label = "home", url = "https://www.openbmb.cn" },
-]
-notes = "auto-enrolled from brands 2026-11-01"
 
-
-[[provider]]
 name = "OpenTelekomCloud"
 urls = [
     { label = "home", url = "https://open-telekom-cloud.com" },
@@ -2634,6 +2922,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "通义 Qwen"
 urls = [
     { label = "home", url = "https://qwen.ai" },
@@ -2642,6 +2931,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
+
 name = "ServiceNow"
 urls = [
     { label = "home", url = "https://www.servicenow.com" },
@@ -2650,29 +2940,7 @@ notes = "auto-enrolled from brands 2026-11-01"
 
 
 [[provider]]
-name = "TII（阿布扎比技术创新院）"
-urls = [
-    { label = "home", url = "https://www.tii.ae" },
-]
-notes = "auto-enrolled from brands 2026-11-01"
 
-[[provider]]
-name = "IndiaAI"
-urls = [
-    { label = "home", url = "https://indiaai.gov.in" },
-]
-notes = "auto-enrolled from brands 2026-11-01"
-
-
-[[provider]]
-name = "Pawsey 超算中心"
-urls = [
-    { label = "home", url = "https://pawsey.org.au" },
-]
-notes = "auto-enrolled from brands 2026-11-01"
-
-
-[[provider]]
 name = "图灵研究所"
 urls = [
     { label = "home", url = "https://www.turing.ac.uk" },
@@ -2680,21 +2948,7 @@ urls = [
 notes = "auto-enrolled from brands 2026-11-01"
 
 [[provider]]
-name = "sovereignai.gov.uk"
-urls = [
-    { label = "home", url = "https://sovereignai.gov.uk" },
-]
-notes = "auto-enrolled from aicredits 2026-11-01"
 
-
-[[provider]]
-name = "disg.gov.sg"
-urls = [
-    { label = "home", url = "https://disg.gov.sg" },
-]
-notes = "auto-enrolled from aicredits 2026-11-01"
-
-[[provider]]
 name = "Black Forest Labs"
 tier = 1
 urls = [
@@ -2703,6 +2957,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Cirrascale"
 tier = 1
 urls = [
@@ -2711,6 +2966,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Decart"
 tier = 2
 urls = [
@@ -2719,6 +2975,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Featherless"
 tier = 1
 urls = [
@@ -2727,6 +2984,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Fish Audio"
 tier = 2
 urls = [
@@ -2735,6 +2993,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "HeyGen"
 tier = 2
 urls = [
@@ -2743,6 +3002,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Inflection"
 tier = 2
 urls = [
@@ -2751,6 +3011,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Krea"
 tier = 2
 urls = [
@@ -2759,6 +3020,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Mancer"
 tier = 1
 urls = [
@@ -2767,6 +3029,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Phala"
 tier = 2
 urls = [
@@ -2775,6 +3038,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "PrismML"
 tier = 2
 urls = [
@@ -2783,6 +3047,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Respan"
 tier = 2
 urls = [
@@ -2791,6 +3056,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Runway"
 tier = 2
 urls = [
@@ -2799,6 +3065,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "StreamLake"
 tier = 1
 urls = [
@@ -2807,6 +3074,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Tenstorrent"
 tier = 2
 urls = [
@@ -2815,6 +3083,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "AtlasCloud"
 tier = 1
 urls = [
@@ -2823,6 +3092,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Infermatic"
 tier = 1
 urls = [
@@ -2831,6 +3101,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Ionstream"
 tier = 1
 urls = [
@@ -2839,6 +3110,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "KT"
 tier = 3
 urls = [
@@ -2847,6 +3119,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 3)"
 
 [[provider]]
+
 name = "Makora"
 tier = 2
 urls = [
@@ -2855,6 +3128,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "PrimaLabs"
 tier = 1
 urls = [
@@ -2863,6 +3137,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 1)"
 
 [[provider]]
+
 name = "Tensormesh"
 tier = 2
 urls = [
@@ -2871,6 +3146,7 @@ urls = [
 notes = "from universe backfill 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Lightricks"
 tier = 2
 urls = [
@@ -2879,6 +3155,7 @@ urls = [
 notes = "from HF outer scan 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Qdrant"
 tier = 2
 urls = [
@@ -2887,6 +3164,7 @@ urls = [
 notes = "from HF outer scan 2026-11 (tier 2)"
 
 [[provider]]
+
 name = "Red Hat AI"
 tier = 3
 urls = [

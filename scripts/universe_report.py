@@ -32,6 +32,10 @@ IGNORE_DOMAINS = {
     "x.com", "twitter.com", "discord.com", "medium.com", "youtube.com",
     # 政府/学术/公共机构域：按口径排除，不作为厂商
     "europa.eu", "gov.uk", "gov.sg", "ac.uk", "edu.cn", "gov.cn",
+    # 非厂商：政府计划、研究机构、创业活动、支付与运营商
+    "chinamobileltd.com", "tii.ae", "openbmb.cn", "pawsey.org.au",
+    "nairrpilot.org", "indiaai.gov.in", "disg.gov.sg", "sovereignai.gov.uk",
+    "trelis.com", "antler.co", "stripe.com", "blog.google",
 }
 
 
