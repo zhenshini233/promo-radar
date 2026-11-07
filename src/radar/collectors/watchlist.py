@@ -176,6 +176,15 @@ def auto_enroll_from_items(ctx, items: list[RawItem]) -> int:
     return len(blocks)
 
 
+def _best_promo_phrase(hits: list[str]) -> str:
+    """从命中的关键词里挑最有信息量的一个当标题：优先带 $ 金额的（最长），否则最长。"""
+    if not hits:
+        return "出现促销信号"
+    money = [h for h in hits if h.startswith("$") or "$" in h]
+    pool = money or hits
+    return max(pool, key=len)
+
+
 @register_source("watchlist")
 class WatchlistSource:
 
@@ -247,7 +256,7 @@ class WatchlistSource:
                 items.append(
                     RawItem(
                         source="watchlist",
-                        title=f"[{p['name']}] 页面出现促销信号: {', '.join(hits[:5])}",
+                        title=f"{p['name']} — {_best_promo_phrase(hits)}",
                         url=u["url"],
                         provider=p["name"],
                         evidence=_make_evidence(text, visible, regexes),

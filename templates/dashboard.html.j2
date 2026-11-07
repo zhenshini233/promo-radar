@@ -304,14 +304,11 @@
               <span class="pill" :class="d.status">[[ STATUS_NAMES[d.status] ]]</span>
               <span v-if="d.card_required_hint === true" class="pill card-yes">需绑卡</span>
               <span v-else-if="d.card_required_hint === false" class="pill card-no">免绑卡</span>
+              <span class="amount-num" v-if="firstAmount(d)">[[ firstAmount(d) ]]</span>
               <span class="score num" title="匹配分">[[ d.score.toFixed(0) ]]</span>
             </div>
             <div class="t"><a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a></div>
             <div class="ev" v-if="d.evidence">[[ d.evidence ]]</div>
-            <div class="amount-row">
-              <span class="amount num">[[ firstAmount(d) || '—' ]]</span>
-              <span class="amount-note" v-if="d.amount_hint">[[ d.amount_hint.replace(firstAmount(d), '').replace(/^[\s—–-]+/, '').slice(0, 40) ]]</span>
-            </div>
             <div class="meta">
               <span class="provider" v-if="d.provider">[[ d.provider ]]</span>
               <span class="pill src">[[ srcName(d.source) ]]<template v-if="d.also_seen_in.length"> / [[ d.also_seen_in.map(srcName).join(' / ') ]]</template></span>
