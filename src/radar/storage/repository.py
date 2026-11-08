@@ -68,6 +68,7 @@ def _row_to_offer(r: sqlite3.Row) -> Offer:
         first_seen_at=r["first_seen_at"],
         last_seen_at=r["last_seen_at"],
         evidence_count=(int(r["evidence_count"]) if "evidence_count" in keys else 0),
+        score=(float(r["offer_score"]) if "offer_score" in keys else 0.0),
     )
 
 
@@ -829,7 +830,8 @@ class SqliteRepository(StateStore):
     def all_offers(self, vertical: str | None = None, limit: int = 5000) -> list[Offer]:
         sql = (
             "SELECT o.*, COALESCE(o.provider_name, p.name) AS provider_name,"
-            " (SELECT COUNT(*) FROM offer_evidence e WHERE e.offer_id = o.id) AS evidence_count"
+            " (SELECT COUNT(*) FROM offer_evidence e WHERE e.offer_id = o.id) AS evidence_count,"
+            " COALESCE((SELECT MAX(score) FROM offer_evidence e WHERE e.offer_id = o.id), 0) AS offer_score"
             " FROM offers o LEFT JOIN providers p ON p.id = o.provider_id"
         )
         args: list = []

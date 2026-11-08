@@ -145,7 +145,7 @@
         <table>
           <thead><tr>
             <th class="col-title">资源</th><th>厂商</th><th>领域</th><th>类型</th>
-            <th class="num">规格 / 额度</th><th>门槛</th><th class="num">证据</th><th>状态</th><th>领取</th>
+            <th class="num">规格 / 额度</th><th>门槛</th><th class="num">证据 / 分</th><th class="num">收录</th><th>状态</th><th>领取</th>
           </tr></thead>
           <tbody>
             <tr v-for="d in pagedDeals" :key="d.dedup_key">
@@ -159,11 +159,12 @@
               <td><span class="pill hit">[[ d.type_cn || d.offer_type ]]</span></td>
               <td class="num">[[ d.res_text || firstAmount(d) || '—' ]]</td>
               <td>[[ d.card_text || (d.card_required_hint === false ? '免绑卡' : d.card_required_hint === true ? '需绑卡' : '—') ]]</td>
-              <td class="num">[[ d.evidence_count || 1 ]]</td>
+              <td class="num">[[ d.evidence_count || 1 ]]<template v-if="d.score > 0"> · [[ d.score ]]</template></td>
+              <td class="num">[[ d.first_seen_text || '—' ]]</td>
               <td><span class="pill" :class="d.status_cls || d.status">[[ STATUS_NAMES[d.status] ]]</span></td>
               <td><button class="btn small" @click="toggleClaim(d)">[[ claimLabel(d) ]]</button></td>
             </tr>
-            <tr v-if="!pagedDeals.length"><td colspan="9" class="empty-cell">没有符合条件的资源</td></tr>
+            <tr v-if="!pagedDeals.length"><td colspan="10" class="empty-cell">没有符合条件的资源</td></tr>
           </tbody>
         </table>
       </div>
@@ -182,6 +183,12 @@
           <div class="card-meta">
             <span v-if="d.provider" class="provider">[[ d.provider ]]</span>
             <span class="t2">[[ d.card_text || '门槛未标注' ]]</span>
+            <span class="t2">[[ d.region_text ]]</span>
+            <span class="t2">难度 [[ d.difficulty ]]/5</span>
+            <span class="t2" v-if="d.first_seen_text">
+              收录 [[ d.first_seen_text ]]<template v-if="d.age_days !== null"> · [[ d.age_days === 0 ? '今天' : d.age_days + ' 天前' ]]</template>
+            </span>
+            <span class="t2" v-if="d.score > 0">匹配分 [[ d.score ]]</span>
             <span class="t2 num">[[ d.evidence_count || 1 ]] 条证据</span>
             <button class="btn small" @click="toggleClaim(d)">[[ claimLabel(d) ]]</button>
           </div>

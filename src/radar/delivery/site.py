@@ -59,7 +59,7 @@ _VERTICAL_CN = {
 # 「我要部署什么」场景索引：providers 为推荐厂商（模糊包含匹配）
 
 
-def _offer_dict(o) -> dict:
+def _offer_dict(o, now=None) -> dict:
     d = asdict(o)
     d["status_cn"] = _OFFER_STATUS_CN.get(o.status, o.status)
     d["type_cn"] = _OFFER_TYPE_CN.get(o.offer_type, o.offer_type)
@@ -92,7 +92,20 @@ def _offer_dict(o) -> dict:
     # 与旧 deals 视图兼容的字段：前端卡片/表格/时间线共用同一套模板
     d["matched"] = [d["type_cn"]] if d.get("type_cn") else []
     d["also_seen_in"] = []
-    d["score"] = 0.0
+    # 匹配分来自证据（AI 源评分；云资源源不评分，保持 0 时前端不展示）
+    d["score"] = round(float(o.score or 0), 1)
+    # 收录时间与「几天前」，卡片和表格都要能看出资源新旧
+    d["first_seen_text"] = (o.first_seen_at or "")[:10]
+    d["last_seen_text"] = (o.last_seen_at or "")[:10]
+    age_days = None
+    if now is not None and o.first_seen_at:
+        try:
+            age_days = max(0, (now - parse_iso(o.first_seen_at)).days)
+        except Exception:  # noqa: BLE001 - 脏时间戳只影响展示
+            age_days = None
+    d["age_days"] = age_days
+    regs = list(o.regions or [])
+    d["region_text"] = "国内" if "CN" in regs else ("海外 / 全球" if regs else "全球")
     d["card_required_hint"] = card
     d["last_changed_at"] = o.last_seen_at
     d["status_cls"] = "new" if o.status == "active" else o.status
@@ -279,7 +292,7 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
 
     signal_pages = sum(1 for m in monitors if m["promo_keywords"])
     offers = repo.all_offers()
-    offer_rows = [_offer_dict(o) for o in offers]
+    offer_rows = [_offer_dict(o, now) for o in offers]
     verticals = repo.vertical_stats()
     vendors = repo.vendor_summary()
     cloud_count = sum(v["total"] for v in verticals if v["id"] != "ai_api")

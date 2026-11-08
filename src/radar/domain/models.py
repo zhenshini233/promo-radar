@@ -98,6 +98,8 @@ class Offer:
     last_seen_at: str = ""
     id: int | None = None
     evidence_count: int = 0
+    # 匹配分：取该 Offer 全部证据里的最高分（云资源源不评分，保持 0）
+    score: float = 0.0
 
 
 @dataclass
