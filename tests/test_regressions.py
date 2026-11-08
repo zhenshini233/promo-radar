@@ -283,4 +283,4 @@ def test_v4_schema_migrates_to_latest(tmp_path):
     version = store.conn.execute("PRAGMA user_version").fetchone()[0]
     store.close()
     assert {"fail_count", "last_error", "tier", "next_check_at"} <= cols
-    assert version == 8  # v7/v8 只新增实体表，旧表不加列
+    assert version == 9  # v7/v8/v9 只新增表或列，旧数据不重写

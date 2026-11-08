@@ -70,6 +70,8 @@ class Deal:
     last_changed_at: str = ""
     matched: list[str] = field(default_factory=list)  # 命中的关键词标签（类型筛选用）
     also_seen_in: list[str] = field(default_factory=list)
+    verified_at: str = ""
+    verified_by: str = ""
 
 
 @dataclass

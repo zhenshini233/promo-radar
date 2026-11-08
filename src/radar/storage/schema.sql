@@ -1,4 +1,4 @@
--- promo-radar 数据库 schema（PRAGMA user_version = 8）
+-- promo-radar 数据库 schema（PRAGMA user_version = 9）
 
 CREATE TABLE IF NOT EXISTS deals (
     dedup_key          TEXT PRIMARY KEY,
@@ -15,7 +15,9 @@ CREATE TABLE IF NOT EXISTS deals (
     last_changed_at    TEXT NOT NULL,
     status             TEXT NOT NULL DEFAULT 'new',
     matched            TEXT NOT NULL DEFAULT '[]',
-    also_seen_in       TEXT NOT NULL DEFAULT '[]'
+    also_seen_in       TEXT NOT NULL DEFAULT '[]',
+    verified_at        TEXT NOT NULL DEFAULT '',
+    verified_by        TEXT NOT NULL DEFAULT ''
 );
 CREATE INDEX IF NOT EXISTS idx_deals_last_seen ON deals (last_seen_at);
 CREATE INDEX IF NOT EXISTS idx_deals_status ON deals (status);

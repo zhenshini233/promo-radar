@@ -47,6 +47,15 @@ jobs:
           RADAR_AA_KEY: ${{ secrets.RADAR_AA_KEY }}
         run: python -m radar run
 
+      # 实体层脚本：宇宙 → 标注 → Provider → Offer，然后重建站点
+      - name: Rebuild entities
+        run: |
+          python scripts/universe_report.py
+          python scripts/annotate_universe.py
+          python scripts/import_providers.py
+          python scripts/build_offers.py
+          python -m radar report
+
       # providers.toml 是文本、体积小、需要 review，保留在主分支提交；
       # 站点产物与 333 个 monitor json 不再进 git（体积与噪音都不可接受）。
       - name: Commit providers.toml

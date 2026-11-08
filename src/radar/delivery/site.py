@@ -226,6 +226,7 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
         "registry_sizes": registry_sizes(registries),
         "feedback_stats": repo.feedback_stats(),
         "provider_categories": repo.provider_category_stats(),
+        "digest": repo.today_digest(),
         # 源元数据唯一来源是 coverage.py，前端不再手抄
         "source_meta": {
             sid: {"name": SOURCE_NAMES[sid], "type": SOURCE_TYPES[sid], "blurb": SOURCE_BLURBS[sid]}

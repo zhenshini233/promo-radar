@@ -251,35 +251,49 @@
   <main class="main">
     {# ---------- 总览 ---------- #}
     <section v-if="st.page==='overview'">
-      <div class="title-row"><h1>总览</h1></div>
-      <section class="kpis" aria-label="概览">
-        <div class="kpi lead"><div class="label">本周新增</div><div class="value num">[[ kpis.new_this_week ]]</div></div>
-        <div class="kpi"><div class="label">进行中</div><div class="value num">[[ kpis.active_deals ]]</div></div>
-        <div class="kpi"><div class="label">官网活动厂商 <small>共 [[ kpis.monitors ]]</small></div><div class="value num">[[ signal_pages ]]</div></div>
-        <div class="kpi"><div class="label">已过期</div><div class="value num">[[ kpis.expired_deals ]]</div></div>
-      </section>
-      <div class="ov-grid">
-        <div>
-          <h2 class="section-h2">最近发现</h2>
-          <div class="list-box">
-            <div v-for="d in recentDeals" :key="d.dedup_key" class="ov-row">
-              <span class="ov-amount num">[[ (firstAmount(d) || '—').slice(0,16) ]]</span>
-              <a class="ov-title" :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
-              <span class="pill" :class="d.status">[[ STATUS_NAMES[d.status] ]]</span>
-            </div>
-          </div>
+      <div class="title-row"><h1>今天</h1><span class="freshness num">[[ digest.today ]]</span></div>
+      <div class="digest-bar">
+        <strong class="num">[[ digest.today_new ]]</strong><span>条新活动</span>
+        <span class="dot">·</span>
+        <strong class="num">[[ digest.missed_count ]]</strong><span>家未抓到</span>
+        <span class="dot">·</span>
+        <span class="t2">上次成功 [[ (digest.last_success || '').slice(0, 16).replace('T', ' ') || '—' ]]</span>
+      </div>
+
+      <h2 class="section-h2">今天新增</h2>
+      <div class="list-box">
+        <div v-for="d in todayNew" :key="d.dedup_key" class="ov-row">
+          <span class="ov-amount num">[[ firstAmount(d) || '—' ]]</span>
+          <a class="ov-title" :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
+          <span class="pill" :class="d.status">[[ STATUS_NAMES[d.status] ]]</span>
         </div>
-        <div>
-          <h2 class="section-h2">官网活动 · 厂商</h2>
-          <div class="list-box">
-            <div v-for="m in activeMonitorsTop" :key="m.url" class="ov-row">
-              <span class="ov-amount num">[[ (m.promo_keywords.split(';;')[0] || '—').slice(0,18) ]]</span>
-              <a class="ov-title" :href="m.url" target="_blank" rel="noopener noreferrer">[[ m.provider ]]</a>
-              <span class="pill hit">官网活动</span>
-            </div>
-          </div>
+        <div v-if="!todayNew.length" class="ov-empty">
+          今天还没有新活动。最近 7 天仍有 [[ digest.recent_active ]] 条可用。
         </div>
       </div>
+
+      <h2 class="section-h2">最近 7 天仍可用 <small>[[ digest.recent_active ]] 条</small></h2>
+      <div class="list-box">
+        <div v-for="d in recentTop" :key="d.dedup_key" class="ov-row">
+          <span class="ov-amount num">[[ firstAmount(d) || '—' ]]</span>
+          <a class="ov-title" :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
+          <span class="t2">[[ (d.provider || srcName(d.source)) ]]</span>
+        </div>
+        <div v-if="!recentTop.length" class="ov-empty">最近 7 天没有仍可用的活动。</div>
+      </div>
+
+      <h2 class="section-h2">本周漏抓 <small>[[ digest.missed_count ]] 家</small></h2>
+      <div class="list-box">
+        <div v-for="m in digest.missed" :key="m.slug" class="ov-row">
+          <span class="ov-amount num">[[ m.last_success || '—' ]]</span>
+          <span class="ov-title">[[ m.name ]]</span>
+          <span class="pill" :class="m.failed_pages ? 'card-yes' : 'card-no'">[[ m.reason ]]</span>
+        </div>
+        <div v-if="!digest.missed.length" class="ov-empty">本周没有漏抓，所有监控厂商都有成功记录。</div>
+      </div>
+
+      <details class="ov-fold">
+        <summary>分类覆盖 / 反馈闭环</summary>
       <div class="ov-grid" style="margin-top:20px">
         <div style="grid-column:1/-1">
           <h2 class="section-h2">分类覆盖 <small>按 Provider 实体</small></h2>
@@ -339,6 +353,7 @@
           </div>
         </div>
       </div>
+      </details>
     </section>
 
     {# ---------- 活动 ---------- #}
@@ -392,7 +407,10 @@
               <span class="provider" v-if="d.provider">[[ d.provider ]]</span>
               <span class="pill src">[[ srcName(d.source) ]]<template v-if="d.also_seen_in.length"> / [[ d.also_seen_in.map(srcName).join(' / ') ]]</template></span>
               <span class="date num">[[ d.first_seen_at.slice(0, 10) ]]</span>
+              <span class="pill card-no" v-if="d.verified_by === 'user'">已核实</span>
+              <span class="pill hit" v-else-if="d.verified_by">自动核实</span>
               <span class="fb" v-if="st.serveMode">
+                <button class="fb-btn" title="我已核实这个活动仍然有效" @click="sendVerify(d)">✅</button>
                 <button class="fb-btn" :class="{on: voteOf(d)==='up'}" title="已薅/有价值" @click="sendFeedback(d, 'up')">👍</button>
                 <button class="fb-btn" :class="{on: voteOf(d)==='down'}" title="误报" @click="sendFeedback(d, 'down')">👎</button>
                 <button class="fb-btn" :class="{on: voteOf(d)==='snooze'}" title="暂时不关心" @click="sendFeedback(d, 'snooze')">💤</button>

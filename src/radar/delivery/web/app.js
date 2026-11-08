@@ -109,13 +109,17 @@
       });
       var sortedDeals = computed(function () {
         var arr = filteredDeals.value.slice();
-        if (st.sort === "score") {
-          arr.sort(function (a, b) { return b.score - a.score || (a.first_seen_at < b.first_seen_at ? 1 : -1); });
-        } else if (st.sort === "amount") {
-          arr.sort(function (a, b) { return amountValue(b) - amountValue(a); });
-        } else {
-          arr.sort(function (a, b) { return a.last_changed_at < b.last_changed_at ? 1 : -1; });
-        }
+        // 反馈回灌：误报与暂时不关心排到后面（down > snooze > 正常）
+        var fbWeight = function (d) {
+          var v = voteOf(d);
+          return v === "down" ? 2 : v === "snooze" ? 1 : 0;
+        };
+        var primary = function (a, b) {
+          if (st.sort === "score") return b.score - a.score || (a.first_seen_at < b.first_seen_at ? 1 : -1);
+          if (st.sort === "amount") return amountValue(b) - amountValue(a);
+          return a.last_changed_at < b.last_changed_at ? 1 : -1;
+        };
+        arr.sort(function (a, b) { return fbWeight(a) - fbWeight(b) || primary(a, b); });
         return arr;
       });
       var dealPages = computed(function () {
@@ -291,6 +295,20 @@
       }
 
       // ---------- 总览 ----------
+      var DIGEST = DATA.digest || {};
+      var todayNew = computed(function () {
+        var today = DIGEST.today || "";
+        return DEALS.filter(function (d) { return (d.first_seen_at || "").slice(0, 10) === today; })
+          .sort(function (a, b) { return (b.first_seen_at || "").localeCompare(a.first_seen_at || ""); })
+          .slice(0, 6);
+      });
+      var recentTop = computed(function () {
+        var today = DIGEST.today || "";
+        return DEALS.filter(function (d) {
+          if (["new", "active"].indexOf(d.status) < 0) return false;
+          return (d.first_seen_at || "").slice(0, 10) !== today;
+        }).sort(function (a, b) { return (b.score || 0) - (a.score || 0); }).slice(0, 5);
+      });
       var recentDeals = computed(function () {
         return DEALS.slice().sort(function (a, b) { return a.first_seen_at < b.first_seen_at ? 1 : -1; }).slice(0, 8);
       });
@@ -415,6 +433,23 @@
         }).catch(function (e) { st.feedbackMsg = "反馈失败：" + e; });
       }
 
+      function sendVerify(d) {
+        if (!st.serveMode) {
+          st.feedbackMsg = "核实仅在 radar serve 模式下可用；静态页面只显示核实状态";
+          return;
+        }
+        fetch("/api/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: d.dedup_key }),
+        }).then(function (r) { return r.ok ? r.json() : null; }).then(function (res) {
+          if (res && res.ok) {
+            d.verified_at = new Date().toISOString();
+            d.verified_by = "user";
+          }
+        }).catch(function (e) { st.feedbackMsg = "核实失败：" + e; });
+      }
+
       // 防抖搜索
       var qt = null, mqt = null;
       watch(function () { return st.q; }, function (v) {
@@ -477,8 +512,10 @@
         coverChips: coverChips,
         sourceCards: sourceCards, srcSummary: srcSummary,
         startRefresh: startRefresh, saveProxy: saveProxy,
-        sendFeedback: sendFeedback, voteOf: voteOf,
+        sendFeedback: sendFeedback, voteOf: voteOf, sendVerify: sendVerify,
         feedbackStats: DATA.feedback_stats || { total: 0, up: 0, down: 0, snooze: 0 },
+        digest: DIGEST,
+        todayNew: todayNew, recentTop: recentTop,
         providerCategories: DATA.provider_categories || [],
         toggleVendors: toggleVendors, sourceVendors: DATA.source_vendors || {},
         pendingEnroll: DATA.pending_enroll || [],

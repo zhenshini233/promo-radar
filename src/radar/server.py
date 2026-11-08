@@ -97,6 +97,9 @@ class RadarHandler(SimpleHTTPRequestHandler):
         if path == "/api/feedback":
             self._handle_feedback()
             return
+        if path == "/api/verify":
+            self._handle_verify()
+            return
         if path == "/api/proxy":
             self._handle_proxy_save()
             return
@@ -183,6 +186,20 @@ class RadarHandler(SimpleHTTPRequestHandler):
         finally:
             repo.close()
         self._json({"ok": True, "key": key, "vote": vote})
+
+    def _handle_verify(self):
+        length = int(self.headers.get("Content-Length") or 0)
+        body = json.loads(self.rfile.read(length) or b"{}") if length else {}
+        key = (body.get("key") or "").strip()
+        if not key:
+            self._json({"error": "missing key"}, 400)
+            return
+        repo = SqliteRepository(self.cfg.data_dir / "radar.db")
+        try:
+            ok = repo.verify_deal(key, by="user")
+        finally:
+            repo.close()
+        self._json({"ok": ok, "key": key})
 
 
 def make_server(cfg, host: str = "127.0.0.1", port: int = 8790) -> ThreadingHTTPServer:

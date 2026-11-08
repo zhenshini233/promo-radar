@@ -374,3 +374,27 @@ footer a:hover { color: var(--accent); }
   color: var(--ink);
   font-size: 12px;
 }
+
+/* 首页：一句话状态 + 折叠区 */
+.digest-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  margin: 0 0 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.digest-bar strong { font-size: 22px; line-height: 1; }
+.digest-bar .dot { color: var(--muted); }
+.ov-fold { margin-top: 20px; }
+.ov-fold > summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 8px 0;
+  user-select: none;
+}
+.ov-fold[open] > summary { color: var(--ink); }

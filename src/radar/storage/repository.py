@@ -21,7 +21,7 @@ from ..domain.dedup import find_fuzzy_match, make_key, norm_title
 from ..domain.domains import registrable_domain
 from ..domain.models import Deal, RunReport, ScoredItem, iso, utcnow
 
-SCHEMA_VERSION = 8
+SCHEMA_VERSION = 9
 _SCHEMA_PATH = Path(__file__).parent / "schema.sql"
 
 
@@ -42,6 +42,8 @@ def _row_to_deal(r: sqlite3.Row) -> Deal:
         status=r["status"],
         matched=json.loads(r["matched"] or "[]"),
         also_seen_in=json.loads(r["also_seen_in"] or "[]"),
+        verified_at=r["verified_at"],
+        verified_by=r["verified_by"],
     )
 
 
@@ -111,6 +113,9 @@ class SqliteRepository(StateStore):
         if version < 8:
             # v8 只新增 offers / offer_evidence，同样由 schema.sql 建表。
             pass
+        if version < 9:
+            self._add_column("deals", "verified_at", "TEXT NOT NULL DEFAULT ''")
+            self._add_column("deals", "verified_by", "TEXT NOT NULL DEFAULT ''")
 
     def _add_column(self, table: str, name: str, ddl: str) -> None:
         cols = {r["name"] for r in self.conn.execute(f"PRAGMA table_info({table})")}
@@ -622,6 +627,77 @@ class SqliteRepository(StateStore):
             else:
                 done.add(src)
         return out
+
+    # ---------- digest / verify ----------
+
+    def today_digest(self, now=None, stale_days: int = 7) -> dict:
+        """首页三问：今天新增、最近仍可用、本周漏抓。"""
+        now = now or utcnow()
+        today = now.date().isoformat()
+        cutoff = iso(now - timedelta(days=stale_days))
+
+        today_new = self.conn.execute(
+            "SELECT COUNT(*) AS n FROM deals WHERE substr(first_seen_at, 1, 10) = ?", (today,)
+        ).fetchone()["n"]
+        recent_active = self.conn.execute(
+            "SELECT COUNT(*) AS n FROM deals"
+            " WHERE status IN ('new','active') AND last_seen_at >= ?",
+            (cutoff,),
+        ).fetchone()["n"]
+
+        owners = {
+            r["domain"]: r["provider_id"]
+            for r in self.conn.execute("SELECT domain, provider_id FROM provider_domains")
+        }
+        last_success: dict[int, str] = {}
+        failed_pages: dict[int, int] = {}
+        global_last = ""
+        for r in self.conn.execute("SELECT url, last_checked_at, fail_count FROM snapshots"):
+            dom = registrable_domain(r["url"])
+            pid = owners.get(dom) if dom else None
+            if pid is None:
+                continue
+            if r["fail_count"] == 0:
+                if r["last_checked_at"] > last_success.get(pid, ""):
+                    last_success[pid] = r["last_checked_at"]
+                if r["last_checked_at"] > global_last:
+                    global_last = r["last_checked_at"]
+            else:
+                failed_pages[pid] = failed_pages.get(pid, 0) + 1
+
+        missed: list[dict] = []
+        for p in self.conn.execute(
+            "SELECT id, name, slug FROM providers WHERE status = 'monitored' ORDER BY name"
+        ):
+            last = last_success.get(p["id"], "")
+            if last and last >= cutoff:
+                continue
+            missed.append({
+                "name": p["name"],
+                "slug": p["slug"],
+                "last_success": last[:10],
+                "failed_pages": failed_pages.get(p["id"], 0),
+                "reason": "从未成功抓取" if not last else f"{stale_days} 天未成功",
+            })
+
+        return {
+            "today": today,
+            "today_new": today_new or 0,
+            "recent_active": recent_active or 0,
+            "missed_count": len(missed),
+            "missed": missed[:10],
+            "last_success": global_last,
+        }
+
+    def verify_deal(self, dedup_key: str, *, by: str = "user", now=None) -> bool:
+        """标记活动已核实（人工）。返回是否命中。"""
+        now_s = iso(now or utcnow())
+        cur = self.conn.execute(
+            "UPDATE deals SET verified_at = ?, verified_by = ? WHERE dedup_key = ?",
+            (now_s, by, dedup_key),
+        )
+        self.conn.commit()
+        return cur.rowcount > 0
 
     # ---------- providers ----------
 
