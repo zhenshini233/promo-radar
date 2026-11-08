@@ -3172,3 +3172,80 @@ urls = [
 ]
 notes = "from HF outer scan 2026-11 (tier 3)"
 
+[[provider]]
+name = "antler.co"
+urls = [
+    { label = "home", url = "https://antler.co" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "disg.gov.sg"
+urls = [
+    { label = "home", url = "https://disg.gov.sg" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "indiaai.gov.in"
+urls = [
+    { label = "home", url = "https://indiaai.gov.in" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "nairrpilot.org"
+urls = [
+    { label = "home", url = "https://nairrpilot.org" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "pawsey.org.au"
+urls = [
+    { label = "home", url = "https://pawsey.org.au" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "sovereignai.gov.uk"
+urls = [
+    { label = "home", url = "https://sovereignai.gov.uk" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "stripe.com"
+urls = [
+    { label = "home", url = "https://stripe.com" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "trelis.com"
+urls = [
+    { label = "home", url = "https://trelis.com" },
+]
+notes = "auto-enrolled from aicredits 2026-11-08"
+
+[[provider]]
+name = "OpenBMB"
+urls = [
+    { label = "home", url = "https://www.openbmb.cn" },
+]
+notes = "auto-enrolled from brands 2026-11-08"
+
+[[provider]]
+name = "TII（阿布扎比技术创新院）"
+urls = [
+    { label = "home", url = "https://www.tii.ae" },
+]
+notes = "auto-enrolled from brands 2026-11-08"
+
+[[provider]]
+name = "中国移动"
+urls = [
+    { label = "home", url = "https://www.chinamobileltd.com" },
+]
+notes = "auto-enrolled from brands 2026-11-08"
+
