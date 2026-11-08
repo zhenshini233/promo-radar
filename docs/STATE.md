@@ -1,7 +1,7 @@
 # 项目现状（唯一事实源）
 
 > 任何数字、状态、下一步，以本文件为准。其它文档只解释“为什么”，不再各自定义“做到哪”。
-> 最后更新：2026-11-07｜commit `5d51878`｜schema **v9**
+> 最后更新：2026-11-08｜schema **v10**｜云资源扩展已落地（M0–M6）
 
 ---
 
@@ -16,23 +16,27 @@
 
 | 块 | 状态 | 证据 |
 |---|---|---|
-| 采集 | 可用 | `radar run` 跑通，10 源 + watchlist |
-| 理解 | 可用 | 解析器、注册域、别名归一 |
-| 判定 | 可用 | 评分、强信号、状态机、Offer 层 |
-| 记忆 | 可用 | SQLite v9，核心表 + offers |
-| 分发 | 可用 | 静态站点 + Telegram + 反馈 |
+| 采集 | 可用 | `radar run` 跑通，10 个 AI 源 + watchlist + 2 个云源 |
+| 理解 | 可用 | 解析器、注册域、别名归一、云规格/单位归一 |
+| 判定 | 可用 | 评分、强信号、状态机、Offer 层、免费门槛 |
+| 记忆 | 可用 | SQLite v10，核心表 + offers + signals + claims |
+| 分发 | 可用 | 统一「资源」+ 统一「厂商」+ 用途筛选 + Telegram + 反馈 |
 | 治理 | 半可用 | 覆盖率、分类视图、熔断；缺收编闸门 |
 
-## 2. 数据（2026-11-07 实测）
+## 2. 数据（2026-11-08 本地实测）
 
 | 表 | 行数 |
 |---|---:|
-| deals | 213 |
-| snapshots | 366 |
-| providers | 370 |
-| offers | 213 |
-| offer_evidence | 213 |
-| runs | 41 |
+| deals | 220 |
+| snapshots | 333 |
+| providers | 370（线上 v9 口径；本地开发库未跑 import_providers） |
+| offers | 881（AI 212 + 云 669；统一目录的唯一展示实体） |
+| offer_evidence | 882（一个 Offer 可有多条来源证据） |
+| signals | 26 |
+| vendors（聚合视图） | 805（AI + 云，不依赖 providers 表） |
+| claims | 0 |
+
+云资源分布：devtool 184 / cloud 84 / paas 72 / cdn 60 / storage 52 / database 48。
 
 覆盖率 91.4%（338/370）；页关联 99.5%（364/366）；有官网盲区 0；无官网 32。
 
@@ -44,20 +48,21 @@
 | `annotate_universe.py` | 宇宙 → `universe_annotated_v0.json` |
 | `import_providers.py` | 标注 → `providers` 四表 |
 | `provider_page_report.py` | 快照 → 关联报告 |
-| `build_offers.py` | deals → `offers` / `offer_evidence` |
+| `build_offers.py` | 历史 deals → `offers`（一次性迁移，不再每日执行） |
 | `diagnose_pages.py` | 只读诊断无页 Provider |
 | `queue_missing_pages.py` | 调度引导缺失页 |
 | `prune_watchlist.py` | 移除非厂商条目 |
 
 运行顺序：`universe → annotate → import → offers → page_report`。
 
-## 4. 文档（13 份，定位固定）
+## 4. 文档（14 份，定位固定）
 
 | 文档 | 只回答 |
 |---|---|
 | `README.md` | 入口与状态摘要 |
 | `STATE.md` | **本文件：唯一事实源** |
 | `ARCHITECTURE_REVIEW.md` | 为什么这样分层 |
+| `CLOUD_EXPANSION.md` | 云资源（免费额度/云服务器/云存储）扩展的设计与实现（v1 已落地） |
 | `NEXT_STEPS.md` | 待办清单（按优先级） |
 | `STAGE_CLOSURE.md` | 阶段 1 边界（历史） |
 | `RELEASE_SCOPE.md` | 上线范围（待合并进 NEXT_STEPS） |
@@ -71,6 +76,8 @@
 | P0 | 步骤文档三份重叠（NEXT/RELEASE/STAGE） | 路线反复的根源 |
 | P1 | 32 条无官网 | 覆盖率缺口 |
 | P1 | 16 个 Offer 未匹配 Provider | 语义不完整 |
+| P1 | 云页面 4/15 抓取失败（Oracle 403 / GCP 超时 / Render 超时 / Netlify 未命中） | 云覆盖率缺口 |
+| P1 | 云资源结构化率约 40%（规格/额度字段） | 筛选能力有限 |
 | P1 | watchlist 内混合调度/抓取/判定 | 层边界不清 |
 | P2 | 无契约测试 | 重构易破 |
 | P2 | 无回滚手册 | 线上故障恢复慢 |
@@ -100,6 +107,15 @@
 - Actions 手动跑通一次；
 - Pages 可访问；
 - 回滚手册 + 基础告警。
+
+### R4 云资源扩展（v1 已完成）
+
+- M0 契约与 v10 模型：`vertical` / `offer_type` / `resources` / `eligibility` / `signals` / `claims`；
+- M1 垂直化贯通：规则包、免费门槛、CLI `--vertical`；
+- M2/M3 采集：`free-for-dev` 目录 + `cloud_sources.toml` 配置化官方页；
+- M4/M5 数据：数据库/存储/大厂免费层；
+- M6 站点：部署场景页、云资源表格、localStorage 领取跟踪；
+- 待办：4 家抓取失败修复、结构化率提升、云侧 Telegram 日报、VPS 特价（P2 可选）。
 
 ---
 

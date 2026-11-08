@@ -216,3 +216,65 @@
 ---
 
 *下一步（Day 3）：按本口径与来源清单，做第一版宇宙聚合——归一、去重、算重叠、输出覆盖率与盲区 Top。*
+
+---
+
+## 附：v10.6 国内渠道补位记录
+
+第 2.1 节列出的「中文 × 平台 API」空档，已用 `cloud_pages` 的配置化页面源补上（`cloud_sources.toml`）。
+
+### 已接入：国内大模型开放平台（vertical=ai_api，regions=CN）
+
+| 厂商 | 页面 | 抓取到的额度 |
+|---|---|---|
+| 阿里云百炼 | help.aliyun.com/zh/model-studio/new-free-quota | 100 万 tokens / 90 天（正文可抽） |
+| 火山方舟 | volcengine.com/docs/82379/1399514 | 免费推理额度（未写具体数字） |
+| 腾讯混元 | cloud.tencent.com/document/product/1729/97731 | 100 万 tokens（正文可抽） |
+| 智谱 AI | docs.bigmodel.cn/cn/guide/start/model-overview | Flash 系列免费模型 |
+| MiniMax | platform.minimaxi.com/document/price | 新用户免费额度 |
+| 硅基流动 | siliconflow.cn/pricing | 部分模型 0 元 |
+| 百度千帆 | cloud.baidu.com/doc/qianfan-api/s/3m7of64lb | ERNIE 免费额度 |
+| 讯飞星火 | www.xfyun.cn/doc/spark/Web.html | Spark 免费额度 |
+
+DeepSeek 的 500 万 token 免费额度由 `aicredits` 源覆盖；区域标注由 `infer_regions()` 按厂商名自动补 `CN`。
+
+### 探测结论：无法静态接入的厂商
+
+| 厂商 | 原因 |
+|---|---|
+| 小米 MiMo、美团 LongCat | 开放平台为纯前端渲染（HTML 仅 400–12KB 壳），正文全在 JS 里 |
+| 阶跃星辰、零一万物、商汤、百川 | 文档站正文抽取不足 250 字；百川「免费使用 M3Plus API」需商务申请 |
+| 月之暗面 Kimi | 已取消新用户免费额度，定价页无「免费」表述 |
+| DeepSeek | 已无长期免费额度（靠 aicredits 的历史活动条目覆盖） |
+
+后续若要让 JS 页进入采集，需要引入无头浏览器渲染（Playwright），成本明显高于收益，暂不做。
+
+
+---
+
+## 附：v10.7 免费算力品类（ai_compute）
+
+新增品类 `ai_compute`（前端标签「免费算力」），与 `ai_api`（模型 API）、`cloud`（云主机/存储）区分开。首批 3 条：
+
+| 平台 | 页面 | 抓到的内容 |
+|---|---|---|
+| 阿里云 | free.aliyun.com/product/ai | 新客 1 亿 tokens + 百炼/PAI/EAS 免费试用 |
+| 百度飞桨 AI Studio | ai.baidu.com/ai-doc/AISTUDIO/nk39v9kec | 每日 8 点算力卡（≈16h V100 16G） |
+| 腾讯 Cloud Studio | cloud.tencent.com/product/cloudstudio | 每月 10000 分钟 T4 工作空间 |
+
+### 探测过但接不了的
+
+| 平台 | 原因 |
+|---|---|
+| 魔搭 ModelScope（Notebook / API-Inference） | 文档站为 JS 渲染，首页 HTML 仅 4.5–4.9KB |
+| 华为 Modelers.cn | 首页 HTML 1.1KB，纯前端渲染 |
+| AMD 中国开发者平台 | 首页 0.9KB，纯前端渲染 |
+| 九天毕昇 | 首页 0.6KB，纯前端渲染 |
+| 阿里天池实验室 | 页面只有导航，无可核实的免费算力表述 → 已删除该条目，避免臆测 |
+
+要覆盖这些页面需要无头浏览器渲染（Playwright），成本明显高于收益，暂不做。
+
+### 顺带修正
+
+- token 额度显示支持「万 / 亿」两级（此前 1 亿会显示成「10000 万」）。
+- 页面源新增导航段落过滤：一段里出现 3 个以上导航词（登录/注册/定价/客户支持…）时降权，避免把菜单当证据。

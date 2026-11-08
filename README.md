@@ -1,10 +1,19 @@
 # promo-radar
 
-系统性收集国际 AI API 服务商"注册送额度 / 绑卡送额度 / 免费层"类促销活动的个人监控站。
+系统性收集 **AI API 促销 + 可白嫖云资源**（免费额度 / 免费服务器 / 可部署网站）的个人监控站。
 
 多渠道抓取 → 关键词打分 → 三级去重 → SQLite 归档 → **交互式 Dashboard**（纯静态，双击可开）+ Atom 订阅 + 可选 Telegram 推送。
 
-## 渠道全景（12 条线）
+三个领域共用一套管线：
+
+- **AI 促销**：注册送额度、绑卡送额度、free tier。
+- **云资源**（v10）：永久免费、免费层、试用赠金，重点回答「我想部署一个网站，能用什么」。
+- **免费算力**（v10.7）：免费 GPU / Notebook / 免费 token 额度，回答「没有显卡怎么跑模型」。
+
+两者**不是两个目录**：所有来源统一写入 `offers`，站点只有一个「全部资源」列表，用「领域」筛选切换。
+`deals` 表只作为历史线索保留，不再产生新数据。
+
+## 渠道全景（15 条线）
 
 | # | 渠道 | 覆盖 | 层级 |
 |---|---|---|---|
@@ -20,6 +29,9 @@
 | 10 | Artificial Analysis API | 新模型厂商上榜（60 家基线已建，✅ 已启用） | 榜单 |
 | 11 | 子代理批量排查 | OpenRouter 供应商逐家核查（已排查 35 家收编 32 家） | 人工 |
 | 12 | SearXNG 关键词搜索 | 需自托管 | ⏸ 延后 |
+| 13 | **free-for-dev 目录** | 800+ 条免费开发者资源，只收云/托管/数据库/存储/CI/监控分类 | 目录 |
+| 14 | **官方免费页** | `cloud_sources.toml` 配置化 42 个页面：国内云厂商（阿里云/腾讯云/华为云/京东云/百度智能云/青云）、8 家模型平台（百炼/火山方舟/腾讯混元/智谱/MiniMax/硅基流动/千帆/星火）、3 家免费算力（阿里云/百度 AI Studio/腾讯 Cloud Studio），结构化出 `offer_type` / 规格 / 门槛 | 官网 |
+| 15 | **国内社区 RSS** | 掘金 / 开源中国 / 博客园，只收「免费额度、试用、领取、0元」等组合信号 | 社区 |
 
 自动发现闭环：目录/平台冒出新面孔 → **自动收编**（aicredits 域名挖掘 + catalog diff 事件）→ 自动盯官网变化 → 报告呈现。
 
@@ -27,13 +39,14 @@
 
 ```
 src/radar/
-├─ domain/      纯逻辑：models / scoring（关键词打分）/ dedup（三级去重+别名）
-├─ collectors/  源插件：@register_source 注册表 + CatalogDiffSource 基类 + 11 个源
-├─ pipeline/    runner：collect → score → filter → dedup → repo → 事件流（逐源故障隔离）
-├─ storage/     repository.py（Repository + StateStore 协议 + SQLite 实现）+ schema.sql
-├─ delivery/    site.py（dashboard 站点生成）/ notify.py（Notifier 协议 + Telegram）
-├─ infra/       config.toml 加载 / http（重试/代理/正文提取 trafilatura）
-└─ cli.py       run / report / add-provider
+├─ domain/      纯逻辑：models / scoring（按 vertical 选规则包）/ dedup / free_gate / normalize_units
+├─ collectors/  源插件：@register_source 注册表 + CatalogDiffSource 基类 + 12 个 AI 源
+│               └─ cloud/  free_for_dev（目录）+ pages（cloud_sources.toml 配置化）
+├─ pipeline/    runner：collect → score/free-gate → filter → dedup → repo → 事件流（逐源故障隔离）
+├─ storage/     repository.py（Deal + v10 Offer/信号/领取 + SQLite 实现）+ schema.sql
+├─ delivery/    site.py（dashboard，含部署场景/云资源视图）/ notify.py
+├─ infra/       config.toml + cloud_sources.toml / http（重试/代理/正文提取）
+└─ cli.py       run / report / add-provider / (--vertical ai_api|cloud)
 ```
 
 解耦约定：collectors 只依赖 `StateStore` 协议；delivery 只读 domain 模型；加源 = 一个类 + `@register_source` + `__init__.py` 一行 import + config 开关。
@@ -42,9 +55,11 @@ src/radar/
 
 ```bash
 pip install -e .
-radar run            # 抓取全部源 + 生成 data/site/（index.html + data.json + atom.xml）
-radar report         # 仅用已有数据重建站点
-radar add-provider <名> --url <页>   # 手动收编服务商
+radar run                          # 抓取全部源（AI + 云）+ 生成 data/site/
+radar run --vertical cloud         # 只抓云资源（free-for-dev + 云厂商免费层页）
+radar run --vertical ai_api        # 只抓 AI 促销源
+radar report                       # 仅用已有数据重建站点
+radar add-provider <名> --url <页>  # 手动收编服务商
 ```
 
 大陆网络抓 linux.do / raw.githubusercontent 需配代理（config.toml `[proxy]`；本机已配 v2rayN 10808）。GitHub Actions 海外直连。
@@ -54,6 +69,9 @@ radar add-provider <名> --url <页>   # 手动收编服务商
 ## Dashboard 功能
 
 - **三视图**：卡片（活跃活动）/ 表格（全量+排序）/ 时间线（按日聚簇）
+'- **用途筛选**（v10）：静态站 / 全栈 + 数据库 / 后端容器 / 对象存储 / 自建 VPS，直接在资源列表里筛
+- **统一厂商**（v10）：AI 与云一个列表，可按领域、是否有官网监控筛选
+- **领取跟踪**：任何一条资源都能标记「已领」，状态存本机 localStorage，可导出/导入'
 - **筛选**：来源 / 类型（送额度、免绑卡、free tier…自动归纳）/ 金额档 / 状态，多选 chips 带计数 + 全文搜索
 - **Watchlist 信号带**：每监控页 30 天逐日信号（金=有促销信号），有信号的排前面
 - **KPI 条**：活跃数 / 本周新增 / 有信号页数 / 历史入库
