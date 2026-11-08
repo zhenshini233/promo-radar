@@ -12,7 +12,7 @@
 - 标注：category / regions / relevance + 品牌归并（`ANNOTATION_RULES_v0.md`）
 - 实体：v7 四表，370 Provider，覆盖率 91.4%（`PROVIDER_ENTITY_v0.md`）
 - 关联：345 页，关联率 92.2%（`PROVIDER_PAGES_v0.md`）
-- **云资源扩展 v1（2026-11-08）**：schema v10、`free-for-dev` + 15 家官方免费层页、部署场景页、云资源表格、localStorage 领取、120 项测试全绿
+- **云资源扩展 v1（2026-11-08）**：schema v10、`free-for-dev` + 15 家官方免费层页、部署场景页、云资源表格、localStorage 领取、121 项测试全绿
 - **统一链路 v10.1（2026-11-08）**：AI 与云统一写 `offers`，`deals` 停止写入；站点合并为「全部资源」+「厂商」，四维筛选；反馈/核实/摘要/通知全部改按 `offer_key`
 
 ---

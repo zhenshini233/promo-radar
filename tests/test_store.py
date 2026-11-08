@@ -107,3 +107,38 @@ def test_feedback_stats_aggregates_by_source(tmp_path):
     assert stats["down"] == 1
     assert stats["by_source"]["linuxdo"]["down"] == 1
     assert stats["by_source"]["hackernews"]["up"] == 1
+
+def test_legacy_db_without_v10_columns_migrates(tmp_path):
+    """旧库（CI 从 data 分支恢复的快照）没有 v10 列：初始化要先补列再建索引。
+
+    否则 schema.sql 里的 idx_offers_vertical / idx_providers_vertical
+    会直接抛 "no such column: vertical"。
+    """
+    import sqlite3
+
+    db = tmp_path / "legacy.db"
+    con = sqlite3.connect(db)
+    con.executescript(
+        "CREATE TABLE providers ("
+        " id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        " slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL,"
+        " category TEXT NOT NULL DEFAULT 'unknown',"
+        " status TEXT NOT NULL DEFAULT 'in_universe');"
+        "CREATE TABLE offers ("
+        " id INTEGER PRIMARY KEY AUTOINCREMENT, provider_id INTEGER,"
+        " title TEXT NOT NULL, amount_hint TEXT NOT NULL DEFAULT '',"
+        " status TEXT NOT NULL DEFAULT 'active',"
+        " first_seen_at TEXT NOT NULL DEFAULT '',"
+        " last_seen_at TEXT NOT NULL DEFAULT '',"
+        " dedup_key TEXT NOT NULL UNIQUE);"
+    )
+    con.execute("PRAGMA user_version = 9")
+    con.commit()
+    con.close()
+
+    store = SqliteRepository(db)
+    offer_cols = {r["name"] for r in store.conn.execute("PRAGMA table_info(offers)")}
+    provider_cols = {r["name"] for r in store.conn.execute("PRAGMA table_info(providers)")}
+    assert "vertical" in offer_cols and "provider_name" in offer_cols
+    assert "vertical" in provider_cols and "categories" in provider_cols
+    store.close()

@@ -114,10 +114,12 @@ class SqliteRepository(StateStore):
         if init:
             self.conn.execute("PRAGMA journal_mode=WAL")
             version = self.conn.execute("PRAGMA user_version").fetchone()[0]
-            self.conn.executescript(_SCHEMA_PATH.read_text(encoding="utf-8"))
-            # 幂等补齐 v10 列：即使 user_version 已是 10，开发期新增的列
-            # （如 provider_name）也会被补上，避免旧库报 no such column。
+            # 旧库必须先补 v10 列，再执行 schema：schema.sql 里有
+            # idx_offers_vertical / idx_providers_vertical，列不存在时建索引会直接
+            # 抛 "no such column"（CI 从 data 分支恢复的旧快照就会命中）。
+            # _ensure_v10_columns 幂等：新库没有表时跳过，由 schema.sql 连列一起建。
             self._ensure_v10_columns()
+            self.conn.executescript(_SCHEMA_PATH.read_text(encoding="utf-8"))
             if version < SCHEMA_VERSION:
                 self._migrate(version)
                 self.conn.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
@@ -190,6 +192,12 @@ class SqliteRepository(StateStore):
             self._ensure_v10_columns()
 
     def _add_column(self, table: str, name: str, ddl: str) -> None:
+        # 表还不存在（首次建库）时跳过：schema.sql 会连列一起建出来
+        exists = self.conn.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)
+        ).fetchone()
+        if not exists:
+            return
         cols = {r["name"] for r in self.conn.execute(f"PRAGMA table_info({table})")}
         if name not in cols:
             self.conn.execute(f"ALTER TABLE {table} ADD COLUMN {name} {ddl}")
