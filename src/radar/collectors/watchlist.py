@@ -387,12 +387,14 @@ class WatchlistSource:
                     )
                 )
             else:
-                # 促销文案消失：把对应 deal 归档，事件留在 snapshot 里
-                from ..domain.dedup import make_key
+                # 促销文案消失：把对应 Offer 归档，事件留在 snapshot 里
+                from ..domain.dedup import offer_key
                 from ..domain.models import RawItem as _RI
+                from ..domain.offer_infer import apply_ai_offer
 
-                ctx.state.mark_expired(make_key(_RI(source="watchlist", title="", key_override=key)))
-                print(f"[watchlist] {p['name']}/{u['label']} 促销文案消失，已归档对应 deal")
+                gone = _RI(source="watchlist", title="", key_override=key)
+                ctx.state.mark_expired_offer(offer_key(apply_ai_offer(gone)))
+                print(f"[watchlist] {p['name']}/{u['label']} 促销文案消失，已归档对应 Offer")
 
         # 单页失败不再判整源死亡（360 页里少数站点超时是常态）；
         # 成功率低于 50% 才视为源级故障，交给 runner 的故障隔离与告警。

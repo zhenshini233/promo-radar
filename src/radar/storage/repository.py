@@ -11,39 +11,63 @@ collectors 只依赖 StateStore 协议（本模块定义），不感知 SQLite �
 
 from __future__ import annotations
 
+import hashlib
 import json
 import sqlite3
 from datetime import timedelta
 from pathlib import Path
 from typing import Protocol, runtime_checkable
 
-from ..domain.dedup import find_fuzzy_match, make_key, norm_title
+from ..domain.dedup import canonical_terms, find_fuzzy_match, make_key, norm_title, offer_key
 from ..domain.domains import registrable_domain
-from ..domain.models import Deal, RunReport, ScoredItem, iso, utcnow
+from ..domain.models import Offer, RunReport, iso, utcnow
 
-SCHEMA_VERSION = 9
+SCHEMA_VERSION = 10
 _SCHEMA_PATH = Path(__file__).parent / "schema.sql"
 
 
-def _row_to_deal(r: sqlite3.Row) -> Deal:
-    return Deal(
+
+
+def _json_obj(raw: str | None, default):
+    """容错解析 JSON 列：坏数据回退默认值，避免整站崩。"""
+    try:
+        v = json.loads(raw or "")
+    except (ValueError, TypeError):
+        return default
+    return v if isinstance(v, type(default)) else default
+
+
+def _row_to_offer(r: sqlite3.Row) -> Offer:
+    keys = set(r.keys())
+    return Offer(
+        id=r["id"],
         dedup_key=r["dedup_key"],
-        source=r["source"],
         title=r["title"],
+        provider=(r["provider_name"] or None),
+        provider_id=r["provider_id"],
+        vertical=r["vertical"],
+        offer_type=r["offer_type"],
+        granularity=r["granularity"],
+        category=r["category"],
+        amount_hint=r["amount_hint"] or "",
+        status=r["status"],
+        resources=_json_obj(r["resources"], {}),
+        limits=_json_obj(r["limits"], {}),
+        eligibility=_json_obj(r["eligibility"], {}),
+        regions=_json_obj(r["regions"], []),
+        claim_steps=r["claim_steps"],
+        difficulty=int(r["difficulty"] or 2),
+        expires_at=r["expires_at"],
+        terms_hash=r["terms_hash"],
+        last_verified_at=r["last_verified_at"],
+        verified_by=r["verified_by"],
+        status_reason=r["status_reason"],
         url=r["url"],
-        provider=r["provider"],
-        amount_hint=r["amount_hint"],
-        card_required_hint=None if r["card_required_hint"] is None else bool(r["card_required_hint"]),
-        score=r["score"],
+        source=r["source"],
         evidence=r["evidence"],
         first_seen_at=r["first_seen_at"],
         last_seen_at=r["last_seen_at"],
-        last_changed_at=r["last_changed_at"],
-        status=r["status"],
-        matched=json.loads(r["matched"] or "[]"),
-        also_seen_in=json.loads(r["also_seen_in"] or "[]"),
-        verified_at=r["verified_at"],
-        verified_by=r["verified_by"],
+        evidence_count=(int(r["evidence_count"]) if "evidence_count" in keys else 0),
     )
 
 
@@ -91,10 +115,55 @@ class SqliteRepository(StateStore):
             self.conn.execute("PRAGMA journal_mode=WAL")
             version = self.conn.execute("PRAGMA user_version").fetchone()[0]
             self.conn.executescript(_SCHEMA_PATH.read_text(encoding="utf-8"))
+            # 幂等补齐 v10 列：即使 user_version 已是 10，开发期新增的列
+            # （如 provider_name）也会被补上，避免旧库报 no such column。
+            self._ensure_v10_columns()
             if version < SCHEMA_VERSION:
                 self._migrate(version)
                 self.conn.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
             self.conn.commit()
+
+    def _ensure_v10_columns(self) -> None:
+        for col, ddl in (
+            ("vertical", "TEXT NOT NULL DEFAULT 'ai_api'"),
+            ("categories", "TEXT NOT NULL DEFAULT '[]'"),
+            ("deploy_modes", "TEXT NOT NULL DEFAULT '[]'"),
+            ("free_tier_url", "TEXT NOT NULL DEFAULT ''"),
+            ("pricing_url", "TEXT NOT NULL DEFAULT ''"),
+        ):
+            self._add_column("providers", col, ddl)
+        for col, ddl in (
+            ("vertical", "TEXT NOT NULL DEFAULT 'ai_api'"),
+            ("offer_type", "TEXT NOT NULL DEFAULT 'credits'"),
+            ("granularity", "TEXT NOT NULL DEFAULT 'activity'"),
+            ("category", "TEXT NOT NULL DEFAULT ''"),
+            ("resources", "TEXT NOT NULL DEFAULT '{}'"),
+            ("limits", "TEXT NOT NULL DEFAULT '{}'"),
+            ("eligibility", "TEXT NOT NULL DEFAULT '{}'"),
+            ("regions", "TEXT NOT NULL DEFAULT '[]'"),
+            ("claim_steps", "TEXT NOT NULL DEFAULT ''"),
+            ("difficulty", "INTEGER NOT NULL DEFAULT 2"),
+            ("expires_at", "TEXT NOT NULL DEFAULT ''"),
+            ("terms_hash", "TEXT NOT NULL DEFAULT ''"),
+            ("last_verified_at", "TEXT NOT NULL DEFAULT ''"),
+            ("verified_by", "TEXT NOT NULL DEFAULT 'rule'"),
+            ("status_reason", "TEXT NOT NULL DEFAULT ''"),
+            ("url", "TEXT NOT NULL DEFAULT ''"),
+            ("source", "TEXT NOT NULL DEFAULT ''"),
+            ("evidence", "TEXT NOT NULL DEFAULT ''"),
+            ("provider_name", "TEXT NOT NULL DEFAULT ''"),
+        ):
+            self._add_column("offers", col, ddl)
+        for col, ddl in (
+            ("title", "TEXT NOT NULL DEFAULT ''"),
+            ("evidence", "TEXT NOT NULL DEFAULT ''"),
+            ("amount_hint", "TEXT NOT NULL DEFAULT ''"),
+            ("matched", "TEXT NOT NULL DEFAULT '[]'"),
+            ("score", "REAL NOT NULL DEFAULT 0"),
+            ("first_seen_at", "TEXT NOT NULL DEFAULT ''"),
+            ("last_seen_at", "TEXT NOT NULL DEFAULT ''"),
+        ):
+            self._add_column("offer_evidence", col, ddl)
 
     def _migrate(self, version: int) -> None:
         """按版本补齐新增列；CREATE TABLE IF NOT EXISTS 不会改旧表结构。"""
@@ -116,6 +185,9 @@ class SqliteRepository(StateStore):
         if version < 9:
             self._add_column("deals", "verified_at", "TEXT NOT NULL DEFAULT ''")
             self._add_column("deals", "verified_by", "TEXT NOT NULL DEFAULT ''")
+        if version < 10:
+            # v10：垂直领域 + 免费资源结构化字段；新表由 schema.sql 建。
+            self._ensure_v10_columns()
 
     def _add_column(self, table: str, name: str, ddl: str) -> None:
         cols = {r["name"] for r in self.conn.execute(f"PRAGMA table_info({table})")}
@@ -125,293 +197,55 @@ class SqliteRepository(StateStore):
     def close(self) -> None:
         self.conn.close()
 
-    # ---------- aliases ----------
-
-    def resolve_alias(self, key: str) -> str | None:
-        """转发帖 key → 主条目 key（带环保护）。"""
-        current = key
-        for _ in range(5):
-            row = self.conn.execute(
-                "SELECT master_key FROM aliases WHERE aliased_key = ?", (current,)
-            ).fetchone()
-            if row is None:
-                return None if current == key else current
-            current = row["master_key"]
-        return None
-
-    def add_alias(self, aliased: str, master: str) -> None:
-        if aliased == master:
-            return
-        self.conn.execute(
-            "INSERT INTO aliases (aliased_key, master_key) VALUES (?, ?)"
-            " ON CONFLICT(aliased_key) DO UPDATE SET master_key = excluded.master_key",
-            (aliased, master),
-        )
-        self.conn.commit()
-
-    # ---------- deals ----------
-
-    def get_deal(self, key: str) -> Deal | None:
-        row = self.conn.execute("SELECT * FROM deals WHERE dedup_key = ?", (key,)).fetchone()
-        return _row_to_deal(row) if row else None
-
-    def upsert_scored(
-        self,
-        scored: ScoredItem,
-        now,
-        fuzzy_candidates: list[Deal] | None = None,
-    ) -> tuple[Deal, str]:
-        """入库或合并。返回 (deal, action)：action ∈ new|updated|unchanged。
-
-        合并规则：同 key 精确命中；否则在 fuzzy_candidates（近两周）里做标题
-        模糊匹配，命中则合并进老条目（also_seen_in 记录额外来源）。
-        """
-        item = scored.item
-        now_s = iso(now)
-        key = make_key(item)
-
-        # 已知的转发帖：直达主条目，只记"见到"，不算内容变化（幂等）
-        master_key = self.resolve_alias(key)
-        if master_key:
-            existing = self.get_deal(master_key)
-            if existing is not None:
-                return self._merge_sighting(existing, scored, now_s), "unchanged"
-            key = master_key  # 主条目不存在（被清理）则落到其 key 上重建
-            existing = None
-            via = "fuzzy"
-        else:
-            existing = self.get_deal(key)
-            if existing is not None:
-                via = "exact"
-            elif fuzzy_candidates:
-                match = find_fuzzy_match(item, fuzzy_candidates)
-                if match is not None:
-                    existing = match
-                    key = match.dedup_key
-                    via = "fuzzy"
-                    self.add_alias(make_key(item), key)
-                else:
-                    via = "exact"
-            else:
-                via = "exact"
-
-        if existing is None:
-            deal = Deal(
-                dedup_key=key,
-                source=item.source,
-                title=item.title,
-                url=item.url,
-                provider=item.provider,
-                amount_hint=item.amount_hint,
-                card_required_hint=item.card_required_hint,
-                score=scored.score,
-                evidence=item.evidence,
-                first_seen_at=now_s,
-                last_seen_at=now_s,
-                last_changed_at=now_s,
-                status="new",
-                matched=list(scored.matched),
-                also_seen_in=[],
-            )
-            self.conn.execute(
-                "INSERT INTO deals (dedup_key, source, title, url, provider, amount_hint,"
-                " card_required_hint, score, evidence, first_seen_at, last_seen_at,"
-                " last_changed_at, status, matched, also_seen_in)"
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                (
-                    deal.dedup_key, deal.source, deal.title, deal.url, deal.provider,
-                    deal.amount_hint,
-                    None if deal.card_required_hint is None else int(deal.card_required_hint),
-                    deal.score, deal.evidence, deal.first_seen_at, deal.last_seen_at,
-                    deal.last_changed_at, deal.status,
-                    json.dumps(deal.matched, ensure_ascii=False), json.dumps(deal.also_seen_in),
-                ),
-            )
-            self.conn.commit()
-            return deal, "new"
-
-        # ---- 合并进已有条目 ----
-        also = list(existing.also_seen_in)
-        if item.source != existing.source and item.source not in also:
-            also.append(item.source)
-        matched = list(existing.matched) + [m for m in scored.matched if m not in existing.matched]
-
-        if via == "exact":
-            # 同一 URL/主题：内容可演进（编辑、加码），标题允许更新
-            title_changed = norm_title(item.title) != norm_title(existing.title)
-            changed = (
-                title_changed
-                or (item.provider or "").lower() != (existing.provider or "").lower()
-                or (item.amount_hint or "") != (existing.amount_hint or "")
-            )
-            title = item.title if title_changed else existing.title
-        else:
-            # 模糊合并：主条目标题锁定，只允许填补空缺字段——
-            # 否则不同档位/转发的标题会来回覆盖主条目，破坏幂等
-            title = existing.title
-            provider_fill = bool(item.provider) and not existing.provider
-            amount_fill = bool(item.amount_hint) and not existing.amount_hint
-            changed = provider_fill or amount_fill
-            title_changed = False
-
-        revived = existing.status == "expired"
-
-        status = existing.status
-        if revived or changed:
-            status = "updated"
-
-        deal = Deal(
-            dedup_key=key,
-            source=existing.source,
-            title=title,
-            url=existing.url or item.url,
-            provider=existing.provider or item.provider,
-            amount_hint=existing.amount_hint or item.amount_hint,
-            card_required_hint=(
-                existing.card_required_hint
-                if existing.card_required_hint is not None
-                else item.card_required_hint
-            ),
-            score=max(existing.score, scored.score),
-            evidence=item.evidence or existing.evidence,
-            first_seen_at=existing.first_seen_at,
-            last_seen_at=now_s,
-            last_changed_at=now_s if (changed or revived) else existing.last_changed_at,
-            status=status,
-            matched=matched,
-            also_seen_in=also,
-        )
-        self.conn.execute(
-            "UPDATE deals SET title=?, url=?, provider=?, amount_hint=?, card_required_hint=?,"
-            " score=?, evidence=?, last_seen_at=?, last_changed_at=?, status=?, matched=?,"
-            " also_seen_in=? WHERE dedup_key=?",
-            (
-                deal.title, deal.url, deal.provider, deal.amount_hint,
-                None if deal.card_required_hint is None else int(deal.card_required_hint),
-                deal.score, deal.evidence, deal.last_seen_at, deal.last_changed_at,
-                deal.status, json.dumps(deal.matched, ensure_ascii=False),
-                json.dumps(deal.also_seen_in), key,
-            ),
-        )
-        self.conn.commit()
-        return deal, ("updated" if (changed or revived) else "unchanged")
-
-    def _merge_sighting(self, existing: Deal, scored: ScoredItem, now_s: str) -> Deal:
-        """转发帖 sighting：只补空缺字段并刷新 last_seen，不触发状态/时间变化。"""
-        item = scored.item
-        also = list(existing.also_seen_in)
-        if item.source != existing.source and item.source not in also:
-            also.append(item.source)
-        matched = list(existing.matched) + [m for m in scored.matched if m not in existing.matched]
-        deal = Deal(
-            dedup_key=existing.dedup_key,
-            source=existing.source,
-            title=existing.title,
-            url=existing.url or item.url,
-            provider=existing.provider or item.provider,
-            amount_hint=existing.amount_hint or item.amount_hint,
-            card_required_hint=(
-                existing.card_required_hint
-                if existing.card_required_hint is not None
-                else item.card_required_hint
-            ),
-            score=max(existing.score, scored.score),
-            evidence=item.evidence or existing.evidence,
-            first_seen_at=existing.first_seen_at,
-            last_seen_at=now_s,
-            last_changed_at=existing.last_changed_at,
-            status=existing.status,
-            matched=matched,
-            also_seen_in=also,
-        )
-        self.conn.execute(
-            "UPDATE deals SET url=?, provider=?, amount_hint=?, card_required_hint=?,"
-            " score=?, evidence=?, last_seen_at=?, matched=?, also_seen_in=? WHERE dedup_key=?",
-            (
-                deal.url, deal.provider, deal.amount_hint,
-                None if deal.card_required_hint is None else int(deal.card_required_hint),
-                deal.score, deal.evidence, deal.last_seen_at,
-                json.dumps(deal.matched, ensure_ascii=False), json.dumps(deal.also_seen_in),
-                deal.dedup_key,
-            ),
-        )
-        self.conn.commit()
-        return deal
-
-    def load_recent_deals(self, days: int) -> list[Deal]:
-        """近 N 天活跃 deal，作为模糊去重候选。"""
-        cutoff = iso(utcnow() - timedelta(days=days))
-        rows = self.conn.execute(
-            "SELECT * FROM deals WHERE status != 'expired' AND last_seen_at >= ?"
-            " ORDER BY last_seen_at DESC LIMIT 2000",
-            (cutoff,),
-        ).fetchall()
-        return [_row_to_deal(r) for r in rows]
-
-    def all_deals(self, limit: int = 3000) -> list[Deal]:
-        """全量 deal（含过期），dashboard 数据源。"""
-        rows = self.conn.execute(
-            "SELECT * FROM deals ORDER BY last_changed_at DESC LIMIT ?", (limit,)
-        ).fetchall()
-        return [_row_to_deal(r) for r in rows]
-
-    def expire_old(self, days: int, now=None) -> int:
-        cutoff = iso((now or utcnow()) - timedelta(days=days))
+    def mark_expired_offer(self, key: str) -> bool:
+        """按 offer 指纹归档（全量目录源上游消失时使用）。"""
         cur = self.conn.execute(
-            "UPDATE deals SET status='expired' WHERE status != 'expired' AND last_seen_at < ?",
-            (cutoff,),
-        )
-        self.conn.commit()
-        return cur.rowcount
-
-    def mark_expired(self, key: str) -> bool:
-        cur = self.conn.execute(
-            "UPDATE deals SET status='expired' WHERE dedup_key = ? AND status != 'expired'",
+            "UPDATE offers SET status='expired', status_reason='upstream_removed'"
+            " WHERE dedup_key = ? AND status != 'expired'",
             (key,),
         )
         self.conn.commit()
         return cur.rowcount > 0
 
-    def mark_expired_resolved(self, key: str) -> bool:
-        """按 dedup key 归档；若该 key 已被模糊合并为别名，归档其主条目。"""
-        master = self.resolve_alias(key)
-        return self.mark_expired(master or key)
-
     def digest_data(self, now) -> dict:
+        """首页数据：统一从 offers 取（AI + 云同一个目录）。"""
         c7 = iso(now - timedelta(days=7))
         c30 = iso(now - timedelta(days=30))
-        q = "SELECT * FROM deals WHERE {} ORDER BY {} LIMIT ?"
+        q = (
+            "SELECT o.*, COALESCE(o.provider_name, p.name) AS provider_name"
+            " FROM offers o LEFT JOIN providers p ON p.id = o.provider_id"
+            " WHERE {} ORDER BY {} LIMIT ?"
+        )
         new = self.conn.execute(
-            q.format("status != 'expired' AND first_seen_at >= ?", "score DESC, first_seen_at DESC"),
+            q.format("o.status = 'active' AND o.first_seen_at >= ?", "o.first_seen_at DESC"),
             (c7, 200),
         ).fetchall()
         updated = self.conn.execute(
             q.format(
-                "status != 'expired' AND last_changed_at >= ? AND first_seen_at < ?",
-                "last_changed_at DESC",
+                "o.status = 'active' AND o.last_seen_at >= ? AND o.first_seen_at < ?",
+                "o.last_seen_at DESC",
             ),
             (c7, c7, 200),
         ).fetchall()
         needs_review = self.conn.execute(
-            "SELECT * FROM deals WHERE status != 'expired' AND last_seen_at < ?"
-            " ORDER BY last_seen_at ASC LIMIT 100",
-            (c30,),
+            q.format("o.status = 'active' AND o.last_seen_at < ?", "o.last_seen_at ASC"),
+            (c30, 100),
         ).fetchall()
         expired_recent = self.conn.execute(
-            q.format("status = 'expired' AND last_changed_at >= ?", "last_changed_at DESC"),
+            q.format("o.status = 'expired' AND o.last_seen_at >= ?", "o.last_seen_at DESC"),
             (c30, 50),
         ).fetchall()
         totals = self.conn.execute(
             "SELECT COUNT(*) AS total,"
-            " SUM(CASE WHEN status != 'expired' THEN 1 ELSE 0 END) AS active,"
+            " SUM(CASE WHEN status = 'active' THEN 1 ELSE 0 END) AS active,"
             " SUM(CASE WHEN status = 'expired' THEN 1 ELSE 0 END) AS expired"
-            " FROM deals"
+            " FROM offers"
         ).fetchone()
         return {
-            "new_deals": [_row_to_deal(r) for r in new],
-            "updated_deals": [_row_to_deal(r) for r in updated],
-            "needs_review": [_row_to_deal(r) for r in needs_review],
-            "expired_recent": [_row_to_deal(r) for r in expired_recent],
+            "new_deals": [_row_to_offer(r) for r in new],
+            "updated_deals": [_row_to_offer(r) for r in updated],
+            "needs_review": [_row_to_offer(r) for r in needs_review],
+            "expired_recent": [_row_to_offer(r) for r in expired_recent],
             "total_deals": totals["total"] or 0,
             "active_deals": totals["active"] or 0,
             "expired_deals": totals["expired"] or 0,
@@ -540,7 +374,7 @@ class SqliteRepository(StateStore):
             " VALUES (?, ?, ?, ?, ?, ?)",
             (
                 iso(report.started_at), iso(report.finished_at or utcnow()),
-                len(report.new_deals),
+                len(report.new_offers),
                 sum(r.updated for r in report.results),
                 sum(1 for r in report.results if r.status == "error"),
                 report.expired_count,
@@ -637,11 +471,11 @@ class SqliteRepository(StateStore):
         cutoff = iso(now - timedelta(days=stale_days))
 
         today_new = self.conn.execute(
-            "SELECT COUNT(*) AS n FROM deals WHERE substr(first_seen_at, 1, 10) = ?", (today,)
+            "SELECT COUNT(*) AS n FROM offers WHERE substr(first_seen_at, 1, 10) = ?", (today,)
         ).fetchone()["n"]
         recent_active = self.conn.execute(
-            "SELECT COUNT(*) AS n FROM deals"
-            " WHERE status IN ('new','active') AND last_seen_at >= ?",
+            "SELECT COUNT(*) AS n FROM offers"
+            " WHERE status = 'active' AND last_seen_at >= ?",
             (cutoff,),
         ).fetchone()["n"]
 
@@ -689,15 +523,7 @@ class SqliteRepository(StateStore):
             "last_success": global_last,
         }
 
-    def verify_deal(self, dedup_key: str, *, by: str = "user", now=None) -> bool:
-        """标记活动已核实（人工）。返回是否命中。"""
-        now_s = iso(now or utcnow())
-        cur = self.conn.execute(
-            "UPDATE deals SET verified_at = ?, verified_by = ? WHERE dedup_key = ?",
-            (now_s, by, dedup_key),
-        )
-        self.conn.commit()
-        return cur.rowcount > 0
+    
 
     # ---------- providers ----------
 
@@ -836,6 +662,343 @@ class SqliteRepository(StateStore):
         out.sort(key=lambda x: (-x["providers"], x["category"]))
         return out
 
+    # ---------- offers (v10) ----------
+
+    def _provider_id_for(self, name: str | None) -> int | None:
+        if not name:
+            return None
+        n = name.strip().lower()
+        row = self.conn.execute(
+            "SELECT id FROM providers WHERE LOWER(slug) = ? OR LOWER(name) = ? LIMIT 1",
+            (n, n),
+        ).fetchone()
+        return row["id"] if row else None
+
+    def _touch_evidence(
+        self, offer_id: int, key: str, item, now_s: str,
+        score: float = 0.0, matched: list[str] | None = None,
+    ) -> None:
+        """同一 offer 的每个来源各留一条证据；重复观察刷新 last_seen。"""
+        self.conn.execute(
+            "INSERT INTO offer_evidence"
+            " (offer_id, deal_key, url, source, seen_at, title, evidence,"
+            "  amount_hint, matched, score, first_seen_at, last_seen_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            " ON CONFLICT(offer_id, deal_key) DO UPDATE SET"
+            " url = excluded.url, seen_at = excluded.seen_at,"
+            " evidence = excluded.evidence, amount_hint = excluded.amount_hint,"
+            " matched = excluded.matched, score = excluded.score,"
+            " last_seen_at = excluded.last_seen_at",
+            (
+                offer_id, f"{item.source}:{key}", item.url, item.source, now_s,
+                item.title, (item.evidence or "")[:1000], item.amount_hint or "",
+                json.dumps(matched or [], ensure_ascii=False), float(score),
+                now_s, now_s,
+            ),
+        )
+
+    def get_offer(self, key: str) -> Offer | None:
+        row = self.conn.execute(
+            "SELECT o.*, COALESCE(o.provider_name, p.name) AS provider_name FROM offers o"
+            " LEFT JOIN providers p ON p.id = o.provider_id WHERE o.dedup_key = ?",
+            (key,),
+        ).fetchone()
+        return _row_to_offer(row) if row else None
+
+    def upsert_offer(
+        self, item, now, provider_id=None, fuzzy_candidates=None,
+        score: float = 0.0, matched: list[str] | None = None,
+    ) -> tuple[Offer, str]:
+        """按 offer 指纹入库或合并。所有来源（AI / 云）都走这一个入口。
+
+        返回 (offer, action)：new | updated（条款有变化）| unchanged。
+        fuzzy_candidates 用于把「同一活动的转发帖」并入同一 Offer 的证据，
+        而不是每条帖子都生成一个 Offer。
+        """
+        key = offer_key(item)
+        now_s = iso(now)
+        terms = canonical_terms(item.resources, item.limits)
+        th = hashlib.sha1(
+            json.dumps(terms, sort_keys=True, ensure_ascii=False).encode("utf-8")
+        ).hexdigest()
+        pid = provider_id if provider_id is not None else self._provider_id_for(item.provider)
+        row = self.conn.execute("SELECT * FROM offers WHERE dedup_key = ?", (key,)).fetchone()
+
+        # 指纹未命中时，尝试与近两周 Offer 做标题 + 金额模糊匹配（转发帖合并）
+        if row is None and fuzzy_candidates:
+            match = find_fuzzy_match(item, fuzzy_candidates)
+            if match is not None:
+                key = match.dedup_key
+                row = self.conn.execute(
+                    "SELECT * FROM offers WHERE dedup_key = ?", (key,)
+                ).fetchone()
+
+        res = dict(item.resources or {})
+        lim = dict(item.limits or {})
+        elig = dict(item.eligibility or {})
+        regs = list(item.regions or [])
+
+        if row is None:
+            cur = self.conn.execute(
+                "INSERT INTO offers (provider_id, title, amount_hint, status, first_seen_at,"
+                " last_seen_at, dedup_key, vertical, offer_type, category, resources, limits,"
+                " eligibility, regions, claim_steps, difficulty, expires_at, terms_hash,"
+                " last_verified_at, verified_by, status_reason, url, source, evidence, provider_name, granularity)"
+                " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    pid, item.title, item.amount_hint or "", "active", now_s, now_s, key,
+                    item.vertical, item.offer_type, item.category,
+                    json.dumps(res, ensure_ascii=False),
+                    json.dumps(lim, ensure_ascii=False),
+                    json.dumps(elig, ensure_ascii=False),
+                    json.dumps(regs, ensure_ascii=False),
+                    item.claim_steps, int(item.difficulty), item.expires_at, th, now_s,
+                    "rule", "", item.url, item.source, (item.evidence or "")[:1000],
+                    item.provider or "", item.granularity,
+                ),
+            )
+            self._touch_evidence(int(cur.lastrowid), key, item, now_s, score, matched)
+            self.conn.commit()
+            return self.get_offer(key), "new"  # type: ignore[return-value]
+
+        old = {
+            "resources": _json_obj(row["resources"], {}),
+            "limits": _json_obj(row["limits"], {}),
+            "eligibility": _json_obj(row["eligibility"], {}),
+            "regions": _json_obj(row["regions"], []),
+        }
+        new = {"resources": res, "limits": lim, "eligibility": elig, "regions": regs}
+        changed = [k for k in old if old[k] != new[k]]
+
+        if changed:
+            self.conn.execute(
+                "INSERT INTO offer_terms_history"
+                " (offer_id, terms_hash, snapshot, changed_fields, changed_at)"
+                " VALUES (?, ?, ?, ?, ?)",
+                (row["id"], th, json.dumps(new, ensure_ascii=False),
+                 json.dumps(changed), now_s),
+            )
+        self.conn.execute(
+            "UPDATE offers SET provider_id=?, title=?, amount_hint=?, vertical=?, offer_type=?,"
+            " granularity=?, category=?, resources=?, limits=?, eligibility=?, regions=?, claim_steps=?,"
+            " difficulty=?, expires_at=?, terms_hash=?, last_verified_at=?, verified_by=?,"
+            " url=?, source=?, evidence=?, provider_name=?, last_seen_at=?, status='active', status_reason=''"
+            " WHERE dedup_key=?",
+            (
+                pid or row["provider_id"], item.title or row["title"],
+                item.amount_hint or row["amount_hint"], item.vertical, item.offer_type, item.granularity,
+                item.category or row["category"],
+                json.dumps(res, ensure_ascii=False), json.dumps(lim, ensure_ascii=False),
+                json.dumps(elig, ensure_ascii=False), json.dumps(regs, ensure_ascii=False),
+                item.claim_steps or row["claim_steps"], int(item.difficulty),
+                item.expires_at or row["expires_at"], th, now_s, "rule",
+                item.url or row["url"], item.source, (item.evidence or row["evidence"])[:1000], item.provider or row["provider_name"],
+                now_s, key,
+            ),
+        )
+        self._touch_evidence(row["id"], key, item, now_s, score, matched)
+        self.conn.commit()
+        if changed:
+            self.record_signal(
+                "terms_changed", vertical=item.vertical, source=item.source,
+                page_url=item.url, offer_id=row["id"],
+                payload={"fields": changed}, now=now,
+            )
+        return self.get_offer(key), ("updated" if changed else "unchanged")  # type: ignore[return-value]
+
+    def load_recent_offers(self, days: int = 14, limit: int = 2000) -> list[Offer]:
+        """近 N 天活跃 Offer，作为转发合并候选。"""
+        cutoff = iso(utcnow() - timedelta(days=days))
+        rows = self.conn.execute(
+            "SELECT o.*, COALESCE(o.provider_name, p.name) AS provider_name"
+            " FROM offers o LEFT JOIN providers p ON p.id = o.provider_id"
+            " WHERE o.status != 'expired' AND o.last_seen_at >= ?"
+            " ORDER BY o.last_seen_at DESC LIMIT ?",
+            (cutoff, limit),
+        ).fetchall()
+        return [_row_to_offer(r) for r in rows]
+
+    def all_offers(self, vertical: str | None = None, limit: int = 5000) -> list[Offer]:
+        sql = (
+            "SELECT o.*, COALESCE(o.provider_name, p.name) AS provider_name,"
+            " (SELECT COUNT(*) FROM offer_evidence e WHERE e.offer_id = o.id) AS evidence_count"
+            " FROM offers o LEFT JOIN providers p ON p.id = o.provider_id"
+        )
+        args: list = []
+        if vertical:
+            sql += " WHERE o.vertical = ?"
+            args.append(vertical)
+        sql += " ORDER BY o.last_seen_at DESC LIMIT ?"
+        args.append(limit)
+        return [_row_to_offer(r) for r in self.conn.execute(sql, args)]
+
+    def vertical_stats(self) -> list[dict]:
+        rows = self.conn.execute(
+            "SELECT vertical, COUNT(*) AS total,"
+            " SUM(CASE WHEN status = 'active' THEN 1 ELSE 0 END) AS active,"
+            " SUM(CASE WHEN offer_type IN ('always_free', 'free_tier') THEN 1 ELSE 0 END) AS always"
+            " FROM offers GROUP BY vertical ORDER BY total DESC"
+        ).fetchall()
+        return [
+            {
+                "id": r["vertical"],
+                "total": r["total"] or 0,
+                "active": r["active"] or 0,
+                "always_free": r["always"] or 0,
+            }
+            for r in rows
+        ]
+
+    def expire_offers(self, now=None, stale_days: int = 0) -> int:
+        """统一的过期归档：只改状态，不删除。
+
+        两条规则：
+        1. 有明确截止时间且已过 → expired（reason=expires_at）；
+        2. stale_days > 0 时，超过 N 天没有再被任何来源观察到 → expired（reason=stale）。
+           全量目录源每轮都会刷新 last_seen，因此不会被误判；社区源长期没人再提
+           才会落到这条规则。
+        """
+        now_dt = now or utcnow()
+        cur = self.conn.execute(
+            "UPDATE offers SET status='expired', status_reason='expires_at'"
+            " WHERE status='active' AND expires_at != '' AND expires_at < ?",
+            (iso(now_dt),),
+        )
+        count = cur.rowcount
+        if stale_days > 0:
+            cutoff = iso(now_dt - timedelta(days=stale_days))
+            cur = self.conn.execute(
+                "UPDATE offers SET status='expired', status_reason='stale'"
+                " WHERE status='active' AND last_seen_at < ?",
+                (cutoff,),
+            )
+            count += cur.rowcount
+        self.conn.commit()
+        return count
+
+    def verify_offer(self, key: str, *, by: str = "user", now=None) -> bool:
+        cur = self.conn.execute(
+            "UPDATE offers SET last_verified_at = ?, verified_by = ? WHERE dedup_key = ?",
+            (iso(now or utcnow()), by, key),
+        )
+        self.conn.commit()
+        return cur.rowcount > 0
+
+    def record_signal(
+        self, kind: str, *, vertical: str = "ai_api", source: str = "",
+        page_url: str = "", provider_id: int | None = None,
+        offer_id: int | None = None, payload: dict | None = None, now=None,
+    ) -> int:
+        cur = self.conn.execute(
+            "INSERT INTO signals (kind, vertical, provider_id, offer_id, source, page_url,"
+            " payload, observed_at) VALUES (?,?,?,?,?,?,?,?)",
+            (kind, vertical, provider_id, offer_id, source, page_url,
+             json.dumps(payload or {}, ensure_ascii=False), iso(now or utcnow())),
+        )
+        self.conn.commit()
+        return int(cur.lastrowid)
+
+    def recent_signals(self, limit: int = 100) -> list[dict]:
+        rows = self.conn.execute(
+            "SELECT * FROM signals ORDER BY observed_at DESC LIMIT ?", (limit,)
+        ).fetchall()
+        return [
+            {
+                "id": r["id"], "kind": r["kind"], "vertical": r["vertical"],
+                "source": r["source"], "page_url": r["page_url"],
+                "payload": _json_obj(r["payload"], {}), "observed_at": r["observed_at"],
+            }
+            for r in rows
+        ]
+
+    def claims_map(self) -> dict[int, dict]:
+        return {
+            r["offer_id"]: {
+                "state": r["state"], "claimed_at": r["claimed_at"],
+                "expires_at": r["expires_at"], "note": r["note"],
+            }
+            for r in self.conn.execute("SELECT * FROM claims")
+        }
+
+    def set_claim(
+        self, offer_id: int, state: str, *, note: str = "",
+        account: str = "", expires_at: str = "", now=None,
+    ) -> None:
+        if state not in ("todo", "claimed", "rejected", "expired", "skipped"):
+            raise ValueError(f"bad claim state: {state!r}")
+        now_s = iso(now or utcnow())
+        self.conn.execute(
+            "INSERT INTO claims (offer_id, state, claimed_at, expires_at, account, note, updated_at)"
+            " VALUES (?,?,?,?,?,?,?)"
+            " ON CONFLICT(offer_id) DO UPDATE SET state=excluded.state,"
+            " claimed_at=excluded.claimed_at, expires_at=excluded.expires_at,"
+            " account=excluded.account, note=excluded.note, updated_at=excluded.updated_at",
+            (
+                offer_id, state, now_s if state == "claimed" else "",
+                expires_at, account, note, now_s,
+            ),
+        )
+        self.conn.commit()
+
+    def vendor_summary(self) -> list[dict]:
+        """统一厂商视图：从 offers 聚合，覆盖 AI 与云，不依赖 providers 表是否已导入。
+
+        monitored/pages 来自 watchlist 快照；云厂商通常没有官网监控页，
+        但仍有目录/官方页证据，因此照样出现在厂商列表里。
+        """
+        agg: dict[str, dict] = {}
+        for r in self.conn.execute(
+            "SELECT provider_name, vertical, category, status, last_seen_at"
+            " FROM offers WHERE provider_name != ''"
+        ):
+            name = (r["provider_name"] or "").strip()
+            if not name:
+                continue
+            key = name.lower()
+            v = agg.setdefault(
+                key,
+                {
+                    "name": name,
+                    "verticals": {},
+                    "categories": set(),
+                    "offers": 0,
+                    "active": 0,
+                    "last_seen": "",
+                },
+            )
+            v["offers"] += 1
+            if r["status"] == "active":
+                v["active"] += 1
+            v["verticals"][r["vertical"]] = v["verticals"].get(r["vertical"], 0) + 1
+            if r["category"]:
+                v["categories"].add(r["category"])
+            if (r["last_seen_at"] or "") > v["last_seen"]:
+                v["last_seen"] = r["last_seen_at"] or ""
+
+        pages: dict[str, int] = {}
+        for r in self.conn.execute(
+            "SELECT provider, COUNT(*) AS n FROM snapshots GROUP BY provider"
+        ):
+            pages[((r["provider"] or "").strip().lower())] = r["n"]
+
+        out: list[dict] = []
+        for key, v in agg.items():
+            vertical = max(v["verticals"].items(), key=lambda kv: kv[1])[0]
+            out.append(
+                {
+                    "name": v["name"],
+                    "vertical": vertical,
+                    "offers": v["offers"],
+                    "active": v["active"],
+                    "categories": sorted(v["categories"]),
+                    "last_seen": v["last_seen"],
+                    "monitored": key in pages,
+                    "pages": pages.get(key, 0),
+                }
+            )
+        out.sort(key=lambda x: (-x["offers"], x["name"].lower()))
+        return out
+
     def offer_stats(self) -> dict:
         """Offer 层统计：活动数、状态、多来源合并数、未匹配厂商数。"""
         row = self.conn.execute(
@@ -899,9 +1062,9 @@ class SqliteRepository(StateStore):
             " COUNT(*) AS total FROM feedback"
         ).fetchone()
         by_source = self.conn.execute(
-            "SELECT d.source AS source, f.vote AS vote, COUNT(*) AS n"
-            " FROM feedback f JOIN deals d ON d.dedup_key = f.dedup_key"
-            " GROUP BY d.source, f.vote"
+            "SELECT o.source AS source, f.vote AS vote, COUNT(*) AS n"
+            " FROM feedback f JOIN offers o ON o.dedup_key = f.dedup_key"
+            " GROUP BY o.source, f.vote"
         ).fetchall()
         per_source: dict[str, dict[str, int]] = {}
         for r in by_source:

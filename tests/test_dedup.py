@@ -8,7 +8,7 @@ from radar.domain.dedup import (
     norm_title,
     title_similarity,
 )
-from radar.domain.models import Deal, RawItem
+from radar.domain.models import Offer, RawItem
 
 
 def test_canonical_url_strips_tracking():
@@ -47,13 +47,12 @@ def test_amounts_compatible():
     assert not amounts_compatible({25.0}, {100.0})
 
 
-def _deal(title: str, amount: str | None, key: str = "k1") -> Deal:
-    return Deal(
+def _deal(title: str, amount: str | None, key: str = "k1") -> Offer:
+    return Offer(
         dedup_key=key, source="linuxdo", title=title, url="https://x.com/1",
-        provider=None, amount_hint=amount, card_required_hint=None,
-        score=5.0, evidence="", first_seen_at="2026-06-29T00:00:00Z",
-        last_seen_at="2026-06-29T00:00:00Z", last_changed_at="2026-06-29T00:00:00Z",
-        status="new", also_seen_in=[],
+        provider=None, amount_hint=amount or "", evidence="",
+        first_seen_at="2026-06-29T00:00:00Z", last_seen_at="2026-06-29T00:00:00Z",
+        status="active",
     )
 
 

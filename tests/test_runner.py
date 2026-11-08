@@ -45,7 +45,7 @@ def test_runner_isolates_source_failure(tmp_path, monkeypatch):
     assert by_name["fake_ok"].status == "ok"
     assert by_name["fake_ok"].fetched == 2
     assert by_name["fake_ok"].kept == 1, "噪音应在阈值过滤阶段被丢弃"
-    assert len(report.new_deals) == 1
+    assert len(report.new_offers) == 1
     assert report.ok  # 有源成功即视为运行成功
 
 
@@ -58,7 +58,7 @@ def test_runner_idempotent_second_run(tmp_path, monkeypatch):
     second = runner_mod.run(cfg, store)
     store.close()
 
-    assert len(first.new_deals) == 1
-    assert len(second.new_deals) == 0, "第二次运行不应产生新增（去重幂等）"
+    assert len(first.new_offers) == 1
+    assert len(second.new_offers) == 0, "第二次运行不应产生新增（去重幂等）"
     by_name = {r.name: r for r in second.results}
     assert by_name["fake_ok"].updated == 0

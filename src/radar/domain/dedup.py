@@ -7,7 +7,7 @@ import re
 from difflib import SequenceMatcher
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-from .models import Deal, RawItem
+from .models import Offer, RawItem
 
 # 追踪参数与邀请参数：同一活动页不同人分享 → 归一为同一 key
 _DROP_PARAMS = {"ref", "aff", "invite", "invite_code", "share", "share_token"}
@@ -59,6 +59,56 @@ def make_key(item: RawItem) -> str:
     return hashlib.sha1(basis.encode("utf-8")).hexdigest()
 
 
+# 参与 offer 指纹的稳定字段：只放能区分「方案档位」的规格与额度，
+# 不放 last_verified / 展示文案等会波动的内容。
+_TERM_KEYS = (
+    "vcpu", "ram_gb", "disk_gb", "disk_type", "storage_gb",
+    "bandwidth_gb", "runtime_hours_month", "requests_month",
+    "credit_usd", "valid_days", "renew", "regions_count",
+)
+
+
+def canonical_terms(resources: dict | None, limits: dict | None) -> dict:
+    """抽取稳定条款字段（resources 优先，其次 limits），用于 offer 指纹。"""
+    resources = resources or {}
+    limits = limits or {}
+    out: dict = {}
+    for k in _TERM_KEYS:
+        v = resources.get(k)
+        if v is None:
+            v = limits.get(k)
+        if v is not None:
+            out[k] = v
+    return out
+
+
+def offer_key(item: RawItem) -> str:
+    """Offer 身份指纹：vertical + provider + offer_type + 标题归一。
+
+    注意：**不包含 resources / limits**。规格与额度会随政策变化，它们由
+    terms_hash 单独记录，用于产生「条款变更」事件；如果把规格放进身份键，
+    任何额度调整都会被误判成一个全新 offer。
+
+    - key_basis 优先：配置化源可给出 provider|plan|cycle 的精确指纹；
+    - 不含 URL：同一方案会被目录、帖子、官网多处引用。
+    """
+    if item.key_basis:
+        # key_basis 已包含来源页/目录条目的唯一标识；
+        # 不拼 provider，避免厂商改名产生重复 Offer。
+        basis = f"{item.vertical}|{item.key_basis}"
+    else:
+        basis = "|".join(
+            [
+                item.vertical,
+                (item.provider or "").strip().lower(),
+                item.offer_type,
+                item.category,
+                norm_title(item.title),
+            ]
+        )
+    return hashlib.sha1(basis.encode("utf-8")).hexdigest()
+
+
 def _amounts(deal_or_item_amount: str | None, evidence: str = "") -> set[float]:
     """从 amount_hint / evidence 提取美元数字（'5k'→5000），无则空集。"""
     text = f"{deal_or_item_amount or ''} {evidence}"
@@ -78,14 +128,14 @@ def amounts_compatible(a: set[float], b: set[float]) -> bool:
     return any(abs(x - y) <= 0.1 * max(x, y) for x in a for y in b)
 
 
-def find_fuzzy_match(item: RawItem, candidates: list[Deal]) -> Deal | None:
+def find_fuzzy_match(item: RawItem, candidates: list[Offer]) -> Offer | None:
     """在近两周的已有 deal 中找同一活动的转发/重复帖。
 
     双重金额护栏（防"同服务商不同档位"误合并，如 Google for Startups 的
     Scale Tier vs AI Track）：hint/evidence 金额对不上不合并，标题内金额
     对不上也不合并——目录站常给同一服务商的不同档位写相同的总述金额。
     """
-    best: tuple[float, Deal] | None = None
+    best: tuple[float, Offer] | None = None
     for deal in candidates:
         if deal.status == "expired":
             continue

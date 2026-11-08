@@ -21,89 +21,6 @@ def _store(tmp_path):
     return SqliteRepository(tmp_path / "test.db")
 
 
-def test_upsert_new_then_unchanged(tmp_path):
-    store = _store(tmp_path)
-    now = utcnow()
-    deal, action = store.upsert_scored(_scored(), now)
-    assert action == "new" and deal.status == "new"
-
-    # 同一内容重复见到：last_seen 刷新、状态不变
-    deal2, action2 = store.upsert_scored(_scored(), now + timedelta(hours=1))
-    assert action2 == "unchanged"
-    assert deal2.status == "new"
-    assert deal2.last_seen_at > deal.first_seen_at
-    assert deal2.first_seen_at == deal.first_seen_at
-
-
-def test_upsert_updated_on_content_change(tmp_path):
-    store = _store(tmp_path)
-    now = utcnow()
-    store.upsert_scored(_scored(), now)
-    changed = _scored(_item("注册送 $25 额度（加码）"))
-    deal, action = store.upsert_scored(changed, now + timedelta(hours=2))
-    assert action == "updated" and deal.status == "updated"
-    assert "加码" in deal.title
-
-
-def test_expired_deal_revives(tmp_path):
-    store = _store(tmp_path)
-    now = utcnow()
-    store.upsert_scored(_scored(), now)
-    assert store.expire_old(days=0, now=now + timedelta(seconds=1)) >= 1
-    assert store.get_deal(make_key(_item())).status == "expired"
-
-    deal, action = store.upsert_scored(_scored(), now + timedelta(hours=3))
-    assert action == "updated"
-    assert deal.status == "updated"
-
-
-def test_fuzzy_merge_records_also_seen_in(tmp_path):
-    store = _store(tmp_path)
-    now = utcnow()
-    deal1, _ = store.upsert_scored(_scored(), now)
-    candidates = [deal1]
-
-    # 同标题（差一个标点）不同 URL、不同源 → 模糊合并
-    repost = _scored(_item(title="注册送 $25 额度！", url="https://other.com/x", source="hackernews"))
-    deal2, action = store.upsert_scored(repost, now + timedelta(minutes=5), fuzzy_candidates=candidates)
-    assert action == "unchanged"  # 内容没变，只是被转发
-    assert deal2.dedup_key == deal1.dedup_key
-    assert "hackernews" in deal2.also_seen_in
-
-
-def test_fuzzy_merge_keeps_master_title_and_is_stable(tmp_path):
-    """模糊合并不覆盖主条目标题，且转发帖重复出现不产生 updated（幂等回归）。"""
-    store = _store(tmp_path)
-    now = utcnow()
-    master, _ = store.upsert_scored(_scored(_item(title="注册送 $25 额度")), now)
-    candidates = [master]
-
-    repost = _scored(_item(title="注册送 $25 额度（转发版标题不同）", url="https://other.com/x"))
-    deal2, action = store.upsert_scored(repost, now + timedelta(minutes=1), fuzzy_candidates=candidates)
-    assert deal2.title == "注册送 $25 额度", "主条目标题必须锁定"
-    assert deal2.dedup_key == master.dedup_key
-
-    # 转发帖再次出现：走别名 sighting，不产生 updated
-    store2 = store
-    _, action3 = store2.upsert_scored(repost, now + timedelta(minutes=2))
-    assert action3 == "unchanged"
-    # 主条目再次出现：精确命中，也不产生 updated
-    _, action4 = store2.upsert_scored(_scored(), now + timedelta(minutes=3))
-    assert action4 == "unchanged"
-
-
-def test_fuzzy_not_merged_when_expired(tmp_path):
-    store = _store(tmp_path)
-    now = utcnow()
-    deal1, _ = store.upsert_scored(_scored(), now)
-    store.expire_old(days=0, now=now + timedelta(seconds=1))
-    candidates = [store.get_deal(deal1.dedup_key)]
-    repost = _scored(_item(title="注册送 $25 额度！", url="https://other.com/x"))
-    deal2, action = store.upsert_scored(repost, now, fuzzy_candidates=candidates)
-    # 已过期候选不参与合并 → 作为新 deal 入库
-    assert action == "new" and deal2.dedup_key != deal1.dedup_key
-
-
 def test_snapshots(tmp_path):
     store = _store(tmp_path)
     now = utcnow()
@@ -137,7 +54,8 @@ def test_state_roundtrip(tmp_path):
 def test_digest_data_sections(tmp_path):
     store = _store(tmp_path)
     now = utcnow()
-    store.upsert_scored(_scored(), now)
+    scored = _scored()
+    store.upsert_offer(scored.item, now, score=scored.score, matched=scored.matched)
     data = store.digest_data(now)
     assert len(data["new_deals"]) == 1
     assert data["total_deals"] == 1 and data["active_deals"] == 1
@@ -147,8 +65,9 @@ def test_digest_data_sections(tmp_path):
 def test_feedback_upsert_and_clear(tmp_path):
     store = _store(tmp_path)
     now = utcnow()
-    deal, _ = store.upsert_scored(_scored(), now)
-    key = deal.dedup_key
+    scored = _scored()
+    offer, _ = store.upsert_offer(scored.item, now, score=scored.score, matched=scored.matched)
+    key = offer.dedup_key
 
     store.record_feedback(key, "up")
     assert store.feedback_map() == {key: "up"}
@@ -174,10 +93,10 @@ def test_feedback_rejects_bad_vote(tmp_path):
 def test_feedback_stats_aggregates_by_source(tmp_path):
     store = _store(tmp_path)
     now = utcnow()
-    d1, _ = store.upsert_scored(_scored(_item(source="linuxdo")), now)
-    d2, _ = store.upsert_scored(
-        _scored(_item(title="HN 同款", url="https://hn.com/x", source="hackernews")), now
-    )
+    s1 = _scored(_item(source="linuxdo"))
+    s2 = _scored(_item(title="HN 同款", url="https://hn.com/x", source="hackernews"))
+    d1, _ = store.upsert_offer(s1.item, now, score=s1.score, matched=s1.matched)
+    d2, _ = store.upsert_offer(s2.item, now, score=s2.score, matched=s2.matched)
     store.record_feedback(d1.dedup_key, "up")
     store.record_feedback(d1.dedup_key, "down")  # 覆盖，不算两条
     store.record_feedback(d2.dedup_key, "up")

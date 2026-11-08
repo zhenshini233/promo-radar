@@ -196,7 +196,7 @@ class RadarHandler(SimpleHTTPRequestHandler):
             return
         repo = SqliteRepository(self.cfg.data_dir / "radar.db")
         try:
-            ok = repo.verify_deal(key, by="user")
+            ok = repo.verify_offer(key, by="user")
         finally:
             repo.close()
         self._json({"ok": ok, "key": key})

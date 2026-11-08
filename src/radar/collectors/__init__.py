@@ -15,6 +15,8 @@ from . import (  # noqa: F401 - import 触发注册
     watchlist,
     aa_providers,
     reddit,
+    cloud,
+    cn_rss,
 )
 
 __all__ = ["FetchContext", "Source", "build_sources", "register_source"]

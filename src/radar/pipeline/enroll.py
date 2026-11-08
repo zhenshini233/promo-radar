@@ -87,9 +87,9 @@ def compute_enroll_plan(
 
 def auto_enroll_blindspots(cfg: RadarConfig, repo: SqliteRepository) -> tuple[int, list[dict]]:
     """盲区收编入口：追加 providers.toml、更新待收编 state。返回 (收编数, 待收编)。"""
-    deals = repo.all_deals()
+    items = repo.all_offers()
     monitors = [{"provider": s["provider"], "url": s["url"]} for s in repo.all_snapshots()]
-    registries = build_registries(repo, deals, monitors)
+    registries = build_registries(repo, items, monitors)
 
     tracked: set[str] = set()
     for p in load_providers(cfg.providers_file):

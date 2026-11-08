@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html as html_mod
 import json
+import os
 import re
 import threading
 import time
@@ -49,6 +50,10 @@ def make_client(cfg: RadarConfig) -> httpx.Client:
     if proxy and cfg.proxy_bypass:
         mounts = {f"all://{host}": httpx.HTTPTransport() for host in cfg.proxy_bypass}
         return httpx.Client(mounts=mounts, transport=httpx.HTTPTransport(proxy=proxy), **common)
+    # 仅本地调试用：系统证书链异常时可临时关闭校验（CI/线上不要设置）
+    if os.environ.get("RADAR_TLS_INSECURE") == "1":
+        print("[http] 警告：RADAR_TLS_INSECURE=1，已关闭 TLS 校验（仅限本地调试）")
+        common["verify"] = False
     return httpx.Client(proxy=proxy or None, **common)
 
 

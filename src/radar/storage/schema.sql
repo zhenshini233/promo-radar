@@ -1,4 +1,4 @@
--- promo-radar 数据库 schema（PRAGMA user_version = 9）
+-- promo-radar 数据库 schema（PRAGMA user_version = 10）
 
 CREATE TABLE IF NOT EXISTS deals (
     dedup_key          TEXT PRIMARY KEY,
@@ -110,10 +110,17 @@ CREATE TABLE IF NOT EXISTS providers (
     parent_id        INTEGER,
     first_seen_at    TEXT NOT NULL DEFAULT '',
     last_verified_at TEXT NOT NULL DEFAULT '',
-    updated_at       TEXT NOT NULL DEFAULT ''
+    updated_at       TEXT NOT NULL DEFAULT '',
+    -- v10：垂直领域与云资源属性
+    vertical         TEXT NOT NULL DEFAULT 'ai_api',
+    categories       TEXT NOT NULL DEFAULT '[]',
+    deploy_modes     TEXT NOT NULL DEFAULT '[]',
+    free_tier_url    TEXT NOT NULL DEFAULT '',
+    pricing_url      TEXT NOT NULL DEFAULT ''
 );
 CREATE INDEX IF NOT EXISTS idx_providers_status ON providers (status);
 CREATE INDEX IF NOT EXISTS idx_providers_category ON providers (category);
+CREATE INDEX IF NOT EXISTS idx_providers_vertical ON providers (vertical);
 
 -- 一个注册域只属于一个 primary provider；子品牌不重复占域名。
 CREATE TABLE IF NOT EXISTS provider_domains (
@@ -150,10 +157,33 @@ CREATE TABLE IF NOT EXISTS offers (
                   CHECK (status IN ('active', 'expired', 'unknown')),
     first_seen_at TEXT NOT NULL DEFAULT '',
     last_seen_at  TEXT NOT NULL DEFAULT '',
-    dedup_key     TEXT NOT NULL UNIQUE
+    dedup_key     TEXT NOT NULL UNIQUE,
+    -- v10：免费资源结构化字段
+    vertical      TEXT NOT NULL DEFAULT 'ai_api',
+    offer_type    TEXT NOT NULL DEFAULT 'credits',
+    granularity   TEXT NOT NULL DEFAULT 'activity',
+    category      TEXT NOT NULL DEFAULT '',
+    resources     TEXT NOT NULL DEFAULT '{}',
+    limits        TEXT NOT NULL DEFAULT '{}',
+    eligibility   TEXT NOT NULL DEFAULT '{}',
+    regions       TEXT NOT NULL DEFAULT '[]',
+    claim_steps   TEXT NOT NULL DEFAULT '',
+    difficulty    INTEGER NOT NULL DEFAULT 2,
+    expires_at    TEXT NOT NULL DEFAULT '',
+    terms_hash    TEXT NOT NULL DEFAULT '',
+    last_verified_at TEXT NOT NULL DEFAULT '',
+    verified_by   TEXT NOT NULL DEFAULT 'rule',
+    status_reason TEXT NOT NULL DEFAULT '',
+    url           TEXT NOT NULL DEFAULT '',
+    source        TEXT NOT NULL DEFAULT '',
+    evidence      TEXT NOT NULL DEFAULT '',
+    provider_name TEXT NOT NULL DEFAULT ''
 );
 CREATE INDEX IF NOT EXISTS idx_offers_provider ON offers (provider_id);
 CREATE INDEX IF NOT EXISTS idx_offers_status ON offers (status);
+CREATE INDEX IF NOT EXISTS idx_offers_vertical ON offers (vertical);
+CREATE INDEX IF NOT EXISTS idx_offers_type ON offers (offer_type);
+CREATE INDEX IF NOT EXISTS idx_offers_expires ON offers (expires_at);
 
 CREATE TABLE IF NOT EXISTS offer_evidence (
     offer_id  INTEGER NOT NULL,
@@ -161,6 +191,53 @@ CREATE TABLE IF NOT EXISTS offer_evidence (
     url       TEXT NOT NULL DEFAULT '',
     source    TEXT NOT NULL DEFAULT '',
     seen_at   TEXT NOT NULL DEFAULT '',
+    -- v10：证据明细（吸收原 deals 的展示字段）
+    title         TEXT NOT NULL DEFAULT '',
+    evidence      TEXT NOT NULL DEFAULT '',
+    amount_hint   TEXT NOT NULL DEFAULT '',
+    matched       TEXT NOT NULL DEFAULT '[]',
+    score         REAL NOT NULL DEFAULT 0,
+    first_seen_at TEXT NOT NULL DEFAULT '',
+    last_seen_at  TEXT NOT NULL DEFAULT '',
     PRIMARY KEY (offer_id, deal_key)
 );
 CREATE INDEX IF NOT EXISTS idx_offer_evidence_offer ON offer_evidence (offer_id);
+
+-- v10：条款快照历史（terms_hash 变化时留档）
+CREATE TABLE IF NOT EXISTS offer_terms_history (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    offer_id       INTEGER NOT NULL,
+    terms_hash     TEXT NOT NULL,
+    snapshot       TEXT NOT NULL DEFAULT '{}',
+    changed_fields TEXT NOT NULL DEFAULT '[]',
+    changed_at     TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_terms_offer ON offer_terms_history (offer_id, changed_at);
+
+-- v10：信号事件（补货/售罄/新地区/降价/条款变更）
+CREATE TABLE IF NOT EXISTS signals (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    kind         TEXT NOT NULL,
+    vertical     TEXT NOT NULL DEFAULT 'ai_api',
+    provider_id  INTEGER,
+    offer_id     INTEGER,
+    source       TEXT NOT NULL DEFAULT '',
+    page_url     TEXT NOT NULL DEFAULT '',
+    payload      TEXT NOT NULL DEFAULT '{}',
+    observed_at  TEXT NOT NULL,
+    notified_at  TEXT NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS idx_signals_time ON signals (observed_at);
+CREATE INDEX IF NOT EXISTS idx_signals_kind ON signals (kind, observed_at);
+
+-- v10：个人领取跟踪（serve 模式 / CLI），静态站用 localStorage
+CREATE TABLE IF NOT EXISTS claims (
+    offer_id    INTEGER PRIMARY KEY,
+    state       TEXT NOT NULL DEFAULT 'todo'
+                CHECK (state IN ('todo', 'claimed', 'rejected', 'expired', 'skipped')),
+    claimed_at  TEXT NOT NULL DEFAULT '',
+    expires_at  TEXT NOT NULL DEFAULT '',
+    account     TEXT NOT NULL DEFAULT '',
+    note        TEXT NOT NULL DEFAULT '',
+    updated_at  TEXT NOT NULL
+);

@@ -6,8 +6,9 @@ from datetime import timedelta
 
 import radar.pipeline.runner as runner_mod
 from radar.delivery.site import _freshness, _monitor_rows
-from radar.domain.dedup import make_key
+from radar.domain.dedup import make_key, offer_key
 from radar.domain.models import RawItem, RunReport, SourceResult, iso, utcnow
+from radar.domain.offer_infer import apply_ai_offer
 from radar.domain.scoring import score_item
 from radar.infra.config import GeneralConfig, KeywordRule, RadarConfig
 from radar.storage.repository import SqliteRepository
@@ -137,19 +138,15 @@ def test_expire_skipped_when_sources_unhealthy(tmp_path, monkeypatch):
     cfg = _cfg(tmp_path)
     store = SqliteRepository(tmp_path / "test.db")
     item = RawItem(source="fake_ok", title="注册送 $25 额度", url="https://example.com/old",
-                   evidence="注册送 25 额度")
-    deal, _ = store.upsert_scored(score_item(item), utcnow())
-    store.conn.execute(
-        "UPDATE deals SET last_seen_at = '2020-01-01T00:00:00Z' WHERE dedup_key = ?",
-        (deal.dedup_key,),
-    )
-    store.conn.commit()
+                   evidence="注册送 25 额度", expires_at="2020-01-01T00:00:00Z")
+    scored = score_item(item)
+    offer, _ = store.upsert_offer(scored.item, utcnow(), score=scored.score, matched=scored.matched)
 
     monkeypatch.setattr(runner_mod, "build_sources", lambda cfg: [FakeFailSource()])
     report = runner_mod.run(cfg, store)
     assert report.success_rate == 0.0
     assert report.expired_count == 0
-    assert store.get_deal(deal.dedup_key).status != "expired"
+    assert store.get_offer(offer.dedup_key).status != "expired"
     store.close()
 
 
@@ -157,19 +154,15 @@ def test_expire_runs_when_sources_healthy(tmp_path, monkeypatch):
     cfg = _cfg(tmp_path)
     store = SqliteRepository(tmp_path / "test.db")
     item = RawItem(source="fake_ok", title="注册送 $25 额度", url="https://example.com/old",
-                   evidence="注册送 25 额度")
-    deal, _ = store.upsert_scored(score_item(item), utcnow())
-    store.conn.execute(
-        "UPDATE deals SET last_seen_at = '2020-01-01T00:00:00Z' WHERE dedup_key = ?",
-        (deal.dedup_key,),
-    )
-    store.conn.commit()
+                   evidence="注册送 25 额度", expires_at="2020-01-01T00:00:00Z")
+    scored = score_item(item)
+    offer, _ = store.upsert_offer(scored.item, utcnow(), score=scored.score, matched=scored.matched)
 
     monkeypatch.setattr(runner_mod, "build_sources", lambda cfg: [FakeOKSource()])
     report = runner_mod.run(cfg, store)
     assert report.success_rate == 1.0
     assert report.expired_count == 1
-    assert store.get_deal(deal.dedup_key).status == "expired"
+    assert store.get_offer(offer.dedup_key).status == "expired"
     store.close()
 
 
@@ -177,18 +170,14 @@ def test_expire_skipped_when_no_sources_ran(tmp_path, monkeypatch):
     cfg = _cfg(tmp_path)
     store = SqliteRepository(tmp_path / "test.db")
     item = RawItem(source="fake_ok", title="注册送 $25 额度", url="https://example.com/old",
-                   evidence="注册送 25 额度")
-    deal, _ = store.upsert_scored(score_item(item), utcnow())
-    store.conn.execute(
-        "UPDATE deals SET last_seen_at = '2020-01-01T00:00:00Z' WHERE dedup_key = ?",
-        (deal.dedup_key,),
-    )
-    store.conn.commit()
+                   evidence="注册送 25 额度", expires_at="2020-01-01T00:00:00Z")
+    scored = score_item(item)
+    offer, _ = store.upsert_offer(scored.item, utcnow(), score=scored.score, matched=scored.matched)
 
     monkeypatch.setattr(runner_mod, "build_sources", lambda cfg: [])
     report = runner_mod.run(cfg, store, only=["no-such-source"])
     assert report.expired_count == 0
-    assert store.get_deal(deal.dedup_key).status != "expired"
+    assert store.get_offer(offer.dedup_key).status != "expired"
     store.close()
 
 
@@ -216,12 +205,12 @@ def test_catalog_disappearance_archives_missing_item(tmp_path, monkeypatch):
     store = SqliteRepository(tmp_path / "test.db")
 
     first = runner_mod.run(cfg, store)
-    assert len(first.new_deals) == 4
-    gone_key = make_key(_catalog_item(4))
+    assert len(first.new_offers) == 4
+    gone_key = offer_key(apply_ai_offer(_catalog_item(4)))
 
     src.items = [_catalog_item(i) for i in range(1, 4)]  # 4 消失
     runner_mod.run(cfg, store)
-    assert store.get_deal(gone_key).status == "expired"
+    assert store.get_offer(gone_key).status == "expired"
     store.close()
 
 
@@ -233,11 +222,11 @@ def test_catalog_zero_items_does_not_archive(tmp_path, monkeypatch):
     store = SqliteRepository(tmp_path / "test.db")
 
     runner_mod.run(cfg, store)
-    keys = [make_key(_catalog_item(i)) for i in range(1, 4)]
+    keys = [offer_key(apply_ai_offer(_catalog_item(i))) for i in range(1, 4)]
 
     src.items = []  # 上游解析失败（0 条）
     runner_mod.run(cfg, store)
-    assert all(store.get_deal(k).status != "expired" for k in keys), "0 条时必须拒绝归档"
+    assert all(store.get_offer(k).status != "expired" for k in keys), "0 条时必须拒绝归档"
     store.close()
 
 
@@ -283,4 +272,10 @@ def test_v4_schema_migrates_to_latest(tmp_path):
     version = store.conn.execute("PRAGMA user_version").fetchone()[0]
     store.close()
     assert {"fail_count", "last_error", "tier", "next_check_at"} <= cols
-    assert version == 9  # v7/v8/v9 只新增表或列，旧数据不重写
+    assert version == 10  # v7–v10 只新增表或列，旧数据不重写
+    check = SqliteRepository(db)
+    prov_cols = {r["name"] for r in check.conn.execute("PRAGMA table_info(providers)")}
+    offer_cols = {r["name"] for r in check.conn.execute("PRAGMA table_info(offers)")}
+    check.close()
+    assert {"vertical", "categories", "deploy_modes"} <= prov_cols
+    assert {"offer_type", "resources", "eligibility", "terms_hash"} <= offer_cols

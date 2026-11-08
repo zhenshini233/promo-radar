@@ -16,6 +16,13 @@ def _deal(repo, key, first, last, status="active", provider="OpenAI"):
         " VALUES (?, 'x', 't', 'https://x', ?, '$10', ?, ?, ?, ?)",
         (key, provider, first, last, last, status),
     )
+    # v10：首页统计读 offers，同步写一条最小的 Offer
+    repo.conn.execute(
+        "INSERT INTO offers (dedup_key, source, title, url, provider_name,"
+        " first_seen_at, last_seen_at, status, vertical, offer_type)"
+        " VALUES (?, 'x', 't', 'https://x', ?, ?, ?, ?, 'ai_api', 'credits')",
+        (key, provider, first, last, status),
+    )
 
 
 def test_today_digest_counts(tmp_path):
@@ -54,16 +61,16 @@ def test_today_digest_counts(tmp_path):
     assert d["missed"][0]["reason"] == "从未成功抓取"
 
 
-def test_verify_deal(tmp_path):
+def test_verify_offer(tmp_path):
     repo = SqliteRepository(tmp_path / "radar.db")
     _deal(repo, "k1", "2026-11-07T09:00:00Z", "2026-11-07T09:00:00Z")
     repo.conn.commit()
 
-    assert repo.verify_deal("k1", by="user", now=_now()) is True
-    deal = repo.get_deal("k1")
-    assert deal.verified_by == "user"
-    assert deal.verified_at.startswith("2026-11-07")
-    assert repo.verify_deal("missing") is False
+    assert repo.verify_offer("k1", by="user", now=_now()) is True
+    offer = repo.get_offer("k1")
+    assert offer.verified_by == "user"
+    assert offer.last_verified_at.startswith("2026-11-07")
+    assert repo.verify_offer("missing") is False
 
 
 def iso(dt):

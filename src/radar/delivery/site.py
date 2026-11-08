@@ -26,22 +26,83 @@ from ..domain.coverage import (
     SOURCE_IDS, SOURCE_NAMES, SOURCE_TYPES, SOURCE_BLURBS,
     build_registries, covered_by, domain_norm, registry_sizes, vendor_links,
 )
-from ..domain.models import Deal, iso, parse_iso, utcnow
+from ..domain.models import iso, parse_iso, utcnow
 from ..infra.config import RadarConfig, load_providers
 from ..storage.repository import SqliteRepository
 
 _STATUS_CN = {"new": "新增", "updated": "有更新", "expired": "已过期"}
+_OFFER_STATUS_CN = {"active": "可用", "expired": "已过期", "unknown": "待确认"}
+_OFFER_TYPE_CN = {
+    "always_free": "永久免费",
+    "free_tier": "免费层",
+    "trial": "限时试用",
+    "credits": "赠金/额度",
+    "student": "学生认证",
+    "startup": "创业计划",
+    "oss": "开源计划",
+    "promo_code": "优惠码",
+    "lifetime": "终身",
+    "restock": "补货",
+}
+_VERTICAL_CN = {
+    "ai_api": "AI 促销",
+    "ai_compute": "免费算力",
+    "cloud": "云计算",
+    "vps": "VPS 特价",
+    "paas": "部署平台",
+    "storage": "存储",
+    "database": "数据库",
+    "cdn": "CDN / 网络",
+    "devtool": "开发者工具",
+}
+
+# 「我要部署什么」场景索引：providers 为推荐厂商（模糊包含匹配）
+
+
+def _offer_dict(o) -> dict:
+    d = asdict(o)
+    d["status_cn"] = _OFFER_STATUS_CN.get(o.status, o.status)
+    d["type_cn"] = _OFFER_TYPE_CN.get(o.offer_type, o.offer_type)
+    d["vertical_cn"] = _VERTICAL_CN.get(o.vertical, o.vertical)
+    parts = []
+    for key, label, unit in (
+        ("vcpu", "vCPU", ""), ("ram_gb", "内存", "G"),
+        ("disk_gb", "磁盘", "G"), ("storage_gb", "存储", "G"),
+        ("bandwidth_gb", "流量", "G"), ("runtime_hours_month", "时长", "h/月"),
+    ):
+        if d["resources"].get(key):
+            parts.append(f"{label} {d['resources'][key]:g}{unit}")
+    tokens = d["resources"].get("tokens_free")
+    if tokens:
+        n = float(tokens)
+        if n >= 100_000_000:
+            parts.append(f"{n / 100_000_000:g} 亿 tokens")
+        elif n >= 10_000:
+            parts.append(f"{n / 10_000:g} 万 tokens")
+        else:
+            parts.append(f"{n:g} tokens")
+    if d["limits"].get("valid_days"):
+        parts.append(f"有效期 {d['limits']['valid_days']} 天")
+    if d["limits"].get("credit_usd"):
+        parts.append(f"赠金 ${d['limits']['credit_usd']:g}")
+    d["res_text"] = " · ".join(parts)
+    card = d["eligibility"].get("card_required")
+    d["card_text"] = "免绑卡" if card is False else ("需绑卡" if card is True else "")
+    d["verified_text"] = (d["last_verified_at"] or "")[:10]
+    # 与旧 deals 视图兼容的字段：前端卡片/表格/时间线共用同一套模板
+    d["matched"] = [d["type_cn"]] if d.get("type_cn") else []
+    d["also_seen_in"] = []
+    d["score"] = 0.0
+    d["card_required_hint"] = card
+    d["last_changed_at"] = o.last_seen_at
+    d["status_cls"] = "new" if o.status == "active" else o.status
+    d["evidence"] = (d.get("evidence") or "")[:400]
+    return d
 
 
 def _slug(provider: str, label: str) -> str:
     base = f"{provider}-{label}".lower()
     return re.sub(r"[^a-z0-9]+", "-", base).strip("-") or "monitor"
-
-
-def _deal_dict(d: Deal) -> dict:
-    out = asdict(d)
-    out["status_cn"] = _STATUS_CN.get(d.status, d.status)
-    return out
 
 
 def _monitor_rows(repo: SqliteRepository, providers_file: Path, days: int = 30) -> list[dict]:
@@ -127,25 +188,35 @@ def _compact_json(obj) -> str:
 
 # 首屏内联兜底的数据上限：全量数据放在 data.js，内联只保留可交互的最小集，
 # 避免 index.html 随 deals/厂商清单线性膨胀（P0-H：index < 200KB）。
-INLINE_DEAL_LIMIT = 60
-INLINE_MONITOR_LIMIT = 80
+INLINE_MONITOR_LIMIT = 60
+INLINE_OFFER_LIMIT = 20
 
 
 def _inline_payload(payload: dict) -> dict:
     """裁剪内联到 index.html 的载荷；全量仍写 data.json / data.js。"""
-    deals = payload.get("deals", [])
     monitors = payload.get("monitors", [])
-    active = [d for d in deals if d.get("status") != "expired"][:INLINE_DEAL_LIMIT]
+    offers = payload.get("offers", [])
     inline = dict(payload)
-    inline["deals"] = active
     inline["monitors"] = monitors[:INLINE_MONITOR_LIMIT]
+    inline["offers"] = [
+        {
+            k: o.get(k) for k in (
+                "dedup_key", "title", "provider", "vertical", "vertical_cn",
+                "offer_type", "type_cn", "category", "status", "status_cn", "url",
+                "eligibility", "res_text", "card_text", "verified_text",
+                "amount_hint", "difficulty", "expires_at", "regions",
+            )
+        }
+        for o in offers[:INLINE_OFFER_LIMIT]
+    ]
+    inline["vendors"] = payload.get("vendors", [])[:60]
     # 厂商清单占 80KB+，file:// 场景由 data.js 提供，内联不再重复
     inline["source_vendors"] = {}
     inline["inline_meta"] = {
-        "deals_total": len(deals),
-        "deals_inline": len(active),
         "monitors_total": len(monitors),
         "monitors_inline": len(inline["monitors"]),
+        "offers_total": len(offers),
+        "offers_inline": len(inline["offers"]),
         "full_data": "data.js",
     }
     return inline
@@ -187,9 +258,9 @@ def _freshness(repo: SqliteRepository, now, min_sources: int = 0) -> dict:
 def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
     now = utcnow()
     data = repo.digest_data(now)
-    deals = repo.all_deals()
+    items = repo.all_offers()
     monitors = _monitor_rows(repo, cfg.providers_file)
-    registries = build_registries(repo, deals, monitors)
+    registries = build_registries(repo, items, monitors)
     for m in monitors:
         m["covered_by"] = covered_by(m["provider"], registries, extra_keys={domain_norm(m["url"])})
     links = vendor_links(registries, monitors)
@@ -207,7 +278,13 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
     freshness = _freshness(repo, now, cfg.general.full_run_min_sources)
 
     signal_pages = sum(1 for m in monitors if m["promo_keywords"])
+    offers = repo.all_offers()
+    offer_rows = [_offer_dict(o) for o in offers]
+    verticals = repo.vertical_stats()
+    vendors = repo.vendor_summary()
+    cloud_count = sum(v["total"] for v in verticals if v["id"] != "ai_api")
     payload = {
+        "schema_version": "v10",
         "generated_at": iso(now),
         "kpis": {
             "total_deals": data["total_deals"],
@@ -216,8 +293,14 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
             "expired_deals": data.get("expired_deals", 0),
             "monitors": len(monitors),
             "signal_pages": signal_pages,
+            "cloud_offers": cloud_count,
+            "total_offers": len(offer_rows),
         },
-        "deals": [{**_deal_dict(d), "vote": feedback.get(d.dedup_key, "")} for d in deals],
+        "offers": [{**r, "vote": feedback.get(r["dedup_key"], "")} for r in offer_rows],
+        "vendors": vendors,
+        "verticals": verticals,
+        "signals": repo.recent_signals(60),
+        "claims": {str(k): v for k, v in repo.claims_map().items()},
         "monitors": monitors,
         "last_run": last_run,
         "source_runs": repo.latest_source_runs(),
@@ -271,12 +354,17 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
         freshness=freshness,
         last_run=last_run,
         sources=repo.latest_source_runs(),
-        new_deals=data["new_deals"],
         needs_review=data["needs_review"],
-        expired_all=[d for d in deals if d.status == "expired"],
         monitors=monitors,
         signal_pages=signal_pages,
         status_cn=_STATUS_CN,
+        offers=offer_rows[:INLINE_OFFER_LIMIT],
+        vendors=vendors[:60],
+        expired_offers=[o for o in offer_rows if o["status"] == "expired"][:30],
+        cloud_total=cloud_count,
+        verticals=verticals,
+        vertical_cn=_VERTICAL_CN,
+        offer_type_cn=_OFFER_TYPE_CN,
     )
     out = site / "index.html"
     out.write_text(html, encoding="utf-8")
@@ -295,21 +383,21 @@ def build_site(cfg: RadarConfig, repo: SqliteRepository) -> Path:
     return out
 
 
-def _write_atom(path: Path, deals: list[Deal], now) -> None:
+def _write_atom(path: Path, deals: list, now) -> None:
     ns = "http://www.w3.org/2005/Atom"
     ET.register_namespace("", ns)  # 输出默认命名空间，避免 ns0: 前缀
     root = ET.Element("{%s}feed" % ns)
-    ET.SubElement(root, "{%s}title" % ns).text = "promo-radar: AI API 促销活动"
+    ET.SubElement(root, "{%s}title" % ns).text = "promo-radar: 免费资源雷达"
     ET.SubElement(root, "{%s}id" % ns).text = "urn:promo-radar:feed"
     ET.SubElement(root, "{%s}updated" % ns).text = iso(now)
     for deal in deals:
         entry = ET.SubElement(root, "{%s}entry" % ns)
-        ET.SubElement(entry, "{%s}id" % ns).text = f"urn:promo-radar:deal:{deal.dedup_key[:16]}"
+        ET.SubElement(entry, "{%s}id" % ns).text = f"urn:promo-radar:offer:{deal.dedup_key[:16]}"
         ET.SubElement(entry, "{%s}title" % ns).text = deal.title
         link = ET.SubElement(entry, "{%s}link" % ns)
         link.set("href", deal.url or "about:blank")
         ET.SubElement(entry, "{%s}updated" % ns).text = deal.last_seen_at
-        meta = f"[{deal.source}] {deal.provider or ''} {deal.amount_hint or ''}".strip()
+        meta = f"[{getattr(deal, 'vertical', '')}] {deal.provider or ''} {getattr(deal, 'offer_type', '')}".strip()
         ET.SubElement(entry, "{%s}summary" % ns).text = (meta + " — " + deal.evidence)[:500]
     ET.indent(root, space="  ")
     path.write_text(

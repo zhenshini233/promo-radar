@@ -109,6 +109,29 @@ api_key = ""
 # v2 计划：官方 OAuth（需注册 script 类型 app）；公开 JSON 已对数据中心 IP 封锁
 enabled = false
 
+# ---------- v10：云资源（免费额度 / 可部署网站） ----------
+
+[sources.free_for_dev]
+# 800+ 条免费开发者资源目录；只收云/托管/数据库/存储/CI/监控分类
+enabled = true
+url = "https://cdn.jsdelivr.net/gh/ripienaar/free-for-dev@master/README.md"
+
+[sources.cloud_pages]
+# 配置化官方免费层页；清单在 cloud_sources.toml
+enabled = true
+
+[sources.cn_rss]
+# 国内社区 / 资讯 RSS：只收命中「免费 / 试用 / 优惠」的条目
+enabled = true
+# 社区帖信号弱，单独放宽阈值（全局 4.0）
+threshold = 2.5
+feeds = [
+    "https://juejin.cn/rss",
+    "https://www.oschina.net/news/rss",
+    "https://feed.cnblogs.com/blog/sitehome/rss",
+    "https://www.vpsxxs.com/feed",
+]
+
 # 额外关键词规则（追加到内置规则之后）：pattern 为正则，大小写不敏感
 [[keywords]]
 pattern = '留\s*id.{0,8}送'

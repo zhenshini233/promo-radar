@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>promo-radar · AI API 优惠监控</title>
+<title>promo-radar · 免费云资源雷达</title>
 <link rel="stylesheet" href="styles.css">
 <script>
 (function () {
@@ -25,542 +25,307 @@
 </div>
 {% endif %}
 
-<div id="app">
-  <aside class="side">
-    <div class="brand"><span class="mark" aria-hidden="true">PR</span> promo-radar</div>
-    <nav class="nav" aria-label="页面">
-      <a href="#/overview" data-page="overview">总览</a>
-      <a href="#/deals" data-page="deals">活动</a>
-      <a href="#/monitors" data-page="monitors">厂商</a>
-      <a href="#/archive" data-page="archive">已过期</a>
-      <a href="#/sources" data-page="sources">数据源</a>
-    </nav>
+<noscript>
+  <div class="noscript">
+    <h1>promo-radar</h1>
+    <p>这是一个交互式资源目录，需要启用 JavaScript。</p>
+    <p>共 {{ kpis.total_offers }} 条资源（AI {{ kpis.total_deals }} · 云 {{ kpis.cloud_offers }}），
+       监控 {{ kpis.monitors }} 个厂商页面。</p>
+    <p>更新于 {{ generated_at[:16].replace('T', ' ') }} UTC ·
+       <a href="atom.xml">Atom 订阅</a> ·
+       <a href="data.json">data.json</a></p>
+  </div>
+</noscript>
 
-    <div class="side-block" id="refresh-box" hidden>
-      <div class="side-title">手动刷新</div>
-      <details>
-        <summary>选择部分源</summary>
-        <div id="refresh-sources"></div>
-      </details>
-      <button class="btn primary wide" id="btn-refresh">开始刷新</button>
-      <div class="refresh-status" id="refresh-status"></div>
-    </div>
-
-    <div class="side-foot">
-      每 24 小时自动更新<br>
-      更新于 {{ generated_at[:16].replace('T', ' ') }} UTC
-    </div>
-  </aside>
-
-  <main class="main">
-    {# ---------- 总览 ---------- #}
-    <section class="view" id="page-overview">
-      <div class="title-row"><h1>总览</h1></div>
-      <section class="kpis" aria-label="概览">
-        <div class="kpi lead"><div class="label">本周新增</div><div class="value num">{{ kpis.new_this_week }}</div></div>
-        <div class="kpi"><div class="label">进行中</div><div class="value num">{{ kpis.active_deals }}</div></div>
-        <div class="kpi"><div class="label">官网活动厂商 <small>共 {{ kpis.monitors }}</small></div><div class="value num">{{ signal_pages }}</div></div>
-        <div class="kpi"><div class="label">已过期</div><div class="value num">{{ kpis.expired_deals }}</div></div>
-      </section>
-      <div class="ov-grid">
-        <div>
-          <h2 class="section-h2">最近发现</h2>
-          <div class="list-box">
-            {% for d in new_deals[:10] %}
-            <div class="ov-row">
-              <span class="ov-amount num">{{ (d.amount_hint or "—")[:16] }}</span>
-              <a class="ov-title" href="{{ d.url }}" target="_blank" rel="noopener noreferrer">{{ d.title }}</a>
-              <span class="pill {{ d.status }}">{{ status_cn[d.status] }}</span>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-        <div>
-          <h2 class="section-h2">官网活动 · 厂商</h2>
-          <div class="list-box">
-            {% for m in monitors %}{% if m.promo_keywords %}{% if loop.index <= 10 %}
-            <div class="ov-row">
-              <span class="ov-amount num">{{ m.promo_keywords.split(';;')[0][:18] }}</span>
-              <a class="ov-title" href="{{ m.url }}" target="_blank" rel="noopener noreferrer">{{ m.provider }}</a>
-              <span class="pill hit">官网活动</span>
-            </div>
-            {% endif %}{% endif %}{% endfor %}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {# ---------- 活动 ---------- #}
-    <section class="view" id="page-deals">
-      <div class="title-row">
-        <h1>活动</h1>
-        <span class="freshness num" id="result-count"></span>
-      </div>
-      <div class="controls">
-        <div class="row">
-          <div class="tabs" role="tablist" aria-label="视图">
-            <button class="tab" data-subview="cards" aria-pressed="true">卡片</button>
-            <button class="tab" data-subview="table" aria-pressed="false">表格</button>
-            <button class="tab" data-subview="timeline" aria-pressed="false">时间线</button>
-          </div>
-          <span class="spacer" style="flex:1"></span>
-          <input class="search" id="search" type="search" placeholder="搜索活动 / 厂商 / 内容…" aria-label="搜索">
-          <select class="picker" id="sort" aria-label="排序">
-            <option value="recent">最新发现</option>
-            <option value="score">按匹配分</option>
-            <option value="amount">按金额</option>
-          </select>
-        </div>
-        <div class="chiprow" id="chips">
-          <span class="group-label">状态</span>
-          <span class="group-label">来源</span>
-          <span class="group-label">类型</span>
-          <span class="group-label">金额</span>
-          <button class="clear-filters" id="clear-filters" style="visibility:hidden">清除筛选</button>
-        </div>
-      </div>
-      <section id="view-cards" aria-label="卡片视图"></section>
-      <section id="view-table" aria-label="表格视图">
-        <div class="table-wrap"><table>
-          <thead><tr>
-            <th class="col-title">活动</th><th>厂商</th><th class="num">金额</th><th>绑卡</th>
-            <th>状态</th><th class="num">匹配分</th><th>来源</th><th class="num">发现于</th>
-          </tr></thead><tbody>
-          {% for d in new_deals[:30] %}
-          <tr>
-            <td class="col-title"><a href="{{ d.url }}" target="_blank" rel="noopener noreferrer">{{ d.title }}</a>
-              {% if d.evidence %}<div class="t2">{{ d.evidence[:90] }}</div>{% endif %}</td>
-            <td>{{ d.provider or "—" }}</td>
-            <td class="num amt" title="{{ d.amount_hint }}">{{ (d.amount_hint or "—")[:28] }}</td>
-            <td class="status-cell">{% if d.card_required_hint is none %}—{% elif d.card_required_hint %}<span class="pill card-yes">需绑卡</span>{% else %}<span class="pill card-no">免绑卡</span>{% endif %}</td>
-            <td class="status-cell"><span class="pill {{ d.status }}">{{ status_cn[d.status] }}</span></td>
-            <td class="num">{{ "%.0f"|format(d.score) }}</td>
-            <td><span class="pill src">{{ d.source }}</span></td>
-            <td class="num">{{ d.first_seen_at[:10] }}</td>
-          </tr>
-          {% endfor %}
-          </tbody></table></div>
-      </section>
-      <section id="view-timeline" aria-label="时间线视图"></section>
-      <div id="pager"></div>
-    </section>
-
-    {# ---------- 厂商 ---------- #}
-    <section class="view" id="page-monitors">
-      <div class="title-row">
-        <h1>厂商</h1>
-        <span class="freshness">官网每日检查 · 金色 = 当天发现新内容</span>
-      </div>
-      <div class="controls">
-        <div class="row">
-          <div class="tabs" role="tablist" aria-label="厂商筛选">
-            <button class="mtab" data-mfilter="all" aria-pressed="true">全部</button>
-            <button class="mtab" data-mfilter="active" aria-pressed="false">官网活动</button>
-            <button class="mtab" data-mfilter="new" aria-pressed="false">新收录</button>
-          </div>
-          <span class="spacer" style="flex:1"></span>
-          <span class="freshness num" id="mon-count"></span>
-          <input class="search" id="mon-search" type="search" placeholder="搜索厂商…" aria-label="搜索厂商">
-        </div>
-      </div>
-      <div class="table-wrap" id="mon-table"><table>
-        <thead><tr>
-          <th class="col-title">厂商</th><th>每日记录</th><th>页面内容</th><th class="num">最近检查</th>
-        </tr></thead><tbody id="mon-body">
-        {% for m in monitors[:40] %}
-        <tr data-mstate="{{ 'active' if m.promo_keywords else ('new' if m.checked_days is defined and m.checked_days is not none and m.checked_days < 3 else 'new') }}">
-          <td class="col-title"><a href="{{ m.url }}" target="_blank" rel="noopener noreferrer">{{ m.provider }}</a>
-            <span class="t2">{{ m.label }}</span></td>
-          <td>{% if m.checked_days is defined and m.checked_days is not none and m.checked_days >= 3 %}<span class="band" aria-hidden="true">{% for c in m.band %}<i class="{{ 'c1' if c == '1' else ('c0' if c == '0' else '') }}"></i>{% endfor %}</span>{% else %}<span class="t2">新收录</span>{% endif %}</td>
-          <td>{% if m.promo_keywords %}{% for k in m.promo_keywords.split(';;')[:4] %}<span class="pill hit">{{ k }}</span> {% endfor %}{% else %}<span class="t2">—</span>{% endif %}</td>
-          <td class="num">{{ m.last_checked_at[:16].replace('T', ' ') }}</td>
-        </tr>
-        {% endfor %}
-        {% if monitors|length > 40 %}
-        <tr><td colspan="4" class="t2" style="padding:20px">另有 {{ monitors|length - 40 }} 家厂商，启用 JavaScript 后查看完整列表</td></tr>
-        {% endif %}
-        </tbody></table></div>
-    </section>
-
-    {# ---------- 已过期 ---------- #}
-    <section class="view" id="page-archive">
-      <div class="title-row">
-        <h1>已过期</h1>
-        <span class="freshness">过期活动留档备查，点链接可确认是否真失效</span>
-      </div>
-      <div class="table-wrap"><table>
-        <thead><tr><th class="col-title">活动</th><th>厂商</th><th>来源</th><th class="num">最后更新</th></tr></thead>
-        <tbody id="archive-body">{% for d in expired_all[:30] %}
-          <tr><td class="col-title"><a href="{{ d.url }}" target="_blank" rel="noopener noreferrer">{{ d.title }}</a></td>
-          <td>{{ d.provider or "—" }}</td>
-          <td><span class="pill src">{{ d.source }}</span></td>
-          <td class="num">{{ d.last_changed_at[:10] }}</td></tr>
-        {% endfor %}{% if expired_all|length > 30 %}<tr><td colspan="4" class="t2" style="padding:20px">另有 {{ expired_all|length - 30 }} 条，启用 JavaScript 后查看</td></tr>{% elif not expired_all %}<tr><td colspan="4" class="t2" style="padding:20px">暂无已过期活动</td></tr>{% endif %}</tbody></table></div>
-    </section>
-  </main>
-</div>
-
-<noscript><style>.view{display:block!important}.side{position:static;height:auto}</style></noscript>
+<div id="app"></div>
 
 <script type="text/x-template" id="tpl-app">
 <div class="shell">
-  <aside class="side">
-    <div class="brand"><span class="mark" aria-hidden="true">PR</span> promo-radar</div>
-    <nav class="nav" aria-label="页面">
-      <a href="#/overview" :class="{active: st.page==='overview'}" @click.prevent="goTo('overview')">总览</a>
-      <a href="#/deals" :class="{active: st.page==='deals'}" @click.prevent="goTo('deals')">活动</a>
+  <header class="topbar">
+    <a class="brand" href="#/deals" @click.prevent="goTo('deals')">
+      <span class="mark">PR</span><span>promo-radar</span>
+    </a>
+    <nav class="topnav" aria-label="页面">
+      <a href="#/deals" :class="{active: st.page==='deals'}" @click.prevent="goTo('deals')">资源</a>
       <a href="#/monitors" :class="{active: st.page==='monitors'}" @click.prevent="goTo('monitors')">厂商</a>
+      <a href="#/overview" :class="{active: st.page==='overview'}" @click.prevent="goTo('overview')">总览</a>
       <a href="#/archive" :class="{active: st.page==='archive'}" @click.prevent="goTo('archive')">已过期</a>
       <a href="#/sources" :class="{active: st.page==='sources'}" @click.prevent="goTo('sources')">数据源</a>
     </nav>
+    <div class="top-actions">
+      <span class="sub num">[[ generated_at.slice(0,16).replace('T',' ') ]] UTC</span>
+      <a href="atom.xml" target="_blank" rel="noopener" title="Atom 订阅：复制此链接到 RSS 阅读器">订阅</a>
+      <button v-if="st.serveMode" class="btn small" @click="st.showLocal = !st.showLocal">本地操作</button>
+      <button class="icon-btn" @click="toggleTheme" title="切换主题">◐</button>
+    </div>
+  </header>
 
-    <div class="side-block" v-if="st.serveMode">
-      <div class="side-title">手动刷新</div>
+  <div class="local-panel" v-if="st.serveMode && st.showLocal">
+    <div class="local-head">
+      <b>本地操作</b>
+      <button class="icon-btn" @click="st.showLocal = false" title="关闭">×</button>
+    </div>
+    <div class="local-block">
+      <b>手动刷新</b>
       <details>
-        <summary>选择部分源</summary>
-        <div class="rf-list">
-          <label v-for="s in srcRows" :key="'rf-'+s.id" class="rf-check">
-            <input type="checkbox" :value="s.id" v-model="st.refreshSel"> [[ s.name ]]
-          </label>
-        </div>
+        <summary>选择部分源（不选 = 全部）</summary>
+        <label v-for="s in srcRows" :key="s.id" class="check">
+          <input type="checkbox" v-model="st.refreshSel[s.id]"> [[ s.name ]]
+        </label>
       </details>
-      <button class="btn primary wide" :disabled="st.refreshing" @click="startRefresh">[[ st.refreshing ? '刷新中…' : '开始刷新' ]]</button>
-      <div class="refresh-status">[[ st.refreshMsg ]]</div>
+      <button class="btn primary" :disabled="st.refreshing" @click="startRefresh">
+        [[ st.refreshing ? '刷新中…' : '开始刷新' ]]
+      </button>
+      <p class="t2">[[ st.refreshMsg ]]</p>
     </div>
-
-    <div class="side-block" v-if="st.serveMode">
-      <div class="side-title">代理</div>
-      <input class="proxy-input" type="text" v-model="st.proxyUrl" placeholder="留空 = 直连" aria-label="代理地址">
-      <button class="btn wide" :disabled="st.proxySaving" @click="saveProxy">[[ st.proxySaving ? '保存中…' : '保存并测试' ]]</button>
-      <div class="refresh-status">[[ st.proxyMsg ]]</div>
+    <div class="local-block">
+      <b>代理</b>
+      <input class="input" v-model="st.proxyUrl" placeholder="http://127.0.0.1:10808">
+      <button class="btn" :disabled="st.proxySaving" @click="saveProxy">
+        [[ st.proxySaving ? '保存中…' : '保存并测试' ]]
+      </button>
+      <p class="t2">[[ st.proxyMsg ]]</p>
     </div>
-
-    <div class="side-block" v-else>
-      <div class="side-title">手动刷新</div>
-      <div class="refresh-status">本地运行 <b>radar serve</b> 后可用</div>
-    </div>
-
-    <div class="side-foot">
-      每 24 小时自动更新<br>
-      更新于 [[ generated_at.slice(0,16).replace('T',' ') ]] UTC
-      <a href="atom.xml" target="_blank" style="display:inline-block;margin-left:4px">Atom</a> ·
-      <a href="#" @click.prevent="toggleTheme">主题</a>
-    </div>
-  </aside>
-
-  <main class="main">
-    {# ---------- 总览 ---------- #}
-    <section v-if="st.page==='overview'">
-      <div class="title-row"><h1>今天</h1><span class="freshness num">[[ digest.today ]]</span></div>
-      <div class="digest-bar">
-        <strong class="num">[[ digest.today_new ]]</strong><span>条新活动</span>
-        <span class="dot">·</span>
-        <strong class="num">[[ digest.missed_count ]]</strong><span>家未抓到</span>
-        <span class="dot">·</span>
-        <span class="t2">上次成功 [[ (digest.last_success || '').slice(0, 16).replace('T', ' ') || '—' ]]</span>
-      </div>
-
-      <h2 class="section-h2">今天新增</h2>
-      <div class="list-box">
-        <div v-for="d in todayNew" :key="d.dedup_key" class="ov-row">
-          <span class="ov-amount num">[[ firstAmount(d) || '—' ]]</span>
-          <a class="ov-title" :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
-          <span class="pill" :class="d.status">[[ STATUS_NAMES[d.status] ]]</span>
-        </div>
-        <div v-if="!todayNew.length" class="ov-empty">
-          今天还没有新活动。最近 7 天仍有 [[ digest.recent_active ]] 条可用。
-        </div>
-      </div>
-
-      <h2 class="section-h2">最近 7 天仍可用 <small>[[ digest.recent_active ]] 条</small></h2>
-      <div class="list-box">
-        <div v-for="d in recentTop" :key="d.dedup_key" class="ov-row">
-          <span class="ov-amount num">[[ firstAmount(d) || '—' ]]</span>
-          <a class="ov-title" :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
-          <span class="t2">[[ (d.provider || srcName(d.source)) ]]</span>
-        </div>
-        <div v-if="!recentTop.length" class="ov-empty">最近 7 天没有仍可用的活动。</div>
-      </div>
-
-      <h2 class="section-h2">本周漏抓 <small>[[ digest.missed_count ]] 家</small></h2>
-      <div class="list-box">
-        <div v-for="m in digest.missed" :key="m.slug" class="ov-row">
-          <span class="ov-amount num">[[ m.last_success || '—' ]]</span>
-          <span class="ov-title">[[ m.name ]]</span>
-          <span class="pill" :class="m.failed_pages ? 'card-yes' : 'card-no'">[[ m.reason ]]</span>
-        </div>
-        <div v-if="!digest.missed.length" class="ov-empty">本周没有漏抓，所有监控厂商都有成功记录。</div>
-      </div>
-
-      <details class="ov-fold">
-        <summary>分类覆盖 / 反馈闭环</summary>
-      <div class="ov-grid" style="margin-top:20px">
-        <div style="grid-column:1/-1">
-          <h2 class="section-h2">分类覆盖 <small>按 Provider 实体</small></h2>
-          <div class="list-box">
-            <div v-if="providerCategories.length === 0" class="ov-empty">
-              还没有 Provider 实体数据。先运行 universe → annotate → import 三个脚本。
-            </div>
-            <div v-for="c in providerCategories" :key="c.category" class="ov-row">
-              <span class="ov-amount num">[[ c.category ]]</span>
-              <span class="ov-title">[[ c.monitored ]] / [[ c.providers ]] 监控 · [[ c.pages ]] 页 · 盲区 [[ c.in_universe ]]</span>
-              <span class="pill" :class="c.coverage >= 0.9 ? 'card-no' : 'card-yes'">[[ Math.round(c.coverage * 100) ]]%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ov-grid" style="margin-top:20px">
-        <div>
-          <h2 class="section-h2">反馈闭环</h2>
-          <div class="list-box">
-            <div v-if="feedbackStats.total === 0" class="ov-empty">
-              还没有反馈。去「活动」页给误报点 👎，给已薅的点 👍——这里会显示哪个源在制造噪音。
-            </div>
-            <template v-else>
-              <div class="ov-row">
-                <span class="ov-amount num">👍</span>
-                <span class="ov-title">有价值 / 已薅</span>
-                <span class="pill card-no">[[ feedbackStats.up ]]</span>
-              </div>
-              <div class="ov-row">
-                <span class="ov-amount num">👎</span>
-                <span class="ov-title">误报</span>
-                <span class="pill card-yes">[[ feedbackStats.down ]]</span>
-              </div>
-              <div class="ov-row">
-                <span class="ov-amount num">💤</span>
-                <span class="ov-title">暂时不关心</span>
-                <span class="pill">[[ feedbackStats.snooze ]]</span>
-              </div>
-            </template>
-          </div>
-        </div>
-        <div>
-          <h2 class="section-h2">误报率 · 按来源</h2>
-          <div class="list-box">
-            <div v-if="Object.keys(feedbackStats.by_source || {}).length === 0" class="ov-empty">
-              点过 👎 后，这里会列出每个来源的误报数，用来调 scoring 权重。
-            </div>
-            <div v-for="(counts, src) in feedbackStats.by_source" :key="src" class="ov-row">
-              <span class="ov-amount num">[[ srcName(src) ]]</span>
-              <span class="ov-title">
-                👍 [[ counts.up || 0 ]] · 👎 [[ counts.down || 0 ]] · 💤 [[ counts.snooze || 0 ]]
-              </span>
-              <span class="pill" :class="(counts.down || 0) > (counts.up || 0) ? 'card-yes' : 'card-no'">
-                误报率 [[ Math.round((counts.down || 0) / ((counts.up || 0) + (counts.down || 0) + (counts.snooze || 0)) * 100) ]]%
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      </details>
-    </section>
-
-    {# ---------- 活动 ---------- #}
+  </div>
+  <main class="page">
+    {# ---------- 资源 ---------- #}
     <section v-if="st.page==='deals'">
-      <div class="title-row">
-        <h1>活动</h1><span class="freshness num">[[ filteredDeals.length ]] 条</span>
+      <div class="page-head">
+        <div>
+          <h1>全部资源</h1>
+          <p class="sub">AI 促销与免费云资源，同一份目录、同一套筛选。</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="视图">
+          <button class="tab" :class="{on: st.dealView==='table'}" @click="st.dealView='table'">表格</button>
+          <button class="tab" :class="{on: st.dealView==='cards'}" @click="st.dealView='cards'">卡片</button>
+          <button class="tab" :class="{on: st.dealView==='timeline'}" @click="st.dealView='timeline'">时间线</button>
+        </div>
       </div>
-      <div class="controls">
-        <div class="row">
-          <div class="tabs" role="tablist" aria-label="视图">
-            <button class="tab" :class="{on: st.dealView==='cards'}" @click="st.dealView='cards'">卡片</button>
-            <button class="tab" :class="{on: st.dealView==='table'}" @click="st.dealView='table'">表格</button>
-            <button class="tab" :class="{on: st.dealView==='timeline'}" @click="st.dealView='timeline'">时间线</button>
-          </div>
-          <span style="flex:1"></span>
-          <input class="search" v-model="st.q" type="search" placeholder="搜索活动 / 厂商 / 内容…" aria-label="搜索">
+
+      <div class="kpi-strip">
+        <div class="kpi"><span class="k">资源</span><b class="num">[[ deals.length ]]</b></div>
+        <div class="kpi"><span class="k">可用</span><b class="num">[[ deals.filter(function(d){return d.status==='active'}).length ]]</b></div>
+        <div class="kpi"><span class="k">AI 促销</span><b class="num">[[ deals.filter(function(d){return d.vertical==='ai_api'}).length ]]</b></div>
+        <div class="kpi"><span class="k">云资源</span><b class="num">[[ deals.filter(function(d){return d.vertical!=='ai_api'}).length ]]</b></div>
+        <div class="kpi"><span class="k">本周新增</span><b class="num">[[ kpis.new_this_week ]]</b></div>
+      </div>
+
+      <div class="usecase-strip">
+        <span class="label">用途</span>
+        <button class="chip" :class="{on: st.useCase==='all'}" @click="st.useCase='all'">全部</button>
+        <button v-for="u in useCases" :key="u.id" class="chip"
+                :class="{on: st.useCase===u.id}" @click="st.useCase=u.id">[[ u.label ]]</button>
+      </div>
+
+      <div class="filters">
+        <div class="search-row">
+          <input class="search" v-model="st.q" type="search" placeholder="搜索资源 / 厂商 / 规格…" aria-label="搜索">
           <select class="picker" v-model="st.sort" aria-label="排序">
             <option value="recent">最新发现</option>
             <option value="score">按匹配分</option>
-            <option value="amount">按金额</option>
+            <option value="amount">按额度</option>
           </select>
+          <button class="chip ghost" v-if="anyFilter" @click="clearFilters">清除筛选</button>
+          <span class="result-count num">[[ filteredDeals.length ]] 条</span>
         </div>
-        <div class="chiprow">
+        <div class="chip-groups">
           <div v-for="grp in chipGroups" :key="grp.label" class="chip-line">
-            <span class="group-label">[[ grp.label ]]</span>
+            <span class="label">[[ grp.label ]]</span>
             <template v-for="c in grp.chips" :key="c.g + c.k">
-              <span v-if="c.g === 'label'" class="group-label">[[ c.label ]]</span>
-              <button v-else class="chip" :class="{on: c.on}"
-                      @click="toggle(c.g, c.k)">[[ c.label ]] <span class="count num">[[ c.count ]]</span></button>
+              <span v-if="c.g === 'label'" class="label sub-label">[[ c.label ]]</span>
+              <button v-else class="chip" :class="{on: c.on}" @click="toggle(c.g, c.k)">
+                [[ c.label ]] <span class="count num">[[ c.count ]]</span>
+              </button>
             </template>
           </div>
-          <div class="chip-line">
-            <button class="clear-filters" v-if="anyFilter" @click="clearFilters">清除筛选</button>
-          </div>
         </div>
-      </div>
-
-      <div v-if="st.dealView==='cards'">
-        <div class="cards" v-if="pagedDeals.length">
-          <article v-for="d in pagedDeals" :key="d.dedup_key" class="card">
-            <div class="head">
-              <span class="pill" :class="d.status">[[ STATUS_NAMES[d.status] ]]</span>
-              <span v-if="d.card_required_hint === true" class="pill card-yes">需绑卡</span>
-              <span v-else-if="d.card_required_hint === false" class="pill card-no">免绑卡</span>
-              <span class="amount-num" v-if="firstAmount(d)">[[ firstAmount(d) ]]</span>
-              <span class="score num" title="匹配分">[[ d.score.toFixed(0) ]]</span>
-            </div>
-            <div class="t"><a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a></div>
-            <div class="ev" v-if="d.evidence">[[ d.evidence ]]</div>
-            <div class="meta">
-              <span class="provider" v-if="d.provider">[[ d.provider ]]</span>
-              <span class="pill src">[[ srcName(d.source) ]]<template v-if="d.also_seen_in.length"> / [[ d.also_seen_in.map(srcName).join(' / ') ]]</template></span>
-              <span class="date num">[[ d.first_seen_at.slice(0, 10) ]]</span>
-              <span class="pill card-no" v-if="d.verified_by === 'user'">已核实</span>
-              <span class="pill hit" v-else-if="d.verified_by">自动核实</span>
-              <span class="fb" v-if="st.serveMode">
-                <button class="fb-btn" title="我已核实这个活动仍然有效" @click="sendVerify(d)">✅</button>
-                <button class="fb-btn" :class="{on: voteOf(d)==='up'}" title="已薅/有价值" @click="sendFeedback(d, 'up')">👍</button>
-                <button class="fb-btn" :class="{on: voteOf(d)==='down'}" title="误报" @click="sendFeedback(d, 'down')">👎</button>
-                <button class="fb-btn" :class="{on: voteOf(d)==='snooze'}" title="暂时不关心" @click="sendFeedback(d, 'snooze')">💤</button>
-              </span>
-            </div>
-          </article>
-        </div>
-        <div class="empty" v-else>[[ emptyHint ]]</div>
       </div>
 
       <div v-if="st.dealView==='table'" class="table-wrap">
         <table>
-          <thead><tr><th class="col-title">活动</th><th>厂商</th><th class="num">金额</th><th>绑卡</th><th>状态</th><th class="num">匹配分</th><th>来源</th><th class="num">发现于</th></tr></thead>
+          <thead><tr>
+            <th class="col-title">资源</th><th>厂商</th><th>领域</th><th>类型</th>
+            <th class="num">规格 / 额度</th><th>门槛</th><th class="num">证据</th><th>状态</th><th>领取</th>
+          </tr></thead>
           <tbody>
             <tr v-for="d in pagedDeals" :key="d.dedup_key">
-              <td class="col-title"><a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
-                <div class="t2" v-if="d.evidence">[[ d.evidence.slice(0, 90) ]]</div></td>
+              <td class="col-title">
+                <a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
+                <div class="t2" v-if="d.evidence">[[ d.evidence.slice(0, 110) ]]</div>
+                <div class="t2" v-if="d.claim_steps">领取：[[ d.claim_steps ]]</div>
+              </td>
               <td>[[ d.provider || '—' ]]</td>
-              <td class="num amt" :title="d.amount_hint">[[ firstAmount(d) || '—' ]]</td>
-              <td class="status-cell">
-                <span v-if="d.card_required_hint === true" class="pill card-yes">需绑卡</span>
-                <span v-else-if="d.card_required_hint === false" class="pill card-no">免绑卡</span>
-                <span v-else>—</span></td>
-              <td class="status-cell"><span class="pill" :class="d.status">[[ STATUS_NAMES[d.status] ]]</span></td>
-              <td class="num">[[ d.score.toFixed(0) ]]</td>
-              <td><span class="pill src">[[ srcName(d.source) ]]</span></td>
-              <td class="num">[[ d.first_seen_at.slice(0, 10) ]]</td>
+              <td><span class="pill src">[[ d.vertical_cn || d.vertical ]]</span></td>
+              <td><span class="pill hit">[[ d.type_cn || d.offer_type ]]</span></td>
+              <td class="num">[[ d.res_text || firstAmount(d) || '—' ]]</td>
+              <td>[[ d.card_text || (d.card_required_hint === false ? '免绑卡' : d.card_required_hint === true ? '需绑卡' : '—') ]]</td>
+              <td class="num">[[ d.evidence_count || 1 ]]</td>
+              <td><span class="pill" :class="d.status_cls || d.status">[[ STATUS_NAMES[d.status] ]]</span></td>
+              <td><button class="btn small" @click="toggleClaim(d)">[[ claimLabel(d) ]]</button></td>
             </tr>
+            <tr v-if="!pagedDeals.length"><td colspan="9" class="empty-cell">没有符合条件的资源</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div v-if="st.dealView==='timeline'">
-        <div class="timeline">
-          <div class="tl-day" v-for="day in timelineDays" :key="day.day">
-            <div class="tl-head"><span class="tl-date">[[ day.day ]]</span><span class="tl-count">[[ day.rows.length ]] 条</span></div>
-            <div class="tl-items">
-              <div class="tl-item" v-for="d in day.rows" :key="d.dedup_key">
-                <span class="when num">[[ d.first_seen_at.slice(11, 16) ]]</span>
-                <span class="what"><a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a></span>
-                <span class="who">[[ d.provider || srcName(d.source) ]]</span>
-                <span class="pill" :class="d.status">[[ STATUS_NAMES[d.status] ]]</span>
-              </div>
-            </div>
+      <div v-if="st.dealView==='cards'" class="cards">
+        <article v-for="d in pagedDeals" :key="d.dedup_key" class="card">
+          <div class="card-head">
+            <span class="pill" :class="d.status_cls || d.status">[[ STATUS_NAMES[d.status] ]]</span>
+            <span class="pill src">[[ d.vertical_cn || d.vertical ]]</span>
+            <span class="pill hit">[[ d.type_cn || d.offer_type ]]</span>
+            <span class="amount num" v-if="d.res_text">[[ d.res_text ]]</span>
           </div>
-          <div class="empty" v-if="!timelineDays.length">[[ emptyHint ]]</div>
+          <div class="card-title"><a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a></div>
+          <div class="card-ev" v-if="d.evidence">[[ d.evidence ]]</div>
+          <div class="card-ev claim" v-if="d.claim_steps">领取：[[ d.claim_steps ]]</div>
+          <div class="card-meta">
+            <span v-if="d.provider" class="provider">[[ d.provider ]]</span>
+            <span class="t2">[[ d.card_text || '门槛未标注' ]]</span>
+            <span class="t2 num">[[ d.evidence_count || 1 ]] 条证据</span>
+            <button class="btn small" @click="toggleClaim(d)">[[ claimLabel(d) ]]</button>
+          </div>
+        </article>
+        <div class="empty" v-if="!pagedDeals.length">没有符合条件的资源</div>
+      </div>
+
+      <div v-if="st.dealView==='timeline'" class="timeline">
+        <div class="tl-day" v-for="day in timelineDays" :key="day.day">
+          <div class="tl-head"><span>[[ day.day ]]</span><span class="t2 num">[[ day.rows.length ]] 条</span></div>
+          <div class="tl-item" v-for="d in day.rows" :key="d.dedup_key">
+            <span class="t2 num">[[ d.first_seen_at.slice(11,16) ]]</span>
+            <a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
+            <span class="t2">[[ d.vertical_cn ]]</span>
+            <span class="pill" :class="d.status_cls || d.status">[[ STATUS_NAMES[d.status] ]]</span>
+          </div>
         </div>
+        <div class="empty" v-if="!timelineDays.length">没有符合条件的资源</div>
       </div>
 
       <div class="pager" v-if="st.dealView !== 'timeline' && dealPages > 1">
-        <span class="pager-label">共 [[ dealPages ]] 页</span>
+        <button class="btn small" :disabled="st.pageNum<=1" @click="dealPageGo(st.pageNum-1)">上一页</button>
         <template v-for="(p, i) in pageList" :key="i">
-          <span v-if="p === '…'" class="pg-ellipsis">…</span>
-          <button v-else class="pg-btn" :class="{current: p === st.pageNum}" @click="dealPageGo(p)">[[ p ]]</button>
+          <span v-if="p === '…'" class="t2">…</span>
+          <button v-else class="btn small" :class="{on: p === st.pageNum}" @click="dealPageGo(p)">[[ p ]]</button>
         </template>
-        <span class="pager-label">每页
-          <select class="picker" v-model.number="st.pageSize">[[ '' ]]
-            <option :value="24">24</option><option :value="48">48</option><option :value="96">96</option>
-          </select> 条</span>
+        <button class="btn small" :disabled="st.pageNum>=dealPages" @click="dealPageGo(st.pageNum+1)">下一页</button>
+        <select class="picker" v-model.number="st.pageSize">
+          <option :value="24">24 / 页</option><option :value="48">48 / 页</option><option :value="96">96 / 页</option>
+        </select>
+      </div>
+
+      <div class="claim-bar">
+        <span class="t2">领取状态只存本机浏览器，可导出/导入。</span>
+        <button class="btn small" @click="exportClaims">导出领取记录</button>
+        <label class="btn small">导入<input type="file" accept="application/json" hidden @change="importClaims"></label>
+        <span class="t2">[[ st.claimMsg ]]</span>
       </div>
     </section>
 
     {# ---------- 厂商 ---------- #}
     <section v-if="st.page==='monitors'">
-      <div class="title-row">
-        <h1>厂商</h1><span class="freshness">官网每日检查 · 金色 = 当天发现新内容</span>
+      <div class="page-head">
+        <div><h1>厂商</h1><p class="sub">AI 与云的统一厂商视图，按资源数排序。</p></div>
       </div>
-      <details class="pending-enroll" v-if="pendingEnroll.length">
-        <summary>待收编 [[ pendingEnroll.length ]] 家：数据源已登记、暂无可靠官网可监控，确认后可手动收编</summary>
-        <div class="vendor-list">
-          <span class="vchip" v-for="p in pendingEnroll" :key="p.key" :title="'发现于 ' + p.sources.join(', ')">[[ p.key ]]</span>
-        </div>
-      </details>
-      <div class="controls">
-        <div class="row">
-          <div class="tabs" role="tablist" aria-label="厂商筛选">
+      <div class="filters">
+        <div class="search-row">
+          <input class="search" v-model="st.monQ" type="search" placeholder="搜索厂商 / 品类…" aria-label="搜索厂商">
+          <div class="tabs">
             <button class="tab" :class="{on: st.monFilter==='all'}" @click="st.monFilter='all'; st.monPage=1">全部</button>
-            <button class="tab" :class="{on: st.monFilter==='active'}" @click="st.monFilter='active'; st.monPage=1">官网活动</button>
-            <button class="tab" :class="{on: st.monFilter==='new'}" @click="st.monFilter='new'; st.monPage=1">新收录</button>
+            <button class="tab" :class="{on: st.monFilter==='monitored'}" @click="st.monFilter='monitored'; st.monPage=1">有官网监控</button>
+            <button class="tab" :class="{on: st.monFilter==='catalog'}" @click="st.monFilter='catalog'; st.monPage=1">仅目录 / 官方页</button>
           </div>
-          <span style="flex:1"></span>
-          <span class="freshness num">[[ filteredMonitors.length ]] 家</span>
-          <input class="search" v-model="st.monQ" type="search" placeholder="搜索厂商…" aria-label="搜索厂商">
+          <span class="result-count num">[[ filteredVendors.length ]] 家</span>
         </div>
-        <div class="chiprow">
-          <div class="chip-line">
-            <span class="group-label">覆盖来源</span>
-            <button v-for="c in coverChips" :key="c.id" class="chip" :class="{on: st.coverSource===c.id}"
-                    @click="st.coverSource=c.id; st.monPage=1">[[ c.label ]] <span class="count num">[[ c.count ]]</span></button>
-          </div>
+        <div class="chip-line">
+          <span class="label">领域</span>
+          <button class="chip" :class="{on: st.monV==='all'}" @click="st.monV='all'; st.monPage=1">
+            全部 <span class="count num">[[ vendors.length ]]</span>
+          </button>
+          <button v-for="v in vendorVerticals" :key="v.id" class="chip"
+                  :class="{on: st.monV===v.id}" @click="st.monV=v.id; st.monPage=1">
+            [[ v.label ]] <span class="count num">[[ v.count ]]</span>
+          </button>
         </div>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th class="col-title">厂商</th><th>每日记录</th><th>页面内容</th><th>收录来源</th><th class="num">最近检查</th></tr></thead>
+          <thead><tr>
+            <th class="col-title">厂商</th><th>领域</th><th class="num">可用 / 资源</th>
+            <th>品类</th><th class="num">最近更新</th><th>官网监控</th>
+          </tr></thead>
           <tbody>
-            <tr v-for="m in pagedMonitors" :key="m.url">
-              <td class="col-title"><a :href="m.url" target="_blank" rel="noopener noreferrer">[[ m.provider ]]</a>
-                <span class="t2">[[ m.label ]]</span></td>
-              <td>
-                <span class="band" v-if="(m.checked_days || 0) >= 3" aria-hidden="true">
-                  <i v-for="(c, i) in m.band.split('')" :key="i" :class="c==='1' ? 'c1' : c==='0' ? 'c0' : ''"
-                     :title="c==='1' ? '当天发现新内容' : c==='0' ? '无变化' : '未检查'"></i>
-                </span>
-                <span class="t2" v-else>新收录</span></td>
-              <td>
-                <template v-if="m.promo_keywords">
-                  <span class="pill hit" v-for="(k, i) in m.promo_keywords.split(';;').slice(0, 4)" :key="i">[[ k ]]</span>
-                </template>
-                <span class="t2" v-else>—</span></td>
-              <td>
-                <span v-if="!(m.covered_by || []).length" class="t2">未覆盖</span>
-                <template v-else>
-                  <span class="pill src" v-for="c in m.covered_by" :key="c" style="margin-right:4px">[[ srcName(c) ]]</span>
-                </template></td>
-              <td class="num">[[ m.last_checked_at.slice(0, 16).replace('T', ' ') ]]</td>
+            <tr v-for="v in pagedVendors" :key="v.name">
+              <td class="col-title">[[ v.name ]]</td>
+              <td><span class="pill src">[[ verticalName(v.vertical) ]]</span></td>
+              <td class="num">[[ v.active ]] / [[ v.offers ]]</td>
+              <td class="t2">[[ (v.categories || []).slice(0,3).join(' · ') ]]</td>
+              <td class="num">[[ (v.last_seen || '').slice(0,10) ]]</td>
+              <td><span v-if="v.monitored" class="pill hit">[[ v.pages ]] 页</span><span v-else class="t2">目录 / 官方页</span></td>
             </tr>
-            <tr v-if="!pagedMonitors.length"><td colspan="5" class="t2" style="padding:20px">没有符合条件的厂商</td></tr>
+            <tr v-if="!pagedVendors.length"><td colspan="6" class="empty-cell">没有符合条件的厂商</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="pager" v-if="monPages > 1">
-        <span class="pager-label">共 [[ monPages ]] 页</span>
-        <template v-for="(p, i) in monPageList" :key="i">
-          <span v-if="p === '…'" class="pg-ellipsis">…</span>
-          <button v-else class="pg-btn" :class="{current: p === st.monPage}" @click="monPageGo(p)">[[ p ]]</button>
-        </template>
-        <span class="pager-label">每页
-          <select class="picker" v-model.number="st.monPageSize">[[ '' ]]
-            <option :value="30">30</option><option :value="60">60</option><option :value="120">120</option>
-          </select> 家</span>
+      <div class="pager" v-if="vendorPages > 1">
+        <button class="btn small" :disabled="st.monPage<=1" @click="st.monPage--">上一页</button>
+        <span class="t2 num">[[ st.monPage ]] / [[ vendorPages ]]</span>
+        <button class="btn small" :disabled="st.monPage>=vendorPages" @click="st.monPage++">下一页</button>
+      </div>
+    </section>
+
+    {# ---------- 总览 ---------- #}
+    <section v-if="st.page==='overview'">
+      <div class="page-head">
+        <div><h1>总览</h1><p class="sub">[[ digest.today ]] · 上次成功 [[ (digest.last_success || '').slice(0,16).replace('T',' ') || '—' ]]</p></div>
+      </div>
+      <div class="kpi-strip">
+        <div class="kpi"><span class="k">今日新增</span><b class="num">[[ digest.today_new ]]</b></div>
+        <div class="kpi"><span class="k">最近可用</span><b class="num">[[ digest.recent_active ]]</b></div>
+        <div class="kpi"><span class="k">未抓取厂商</span><b class="num">[[ digest.missed_count ]]</b></div>
+        <div class="kpi"><span class="k">反馈</span><b class="num">[[ feedbackStats.total ]]</b></div>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h2>今天新增</h2>
+          <div class="list-box">
+            <div v-for="d in todayNew" :key="d.dedup_key" class="row">
+              <span class="amount num">[[ d.res_text || firstAmount(d) || '—' ]]</span>
+              <a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a>
+              <span class="pill" :class="d.status_cls || d.status">[[ STATUS_NAMES[d.status] ]]</span>
+            </div>
+            <div v-if="!todayNew.length" class="empty">今天还没有新增。</div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>反馈分布</h2>
+          <div class="list-box">
+            <div class="row"><span>👍 有价值</span><b class="num">[[ feedbackStats.up ]]</b></div>
+            <div class="row"><span>👎 误报</span><b class="num">[[ feedbackStats.down ]]</b></div>
+            <div class="row"><span>💤 暂不关心</span><b class="num">[[ feedbackStats.snooze ]]</b></div>
+          </div>
+        </div>
       </div>
     </section>
 
     {# ---------- 已过期 ---------- #}
     <section v-if="st.page==='archive'">
-      <div class="title-row">
-        <h1>已过期</h1><span class="freshness num">[[ expiredDeals.length ]] 条 · 过期留档备查，点链接可确认是否真失效</span>
+      <div class="page-head">
+        <div><h1>已过期</h1><p class="sub">只归档不删除，保留历史证据。</p></div>
+        <span class="result-count num">[[ expiredDeals.length ]] 条</span>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th class="col-title">活动</th><th>厂商</th><th>来源</th><th class="num">最后更新</th></tr></thead>
+          <thead><tr><th class="col-title">资源</th><th>厂商</th><th>领域</th><th>原因</th><th class="num">最后更新</th></tr></thead>
           <tbody>
             <tr v-for="d in expiredDeals" :key="d.dedup_key">
               <td class="col-title"><a :href="d.url" target="_blank" rel="noopener noreferrer">[[ d.title ]]</a></td>
               <td>[[ d.provider || '—' ]]</td>
-              <td><span class="pill src">[[ srcName(d.source) ]]</span></td>
-              <td class="num">[[ d.last_changed_at.slice(0, 10) ]]</td>
+              <td><span class="pill src">[[ d.vertical_cn ]]</span></td>
+              <td class="t2">[[ d.status_reason === 'stale' ? '长期未再见' : d.status_reason === 'expires_at' ? '已到截止时间' : d.status_reason === 'upstream_removed' ? '上游已移除' : '—' ]]</td>
+              <td class="num">[[ (d.last_seen_at || '').slice(0,10) ]]</td>
             </tr>
-            <tr v-if="!expiredDeals.length"><td colspan="4" class="t2" style="padding:20px">暂无已过期活动</td></tr>
+            <tr v-if="!expiredDeals.length"><td colspan="5" class="empty-cell">暂无已过期资源</td></tr>
           </tbody>
         </table>
       </div>
@@ -568,35 +333,23 @@
 
     {# ---------- 数据源 ---------- #}
     <section v-if="st.page==='sources'">
-      <div class="title-row">
-        <h1>数据源</h1>
-        <span class="freshness">[[ srcSummary ]]</span>
+      <div class="page-head">
+        <div><h1>数据源</h1><p class="sub">每个源的最近一次运行状态与产出。</p></div>
+        <span class="result-count num">[[ srcSummary ]]</span>
       </div>
-      <div class="src-cards">
-        <div class="src-card" v-for="s in sourceCards" :key="s.id">
-          <div class="head">
-            <span class="src-name">[[ s.name ]]</span>
-            <span class="pill src">[[ s.type ]]</span>
-            <span class="pill" :class="s.ok === false ? 'card-yes' : 'card-no'">[[ s.ok === false ? '✕ 失败' : '✓ 正常' ]]</span>
+      <div class="source-grid">
+        <div class="source-card" v-for="s in sourceCards" :key="s.id">
+          <div class="source-head">
+            <b>[[ s.name ]]</b>
+            <span class="pill" :class="s.ok === false ? 'card-yes' : 'card-no'">[[ s.ok === false ? '失败' : '正常' ]]</span>
           </div>
-          <div class="blurb">[[ s.blurb ]]</div>
-          <div class="src-stats">
-            <div class="stat"><a href="#" @click.prevent="goSource(s.id)"><div class="n num">[[ s.dealsCount ]]</div><div class="l">活动条目</div></a></div>
-            <div class="stat" v-if="s.origin"><a href="#" @click.prevent="goMonitors(s.origin)"><div class="n num">[[ s.vendorCount ]]</div><div class="l">收录厂商</div></a></div>
-            <div class="stat"><button class="stat-btn" @click="toggleVendors(s.id)"><div class="n num">[[ (sourceVendors[s.id] || []).length ]]</div><div class="l">登记名单</div></button></div>
+          <p class="t2">[[ s.blurb ]]</p>
+          <div class="source-stats">
+            <span><b class="num">[[ s.dealsCount ]]</b> 资源</span>
+            <span><b class="num">[[ s.vendorCount || 0 ]]</b> 厂商</span>
           </div>
-          <div class="vendor-list" v-if="st.expandedVendors === s.id">
-            <span class="vchip" v-for="v in sourceVendors[s.id]" :key="v.k">
-              <a v-if="v.url" :href="v.url" target="_blank" rel="noopener noreferrer" :title="'打开 ' + v.label + ' 官网'">[[ v.label ]]</a>
-              <template v-else>[[ v.label ]]</template>
-            </span>
-            <span class="t2" v-if="!(sourceVendors[s.id] || []).length">该源未登记厂商名单</span>
-          </div>
-          <div class="src-links">
-            <a href="#" @click.prevent="goSource(s.id)">贡献的活动 →</a>
-            <a v-if="s.origin" href="#" @click.prevent="goMonitors(s.origin)">收录的厂商 →</a>
-          </div>
-          <div class="src-err" v-if="s.error">失败原因：[[ s.error ]]</div>
+          <div class="t2" v-if="s.error">[[ s.error ]]</div>
+          <a href="#" class="link" @click.prevent="goSource(s.id)">查看该源资源 →</a>
         </div>
       </div>
     </section>

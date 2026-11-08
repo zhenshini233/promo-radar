@@ -1,4 +1,4 @@
-"""领域模型：RawItem（源产出）→ ScoredItem（打分后）→ Deal（入库）。
+"""领域模型：RawItem（源产出）→ ScoredItem（打分后）→ Offer（唯一实体）。
 
 本包零 IO：只放数据类与纯函数，供所有层引用。
 """
@@ -32,6 +32,8 @@ class RawItem:
 
     key_override: 无稳定 URL 的源（如 watchlist）用自定义字符串参与 dedup key；
     force_keep: 目录站等人工筛选过的源跳过阈值过滤（打分仍用于排序展示）。
+
+    v10 新增字段全部带默认值，旧源无需改动即可继续工作。
     """
 
     source: str
@@ -44,6 +46,58 @@ class RawItem:
     published_at: datetime | None = None
     key_override: str | None = None
     force_keep: bool = False
+    # v10：云资源扩展
+    vertical: str = "ai_api"
+    offer_type: str = "credits"
+    category: str = ""
+    resources: dict = field(default_factory=dict)
+    limits: dict = field(default_factory=dict)
+    eligibility: dict = field(default_factory=dict)
+    regions: list[str] = field(default_factory=list)
+    expires_at: str = ""
+    claim_steps: str = ""
+    difficulty: int = 2
+    # activity（厂商级促销）| plan（规格/套餐级方案）
+    granularity: str = "activity"
+    # 稳定指纹用（例如配置化源给出 provider|plan|cycle），为空时由 offer_key 兜底
+    key_basis: str = ""
+
+
+@dataclass
+class Offer:
+    """可获取的免费/优惠资源（v10）。
+
+    一条 Offer 可对应多条 offer_evidence（来源、原文、时间）。
+    """
+
+    dedup_key: str
+    title: str
+    provider: str | None = None
+    provider_id: int | None = None
+    vertical: str = "ai_api"
+    offer_type: str = "credits"
+    category: str = ""
+    amount_hint: str = ""
+    status: str = "active"
+    resources: dict = field(default_factory=dict)
+    limits: dict = field(default_factory=dict)
+    eligibility: dict = field(default_factory=dict)
+    regions: list[str] = field(default_factory=list)
+    claim_steps: str = ""
+    difficulty: int = 2
+    granularity: str = "activity"
+    expires_at: str = ""
+    terms_hash: str = ""
+    last_verified_at: str = ""
+    verified_by: str = "rule"
+    status_reason: str = ""
+    url: str = ""
+    source: str = ""
+    evidence: str = ""
+    first_seen_at: str = ""
+    last_seen_at: str = ""
+    id: int | None = None
+    evidence_count: int = 0
 
 
 @dataclass
@@ -52,26 +106,6 @@ class ScoredItem:
     score: float = 0.0
     matched: list[str] = field(default_factory=list)
 
-
-@dataclass
-class Deal:
-    dedup_key: str
-    source: str
-    title: str
-    url: str
-    provider: str | None
-    amount_hint: str | None
-    card_required_hint: bool | None
-    score: float
-    evidence: str
-    first_seen_at: str
-    last_seen_at: str
-    status: str  # new | updated | expired
-    last_changed_at: str = ""
-    matched: list[str] = field(default_factory=list)  # 命中的关键词标签（类型筛选用）
-    also_seen_in: list[str] = field(default_factory=list)
-    verified_at: str = ""
-    verified_by: str = ""
 
 
 @dataclass
@@ -93,7 +127,8 @@ class RunReport:
     started_at: datetime = field(default_factory=utcnow)
     finished_at: datetime | None = None
     results: list[SourceResult] = field(default_factory=list)
-    new_deals: list[Deal] = field(default_factory=list)
+    # v10：云资源侧新增的 offer（与 deals 分开统计，站点直接查库）
+    new_offers: list["Offer"] = field(default_factory=list)
     expired_count: int = 0
     # 源 → 最近连续失败次数（run 结束时从 source_runs 计算）
     failing_sources: dict[str, int] = field(default_factory=dict)

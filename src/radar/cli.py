@@ -6,7 +6,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from .delivery.notify import push_new_deals
+from .delivery.notify import push_new_offers
 from .delivery.site import build_site
 from .infra.config import load_config
 from .infra.providers_store import ProviderStoreError, append_provider_entries
@@ -23,16 +23,18 @@ def _print_report(report) -> None:
             f"{r.elapsed_ms:>7}ms  {r.error[:80]}"
         )
     print(
-        f"\n合计: 新增 {len(report.new_deals)} 条，归档过期 {report.expired_count} 条"
+        f"\n合计: 新增 {len(report.new_offers)} 条，归档过期 {report.expired_count} 条"
         f"，源成功率 {report.success_rate:.0%}"
     )
     if report.failing_sources:
         detail = ", ".join(f"{k}×{v}" for k, v in sorted(report.failing_sources.items()))
         print(f"连续失败的源: {detail}")
-    for deal in report.new_deals[:10]:
+    if report.new_offers:
+        print(f"统一目录新增 {len(report.new_offers)} 条（详见站点「全部资源」页）")
+    for deal in report.new_offers[:10]:
         print(f"  + {deal.title[:70]} ({deal.source})")
-    if len(report.new_deals) > 10:
-        print(f"  ... 共 {len(report.new_deals)} 条，详见站点 dashboard")
+    if len(report.new_offers) > 10:
+        print(f"  ... 共 {len(report.new_offers)} 条，详见站点 dashboard")
 
 
 def cmd_run(args) -> int:
@@ -40,7 +42,7 @@ def cmd_run(args) -> int:
     store = SqliteRepository(cfg.data_dir / "radar.db")
     only = [s.strip() for s in (args.only or "").split(",") if s.strip()] or None
     try:
-        report = run(cfg, store, only=only)
+        report = run(cfg, store, only=only, vertical=getattr(args, "vertical", None))
         _print_report(report)
 
         if not args.no_report:
@@ -48,7 +50,7 @@ def cmd_run(args) -> int:
             print(f"\n站点已生成: {out.parent}/")
 
         if not args.no_notify:
-            ok, msg = push_new_deals(cfg, report.new_deals)
+            ok, msg = push_new_offers(cfg, report.new_offers)
             print(f"推送: {msg}" if ok else f"推送跳过/失败: {msg}")
         return 0 if report.ok else 1
     finally:
@@ -118,6 +120,10 @@ def main(argv: list[str] | None = None) -> int:
     p_run.add_argument("--no-report", action="store_true", help="跳过生成站点")
     p_run.add_argument("--no-notify", action="store_true", help="跳过 Telegram 推送")
     p_run.add_argument("--only", help="只跑指定源（逗号分隔，如 aicredits,watchlist）")
+    p_run.add_argument(
+        "--vertical", choices=["ai_api", "cloud"],
+        help="只跑某个垂直领域：ai_api = AI 促销源，cloud = 云资源源",
+    )
 
     p_serve = sub.add_parser("serve", help="本地服务：dashboard + 手动刷新（部分源）")
     p_serve.add_argument("--port", type=int, default=8790)

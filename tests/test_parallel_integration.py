@@ -91,7 +91,7 @@ label = "注册送"
 
     statuses = {r.name: r.status for r in report.results}
     assert statuses == {"linuxdo": "ok", "modelsdev": "ok"}
-    assert len(report.new_deals) == 1
+    assert len(report.new_offers) == 1
     assert report.success_rate == 1.0
     # 两个请求各 0.4s：并行 ~0.4s，串行 >=0.8s
     assert elapsed < 0.78, f"并行未生效，耗时 {elapsed:.2f}s"

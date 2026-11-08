@@ -3,41 +3,35 @@
 - 无 token/chat_id 或 enabled=false → 静默跳过（推送失败不影响 run 本身）；
 - 消息 >4096 自动拆分；
 - 不用 parse_mode，规避 Markdown/HTML 转义问题；
-- 推送频率极低（每次 run 至多一次），独立建短生命周期 client，与抓取共用代理配置。
+- v10 起统一推送 Offer（AI 与云同一个来源）。
 """
 
 from __future__ import annotations
 
 import httpx
 
-from ..domain.models import Deal
+from ..domain.models import Offer
 from ..infra.config import RadarConfig
 from ..infra.proxy import effective_proxy
 
 MAX_LEN = 3800  # 留出余量，Telegram 上限 4096
 
 
-def _format_deals(deals: list[Deal]) -> list[str]:
+def _format_offers(offers: list[Offer]) -> list[str]:
     messages: list[str] = []
-    buf: list[str] = [f"promo-radar：发现 {len(deals)} 条新活动", ""]
-    for i, deal in enumerate(deals, 1):
-        card = (
-            " | 需绑卡"
-            if deal.card_required_hint is True
-            else " | 无需绑卡"
-            if deal.card_required_hint is False
-            else ""
+    buf: list[str] = [f"promo-radar：发现 {len(offers)} 条新资源", ""]
+    for i, offer in enumerate(offers, 1):
+        card = offer.eligibility.get("card_required")
+        card_text = "需绑卡" if card is True else ("免绑卡" if card is False else "")
+        meta = " | ".join(
+            x for x in [offer.provider or "未知厂商", offer.offer_type, card_text] if x
         )
         block = "\n".join(
             [
-                f"{i}. {deal.title}",
-                (deal.provider or "未知服务商")
-                + (f" | {deal.amount_hint}" if deal.amount_hint else "")
-                + card,
-                deal.url or "(无链接)",
-                f"来源 {deal.source}"
-                + (f" / 也见于 {'、'.join(deal.also_seen_in)}" if deal.also_seen_in else "")
-                + f" · score {deal.score:g}",
+                f"{i}. {offer.title}",
+                meta + (f" | {offer.amount_hint}" if offer.amount_hint else ""),
+                offer.url or "(无链接)",
+                f"领域 {offer.vertical} · 来源 {offer.source} · 证据 {offer.evidence_count} 条",
                 "",
             ]
         )
@@ -51,9 +45,9 @@ def _format_deals(deals: list[Deal]) -> list[str]:
     return messages
 
 
-def push_new_deals(cfg: RadarConfig, deals: list[Deal]) -> tuple[bool, str]:
-    if not deals:
-        return True, "no new deals"
+def push_new_offers(cfg: RadarConfig, offers: list[Offer]) -> tuple[bool, str]:
+    if not offers:
+        return True, "no new offers"
     if not cfg.telegram_enabled:
         return False, "telegram disabled or not configured"
 
@@ -64,7 +58,7 @@ def push_new_deals(cfg: RadarConfig, deals: list[Deal]) -> tuple[bool, str]:
         timeout=cfg.proxy_detect_timeout,
     )
     with httpx.Client(timeout=30.0, proxy=proxy or None, trust_env=True) as client:
-        for msg in _format_deals(deals):
+        for msg in _format_offers(offers):
             try:
                 resp = client.post(
                     f"https://api.telegram.org/bot{cfg.telegram_token}/sendMessage",

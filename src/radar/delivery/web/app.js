@@ -10,10 +10,27 @@
   // 全量由 data.js 提供（file:// 与 HTTP 都可用）；内联 JSON 只是兜底子集，
   // 保证 data.js 加载失败时页面仍可交互。
   var DATA = window.__RADAR_FULL__ || JSON.parse(dataEl.textContent);
-  var DEALS = DATA.deals || [];
+  // v10：统一目录——所有来源都写 offers，前端只读这一份
   var MONITORS = DATA.monitors || [];
+  var OFFERS = DATA.offers || [];
+  var DEALS = OFFERS;
+  var SCENARIOS = DATA.scenarios || [];
+  var VENDORS = DATA.vendors || [];
+  var VERTICAL_CN = {
+    ai_api: "AI 促销", ai_compute: "免费算力", cloud: "云计算", vps: "VPS 特价", paas: "部署平台",
+    storage: "存储", database: "数据库", cdn: "CDN / 网络", devtool: "开发者工具",
+  };
+  var CLAIM_KEY = "radar.claims.v1";
+  // 用途不是独立页面，而是资源的一个筛选维度
+  var USE_CASES = [
+    { id: "static", label: "静态站", keywords: ["pages", "netlify", "vercel", "surge", "firebase", "hosting"] },
+    { id: "fullstack", label: "全栈 + 数据库", keywords: ["supabase", "neon", "turso", "upstash", "mongo", "postgres", "database"] },
+    { id: "backend", label: "后端 / 容器", keywords: ["render", "koyeb", "fly", "railway", "cloud run", "workers", "deno", "serverless"] },
+    { id: "storage", label: "对象存储", keywords: ["r2", "b2", "backblaze", "storage", "bucket"] },
+    { id: "vps", label: "自建 VPS", keywords: ["oracle", "hetzner", "racknerd", "contabo", "vps", "compute"] },
+  ];
 
-  var STATUS_NAMES = { "new": "新增", "updated": "有更新", "expired": "已过期" };
+  var STATUS_NAMES = { "new": "新增", "updated": "有更新", "expired": "已过期", "active": "可用", "unknown": "待确认" };
   var AMOUNT_BUCKETS = ["<$10", "$10–99", "$100–999", "$1k+", "无金额"];
 
   // 源元数据由 payload 下发（唯一来源 coverage.py），避免前端手抄漂移
@@ -50,15 +67,24 @@
         page: "overview",
         dealView: "cards",
         q: "", qd: "",
-        sources: {}, types: {}, amounts: {}, statuses: {},
+        sources: {}, types: {}, amounts: {}, statuses: {}, verticals: {}, regions: {},
         sort: "recent", pageNum: 1, pageSize: 24,
         monFilter: "all", coverSource: "全部",
-        monQ: "", monQd: "", monPage: 1, monPageSize: 30,
-        serveMode: false, refreshing: false, refreshMsg: "",
+        monQ: "", monQd: "", monPage: 1, monPageSize: 30, monV: "all",
+        serveMode: false, refreshing: false, refreshMsg: "", showLocal: false,
         proxyUrl: "", proxyMsg: "", proxySaving: false,
         refreshSel: {}, expandedVendors: null,
         votes: {}, feedbackMsg: "",
+        useCase: "all", claims: loadClaims(), claimMsg: "",
       });
+
+      function loadClaims() {
+        try { return JSON.parse(localStorage.getItem(CLAIM_KEY) || "{}") || {}; }
+        catch (e) { return {}; }
+      }
+      function saveClaims(c) {
+        try { localStorage.setItem(CLAIM_KEY, JSON.stringify(c)); } catch (e) {}
+      }
 
       // ---------- 工具 ----------
       function firstAmount(d) {
@@ -81,6 +107,7 @@
         return "$1k+";
       }
       function categoryOf(d) {
+        if (d.type_cn) return d.type_cn;
         var m = d.matched || [];
         for (var i = 0; i < TYPE_GROUPS.length; i++) {
           var g = TYPE_GROUPS[i];
@@ -92,14 +119,35 @@
       // ---------- 活动页 computed ----------
       var filteredDeals = computed(function () {
         var hasSrc = Object.keys(st.sources).length > 0;
+        var hasV = Object.keys(st.verticals).length > 0;
         var hasSt = Object.keys(st.statuses).length > 0;
         var hasAmt = Object.keys(st.amounts).length > 0;
         var hasType = Object.keys(st.types).length > 0;
         return DEALS.filter(function (d) {
+          // 已过期只在「已过期」页展示；资源页默认只看仍可用的
+          if (d.status === "expired" && !st.statuses.expired) return false;
           if (hasSrc && !st.sources[d.source]) return false;
+          if (hasV && !st.verticals[d.vertical]) return false;
           if (hasSt && !st.statuses[d.status]) return false;
           if (hasAmt && !st.amounts[amountBucket(d)]) return false;
           if (hasType && st.types[categoryOf(d)] !== true) return false;
+          if (Object.keys(st.regions).length) {
+            var regs = (d.regions && d.regions.length) ? d.regions : ["GLOBAL"];
+            var hitReg = false;
+            for (var ri = 0; ri < regs.length; ri++) if (st.regions[regs[ri]]) hitReg = true;
+            if (!hitReg) return false;
+          }
+          if (st.useCase !== "all") {
+            var uc = null;
+            for (var ui = 0; ui < USE_CASES.length; ui++) {
+              if (USE_CASES[ui].id === st.useCase) uc = USE_CASES[ui];
+            }
+            if (uc) {
+              var uh = ((d.provider || "") + " " + (d.title || "") + " " +
+                        (d.category || "") + " " + (d.evidence || "")).toLowerCase();
+              if (!uc.keywords.some(function (k) { return uh.indexOf(k) >= 0; })) return false;
+            }
+          }
           if (st.qd) {
             var hay = (d.title + " " + (d.provider || "") + " " + (d.evidence || "")).toLowerCase();
             if (hay.indexOf(st.qd) < 0) return false;
@@ -154,13 +202,25 @@
         var out = [];
         var sel = { status: st.statuses, source: st.sources, type: st.types, amount: st.amounts };
         var stC = countBy(function (d) { return d.status; });
-        var stRow = ["new", "updated", "expired"].map(function (s) {
+        var stRow = ["active", "expired", "unknown"].map(function (s) {
           return { g: "status", k: s, label: STATUS_NAMES[s], count: stC[s] || 0, on: !!st.statuses[s] };
         });
         var srcC = countBy(function (d) { return d.source; });
         var srcRow = Object.keys(srcC).sort(function (a, b) { return srcC[b] - srcC[a]; })
           .map(function (s) { return { g: "source", k: s, label: SRC_NAMES[s] || s, count: srcC[s], on: !!st.sources[s] }; });
         out.push({ label: "状态", chips: stRow.concat([{ g: "label", k: "src", label: "来源", count: 0, on: false }], srcRow) });
+        var vC = countBy(function (d) { return d.vertical; });
+        var vRow = Object.keys(vC).sort(function (a, b) { return vC[b] - vC[a]; })
+          .map(function (v) { return { g: "vertical", k: v, label: VERTICAL_CN[v] || v, count: vC[v], on: !!st.verticals[v] }; });
+        out.push({ label: "领域", chips: vRow });
+        var regC = countBy(function (d) {
+          return (d.regions && d.regions.length) ? d.regions : ["GLOBAL"];
+        });
+        var regRow = [
+          { g: "region", k: "CN", label: "国内", count: regC["CN"] || 0, on: !!st.regions["CN"] },
+          { g: "region", k: "GLOBAL", label: "海外 / 全球", count: regC["GLOBAL"] || 0, on: !!st.regions["GLOBAL"] },
+        ];
+        out.push({ label: "地区", chips: regRow });
         var typeC = countBy(categoryOf);
         var typeRow = Object.keys(typeC).sort(function (a, b) { return typeC[b] - typeC[a]; })
           .map(function (t) { return { g: "type", k: t, label: t, count: typeC[t], on: !!st.types[t] }; });
@@ -172,7 +232,9 @@
       });
       var anyFilter = computed(function () {
         return Object.keys(st.sources).length || Object.keys(st.types).length
-          || Object.keys(st.amounts).length || Object.keys(st.statuses).length || !!st.qd;
+          || Object.keys(st.amounts).length || Object.keys(st.statuses).length
+          || Object.keys(st.verticals).length || Object.keys(st.regions).length
+          || st.useCase !== "all" || !!st.qd;
       });
       var emptyHint = computed(function () {
         if (filteredDeals.value.length) return "";
@@ -188,45 +250,31 @@
         return "没有符合条件的活动";
       });
 
-      // ---------- 厂商页 computed ----------
-      var coverChips = computed(function () {
-        var chips = [{ id: "全部", label: "全部", count: MONITORS.length }];
-        var sizes = DATA.registry_sizes || {};
-        Object.keys(SRC_NAMES).forEach(function (sid) {
-          if (sizes[sid]) chips.push({ id: sid, label: SRC_NAMES[sid], count: sizes[sid] });
-        });
-        var uncovered = MONITORS.filter(function (m) { return !(m.covered_by || []).length; }).length;
-        chips.push({ id: "未覆盖", label: "未覆盖", count: uncovered });
-        return chips;
+// ---------- 厂商页（统一：AI + 云） ----------
+      var vendorVerticals = computed(function () {
+        var m = {};
+        VENDORS.forEach(function (v) { m[v.vertical] = (m[v.vertical] || 0) + 1; });
+        return Object.keys(m).sort(function (a, b) { return m[b] - m[a]; })
+          .map(function (k) { return { id: k, label: VERTICAL_CN[k] || k, count: m[k] }; });
       });
-      var filteredMonitors = computed(function () {
-        return MONITORS.filter(function (m) {
-          if (st.monFilter === "active" && !m.promo_keywords) return false;
-          if (st.monFilter === "new" && (m.checked_days || 0) >= 3) return false;
-          if (st.coverSource === "未覆盖" && (m.covered_by || []).length) return false;
-          if (st.coverSource !== "全部" && st.coverSource !== "未覆盖"
-              && (m.covered_by || []).indexOf(st.coverSource) < 0) return false;
-          if (st.monQd && (m.provider + " " + m.label).toLowerCase().indexOf(st.monQd) < 0) return false;
+      var filteredVendors = computed(function () {
+        return VENDORS.filter(function (v) {
+          if (st.monFilter === "monitored" && !v.monitored) return false;
+          if (st.monFilter === "catalog" && v.monitored) return false;
+          if (st.monV !== "all" && v.vertical !== st.monV) return false;
+          if (st.monQd) {
+            var hay = (v.name + " " + (v.categories || []).join(" ")).toLowerCase();
+            if (hay.indexOf(st.monQd) < 0) return false;
+          }
           return true;
         });
       });
-      var monPages = computed(function () {
-        return Math.max(1, Math.ceil(filteredMonitors.value.length / st.monPageSize));
+      var vendorPages = computed(function () {
+        return Math.max(1, Math.ceil(filteredVendors.value.length / st.monPageSize));
       });
-      var pagedMonitors = computed(function () {
-        var p = Math.min(st.monPage, monPages.value);
-        return filteredMonitors.value.slice((p - 1) * st.monPageSize, p * st.monPageSize);
-      });
-      var monPageList = computed(function () {
-        var total = monPages.value, p = Math.min(st.monPage, total), nums = [];
-        for (var i = 1; i <= total; i++) {
-          if (i === 1 || i === total || Math.abs(i - p) <= 2) nums.push(i);
-          else if (nums[nums.length - 1] !== "…") nums.push("…");
-        }
-        return nums;
-      });
-      var activeMonCount = computed(function () {
-        return MONITORS.filter(function (m) { return !!m.promo_keywords; }).length;
+      var pagedVendors = computed(function () {
+        var p = Math.min(st.monPage, vendorPages.value);
+        return filteredVendors.value.slice((p - 1) * st.monPageSize, p * st.monPageSize);
       });
 
       // ---------- 侧栏数据源（点击筛选其活动；厂商数跳厂商页） ----------
@@ -330,12 +378,14 @@
       // ---------- 动作 ----------
       function toggle(group, key) {
         var bucket = group === "amount" ? st.amounts : group === "type" ? st.types
-          : group === "status" ? st.statuses : st.sources;
+          : group === "status" ? st.statuses
+          : group === "vertical" ? st.verticals
+          : group === "region" ? st.regions : st.sources;
         if (bucket[key]) delete bucket[key]; else bucket[key] = true;
         st.pageNum = 1;
       }
       function clearFilters() {
-        st.sources = {}; st.types = {}; st.amounts = {}; st.statuses = {};
+        st.sources = {}; st.types = {}; st.amounts = {}; st.statuses = {}; st.verticals = {}; st.regions = {}; st.useCase = "all";
         st.q = ""; st.qd = ""; st.pageNum = 1;
       }
       function goSource(id) {
@@ -347,9 +397,6 @@
         st.page = page;
         location.hash = "#/" + page;
         st.pageNum = 1; st.monPage = 1;
-      }
-      function monPageGo(p) {
-        st.monPage = Math.min(Math.max(1, p), monPages.value);
       }
       function dealPageGo(p) {
         st.pageNum = Math.min(Math.max(1, p), dealPages.value);
@@ -416,6 +463,46 @@
         });
       }
 
+      // ---------- 领取跟踪（localStorage，无后端） ----------
+      function claimOf(o) { return st.claims[o.dedup_key] || ""; }
+      function claimLabel(o) {
+        var v = claimOf(o);
+        return v === "claimed" ? "已领取" : v === "skipped" ? "已跳过" : "标记已领";
+      }
+      function toggleClaim(o) {
+        var next = Object.assign({}, st.claims);
+        if (next[o.dedup_key] === "claimed") delete next[o.dedup_key];
+        else next[o.dedup_key] = "claimed";
+        st.claims = next;
+        saveClaims(next);
+        st.claimMsg = "已保存到本机浏览器";
+      }
+      function exportClaims() {
+        var blob = new Blob([JSON.stringify(st.claims, null, 2)], { type: "application/json" });
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "radar-claims.json";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }
+      function importClaims(ev) {
+        var file = ev.target.files && ev.target.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function () {
+          try {
+            var parsed = JSON.parse(String(reader.result || "{}"));
+            if (parsed && typeof parsed === "object") {
+              st.claims = parsed;
+              saveClaims(parsed);
+              st.claimMsg = "已导入 " + Object.keys(parsed).length + " 条记录";
+            }
+          } catch (e) { st.claimMsg = "导入失败：不是有效 JSON"; }
+        };
+        reader.readAsText(file);
+      }
+      function verticalName(id) { return VERTICAL_CN[id] || id; }
+
       // ---------- 反馈（serve 模式） ----------
       function voteOf(d) { return st.votes[d.dedup_key] || d.vote || ""; }
       function sendFeedback(d, vote) {
@@ -451,7 +538,7 @@
       }
 
       // 防抖搜索
-      var qt = null, mqt = null;
+      var qt = null, mqt = null, cqt = null;
       watch(function () { return st.q; }, function (v) {
         clearTimeout(qt);
         qt = setTimeout(function () { st.qd = v.trim().toLowerCase(); st.pageNum = 1; }, 200);
@@ -460,6 +547,17 @@
         clearTimeout(mqt);
         mqt = setTimeout(function () { st.monQd = v.trim().toLowerCase(); st.monPage = 1; }, 200);
       });
+      watch(function () { return st.cloudQ; }, function (v) {
+        clearTimeout(cqt);
+        cqt = setTimeout(function () { st.cloudQd = v.trim().toLowerCase(); st.cloudPage = 1; }, 200);
+      });
+      ["monV", "monFilter"].forEach(function (k) {
+        watch(function () { return st[k]; }, function () { st.monPage = 1; });
+      });
+      ["cloudV", "cloudType", "cloudNoCard", "cloudAlways"].forEach(function (k) {
+        watch(function () { return st[k]; }, function () { st.cloudPage = 1; });
+      });
+      watch(function () { return st.cloudPageSize; }, function () { st.cloudPage = 1; });
       ["sources", "types", "amounts", "statuses"].forEach(function (k) {
         watch(function () { return st[k]; }, function () { st.pageNum = 1; });
       });
@@ -496,20 +594,21 @@
         kpis: DATA.kpis || {}, signal_pages: DATA.kpis ? DATA.kpis.signal_pages : 0,
         generated_at: DATA.generated_at || "",
         firstAmount: firstAmount, srcName: function (s) { return SRC_NAMES[s] || s; },
-        deals: DEALS, monitors: MONITORS,
+        deals: DEALS, monitors: MONITORS, useCases: USE_CASES,
+        offers: OFFERS, verticals: DATA.verticals || [],
+        vendors: VENDORS, filteredVendors: filteredVendors, pagedVendors: pagedVendors,
+        vendorPages: vendorPages, vendorVerticals: vendorVerticals,
+        claimLabel: claimLabel, toggleClaim: toggleClaim, exportClaims: exportClaims,
+        importClaims: importClaims, verticalName: verticalName,
         sortedDeals: sortedDeals, pagedDeals: pagedDeals, dealPages: dealPages, pageList: pageList,
         filteredDeals: filteredDeals, chipGroups: chipGroups, anyFilter: anyFilter,
-        filteredMonitors: filteredMonitors, pagedMonitors: pagedMonitors,
-        coverChips: coverChips,
-        monPages: monPages, monPageList: monPageList, activeMonCount: activeMonCount,
         timelineDays: timelineDays,
         srcRows: srcRows, recentDeals: recentDeals, activeMonitorsTop: activeMonitorsTop,
         expiredDeals: DEALS.filter(function (d) { return d.status === "expired"; }),
         categoryOf: categoryOf, amountBucket: amountBucket,
         toggle: toggle, clearFilters: clearFilters, goSource: goSource, goTo: goTo,
-        dealPageGo: dealPageGo, monPageGo: monPageGo, toggleTheme: toggleTheme,
+        dealPageGo: dealPageGo, toggleTheme: toggleTheme,
         goMonitors: goMonitors, emptyHint: emptyHint,
-        coverChips: coverChips,
         sourceCards: sourceCards, srcSummary: srcSummary,
         startRefresh: startRefresh, saveProxy: saveProxy,
         sendFeedback: sendFeedback, voteOf: voteOf, sendVerify: sendVerify,

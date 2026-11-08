@@ -1,0 +1,528 @@
+# 云资源页面清单：一家厂商一段配置，通用解析器见 collectors/cloud/pages.py
+# 只放「免费层 / 免费额度 / 永久免费」页；付费定价页不要放进来。
+# expect = 正文必须出现的关键词，未命中则跳过该页（防止改版后抓到无关内容）。
+
+[[page]]
+name = "cloudflare_workers_pricing"
+provider = "Cloudflare"
+vertical = "paas"
+category = "serverless"
+url = "https://developers.cloudflare.com/workers/platform/pricing/"
+offer_type = "free_tier"
+difficulty = 1
+expect = "free"
+claim_steps = "注册 Cloudflare → Workers & Pages → 创建 Worker → 绑定自定义域"
+
+[[page]]
+name = "cloudflare_r2_pricing"
+provider = "Cloudflare"
+vertical = "storage"
+category = "storage"
+url = "https://developers.cloudflare.com/r2/pricing/"
+offer_type = "free_tier"
+difficulty = 1
+expect = "free"
+claim_steps = "注册 Cloudflare → R2 → 创建 Bucket → 生成 API Token"
+
+[[page]]
+name = "github_pages_limits"
+provider = "GitHub Pages"
+vertical = "paas"
+category = "hosting"
+url = "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits"
+offer_type = "free_tier"
+difficulty = 1
+expect = "free"
+claim_steps = "建公开仓库 → Settings → Pages → 选择分支 → 发布"
+
+[[page]]
+name = "netlify_pricing"
+provider = "Netlify"
+vertical = "paas"
+category = "hosting"
+url = "https://www.netlify.com/pricing/"
+offer_type = "free_tier"
+difficulty = 1
+expect = "free"
+claim_steps = "注册 Netlify → Import from Git → 选择仓库 → Deploy"
+
+[[page]]
+name = "render_pricing"
+provider = "Render"
+vertical = "paas"
+category = "hosting"
+url = "https://render.com/pricing"
+offer_type = "free_tier"
+difficulty = 2
+expect = "free"
+claim_steps = "注册 Render → New Web Service → 连接仓库 → 选 Free 实例"
+
+[[page]]
+name = "vercel_pricing"
+provider = "Vercel"
+vertical = "paas"
+category = "hosting"
+url = "https://vercel.com/pricing"
+offer_type = "free_tier"
+difficulty = 1
+expect = "hobby"
+claim_steps = "注册 Vercel → Add New Project → 导入 Git 仓库 → Deploy"
+
+[[page]]
+name = "koyeb_pricing"
+provider = "Koyeb"
+vertical = "paas"
+category = "hosting"
+url = "https://www.koyeb.com/pricing"
+offer_type = "free_tier"
+difficulty = 2
+expect = "free"
+claim_steps = "注册 Koyeb → Create Service → 选择 GitHub/Docker → 选免费实例"
+
+[[page]]
+name = "supabase_pricing"
+provider = "Supabase"
+vertical = "database"
+category = "database"
+url = "https://supabase.com/pricing"
+offer_type = "free_tier"
+difficulty = 2
+expect = "free"
+claim_steps = "注册 Supabase → New Project → 选 Free 计划 → 获取连接串"
+
+[[page]]
+name = "neon_pricing"
+provider = "Neon"
+vertical = "database"
+category = "database"
+url = "https://neon.tech/pricing"
+offer_type = "free_tier"
+difficulty = 1
+expect = "free"
+claim_steps = "注册 Neon → Create Project → 复制连接串"
+
+[[page]]
+name = "upstash_pricing"
+provider = "Upstash"
+vertical = "database"
+category = "database"
+url = "https://upstash.com/pricing"
+offer_type = "free_tier"
+difficulty = 1
+expect = "free"
+claim_steps = "注册 Upstash → 创建 Redis 数据库 → 选免费区域 → 获取 REST URL"
+
+[[page]]
+name = "oracle_always_free"
+provider = "Oracle Cloud"
+vertical = "cloud"
+category = "compute"
+url = "https://www.oracle.com/cloud/free/"
+offer_type = "always_free"
+difficulty = 4
+expect = "always free"
+claim_steps = "注册 Oracle Cloud（需绑卡验证）→ 创建 Always Free 实例 → 选 ARM/AMD 规格"
+
+[[page]]
+name = "aws_free_tier"
+provider = "AWS"
+vertical = "cloud"
+category = "compute"
+url = "https://aws.amazon.com/free/"
+offer_type = "free_tier"
+difficulty = 4
+expect = "free"
+claim_steps = "注册 AWS（需绑卡）→ 在 Free Tier 范围内创建资源 → 设置预算告警"
+
+[[page]]
+name = "gcp_free_tier"
+provider = "Google Cloud"
+vertical = "cloud"
+category = "compute"
+url = "https://cloud.google.com/free"
+offer_type = "free_tier"
+difficulty = 3
+expect = "free"
+claim_steps = "注册 GCP（需绑卡）→ 领取赠金 → 在 always free 额度内使用"
+
+[[page]]
+name = "azure_free_tier"
+provider = "Azure"
+vertical = "cloud"
+category = "compute"
+url = "https://azure.microsoft.com/en-us/pricing/free-services/"
+offer_type = "free_tier"
+difficulty = 4
+expect = "free"
+claim_steps = "注册 Azure（需绑卡）→ 查看免费服务 → 按额度创建资源"
+
+# ---------- 国内云厂商（v10.2） ----------
+# 国内页面普遍需要实名/手机号，eligibility 在站点按门槛列展示。
+
+[[page]]
+name = "aliyun_free"
+provider = "阿里云"
+vertical = "cloud"
+category = "compute"
+url = "https://free.aliyun.com/"
+offer_type = "free_tier"
+difficulty = 4
+expect = "试用"
+regions = ["CN"]
+claim_steps = "注册阿里云（需实名认证 + 手机号）→ 免费试用中心 → 领取对应产品"
+
+[[page]]
+name = "tencent_free"
+provider = "腾讯云"
+vertical = "cloud"
+category = "compute"
+url = "https://cloud.tencent.com/act/free"
+offer_type = "free_tier"
+difficulty = 4
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册腾讯云（需实名）→ 免费专区 → 领取试用产品"
+
+[[page]]
+name = "baidu_free"
+provider = "百度智能云"
+vertical = "cloud"
+category = "compute"
+url = "https://cloud.baidu.com/campaign/free.html"
+offer_type = "free_tier"
+difficulty = 4
+expect = "0元"
+regions = ["CN"]
+claim_steps = "注册百度智能云（需实名）→ 免费试用活动页 → 领取"
+
+[[page]]
+name = "jdcloud_free"
+provider = "京东云"
+vertical = "cloud"
+category = "compute"
+url = "https://www.jdcloud.com/cn/pages/free"
+offer_type = "free_tier"
+difficulty = 4
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册京东云（需实名）→ 免费试用页 → 领取"
+
+[[page]]
+name = "qingcloud_pricing"
+provider = "青云 QingCloud"
+vertical = "cloud"
+category = "compute"
+url = "https://www.qingcloud.com/pricing"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册青云（需实名）→ 查看免费额度 / 试用政策"
+
+
+# ---------- 国内产品级免费额度（v10.3） ----------
+
+[[page]]
+name = "aliyun_oss_quota"
+provider = "阿里云"
+vertical = "storage"
+category = "storage"
+url = "https://help.aliyun.com/zh/oss/free-quota-for-new-users"
+offer_type = "free_tier"
+difficulty = 4
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册阿里云（实名）→ 开通 OSS 前领取新用户免费试用额度"
+
+[[page]]
+name = "tencent_cos_quota"
+provider = "腾讯云"
+vertical = "storage"
+category = "storage"
+url = "https://cloud.tencent.com/document/product/436/6240"
+offer_type = "free_tier"
+difficulty = 4
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册腾讯云（实名）→ 对象存储 COS → 查看免费额度"
+
+[[page]]
+name = "tencent_scf_quota"
+provider = "腾讯云"
+vertical = "paas"
+category = "serverless"
+url = "https://cloud.tencent.com/document/product/583/12282"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册腾讯云（实名）→ 云函数 SCF → 在免费额度内创建函数"
+
+
+# ---------- 国内中小厂商 / 免费服务器（v10.4） ----------
+
+[[page]]
+name = "huawei_flexus"
+provider = "华为云"
+vertical = "cloud"
+category = "compute"
+url = "https://www.huaweicloud.com/product/flexus-l.html"
+offer_type = "free_tier"
+difficulty = 4
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册华为云（实名）→ Flexus 应用服务器 → 领取免费试用"
+
+[[page]]
+name = "abeiyun_free"
+provider = "阿贝云"
+vertical = "cloud"
+category = "compute"
+url = "https://www.abeiyun.com/"
+offer_type = "always_free"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册阿贝云 → 申请免费服务器 → 到期前在论坛发体验帖续期"
+
+[[page]]
+name = "sanfengyun_free"
+provider = "三丰云"
+vertical = "cloud"
+category = "compute"
+url = "https://www.sanfengyun.com/"
+offer_type = "always_free"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册三丰云 → 申请免费云服务器 / 虚拟主机"
+
+[[page]]
+name = "henghost_free"
+provider = "恒创云"
+vertical = "cloud"
+category = "compute"
+url = "https://www.henghost.com/"
+offer_type = "promo_code"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册恒创云 → 查看免费试用 / 新客优惠"
+
+
+# ---------- 国内产品级文档 / 计费页（v10.5） ----------
+
+[[page]]
+name = "ali_cdn_billing"
+provider = "阿里云"
+title = "阿里云 CDN 免费流量额度"
+vertical = "cdn"
+category = "cdn"
+url = "https://help.aliyun.com/zh/cdn/product-overview/billing-overview"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "开通阿里云 CDN → 查看每月免费流量额度 → 绑定域名后自动抵扣"
+
+[[page]]
+name = "ali_sls_billing"
+provider = "阿里云"
+title = "阿里云日志服务 SLS 免费额度"
+vertical = "cloud"
+category = "logging"
+url = "https://help.aliyun.com/zh/sls/product-overview/billing-overview"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "开通 SLS → 每个 Project 每月免费 500MB 存储 / 一定读写额度"
+
+[[page]]
+name = "tencent_ssl_free"
+provider = "腾讯云"
+title = "腾讯云 SSL 免费证书"
+vertical = "devtool"
+category = "security"
+url = "https://cloud.tencent.com/document/product/400/84281"
+offer_type = "always_free"
+difficulty = 2
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册腾讯云 → SSL 证书控制台 → 申请免费 DV 证书（每账号每年额度）"
+
+[[page]]
+name = "hw_obs_billing"
+provider = "华为云"
+title = "华为云 OBS 免费存储额度"
+vertical = "storage"
+category = "object_storage"
+url = "https://support.huaweicloud.com/price-obs/obs_42_0001.html"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册华为云（实名）→ 开通 OBS → 使用免费额度内的存储与流量"
+
+[[page]]
+name = "jd_oss_billing"
+provider = "京东云"
+title = "京东云对象存储免费额度"
+vertical = "storage"
+category = "object_storage"
+url = "https://docs.jdcloud.com/cn/object-storage-service/price-overview"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册京东云（实名）→ 开通对象存储 → 使用每月免费额度"
+
+
+# ---------- 国内大模型开放平台（v10.6） ----------
+
+[[page]]
+name = "aliyun_model_studio_free"
+provider = "阿里云百炼"
+title = "阿里云百炼 新用户免费额度"
+vertical = "ai_api"
+category = "llm"
+url = "https://help.aliyun.com/zh/model-studio/new-free-quota"
+offer_type = "free_tier"
+difficulty = 2
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册阿里云（实名）→ 开通百炼 → 新用户各模型 100 万 tokens 免费额度（90 天有效）"
+
+[[page]]
+name = "volcengine_ark_pricing"
+provider = "火山方舟"
+title = "火山方舟 免费推理额度"
+vertical = "ai_api"
+category = "llm"
+url = "https://www.volcengine.com/docs/82379/1399514"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册火山引擎（实名）→ 开通方舟 → 每个模型 50 万 tokens 免费额度"
+
+[[page]]
+name = "minimax_pricing"
+provider = "MiniMax"
+title = "MiniMax 开放平台 免费额度"
+vertical = "ai_api"
+category = "llm"
+url = "https://platform.minimaxi.com/document/price"
+offer_type = "free_tier"
+difficulty = 2
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册 MiniMax 开放平台 → 创建 API Key → 使用新用户免费额度"
+
+[[page]]
+name = "zhipu_free_models"
+provider = "智谱 AI"
+title = "智谱 GLM 免费模型（Flash 系列）"
+vertical = "ai_api"
+category = "llm"
+url = "https://docs.bigmodel.cn/cn/guide/start/model-overview"
+offer_type = "always_free"
+difficulty = 2
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册智谱开放平台 → 创建 API Key → 直接调用 GLM-4-Flash 等免费模型"
+
+[[page]]
+name = "siliconflow_free"
+provider = "硅基流动"
+title = "硅基流动 免费模型额度"
+vertical = "ai_api"
+category = "llm"
+url = "https://siliconflow.cn/pricing"
+offer_type = "free_tier"
+difficulty = 2
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册硅基流动 → 创建 API Key → 调用标注 free 的模型（部分模型 0 元）"
+
+[[page]]
+name = "tencent_hunyuan_pricing"
+provider = "腾讯混元"
+title = "腾讯混元 免费额度"
+vertical = "ai_api"
+category = "llm"
+url = "https://cloud.tencent.com/document/product/1729/97731"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册腾讯云（实名）→ 开通混元 → 领取新用户免费 token 包"
+
+[[page]]
+name = "baidu_qianfan_free"
+provider = "百度千帆"
+title = "百度千帆 模型免费额度"
+vertical = "ai_api"
+category = "llm"
+url = "https://cloud.baidu.com/doc/qianfan-api/s/3m7of64lb"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册百度智能云（实名）→ 开通千帆 → 领取 ERNIE 系列免费额度"
+
+[[page]]
+name = "iflytek_spark_doc"
+provider = "讯飞星火"
+title = "讯飞星火 免费额度"
+vertical = "ai_api"
+category = "llm"
+url = "https://www.xfyun.cn/doc/spark/Web.html"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册讯飞开放平台 → 创建应用 → 领取 Spark 免费 token 额度"
+
+
+# ---------- 国内免费算力（v10.7） ----------
+
+[[page]]
+name = "aliyun_free_ai"
+provider = "阿里云"
+title = "阿里云 AI 免费试用（30+ 产品 / 1 亿 tokens）"
+vertical = "ai_compute"
+category = "gpu"
+url = "https://free.aliyun.com/product/ai"
+offer_type = "free_tier"
+difficulty = 3
+expect = "免费"
+regions = ["CN"]
+claim_steps = "注册阿里云（实名）→ free.aliyun.com/product/ai → 领取百炼 / PAI-DSW / EAS 等免费额度"
+
+[[page]]
+name = "baidu_aistudio_gpu"
+provider = "百度飞桨 AI Studio"
+title = "百度 AI Studio 每日免费算力卡（8 点 ≈ 16h V100）"
+vertical = "ai_compute"
+category = "gpu"
+url = "https://ai.baidu.com/ai-doc/AISTUDIO/nk39v9kec"
+offer_type = "free_tier"
+difficulty = 2
+expect = "算力"
+regions = ["CN"]
+claim_steps = "百度账号登录 AI Studio → 启动环境每日领 8 点算力（V100 16G 约 16 小时/天）"
+
+[[page]]
+name = "tencent_cloudstudio"
+provider = "腾讯 Cloud Studio"
+title = "腾讯 Cloud Studio 免费 GPU（10000 分钟/月 T4）"
+vertical = "ai_compute"
+category = "gpu"
+url = "https://cloud.tencent.com/product/cloudstudio"
+offer_type = "free_tier"
+difficulty = 2
+expect = "免费"
+regions = ["CN"]
+claim_steps = "微信 / QQ 登录 Cloud Studio → 新建工作空间选免费 T4 规格（每月 10000 分钟）"
+

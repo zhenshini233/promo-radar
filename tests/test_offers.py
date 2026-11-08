@@ -36,7 +36,7 @@ def test_offer_grouping_and_evidence(tmp_path):
     _deal(repo, "k3", "OpenAI free tier", "OpenAI", "", "https://openai.com/z", "expired", "c")
     repo.conn.commit()
 
-    stats = build_offers(repo.conn)
+    stats = build_offers(repo)
     assert stats["offers"] == 2
     assert stats["evidence"] == 3
     assert stats["merged"] == 1
@@ -53,7 +53,7 @@ def test_offers_idempotent(tmp_path):
     _deal(repo, "k1", "Foo $10", "", "$10", "https://foo.dev", "new")
     repo.conn.commit()
 
-    build_offers(repo.conn)
-    build_offers(repo.conn)
+    build_offers(repo)
+    build_offers(repo)
     assert repo.offer_stats()["total"] == 1
     assert repo.conn.execute("SELECT COUNT(*) FROM offer_evidence").fetchone()[0] == 1

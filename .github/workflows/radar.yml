@@ -47,7 +47,9 @@ jobs:
           RADAR_AA_KEY: ${{ secrets.RADAR_AA_KEY }}
         run: python -m radar run
 
-      # 实体层脚本：宇宙 → 标注 → Provider → Offer，然后重建站点
+      # 实体层脚本：宇宙 → 标注 → Provider → 历史 Offer 迁移，然后重建站点。
+      # build_offers.py 只在该库还没有 AI Offer 时执行（幂等），
+      # 之后 AI 与云都由 radar run 直接写入 offers。
       - name: Rebuild entities
         run: |
           python scripts/universe_report.py
