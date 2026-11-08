@@ -26,18 +26,31 @@ MODELS = '{"acme": {"name": "Acme AI", "models": {"m1": {}}, "doc": "https://acm
 
 
 class Handler(BaseHTTPRequestHandler):
+    # 并发峰值是确定性信号：串行时恒为 1，并行时必然为 2。
+    # 墙钟阈值在共享 runner 上会被调度抖动击穿（0.82s vs 0.78s），只保留宽松上限。
+    active = 0
+    max_active = 0
+    lock = threading.Lock()
+
     def do_GET(self):
-        time.sleep(0.4)  # 模拟慢源：串行会叠加，并行不会
-        if self.path.startswith("/feed"):
-            body, ctype = RSS, "application/rss+xml; charset=utf-8"
-        else:
-            body, ctype = MODELS, "application/json; charset=utf-8"
-        data = body.encode("utf-8")
-        self.send_response(200)
-        self.send_header("Content-Type", ctype)
-        self.send_header("Content-Length", str(len(data)))
-        self.end_headers()
-        self.wfile.write(data)
+        with Handler.lock:
+            Handler.active += 1
+            Handler.max_active = max(Handler.max_active, Handler.active)
+        try:
+            time.sleep(0.4)  # 模拟慢源：串行会叠加，并行不会
+            if self.path.startswith("/feed"):
+                body, ctype = RSS, "application/rss+xml; charset=utf-8"
+            else:
+                body, ctype = MODELS, "application/json; charset=utf-8"
+            data = body.encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+        finally:
+            with Handler.lock:
+                Handler.active -= 1
 
     def log_message(self, *args):
         pass
@@ -45,6 +58,8 @@ class Handler(BaseHTTPRequestHandler):
 
 @pytest.fixture
 def local_server():
+    Handler.active = 0
+    Handler.max_active = 0
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
@@ -93,5 +108,7 @@ label = "注册送"
     assert statuses == {"linuxdo": "ok", "modelsdev": "ok"}
     assert len(report.new_offers) == 1
     assert report.success_rate == 1.0
-    # 两个请求各 0.4s：并行 ~0.4s，串行 >=0.8s
-    assert elapsed < 0.78, f"并行未生效，耗时 {elapsed:.2f}s"
+    # 并行峰值：两个慢源必须同时在途
+    assert Handler.max_active == 2, f"并发峰值 {Handler.max_active}，耗时 {elapsed:.2f}s"
+    # 宽松上限兜底：串行无论如何都要 ~0.8s
+    assert elapsed < 1.5, f"耗时异常 {elapsed:.2f}s"
