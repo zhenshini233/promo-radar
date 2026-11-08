@@ -5,6 +5,13 @@
 
 ---
 
+## 0. 线上
+
+- URL：https://zhenshini233.github.io/promo-radar/
+- 最近部署：2026-11-08T00:16Z（run 42428937304，success）
+- 自动更新：每天 02:37 UTC
+- data 分支存 DB 快照；gh-pages 分支存站点
+
 ## 1. 现在有什么（可运行）
 
 | 块 | 状态 | 证据 |

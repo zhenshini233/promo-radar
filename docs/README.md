@@ -1,5 +1,7 @@
 # promo-radar 文档索引
 
+> 线上地址：https://zhenshini233.github.io/promo-radar/
+>
 > 文档已精简：Day 3–11 的过程记录（补域名、补监控、外圈扫描等）已合并进
 > `discovery/UNIVERSE_REPORT_v1.md`，原文删除。这里只保留长期有效的口径、结论与操作入口。
 
