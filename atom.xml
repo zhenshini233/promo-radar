@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>promo-radar: 免费资源雷达</title>
+  <id>urn:promo-radar:feed</id>
+  <updated>2026-11-14T09:24:00Z</updated>
+  <entry>
+    <id>urn:promo-radar:offer:38e1a01ee49e74c1</id>
+    <title>[OpenRouter] 恢复免费免费模型供应商: inclusionai（1 个 :free 模型）</title>
+    <link href="https://openrouter.ai/inclusionai" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] inclusionai credits — inclusionai 在 OpenRouter 上有 1 个 :free 模型（共 5 个模型），可 0 成本调用。新供应商挂免费模型通常在拉新，值得查看其官网注册活动。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:47265ba007939935</id>
+    <title>Krea — $1000 in credits</title>
+    <link href="https://www.krea.ai/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] Krea credits — [首次建档] nana 2.1 Krea After Effects FLUX 3 Image Ideogram 4.5 GPT Image 2.5 Seedance 2.5 MiniMax H3 Announcing Krea Bots Beta – Get up to $1000 in credits Introducing Krea 3 Get Krea into ChatGPT Get the world’s best image, video, and upscaling models in ChatGPT in 3 simple steps. A …</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:357eb423e668d06e</id>
+    <title>Meganova — free tier</title>
+    <link href="https://meganova.ai" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] Meganova free_tier — ion name MegaNova AI url https://meganova.ai" ,"offers": "@type Offer price 0 priceCurrency USD description Free tier to start." Products Models Blog Docs Sign In Sign Up MegaNova Cloud — free daily quota on selected models The models behind AI …</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dc6338ae095bafad</id>
+    <title>Beliq: European REST API platform for e-invoicing, including generating, validating and</title>
+    <link href="https://beliq.eu" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] Beliq free_tier — [APIs, Data, and ML] European REST API platform for e-invoicing, including generating, validating and delivering e-invoices. The free plan includes 20 live documents/month, plus 400 sandbox documents/month (no card required).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b850d0d71bb32c64</id>
+    <title>Groundmail: Transactional email API and SMTP relay. 3,000 emails/month free (100/day), three</title>
+    <link href="https://groundmail.dev" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] Groundmail free_tier — [Email] Transactional email API and SMTP relay. 3,000 emails/month free (100/day), three domains, three agent mailboxes, inbound email included.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9e18129f37c08017</id>
+    <title>[OpenRouter] 恢复免费免费模型供应商: particle-ai（1 个 :free 模型）</title>
+    <link href="https://openrouter.ai/particle-ai" />
+    <updated>2026-11-13T09:57:27Z</updated>
+    <summary>[ai_api] particle-ai credits — particle-ai 在 OpenRouter 上有 1 个 :free 模型（共 2 个模型），可 0 成本调用。新供应商挂免费模型通常在拉新，值得查看其官网注册活动。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ade4f2db6b47611d</id>
+    <title>[models.dev] 新供应商入库: BytePlus ModelArk（14 个模型）</title>
+    <link href="https://docs.byteplus.com/en/docs/ModelArk/1529329" />
+    <updated>2026-11-13T09:57:27Z</updated>
+    <summary>[ai_api] BytePlus ModelArk credits — models.dev 名录出现新 provider byteplus（14 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:97e162985540f4c1</id>
+    <title>[litellm] 价格大降 50%: nace/drex-v2.0（nace）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-13T09:57:27Z</updated>
+    <summary>[ai_api] nace credits — nace/drex-v2.0 输入价 6.00e-08 → 3.00e-08 $/token（降 50%）。大幅降价常伴随官方促销或竞争拉新。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:851052f2f717d3ba</id>
+    <title>Phala — welcome credit</title>
+    <link href="https://phala.network/" />
+    <updated>2026-11-13T09:57:27Z</updated>
+    <summary>[ai_api] Phala credits — [首次建档] ges stop immediately. Storage charges continue so the disk can be preserved. Delete the CVM to stop both. " , "question ": "What welcome credit is available? ", "answer ": "Some new workspaces are offered a welcome credit when they add a card, while the offer lasts. The am…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:19ed4aedaf2b3b25</id>
+    <title>Rizamo: Social media publishing API: schedule and publish to Instagram, Facebook, TikTok</title>
+    <link href="https://rizamo.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] Rizamo free_tier — [APIs, Data, and ML] Social media publishing API: schedule and publish to Instagram, Facebook, TikTok, Threads, YouTube and more over REST, webhooks or an MCP server for AI agents, with comment inbox and analytics. Free forever for 2 connected accounts, unlimited posts, every feature included, no credit card.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5a90722dc4460f58</id>
+    <title>#双十一#六六云全场循环8折：40元/月起，美国双ISP 9929/GTT/NTT/三网CN2 GIA/菲律宾双ISP/韩国双ISP/韩国优化/香港优化/德国双ISP/德国优化/英国双ISP/英国优化/日本软银，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/liuliuyun20261111/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[vps]  promo_code — 六六云2026年双十一促销，全场常规套餐8折优惠促销，可叠加半年付、年付优惠，包括美国双ISP 9929、美国 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:705b3969a930c3bf</id>
+    <title>莱卡云11月特惠：香港日本美国年付389元，4核4GB起步配置与国内企业云同场参与</title>
+    <link href="https://www.vpsxxs.com/laikayun20261112/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[vps]  promo_code — 计划在香港、日本或美国部署网站，可以先看莱卡云本期389元年付套餐：三地均提供4核CPU、4GB内存和100G [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:45f65d5b970006ef</id>
+    <title>NovixLink美国Cogent双ISP住宅IP VPS补货：5.99加元/月，市面最便宜美国伪家宽，Tiktok/AI够用，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/novixlink20261112/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[vps]  promo_code — NovixLink从这月1号开始，美国机房所有套餐都缺货，不管是美国Cox真家宽，还是Cogent、NTT、G [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b755cdeeb85a757b</id>
+    <title>【补货】PanstarCloud香港三网优化Pro VPS：9.75美元/月，电信163PP/ 联通10099/移动CMI，AMD EPYC 7K62，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/panstarcloud20261104/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[vps]  promo_code — PanstarCloud中国香港云服务器上线HK Pro套餐，三网优化，精品线路，电信163PP+联通 483 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6a87521c96dba889</id>
+    <title>[OpenRouter] 恢复免费免费模型供应商: baidu（1 个 :free 模型）</title>
+    <link href="https://openrouter.ai/baidu" />
+    <updated>2026-11-12T10:15:52Z</updated>
+    <summary>[ai_api] baidu credits — baidu 在 OpenRouter 上有 1 个 :free 模型（共 2 个模型），可 0 成本调用。新供应商挂免费模型通常在拉新，值得查看其官网注册活动。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:fee49f5e7cf3f28f</id>
+    <title>Reliant: Host, monitor, and deploy your services with production best practices. Tracing,</title>
+    <link href="https://reliantlabs.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] Reliant free_tier — [Web Hosting] Host, monitor, and deploy your services with production best practices. Tracing, continuous profiling, metrics, and logs fully baked in and correlated with each release allow you to identify and auto rollback on demand. One free static site per organization, 1 GiB of storage, 10 GiB of traffic a month, CDN with HTTPS, custom domains, no card needed, deployed with the open-source forge CLI.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:df0b76b27f889fc9</id>
+    <title>isvoro限时秒杀：香港VPS/NAT动态家宽9.9元/月，德国9929 14.9元/月，英国ISP 34.5元/月，美国服务器14.9元/月，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/isvoro20261110/" />
+    <updated>2026-11-11T03:29:38Z</updated>
+    <summary>[vps]  promo_code — isvoro双十一特惠活动开启！多地区爆款NVMe云服务器超低折扣限时特价，先到先得，手慢无！香港HK Lit [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f97c995613ed04d8</id>
+    <title>[litellm] 新增免费模型: replicate/ibm-granite/granite-vision-3.3-2b（replicate）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-11T03:29:37Z</updated>
+    <summary>[ai_api] replicate credits — litellm 价格库出现 replicate/ibm-granite/granite-vision-3.3-2b（replicate），输入价 0。免费档上线通常是拉新信号。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:621a36bc93c109d1</id>
+    <title>anyscale.com — $500 in credits</title>
+    <link href="https://anyscale.com" />
+    <updated>2026-11-11T03:29:37Z</updated>
+    <summary>[ai_api] anyscale.com trial — 0,.25) KubeRay Connect now available with free trial. Learn More Anyscale Product Use Cases Developers Customers Pricing Log in $500 in Credits for KubeRay Get started with up to $500 credit Foundation Model builders scale distributed training multimodal data curation embe…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3d59f441f36bac7e</id>
+    <title>Ofox — $3 credit</title>
+    <link href="https://ofox.ai" />
+    <updated>2026-11-11T03:29:37Z</updated>
+    <summary>[ai_api] Ofox credits — first top-up. One Key for Claude, GPT, Gemini and 100+ models. ", "perk1Title ": "$$3 first top-up bonus ", "perk1Desc ": "Extra $3 credited on first top-up ", "perk2Title ": "100+ models ", "perk2Desc ": "One Key for Claude, GPT, Gemini and all available models ", "p…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:efce24e5a9e2128b</id>
+    <title>clickhouse.com — $300 in trial credits</title>
+    <link href="https://clickhouse.com" />
+    <updated>2026-11-11T03:29:37Z</updated>
+    <summary>[ai_api] clickhouse.com credits — ickHouse Cloud, which starts at $50/month. Get started with ClickHouse Cloud for free We'll get you started on a 30 day trial and $300 credits to spend at your own pace. Or run ClickHouse yourself Install for Windows, Docker or see other install options. Or try without in…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:fd8443024354b16b</id>
+    <title>tripo3d.ai — free credits</title>
+    <link href="https://tripo3d.ai" />
+    <updated>2026-11-12T10:15:52Z</updated>
+    <summary>[ai_api] tripo3d.ai credits — ompt or upload a photo, and our AI generates a fully textured 3D model you can download and use immediately. Yes! You can get 200 free credits every month to try Tripo’s AI 3D model generator. Up to 13 models can be generated for free from text prompts or images with thes…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d159a9baf0e30628</id>
+    <title>#双十一#吉云英国ISP 9929/美国双ISP 4837月付8折年付7折：38.4元/月起，24小时退款保障，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/jiyun20261110/" />
+    <updated>2026-11-11T03:29:37Z</updated>
+    <summary>[vps]  promo_code — 吉云2026年双十一促销活动来了，全场月付8折年付7折，包括英国ISP 9929、美国双ISP 4837服务器 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bf1a01bc63bd1872</id>
+    <title>[OpenRouter] 恢复免费免费模型供应商: thinkingmachines（1 个 :free 模型）</title>
+    <link href="https://openrouter.ai/thinkingmachines" />
+    <updated>2026-11-10T03:25:52Z</updated>
+    <summary>[ai_api] thinkingmachines credits — thinkingmachines 在 OpenRouter 上有 1 个 :free 模型（共 4 个模型），可 0 成本调用。新供应商挂免费模型通常在拉新，值得查看其官网注册活动。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:29ff62802a76577c</id>
+    <title>DNSvivo: Free managed DNS with automatic failover, weighted load balancing, and Dynamic D</title>
+    <link href="https://dnsvivo.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] DNSvivo free_tier — [DNS] Free managed DNS with automatic failover, weighted load balancing, and Dynamic DNS (DDNS). Includes 2 domains, 5 IP addresses monitored from 5 locations, and 3 DDNS records.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:90fb18ca87d41ada</id>
+    <title>【补货】PanstarCloud美国原生IP三网精品VPS：5.25美元/月，双向CN2GIA/9929/CMIN2，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/panstarcloud20261027/" />
+    <updated>2026-11-11T03:29:38Z</updated>
+    <summary>[vps]  promo_code — PanstarCloud以前就有美国LAX Premium套餐，说是精品线路，三网优化，双向CN2GIA/99 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:36b9d6f79722077d</id>
+    <title>Runway — free credits</title>
+    <link href="https://runwayml.com/" />
+    <updated>2026-11-09T03:28:05Z</updated>
+    <summary>[ai_api] Runway free_tier — [首次建档] budgets and timelines. ", "contactSales ": "Contact Sales " , "paidAds ": "heroPromptDisclaimer ": "No credit card required. 500 free credits to start. " , "pricing ": "pageTitle ": "AI Image and Video Pricing from $12/month | Runway AI ", "pageDescription ": "Compare R…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:1c1e727e31d1b78e</id>
+    <title>nosocial Embed API: A free API for developers to embed public posts from X, Instagram, TikTok, YouTu</title>
+    <link href="https://nosocial.eu/api-docs" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] nosocial Embed API free_tier — [APIs, Data, and ML] A free API for developers to embed public posts from X, Instagram, TikTok, YouTube, Bluesky, Threads, Facebook, Telegram, Reddit, and LinkedIn on their websites. It returns the embed HTML and any required scripts as JSON. No API key and no request limits.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d5ca8f063bd9b1d2</id>
+    <title>InstaBox: Cloud Linux machine for AI agents and developers, running on Firecracker microVM</title>
+    <link href="https://instabox.sh/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] InstaBox free_tier — [IaaS] Cloud Linux machine for AI agents and developers, running on Firecracker microVMs with Docker and common toolchains preinstalled. Free plan: one 4 vCPU / 8 GiB machine, 20 GiB disk, 5 snapshots and 100 GiB egress per month, no credit card required. Not a persistent VPS: a free machine pauses after 30 minutes idle and runs at most 8 hours per session.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:efa750d1c2657d0e</id>
+    <title>Microsoft Azure Free Account - $200 Credits</title>
+    <link href="https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account" />
+    <updated>2026-11-14T09:23:54Z</updated>
+    <summary>[ai_api] Microsoft Azure Free Account credits — New Azure customers receive **$200 in credits for 30 days**, plus **12 months of free access** to 20+ popular services and **65+ always-free services**. Credits can be applied to any eligible Azure service including compute, databases, and AI services.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e2e30e21db3a02df</id>
+    <title>Cloudflare for Startups - Seed ($100,000)</title>
+    <link href="https://www.cloudflare.com/forstartups" />
+    <updated>2026-11-14T09:23:54Z</updated>
+    <summary>[ai_api] Cloudflare for Startups credits — Seed-funded startups affiliated with a Cloudflare-approved VC or accelerator can receive **$100,000 in credits** covering the full Cloudflare Developer Platform and up to **three enterprise-level domains** with CDN, WAF, DDoS protection, DNS, and Zero Trust features. Credits are valid for **1 year o</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0a5c6c48c38ac453</id>
+    <title>Oracle Cloud Free Trial - $300 Credits</title>
+    <link href="https://www.oracle.com/cloud/free" />
+    <updated>2026-11-14T09:23:52Z</updated>
+    <summary>[ai_api] Oracle Cloud Free Trial trial — New Oracle Cloud Infrastructure (OCI) customers receive **$300 in free credits valid for 30 days** to explore all eligible OCI services, including Generative AI, Compute, Autonomous Database, and networking. After the trial, your account transitions to **Always Free** tier with 20+ services at no co</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e7a43f58f6c465ae</id>
+    <title>Docker Hub: One free private repository and unlimited public repositories to build and store</title>
+    <link href="https://hub.docker.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] Docker Hub free_tier — [Docker Related] One free private repository and unlimited public repositories to build and store Docker images</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:92a1c5b50b53c893</id>
+    <title>quay.io: Build and store container images with unlimited free public repositories</title>
+    <link href="https://quay.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] quay.io free_tier — [Docker Related] Build and store container images with unlimited free public repositories</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:7632a15e3eda09c5</id>
+    <title>ttl.sh: Anonymous &amp; ephemeral Docker image registry</title>
+    <link href="https://ttl.sh/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] ttl.sh free_tier — [Docker Related] Anonymous &amp; ephemeral Docker image registry</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b957de2e3465d879</id>
+    <title>Cloudflare — serverless 免费额度</title>
+    <link href="https://developers.cloudflare.com/workers/platform/pricing/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] Cloudflare free_tier — By default, users have access to the Workers Free plan. The Workers Free plan includes limited usage of Workers, Pages Functions, Workers KV and Hyperdrive. Read more about the Free plan limits. The Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durable Objects usage for a minimum charge of $5 USD per month for an account. The plan includes increased initial usage allotments, with clear charges for usage that exceeds the base plan. </summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:76c229478d882503</id>
+    <title>Cloudflare — storage 免费额度</title>
+    <link href="https://developers.cloudflare.com/r2/pricing/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] Cloudflare free_tier — R2 charges based on the total volume of data stored, along with two classes of operations on that data: - Class A operations which are more expensive and tend to mutate state. - Class B operations which tend to read existing state. For the Infrequent Access storage class, data retrieval fees apply. There are no charges for egress bandwidth for any storage class. All included usage is on a monthly basis. The bucket allowance is shared across all storage classes an</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b81f85981d4a5c8a</id>
+    <title>GitHub Pages — hosting 免费额度</title>
+    <link href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] GitHub Pages free_tier — Usage limits GitHub Pages is not intended for or allowed to be used as a free web-hosting service to run your online business, e-commerce site, or any other website that is primarily directed at either facilitating commercial transactions or providing commercial software as a service (SaaS). GitHub Pages sites shouldn't be used for sensitive transactions like sending passwords or credit card numbers. In addition, your use of GitHub Pages is subject to the GitHub T</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:382c0c728f60454e</id>
+    <title>Netlify — hosting 免费额度</title>
+    <link href="https://www.netlify.com/pricing/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] Netlify free_tier — n.addEventListener(`change`,c),c()})}document.addEventListener(`astro:page-load`,()=&gt;e());
+Personal $ 9 See pricing in your dashboard /month Ready for real traffic Everything in Free, plus: Smart secret detection 1-day observability Priority email support 1,000 credits / month Get started Best value Pro $ 20 See pricing in your dashboard /month with unlimited members Ship faster as a team Everything in Personal, plus: Private organization repos Shared env variables 3+ </summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d1cbc74b0ce3f8e6</id>
+    <title>Render — hosting 免费额度</title>
+    <link href="https://render.com/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] Render free_tier — Introducing Render Sandboxes: a computer for every agent. Learn more Jump to workspace plans, compute pricing, and FAQs. Are you a VC-funded startup? Get up to $100K in credits with Render for Startups ↗ Looking to migrate? We can help and you can get up to $10K in credits. Sign up now ↗ Deploy for free, scale compute as you need. Scale up to 12 CPU and 96 GB of RAM - Private services - Web services with HTTP/2 and full TLS - Background workers - Node, Python, Go, Rust,</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:129000824026fca4</id>
+    <title>Vercel — hosting 免费额度</title>
+    <link href="https://vercel.com/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] Vercel free_tier — Scale your app, control your costs The perfect starting place for your web app. Everything you need to build and scale your app. Critical security, performance, observability, platform SLAs, and support. All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. Learn more about taxes. Vercel Delivery Network G</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dc082b93d80b0e63</id>
+    <title>Koyeb — hosting 免费额度</title>
+    <link href="https://www.koyeb.com/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] Koyeb free_tier — Pricing for intensive infrastructure Designed for Growth Pay only for what you use. Add support plans and capacity. - $10 included compute - 10 users - 100 services - NVMe Volumes and Snapshots - 5 concurrent builds - E-mail support and chat - $100 included compute - 50 users - 1000 services - AWS Regions - Slack cross-connect - 99.9% uptime SLA - Private dedicated locations - Unlimited users - SSO, RBAC, and Audit trail - Custom RAM, CPU, and GPU - ISO27001 and SOC2 Cer</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:851557968e30eb0d</id>
+    <title>Supabase — database 免费额度</title>
+    <link href="https://supabase.com/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Supabase free_tier — Predictable pricing, designed to scale Start building for free, collaborate with your team, then scale to millions of users AI tools Get started with: - Unlimited API requests - 50,000 monthly active users - 500 MB database size Shared CPU • 500 MB RAM - 5 GB egress - 5 GB cached egress - 1 GB file storage - Community support Free projects are paused after 1 week of inactivity. Limit of 2 active projects. Everything in the Free Plan, plus: - 100,000 monthly active</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a8bb9b8c8b8a5a31</id>
+    <title>Neon — database 免费额度</title>
+    <link href="https://neon.tech/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Neon free_tier — Neon pricing Get started for free. Pay per usage as you grow. Neon pricing plans - Lakebase Postgres - 100 projects - 100 CU-hrs monthly per project - 1 GB of storage per project - Sizes up to 2 CU (8 GB RAM) - Unlimited team members Backend - Managed Better Auth - 5 GB of Object Storage - Functions - AI Gateway - Realtime (Beta) - Lakebase Postgres - 100 projects - $0.106 per CU-hr - $0.35 per GB-month - Sizes up to 16 CU (64 GB RAM) - 3-day metrics/logs in UI Backen</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d8c8e49b13bd47a1</id>
+    <title>Upstash — database 免费额度</title>
+    <link href="https://upstash.com/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Upstash free_tier — Pricing Pay only for what you use with per-request pricing. Or choose a Fixed plan for consistent usage with a flat price. Free $0 - Data Size 250 MB Monthly Bandwidth 10 GB Monthly Commands 500K Pay as You Go $0.2 per 100K commands Data Size 100 GB Monthly Bandwidth Unlimited Monthly Commands Unlimited $10/ month $5 ✕ read regions Data Size 250 MB Monthly Bandwidth 50 GB Monthly Commands Unlimited Prod Pack Recommended for production use - Uptime SLA - Multi-Zone </summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5d53449d915a94c7</id>
+    <title>AWS — compute 免费额度</title>
+    <link href="https://aws.amazon.com/free/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] AWS free_tier — AWS Free Tier Get started for free with up to $200 in credits Get up to $200 in credits for new customers When you create a new AWS Free Tier account, you get $100 in credits immediately. As you explore key services, you can earn up to $100 more. That's up to $200 over 6 months to build, break things, and experiment with no charges and no surprise bills on the Free plan. The account closes on its own 6 months after you open it or when your credits run out, whichever comes</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bf61410fa45ac171</id>
+    <title>Google Cloud — compute 免费额度</title>
+    <link href="https://cloud.google.com/free" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] Google Cloud free_tier — Three ways to get started for free $300 in free credit for new customers New customers get $300 in free credit to try Google Cloud products and build a proof of concept. You won’t be charged until you upgrade to a paid account. 20+ products with free tier Get free usage of AI APIs, Compute Engine, BigQuery, and other popular products up to monthly limits—not charged against your $300 free credit. Try Gemini Enterprise Plus edition at no cost for 30 days Empower y</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ff595fb344e0c078</id>
+    <title>Azure — compute 免费额度</title>
+    <link href="https://azure.microsoft.com/en-us/pricing/free-services/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] Azure free_tier — Explore free Azure services Bring your vision to life with free services. These services are free up to the specified monthly amounts. Some are always free to all Azure customers, and some are free for 12 months to new customers only. Free service types Get free monthly amounts of these services for 12 months from the date you create your Azure account.[*] Keep getting free monthly amounts of these services for as long as you have an Azure account. List of free services</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:003a6f7b5d0942d0</id>
+    <title>阿里云 — compute 免费额度</title>
+    <link href="https://free.aliyun.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 阿里云 free_tier — 试用产品到期后数据是否会保留？
+到期后数据会保留 1~15 天，具体时长请参见各产品试用规则，如实例到期后不进行续费，实例会被释放，数据会被清理，请提前做好备份。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f80bc0d3b34771cd</id>
+    <title>腾讯云 — compute 免费额度</title>
+    <link href="https://cloud.tencent.com/act/free" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 腾讯云 free_tier — 超60款云产品免费试用 60+企业免费50+个人免费6款会员专属 近日上新hot 商品每日限量，试用后仍可参与首单特惠 CVM蜂驰型个人企业均可领取 免费试用7天腾讯云智能体开发平台体验版 免费试用1个月遨驰终端 OrcaTerm专业版 免费试用1个月云解析 DNS专业版/企业版 免费试用1个月云官网建站-尊享版（含服务器）SaaS建站+私有服务器，免费试用一个月腾讯敏捷项目管理企业版 免费试用1个月 腾讯云产品新用户均可参与试用。
+云服务器试用后续费最低3.5折活动规则 适用人群 云产品类型 筛选 清除筛选 为您展示66款试用产品 入门简单，开箱即用 高性价比，稳定可靠 试用配置： 2核2G、3Mbps带宽、40GB系统盘、200G流量包 适用场景：适用于构建网站、小程序/小游戏、电商、云盘/图床以及各类开发测试和学习环境等轻量应用场景 适用人群：中小企业和个人开发者 推荐产品搭配： 轻量云硬盘 试用须知：如需备案，请保持服务器包月时长3个月及以上且备案期间剩余有效期大于等于1个月 基于英特尔至强可扩展处理器 试用配置： 4核8G、12</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b8231cbc1102b5a8</id>
+    <title>百度智能云 — compute 免费额度</title>
+    <link href="https://cloud.baidu.com/campaign/free.html" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 百度智能云 free_tier — 了解最新优惠商品与活动集合活动规则 - 优惠商品 - 优惠活动HOT 邀新有礼，完成首购，解锁专属权益，奖励无上限！活动规则 分享邀请链接给好友，完成指定商品首购（实付金额≥20元），可获得20元代金券，邀请人数不设上限 我的优惠券 马上邀请 01.邀请好友 点击“马上邀请”，生成专属邀请链接/二维码，成为邀请人 02.新用户登入关联 分享邀请二维码/链接给好友，邀请好友完成指定商品首购 03.新用户完成付费 被邀请人通过分享链接完成指定商品首次购买，实付金额≥20元 04.双方获得奖励 邀请人每成功邀请一位好友完成符合条件的首购，获得20元代金券，被邀请人得10元代金券 完成企业认证，三步解锁专属权益 完成企业实名认证得1999元福利津贴 专属权益礼包，至高可减11000元 热门产品专属折扣，上百种产品立享优惠 Step1 免费注册，轻松迈出第一步 立即注册 Step2 企业实名认证，获取企业专属权益 立即认证 Step3 领福利津贴，立享企业特惠折扣 立享优惠 11.11特惠 企业新客专享 云服务器经济型e1 11.11年终钜惠，</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dd83b201ff9fda88</id>
+    <title>京东云 — compute 免费额度</title>
+    <link href="https://www.jdcloud.com/cn/pages/free" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 京东云 free_tier — 市场活动 京东全球科技探索者大会 HOT 京东云城市大会 走进京东 客户合作 标杆案例 行业洞察 行业白皮书 直播频道 我在京东做研发 云超级直播 技术前沿 京东探索研究院 文档 备案 控制台 登录 注册 EN 400-098-8505 转 1  服务热线 400-098-8505 售前咨询 购买问题咨询 售后服务 在线售后支持 长按或截图扫码 获取1V1专业服务 7*24 小时技术专家服务 覆盖模型调用、应用接入、算力运行等关键问题 安全合规 权限可控、数据可护、操作可审计 AI专家 1V1 服务 提供模型选型、成本测算、部署方案与落地陪跑 免费备案服务 覆盖备案、部署、域名、网络与上线配置 7*24 小时技术专家服务 安全合规 AI专家 1V1 服务 热门AI应用 JoyDesk JoyClaw JoyCode JoyInside JoyEgoCam 灵境 解决方案 政府 金融 零售 交通 能源 制造业 常见问题 控制台 实名认证 备案 域名 发票 工单 关于京东云 公司介绍 最新动态 可信中心 合作伙伴 人才招聘 举报中心 联系我</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:fe87417ef2bf8434</id>
+    <title>青云 QingCloud — compute 免费额度</title>
+    <link href="https://www.qingcloud.com/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 青云 QingCloud free_tier — 繁星信创联盟 信息凝聚力量，创新共赢未来，打造面向全行业全产业链的“信创生态体系” 企业增值服务 软件维保服务 技术支持与驻场 项目管理服务 咨询与开发 帮助与文档 用户指南 API 文档 CLI 文档 SDK 文档 备案服务 备案介绍 服务条款 服务条款 SLA 协议 支持计划 公益扶持 相关新闻 企业动态 案例新闻 媒体报道 最新资讯 产品动态 安全公告 产品生命周期 公司 关于我们 投资者关系 投诉举报 加入我们 联系我们 登录 注册 免费获得云产品体验券，为您提供0门槛上云实践机会！
+免费注册 青云智能助手 你好！
+我是 青云智能助手 请选择要咨询的产品</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9350d459e7f22547</id>
+    <title>阿里云 — storage 免费额度</title>
+    <link href="https://help.aliyun.com/zh/oss/free-quota-for-new-users" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] 阿里云 free_tier — 支持叠加使用免费额度的地域包括：中国香港、美国（硅谷）、美国（弗吉尼亚）、新加坡、马来西亚（吉隆坡）、印度尼西亚（雅加达）、菲律宾（马尼拉）、泰国（曼谷）、日本（东京）、韩国（首尔）、德国（法兰克福）、英国（伦敦）、阿联酋（迪拜）。
+满足以上领取条件的新用户（包括个人用户和企业用户），除享受20GB/3个月的标准存储（本地冗余）容量免费额度以外，还支持使用满足地域限制的5GB/月的标准存储（本地冗余）容量的免费额度。
+结合该计费项的抵扣方式为总量恒定型，使用免费额度过程中有以下注意事项： - 在免费试用期3个月内的任意小时内，当前小时的标准存储（本地冗余）容量额度不可累计到下个小时。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4dc835e14fa2a8db</id>
+    <title>腾讯云 — storage 免费额度</title>
+    <link href="https://cloud.tencent.com/document/product/436/6240" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] 腾讯云 free_tier — 假设个人用户小云在2019年03月10日开通 COS 服务，并于3月16日上传了50GB标准存储文件至北京地域的存储桶中，产生了100次请求。
+在3月20日通过外网下载了10GB数据，产生了100次请求，随后一直到9月底无其他操作，那么分析如下： 领取与查询 有效期计算 免费额度有效期为用户开通 COS 起6个月（180天）。
+例如，用户开通 COS 的时间是2019年03月10日 17:13:14，按6个月180天计算，则免费额度资源包覆盖3月10日-9月5日的标准存储容量。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:52b614e20331756e</id>
+    <title>腾讯云 — serverless 免费额度</title>
+    <link href="https://cloud.tencent.com/document/product/583/12282" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[paas] 腾讯云 free_tier — 免费试用额度说明 新用户前三个月（包含开通当月）每月 开通使用云函数前三个月的用户可0元免费试用个人高级版或个人标准版套餐包（二选一），总价值最高可达115.34元/月，函数并发配额将提升一倍。
+说明 截至2024年1月1日零点，已开通云函数但使用时间未满3个月的用户：在1月1日，用户仍可以通过系统自动发放获取免费试用额度。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0d7e5f0eb006df18</id>
+    <title>华为云 — compute 免费额度</title>
+    <link href="https://www.huaweicloud.com/product/flexus-l.html" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 华为云 free_tier — hydrateApp('pep-promotion-card_15d2e0b4a6154a2986c0495c3573facd');
+为什么选择Flexus应用服务器L实例 Agent即刻拥有 Agent即刻拥有 丰富的openclaw机器人模版，零门槛设定场景人设，专属AI助手触手可及 免费提供企业级智能体模版，覆盖知识问答、智能问数、合同审查等热门场景，一键启用 场景应用轻松上线 场景应用轻松上线 严选热门高品质应用镜像，安全可信，轻松启用 价优不卡顿 价优不卡顿 套餐式打包计算、存储、网络基础服务，同时提供多种实例规格，兼顾低门槛与灵活性，轻量低成本部署应用首选 安全运维更省心 安全运维更省心 云资源状态可视可管，资源续退操作简单；
+内置多层安全防护措施，全程运行无忧 window.gConfig = window.gConfig || {};</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a758ed8a561661e6</id>
+    <title>阿贝云 — compute 免费额度</title>
+    <link href="https://www.abeiyun.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 阿贝云 always_free — 免费虚拟主机 最早从2001年开始提供免费虚拟主机服务，帮助了一代又一代的学生族和创业者，打造了国内最稳定持久的免费虚拟主机品牌。
+独享虚拟主机PK共享虚拟主机 两者之间功能的区别 - 优势 - 稳定可靠 - 安全保障 - 流量限制 - 域名泛解析 - IP地址访问 - 网络推广 - 独享虚拟主机 - 网站违规导致IP被封，不会受到影响。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4af6614872a59f97</id>
+    <title>三丰云 — compute 免费额度</title>
+    <link href="https://www.sanfengyun.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 三丰云 always_free — 服务好百万免费用户只是基础，服务好付费用户才是能耐 一个IDC企业能承载的用户体量是判断企业综合技术实力的重要依据 大框架、大格局、大基数、才有大发展 免费产品让学生和初创业者永久免费使用 为您成为大咖后，可上九天揽月、可下五洋捉鳖的梦想助航！
+独立IP虚拟主机 共享IP虚拟主机 你购买的不只是产品，更是一对一的全渠道服务支持 虚拟主机具备高在线率、高安全性、高稳定性等多项优势 提供独立IP、不限流量、支持ASP、PHP 具备域名绑定、重启主机、防盗链设置、压缩解压、目录权限设置等上百项功能 云服务器 支持DIY选配，提供一对一的全渠道服务支持 云服务器可以选择推荐套餐也可以根据需求自主选配 云服务器全SSD部署、三副本存储、全盘备份、VNC管理高在线率、高安全性、高稳定性等多项优势 拥有安装系统、关机重启、各种统计、网站助手等超级强大的管理功能 ICP备案中心 登录备案系统 专属服务支持 专属服务支持 如您有任何相关备案问题，可通过三丰云备案专 属服务通道获得服务支持，或者提交备案类工单 初审两小时返回结果 初审两小时返回结果 您提</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c9acee3dd6140db9</id>
+    <title>恒创云 — compute 免费额度</title>
+    <link href="https://www.henghost.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 恒创云 promo_code — } --&gt; 最新活动 HOT 产品中心 服务方案 合作伙伴 关于我们 香港云服务器首购 29 元 产品中心 中国 中国 简体中文 International English 公告 文档 控制台 登录 免费注册 --&gt; 账户信息 待支付订单 待续费产品 未读消息 我的工单 退出账号 所有产品 物理服务器 云服务器 DDoS 高防 虚拟主机 域名 云计算服务 中国香港云服务器 推荐 日本云服务器 美国云服务器 中国香港大带宽云服务器 新品 美国大带宽云服务器 新品 轻量云服务器 韩国云服务器 --&gt; 中国台湾云服务器 服务器租用 中国香港服务器 推荐 中国香港站群服务器 中国香港大带宽服务器 中国香港 GPU 服务器 新品 高存储服务器 新品 美国服务器 日本服务器 日本站群服务器 新加坡服务器 韩国服务器 DDOS 防护 中国香港高防服务器 推荐 美国高防服务器 中国香港高防 IP 推荐 中国香港高防云服务器 美国高防云服务器 虚拟主机 新云主机 新云主机独享版 企业云主机 PHP 云主机 域名服务 域名注册 域名转入 中国香港云服务器 </summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bb4db2c7d726cd86</id>
+    <title>阿里云 CDN 免费流量额度</title>
+    <link href="https://help.aliyun.com/zh/cdn/product-overview/billing-overview" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] 阿里云 free_tier —  CDN 定价详情 资源包 资源包选购 资源包抵扣规则 查询资源包明细 设置资源包预警或复购 退款说明 更多参考 欠费说明 用量概述 账单查询 高额账单风险警示 计费常见问题 上一篇：产品计费 下一篇：基础服务计费 该文章对您有帮助吗？ 反馈 为什么选择阿里云 什么是云计算 全球基础设施 技术领先 稳定可靠 安全合规 分析师报告 大模型 大模型服务平台 千问大模型 模型市场 产品和定价 全部产品 免费试用 产品动态 产品定价 配置报价器 云上成本管理 技术内容 技术解决方案 帮助文档 开发者社区 天池大赛 阿里云认证 权益 免费试用 解决方案免费试用 高校计划 推荐返现计划 服务 基础服务 企业增值服务 迁云服务 官网公告 健康看板 信任中心 关注阿里云 关注阿里云公众号或下载阿里云APP，关注云资讯，随时随地运维管控云服务 联系我们：4008013260 法律声明 Cookies 政策 廉正举报 安全举报 联系我们 加入我们 友情链接 阿里巴巴集团 淘宝网 千问AI平台 千问办公 天猫 全球速卖通 阿里巴巴国际交易市场 1688 阿里妈妈 </summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6b3322bdf111cce1</id>
+    <title>阿里云日志服务 SLS 免费额度</title>
+    <link href="https://help.aliyun.com/zh/sls/product-overview/billing-overview" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 阿里云 free_tier — 更多信息，请参见资源包介绍。
+- 免费额度是按照阿里云账号级别计算，即该账号下日志服务的所有项目（Project）共享免费额度。
+- 相较于按量付费，资源包具有一定的优惠折扣。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:8e97e1a7f0101e5b</id>
+    <title>腾讯云 SSL 免费证书</title>
+    <link href="https://cloud.tencent.com/document/product/400/84281" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] 腾讯云 always_free — ,{\"id\":103007,\"title\":\"云函数 SCF \u0026Serverless 应用平台资源删除策略变更通知\",\"type\":\"page\",\"docType\":\"default\",\"pdfUrl\":\"\",\"link\":\"/document/product/583/103007\"},{\"id\":73739,\"title\":\"云函数免费试用额度发放模式调整\",\"type\":\"page\",\"docType\":\"default\",\"pdfUrl\":\"\",\"link\":\"/document/product/583/73739\"},{\"id\":51773,\"title\":\"云函数日志服务变更说明\",\"type\":\"page\",\"docType\":\"default\",\"pdfUrl\":\"\",\"link\":\"/document/product/583/51773\"}],\"link\":\"/docu</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f6caea9beefc1c8c</id>
+    <title>华为云 OBS 免费存储额度</title>
+    <link href="https://support.huaweicloud.com/price-obs/obs_42_0001.html" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] 华为云 free_tier — 表1 OBS计费周期 计费项 计费周期 计费周期说明 计费顺序 存储费用 标准存储容量 小时 当前小时对上小时产生的费用进行结算，输出账单 优先资源包抵扣，超出资源包额度的部分按需计费 低频访问存储容量 按需计费 归档存储容量 优先资源包抵扣，超出资源包额度的部分按需计费 深度归档存储容量 按需计费 请求费用 所有类型的请求次数 小时 当前小时对上小时产生的费用进行结算，输出账单 注意： 深度归档请求费用，按月出账单（通常为每月1号），按月结算费用。
+按需计费 流量费用 内/公网流入流量 小时 当前小时对上小时产生的费用进行结算，输出账单 免费 内网流出流量 小时 当前小时对上小时产生的费用进行结算，输出账单 免费 公网流出流量 小时 当前小时对上小时产生的费用进行结算，输出账单 优先资源包抵扣，超出资源包额度的部分按需计费 跨区域复制流量 小时 当前小时对上小时产生的费用进行结算，输出账单 回源流量 小时 当前小时对上小时产生的费用进行结算，输出账单 数据恢复费用 恢复低频、归档或深度归档流量费用 小时 当前小时对上小时产生的费用进</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:7fc7dfb950cedf1c</id>
+    <title>京东云对象存储免费额度</title>
+    <link href="https://docs.jdcloud.com/cn/object-storage-service/price-overview" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] 京东云 free_tier — 搜索 对象存储 价格总览 产品概览 产品公告 OSS 存储桶域名使用安全管理通知（2023年10月施行） OSS 自定义域名使用安全管理通知 OSS匿名访问的GET请求中自定义响应头访问策略调整通知 关于 后付费计费类型云资源账单结算方式调整公告 【升级】华北-北京地域对象存储服务系统调整 产品动态 产品简介 OSS概述 核心概念 产品功能 限制说明 产品优势 应用场景 产品定价 计费概述 免费额度 计费方式 按量计费（后付费） 资源包（预付费） 资源包概述 资源包购买 查看资源包 资源包预警设置 资源包常见问题 查看账单 价格总览 计费案例 欠费说明 计费常见问题 入门指南 控制台快速入门 S3 Browser 快速入门 操作指南 开通服务 OSS概览页 OSS访问域名和地域 OSS访问域名使用规则 存储类型 存储类型概述 转换存储类型 存储空间管理 存储空间概述 创建存储空间 删除存储空间 列举存储空间 管理存储空间标签 查询存储桶级别的用量情况 访问权限设置 生命周期管理 生命周期概述 生命周期配置元素 配置生命周期 跨域访问设</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:2f227f8783fac3fe</id>
+    <title>阿里云百炼 新用户免费额度</title>
+    <link href="https://help.aliyun.com/zh/model-studio/new-free-quota" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] 阿里云百炼 free_tier — 注意事项 阿里云主账号与其RAM子账号共享免费额度。
+例如：qwen-max的总免费额度为100万Token。
+主账号消耗了10万Token，RAM子账号消耗了20万Token，qwen-max的剩余免费额度为70万Token。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:37072a221c39bc33</id>
+    <title>火山方舟 免费推理额度</title>
+    <link href="https://www.volcengine.com/docs/82379/1399514" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] 火山方舟 free_tier — 热门活动 免费推理额度 方舟为新用户提供免费推理试用额度，便于新用户 0 成本学习以及尝试将模型推理能力与业务相结合。
+您只需要注册火山引擎，即可获得一定额度的免费调用模型推理服务的次数。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:80b9d4aea75d9ca3</id>
+    <title>MiniMax 开放平台 免费额度</title>
+    <link href="https://platform.minimaxi.com/document/price" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] MiniMax free_tier — 请注意： - 计费项是token数；
+tokens字符比值根据使用场景的不同略有浮动，以实际消耗为准，字符数包括标点等 - Token与字符比（估算）：1600 中文字符约消耗 1000 tokens 视频 立即充值 H3 系列旗舰模型 - 图片输入：每次任务前 5 张免费，超出部分按张计费；
+单价不随图片或输出视频分辨率变化。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:cf61a706e191c962</id>
+    <title>智谱 GLM 免费模型（Flash 系列）</title>
+    <link href="https://docs.bigmodel.cn/cn/guide/start/model-overview" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] 智谱 AI always_free — 智谱的文本模型结合了强大的语言模型和推理模型，使得系统不仅能理解和生成文本内容，还能进行高层次的推理和判断。
+模型 特点 上下文 最大输出 GLM-5.1 Coding 能力对齐 Claude Opus 4.6 长程任务显著提升，可自主工作长达 8 小时 200K 128K GLM-5 编程能力对齐 Claude Opus 4.5 擅长 Agentic 长程规划与执行 200K 128K GLM-5-Turbo 龙虾任务核心需求专项优化 复杂长任务执行连续性好 200K 128K GLM-4.7 通用对话、推理与智能体能力上升级 200K 128K GLM-4.7-FlashX 轻量高速，小尺寸强能力 200K 128K GLM-4.6 擅长高级编码、复杂推理与工具调用 200K 128K GLM-4.5-Air 轻量模型 推理、编码与智能体任务表现稳定 128K 96K GLM-4.5-AirX 极速版本 适合低延迟、高响应要求的业务场景 128K 96K GLM-4-Long 能够理解和回应复杂的查询 为处理超长文本和记忆型</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:1ae8429c62fafd41</id>
+    <title>硅基流动 免费模型额度</title>
+    <link href="https://siliconflow.cn/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] 硅基流动 free_tier — PRICING · 模型价格中心 模型价格总览 面向生产选型的模型价格页：一屏对比主流厂商与模型的输入、输出、缓存命中成本，帮助你快速判断性价比。
+实时价格同步仅展示可用模型按厂商快速定位 对话模型 厂商 模型 输入价格（M Tokens） 输出价格（M Tokens） 缓存价格（M Tokens） deepseek-ai DeepSeek-V4.1-Flashdeepseek-ai/DeepSeek-V4.1-Flash 费用发生时段: 0点～2点/8点～24点¥ 2.00 费用发生时段: 0点～2点/8点～24点¥ 8.00 费用发生时段: 0点～2点/8点～24点¥ 0.04 费用发生时段: 2点～8点¥ 1.00 费用发生时段: 2点～8点¥ 4.00 费用发生时段: 2点～8点¥ 0.02 DeepSeek-V4-Flashdeepseek-ai/DeepSeek-V4-Flash 费用发生时段: 2点～8点¥ 1.50 费用发生时段: 2点～8点¥ 4.50 费用发生时段: 2点～8点¥ 0.15 费用发生时段: 0点～2</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:63967725d9c358c1</id>
+    <title>腾讯混元 免费额度</title>
+    <link href="https://cloud.tencent.com/document/product/1729/97731" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] 腾讯混元 free_tier — 如需使用后付费模式结算，请前往腾讯混元大模型 控制台 &gt; 设置 &gt; 后付费设置 开通后付费。
+费用计算示例 后付费 用户当月首次使用，累计调用混元生文接口 Hunyuan-role-latest 模型共200万 tokens，则在使用达到100万 tokens 时消耗完免费资源包，剩余100万 tokens 需通过后付费进行结算，区分输入和输出。
+假设用户使用了80万 tokens 输入，20万 tokens 输出，所需支付的费用计算如下： 800000 tokens / 1000000 tokens × 2.4元/每百万 tokens + 200000 tokens / 1000000 tokens × 9.6元/每百万 tokens = 3.84（元）</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f29cea06624041cb</id>
+    <title>百度千帆 模型免费额度</title>
+    <link href="https://cloud.baidu.com/doc/qianfan-api/s/3m7of64lb" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] 百度千帆 free_tier — 站管理 POST 实例开机 GET 查询回收站实例列表 DEL 实例彻底删除 其他 GET 获取规格列表 公网访问 POST 解绑EIP POST 绑定EIP 账号管理 POST 修改密码 GET 获取账号列表 GET 获取密码 实例管理 POST 变配实例 POST 修改实例名称 POST 查询新购实例价格 PUT 修改TLS GET 查询实例的TLS配置详情 GET 获取实例证书 GET 查询免费实例额度 GET 实例详情 GET 实例列表 POST 修改实例域名 DEL 删除实例 备份管理 POST 手动备份 POST 设置备份策略 GET 查询备份配额 GET 查询备份列表 POST 恢复实例 GET 查询备份策略 POST 设置备份备注 DEL 删除备份 应用调用 官方Agent POST 语音识别 POST 浏览器使用Agent对话 POST 代码解释器Agent对话 POST 通用对话响应参数 POST 深度研究Agent对话 自定义Agent POST 新建对话 POST 查询工作流组件的异步执行结果 POST 查询工</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f337ff344f9a8ed1</id>
+    <title>讯飞星火 免费额度</title>
+    <link href="https://www.xfyun.cn/doc/spark/Web.html" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_api] 讯飞星火 free_tier — # 星火认知大模型websocket接口文档 公告说明： Ultra版本已升级至X1.5 快思考模式 Max版本套餐将于26年3月10日下线，后端服务将升级为Ultra版本，授权用量与Ultra合并 如有并发提升(含免费模型)、一对一报价等需求，可以直接添加专属同事微信沟通： # 1. 接口说明 注意： 该接口可以正式使用。
+如您需要申请使用，请点击前往产品页面 (opens new window)领取免费额度；</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d1a890643a0b0fd3</id>
+    <title>阿里云 AI 免费试用（30+ 产品 / 1 亿 tokens）</title>
+    <link href="https://free.aliyun.com/product/ai" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_compute] 阿里云 free_tier — 阿里云随时为您提供高效、高性价比、高性能算力，助力企业快速实现 AI 应用落地。
+免费开通阿里云百炼体验大模型，轻松构建 AI 应用 免费体验人工智能平台 PAI，一键部署大模型，轻松应对全尺寸模型推理 人工智能平台 PAI 企业级 AI 开发平台，内置 140+ 种优化算法，支持 Qwen 全系列模型一键部署 预约 AI 专家1V1服务，获取专属优惠 &gt; 人工智能平台 PAI 企业级 AI 开发平台 预约 AI 专家1V1服务，获取专属优惠 &gt; 部署步骤 - 01登录控制台 - 02点击模型卡片 - 03一键部署服务 部署说明 用户通过人工智能平台 PAI 的 Model Gallery，无须写代码即可完成模型部署。
+同时，对于希望自持模型的用户，PAI-DSW 和 PAI-DLC 可支持 Qwen 开源模型的微调训练。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d1f8052c76fdecbb</id>
+    <title>百度 AI Studio 每日免费算力卡（8 点 ≈ 16h V100）</title>
+    <link href="https://ai.baidu.com/ai-doc/AISTUDIO/nk39v9kec" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_compute] 百度飞桨 AI Studio free_tier — 算力卡 目录 概述 AI Studio Notebook项目配备国产算力DCU以及工业级NVIDIA Tesla V100 和NVIDIA Tesla A100 GPU资源. NVIDIA Tesla V100 和NVIDIA Tesla A100 是当今市场上加速人工智能、高性能计算和图形的数据中心 GPU 中的精尖之作，提供 AI 超级计算机的出色性能. 算力获取说明 AI Studio上的GPU算力获取方式主要是运行项目自动获取、分享拉新赢算力以及运营人员手工发放三类，算力卡单位为点，每点可使用高级GPU V100 16GB算力2小时或高级GPU V100 32GB算力1小时，具体的: 运行项目自动获取 每日运行项目即送8点算力，可使用高级GPU V100 16GB算力运行16小时 1、创建或fork并运行一个Notebook项目 3、点击”启动环境”时,即可每日获赠一定算力卡时长 发放记录可以在个人中心-&gt;算力卡管理中进行查看 分享拉新赢算力 每拉取一个新用户助力即可获得10点算力 1、在AI St</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:53b39bcb4c18c212</id>
+    <title>腾讯 Cloud Studio 免费 GPU（10000 分钟/月 T4）</title>
+    <link href="https://cloud.tencent.com/product/cloudstudio" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[ai_compute] 腾讯 Cloud Studio free_tier — } 腾讯云 最新活动 大模型 产品 解决方案 定价 企业中心 云市场 开发者 客户支持 合作与生态 了解腾讯云 搜索 相关产品 Codebuddy | 点击立即免费体验 Cloud Studio（云端IDE） 开箱即用的AI实训中心，具备使用低门槛、低成本的特点，深耕教育行业 AI Coding 与人工智能实训场景。
+立即使用 产品文档 免费资源福利 免费活动 限时赠送机时，每日打卡领取可累计2机时，适用于十余种CPU/GPU算力。
+点击查询 开箱即用 产品公告 内置可灵活切换算力、托管存储、公用网络；</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:74a7f1950dd4ea7a</id>
+    <title>丽萨主机越南双ISP新IP段VPS：79.2元/月，另有双ISP香港/台湾/新加坡/美国/日本/韩国/英国/德国等住宅TK服务器，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/lisazhuji20261022/" />
+    <updated>2026-11-11T03:29:38Z</updated>
+    <summary>[vps]  promo_code — 丽萨主机越南双ISP VPS自从上线后还没有补充过新IP段，这次补货越南西贡邮电SPT新IP段，越南双ISP原 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4c31faca216286aa</id>
+    <title>DataOnline越南VPS：1核1G/20GB NVMe/无限流量/200Mbps/102元/年，支持支付宝/Paypal</title>
+    <link href="https://www.vpsxxs.com/dataonline20261107/" />
+    <updated>2026-11-10T03:25:52Z</updated>
+    <summary>[vps]  promo_code — DataOnline在2026年十一月搞了个超级促销，自己越南老家的VPS优惠40%，越南虚拟主机优惠30%， [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:23127099f6cc51e3</id>
+    <title>#双十一#JustVPS低至3.79美元/月，首期5折/续费6折，全球56机房可选</title>
+    <link href="https://www.vpsxxs.com/justvps20261027/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[vps]  promo_code — JustVPS又是一年多没搞过促销了，这次双十一促销是JustVPS在2026年第一次促销，JustVPS双1 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:8bd63ee34a7e2d0c</id>
+    <title>RackNerd美国VPS：21.99美元/年起，洛杉矶DC03/圣何塞/西雅图/达拉斯/芝加哥/纽约机房，支持支付宝/银联卡/Paypal</title>
+    <link href="https://www.vpsxxs.com/racknerd20260423/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[vps]  promo_code — RackNerd取消之前的所有特价促销套餐，上新5个最新促销套餐，最低21.99美元/年起，机房倒是比以前齐全 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bc847bd7436d0dad</id>
+    <title>freetools.site: Free online tools. Convert or edit documents, images, audio, video, and more.</title>
+    <link href="https://freetools.site/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] freetools.site free_tier — [Storage and Media Processing] Free online tools. Convert or edit documents, images, audio, video, and more.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ac1c4de74cc66a81</id>
+    <title>getpantry.cloud: A simple JSON data storage API perfect for personal projects, hackathons, and mo</title>
+    <link href="https://getpantry.cloud/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] getpantry.cloud free_tier — [Storage and Media Processing] A simple JSON data storage API perfect for personal projects, hackathons, and mobile apps!</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:95e0b1c35435bdab</id>
+    <title>GoFile.io: Free file sharing and storage platform can be used via web-based UI &amp; also API. </title>
+    <link href="https://gofile.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] GoFile.io free_tier — [Storage and Media Processing] Free file sharing and storage platform can be used via web-based UI &amp; also API. unlimited file size, bandwidth, download count, etc. But it will be deleted when a file becomes inactive (no download for more than ten days).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b540b6657d10d381</id>
+    <title>gumlet.com: Image and video hosting, processing and streaming via CDN. Provides generous fre</title>
+    <link href="https://www.gumlet.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] gumlet.com free_tier — [Storage and Media Processing] Image and video hosting, processing and streaming via CDN. Provides generous free tier of 250 GB / month for videos and 30 GB  / month for images.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dcf7bad3d5c0d5e1</id>
+    <title>hyperserve.io: Video backend API for developers: accept any format your users upload, transcode</title>
+    <link href="https://hyperserve.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] hyperserve.io free_tier — [Storage and Media Processing] Video backend API for developers: accept any format your users upload, transcode to MP4, and deliver globally via CDN. The free tier includes 10 videos, 200 MB per file, and 50 GB bandwidth per month.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4fe472c0f19f5e6f</id>
+    <title>icedrive.net: Simple cloud storage service. 10 GB free storage</title>
+    <link href="https://www.icedrive.net/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] icedrive.net free_tier — [Storage and Media Processing] Simple cloud storage service. 10 GB free storage</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:25623f082f4b469e</id>
+    <title>image-charts.com: Unlimited image chart generation with a watermark</title>
+    <link href="https://www.image-charts.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] image-charts.com free_tier — [Storage and Media Processing] Unlimited image chart generation with a watermark</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:86186b2d050d61a2</id>
+    <title>ImageEngine: ImageEngine is an easy to use global image CDN. Sub 60 sec setup. AVIF and JPEGX</title>
+    <link href="https://imageengine.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] ImageEngine free_tier — [Storage and Media Processing] ImageEngine is an easy to use global image CDN. Sub 60 sec setup. AVIF and JPEGXL support, WordPress-, Magento-, React-, Vue- plugins and more. Claim your free developer account [here](https://imageengine.io/developer-program/).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:646ae61b9bbf8036</id>
+    <title>imagekit.io: Image CDN with automatic optimization, real-time transformation, and storage tha</title>
+    <link href="https://imagekit.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] imagekit.io free_tier — [Storage and Media Processing] Image CDN with automatic optimization, real-time transformation, and storage that you can integrate with existing setup in minutes. The free plan includes up to 20GB of bandwidth per month.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:47279fac24691095</id>
+    <title>ImgBB: ImgBB is an unlimited image hosting service. Drag and drop your image anywhere o</title>
+    <link href="https://imgbb.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] ImgBB free_tier — [Storage and Media Processing] ImgBB is an unlimited image hosting service. Drag and drop your image anywhere on the screen. 32 MB / image limit. Receive Direct image links, BBCode and HTML thumbnails after uploading image. Login to see the upload history.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:33c21592e3e6efc2</id>
+    <title>Imgbot: Imgbot is a friendly robot that optimizes your images and saves you time. Optimi</title>
+    <link href="https://github.com/marketplace/imgbot" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] Imgbot free_tier — [Storage and Media Processing] Imgbot is a friendly robot that optimizes your images and saves you time. Optimized images mean smaller file sizes without sacrificing quality. It's free for open source.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0f320a581f9d3caa</id>
+    <title>imgen: On the fly image generation API (text over background, logo) for opengraph image</title>
+    <link href="https://www.jitbit.com/imgen/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] imgen free_tier — [Storage and Media Processing] On the fly image generation API (text over background, logo) for opengraph images, free, no watermark, CDN</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:46ad5a3b5edfab84</id>
+    <title>imgix: Image Caching, management and CDN. Free plan includes 1000 origin images, infini</title>
+    <link href="https://www.imgix.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] imgix free_tier — [Storage and Media Processing] Image Caching, management and CDN. Free plan includes 1000 origin images, infinite transformations and 100 GB bandwidth</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:30a97e1bfb9c8299</id>
+    <title>imgduck.com: Minimalist and fast image hosting service with direct link and API support. Free</title>
+    <link href="https://imgduck.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] imgduck.com free_tier — [Storage and Media Processing] Minimalist and fast image hosting service with direct link and API support. Free tier offers 1GB storage and unlimited requests per month</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:125e82e30ecda80c</id>
+    <title>internxt.com: Internxt Drive is a zero-knowledge file storage service based on absolute privac</title>
+    <link href="https://internxt.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] internxt.com free_tier — [Storage and Media Processing] Internxt Drive is a zero-knowledge file storage service based on absolute privacy and uncompromising security. Sign up and get 10 GB for free, forever!</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b4a0f01da64e2a90</id>
+    <title>kraken.io: Image optimization for website performance as a service, free plan up to 1 MB fi</title>
+    <link href="https://kraken.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] kraken.io free_tier — [Storage and Media Processing] Image optimization for website performance as a service, free plan up to 1 MB file size</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6babf2c95d78a2cb</id>
+    <title>LibreQR: Free QR code generator focused on privacy and no tracking. Free to use with no d</title>
+    <link href="https://libreqr.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] LibreQR free_tier — [Storage and Media Processing] Free QR code generator focused on privacy and no tracking. Free to use with no data collection.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:de69e159aebc875e</id>
+    <title>MConverter: Convert files in bulk. Supports many formats, including [AVIF](https://mconverte</title>
+    <link href="https://mconverter.eu/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] MConverter free_tier — [Storage and Media Processing] Convert files in bulk. Supports many formats, including [AVIF](https://mconverter.eu/convert/to/avif/) and JXL. Extract image frames from videos. Compress PDFs. Free for 15 files per 24h, up to 100 MB each, processed in batches of eight.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3f50d2f733997e9a</id>
+    <title>nitropack.io: Accelerate your site's speed on autopilot with complete front-end optimization (</title>
+    <link href="https://nitropack.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] nitropack.io free_tier — [Storage and Media Processing] Accelerate your site's speed on autopilot with complete front-end optimization (caching, images and code optimization, CDN). Free for up to 5,000 pageviews/month</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bdf59a086ac73347</id>
+    <title>npoint.io: JSON store with collaborative schema editing</title>
+    <link href="https://www.npoint.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] npoint.io free_tier — [Storage and Media Processing] JSON store with collaborative schema editing</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f6cf54b789fc993c</id>
+    <title>MantleDB: Anonymous JSON storage for scripts and tiny apps. No signup required; uses Maste</title>
+    <link href="https://mantledb.sh" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] MantleDB free_tier — [Storage and Media Processing] Anonymous JSON storage for scripts and tiny apps. No signup required; uses Master AID for updates and Read-Only RID for public fetching. Free tier includes 1 bucket (1MB limit) with a 72h inactivity scavenger policy.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f6913315ea21d236</id>
+    <title>otixo.com: Encrypt, share, copy, and move all your cloud storage files from one place. The </title>
+    <link href="https://www.otixo.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] otixo.com free_tier — [Storage and Media Processing] Encrypt, share, copy, and move all your cloud storage files from one place. The basic plan provides unlimited file transfer with 250 MB max. file size and allows five encrypted files</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:304bbbcca9cab01b</id>
+    <title>packagecloud.io: Hosted Package Repositories for YUM, APT, RubyGem and PyPI.  Limited free plans </title>
+    <link href="https://packagecloud.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] packagecloud.io free_tier — [Storage and Media Processing] Hosted Package Repositories for YUM, APT, RubyGem and PyPI.  Limited free plans and open-source plans are available via request</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3bdad08a74b3d8cf</id>
+    <title>pcloud.com: Cloud storage service. Up to 10 GB of free storage</title>
+    <link href="https://www.pcloud.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] pcloud.com free_tier — [Storage and Media Processing] Cloud storage service. Up to 10 GB of free storage</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b2c1c72445be868c</id>
+    <title>Pinata IPFS: Pinata is the simplest way to upload and manage files on IPFS. Our friendly user</title>
+    <link href="https://pinata.cloud" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] Pinata IPFS free_tier — [Storage and Media Processing] Pinata is the simplest way to upload and manage files on IPFS. Our friendly user interface and IPFS API make Pinata the easiest IPFS pinning service for platforms, creators, and collectors. 1 GB storage free, along with access to API.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ce405c0b4620c4b7</id>
+    <title>plot.ly: Graph and share your data. The free tier includes unlimited public files and ten</title>
+    <link href="https://plot.ly/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] plot.ly free_tier — [Storage and Media Processing] Graph and share your data. The free tier includes unlimited public files and ten private files</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f3b9493ce77cacd8</id>
+    <title>podio.com: You can use Podio with a team of up to five people and try out the features of t</title>
+    <link href="https://podio.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] podio.com free_tier — [Storage and Media Processing] You can use Podio with a team of up to five people and try out the features of the Basic Plan, except user management</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6c7cfc3f10160486</id>
+    <title>Proton Drive: Ultra-secure cloud storage for files and key documents. Free plan offers 5gb of </title>
+    <link href="https://proton.me/drive" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] Proton Drive free_tier — [Storage and Media Processing] Ultra-secure cloud storage for files and key documents. Free plan offers 5gb of storage space.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:df745b781c93960c</id>
+    <title>QRtracer: Free QR code generator with built-in scan analytics, bulk generation &amp; brand cus</title>
+    <link href="https://qrtracer.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] QRtracer free_tier — [Storage and Media Processing] Free QR code generator with built-in scan analytics, bulk generation &amp; brand customisation, focused on reliability without any ads.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d523289db803b654</id>
+    <title>QuickChart: Generate embeddable image charts, graphs, and QR codes</title>
+    <link href="https://quickchart.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] QuickChart free_tier — [Storage and Media Processing] Generate embeddable image charts, graphs, and QR codes</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:210b739c427a3e2a</id>
+    <title>redbooth.com: P2P file syncing, free for up to 2 users</title>
+    <link href="https://redbooth.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] redbooth.com free_tier — [Storage and Media Processing] P2P file syncing, free for up to 2 users</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:37def36d14fc1e01</id>
+    <title>resmush.it: reSmush.it is a FREE API that provides image optimization. reSmush.it has been i</title>
+    <link href="https://resmush.it" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] resmush.it free_tier — [Storage and Media Processing] reSmush.it is a FREE API that provides image optimization. reSmush.it has been implemented on the most common CMS such as WordPress, Drupal, or Magento. reSmush.it is the most used image optimization API with more than seven billion images already treated, and it is still Free of charge.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:cea0f9382aea5a4b</id>
+    <title>sirv.com: Smart Image CDN with on-the-fly image optimization and resizing. The free tier i</title>
+    <link href="https://sirv.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] sirv.com free_tier — [Storage and Media Processing] Smart Image CDN with on-the-fly image optimization and resizing. The free tier includes 500 MB of storage and 2 GB of bandwidth.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9c17f94e8e968610</id>
+    <title>SlingSite: Create all the optimized versions of your images and videos. For Free. In bulk. </title>
+    <link href="https://slingsite.github.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] SlingSite free_tier — [Storage and Media Processing] Create all the optimized versions of your images and videos. For Free. In bulk. For each image, you get the following formats: AVIF, WEBP and JPG in the three selected resolutions (desktop, tablet, mobile) For videos, you get: WebM (codec VP9), MP4 (codec HEVC aka H.265) and MP4 (codec AVC aka H.264) plus the cover image with the first frame.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4d3c1fb433a9ac3c</id>
+    <title>sync.com: End-to-End cloud storage service. 5 GB of free storage</title>
+    <link href="https://www.sync.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] sync.com free_tier — [Storage and Media Processing] End-to-End cloud storage service. 5 GB of free storage</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6fd0546086bf935e</id>
+    <title>tinypng.com: API to compress and resize PNG and JPEG images, offers 500 compressions for free</title>
+    <link href="https://tinypng.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] tinypng.com free_tier — [Storage and Media Processing] API to compress and resize PNG and JPEG images, offers 500 compressions for free each month</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e8d037d9e18aa716</id>
+    <title>transloadit.com: Handles file uploads and encoding of video, audio, images, documents. Free for O</title>
+    <link href="https://transloadit.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] transloadit.com free_tier — [Storage and Media Processing] Handles file uploads and encoding of video, audio, images, documents. Free for Open source, charities, and students via the GitHub Student Developer Pack. Commercial applications get 2 GB free for test driving</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4549ebf6321bc871</id>
+    <title>twicpics.com: Responsive images as a service. It provides an image CDN, a media processing API</title>
+    <link href="https://www.twicpics.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] twicpics.com free_tier — [Storage and Media Processing] Responsive images as a service. It provides an image CDN, a media processing API, and a frontend library to automate image optimization. The service is free for up to 3GB of traffic/per month.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:adf2158f5447d940</id>
+    <title>uploadcare.com: Uploadcare provides the media pipeline with the ultimate toolkit based on cuttin</title>
+    <link href="https://uploadcare.com/hub/developers/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] uploadcare.com free_tier — [Storage and Media Processing] Uploadcare provides the media pipeline with the ultimate toolkit based on cutting-edge algorithms. All features are available for developers absolutely for free: File Uploading API and UI, Image CDN and Origin Services, Adaptive Delivery, and Smart Compression. The free tier has 3000 uploads, 3 GB traffic, and 3 GB storage.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:befd2420e27d211e</id>
+    <title>VaocherApp QR Code Generator: Easily create custom QR codes for gift cards, gift vouchers, and promotions. Sup</title>
+    <link href="https://www.vaocherapp.com/qr-code-generator" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] VaocherApp QR Code Generator free_tier — [Storage and Media Processing] Easily create custom QR codes for gift cards, gift vouchers, and promotions. Support custom styling, color, logo...</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c3b1aff29cbb8303</id>
+    <title>Appish: Host Docker containers for demos with just a docker push. Free tier includes 1 s</title>
+    <link href="https://appi.sh/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] Appish free_tier — [Docker Related] Host Docker containers for demos with just a docker push. Free tier includes 1 slot with 2-hour sessions.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5d8647e94229d343</id>
+    <title>Container Registry Service: Harbor based Container Management Solution. The free tier offers 1 GB of storage</title>
+    <link href="https://container-registry.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[devtool] Container Registry Service free_tier — [Docker Related] Harbor based Container Management Solution. The free tier offers 1 GB of storage for private repositories.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a3c916b80db3c1a0</id>
+    <title>SeaTable: Flexible, Spreadsheet-like Database built by the Seafile team. unlimited tables,</title>
+    <link href="https://seatable.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] SeaTable free_tier — [Managed Data Services] Flexible, Spreadsheet-like Database built by the Seafile team. unlimited tables, 2,000 lines, 1-month versioning, up to 25 team members.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:43fc435e7ddffa3a</id>
+    <title>skyvia.com: Cloud Data Platform offers a free tier and all plans are completely free while i</title>
+    <link href="https://skyvia.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] skyvia.com free_tier — [Managed Data Services] Cloud Data Platform offers a free tier and all plans are completely free while in beta</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:484fb8148766ae7b</id>
+    <title>StackBy: One tool that combines spreadsheets' flexibility, databases' power, and built-in</title>
+    <link href="https://stackby.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] StackBy free_tier — [Managed Data Services] One tool that combines spreadsheets' flexibility, databases' power, and built-in integrations with your favorite business apps. The free plan includes unlimited users, ten stacks, and a 2GB attachment per stack.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e279eee4edddec81</id>
+    <title>Tinybird: A serverless managed ClickHouse with connection-less data ingest over HTTP and l</title>
+    <link href="https://tinybird.co" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Tinybird free_tier — [Managed Data Services] A serverless managed ClickHouse with connection-less data ingest over HTTP and lets you publish SQL queries as managed HTTP APIs. There is no time limit on free-tier, 10GB storage + 1000 API requests per day.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:78a483b9b5b6ea5b</id>
+    <title>Turso by ChiselStrike: Turso is SQLite Developer Experience in an Edge Database. Turso provides a Free </title>
+    <link href="https://turso.tech/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Turso by ChiselStrike free_tier — [Managed Data Services] Turso is SQLite Developer Experience in an Edge Database. Turso provides a Free Forever starter plan, 9 GB of total storage, Up to 500 databases, Up to 3 locations, 1 billion row reads per month, and Local development support with SQLite.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:8286dbbc2be92093</id>
+    <title>Upstash: Serverless Redis with free tier up to 500K monthly commands, 256MB max database </title>
+    <link href="https://upstash.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Upstash free_tier — [Managed Data Services] Serverless Redis with free tier up to 500K monthly commands, 256MB max database size, and 20 concurrent connections</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:67fb9e5057ac98d4</id>
+    <title>cname.dev: Free and secure dynamic reverse proxy service.</title>
+    <link href="https://cname.dev/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] cname.dev free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Free and secure dynamic reverse proxy service.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9843a3b21d4402de</id>
+    <title>conveyor.cloud: Visual Studio extension to expose IIS Express to the local network or over a tun</title>
+    <link href="https://conveyor.cloud/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] conveyor.cloud free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Visual Studio extension to expose IIS Express to the local network or over a tunnel to a public URL.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:881de8e568579048</id>
+    <title>Expose: Expose local sites via secure tunnels. The free plan includes an EU Server, Rand</title>
+    <link href="https://expose.dev/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Expose free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Expose local sites via secure tunnels. The free plan includes an EU Server, Random subdomains, and Single users.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ff5fc674a3f6993e</id>
+    <title>Hamachi: LogMeIn Hamachi is a hosted VPN service that lets you securely extend LAN-like n</title>
+    <link href="https://www.vpn.net/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Hamachi free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] LogMeIn Hamachi is a hosted VPN service that lets you securely extend LAN-like networks to distributed teams with a free plan that allows unlimited networks with up to 5 people</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:19f57ac696757e2a</id>
+    <title>Hookdeck: Develop, test, and monitor your webhooks from anywhere. 100K requests and 100K a</title>
+    <link href="https://hookdeck.com/pricing" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Hookdeck free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Develop, test, and monitor your webhooks from anywhere. 100K requests and 100K attempts per month with three days retention.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4217cdd2a4ec42ad</id>
+    <title>localhost.run: Expose locally running servers over a tunnel to a public URL.</title>
+    <link href="https://localhost.run/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] localhost.run free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Expose locally running servers over a tunnel to a public URL.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:558b99d31d1c9bf9</id>
+    <title>localtonet: Multi-protocol tunneling for HTTP, TLS, TCP, UDP, File Server (Default, SFTP, We</title>
+    <link href="https://localtonet.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] localtonet free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Multi-protocol tunneling for HTTP, TLS, TCP, UDP, File Server (Default, SFTP, WebDAV), and Proxy Tunnel (HTTP, SOCKS5, Shadowsocks, VLESS). Free plan: 1 tunnel, 1GB/month bandwidth, 30 min timeout (excl. HTTP Tunnels).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:667082c4e4166176</id>
+    <title>localtunnel: Expose locally running servers over a tunnel to a public URL. Free hosted versio</title>
+    <link href="https://theboroer.github.io/localtunnel-www/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] localtunnel free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Expose locally running servers over a tunnel to a public URL. Free hosted version, and [open source](https://github.com/localtunnel/localtunnel).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6e9d2dd13b829a09</id>
+    <title>LocalXpose: Reverse proxy that enables you to expose your localhost servers to the internet.</title>
+    <link href="https://localxpose.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] LocalXpose free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Reverse proxy that enables you to expose your localhost servers to the internet. The free plan has 15 minutes tunnel lifetime.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:62e15de66eb9d4c2</id>
+    <title>ngrok.com: Expose locally running servers over a tunnel to a public URL.</title>
+    <link href="https://ngrok.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] ngrok.com free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Expose locally running servers over a tunnel to a public URL.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:1abb338aaead380a</id>
+    <title>Pinggy: Public URLs for localhost with a single command, no downloads required. HTTPS / </title>
+    <link href="https://pinggy.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Pinggy free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Public URLs for localhost with a single command, no downloads required. HTTPS / TCP / TLS tunnels. The free plan has 60 minutes tunnel lifetime.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ca27cc70aecfca43</id>
+    <title>Radmin VPN: Connect multiple computers together via a VPN-enabling LAN-like network. Unlimit</title>
+    <link href="https://www.radmin-vpn.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Radmin VPN free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Connect multiple computers together via a VPN-enabling LAN-like network. Unlimited peers. (Hamachi alternative)</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:714e2152e7679d3e</id>
+    <title>serveo: Expose local servers to the internet. No installation, no signup. Free subdomain</title>
+    <link href="https://serveo.net/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] serveo free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Expose local servers to the internet. No installation, no signup. Free subdomain, no limits.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:369861a80db95ecd</id>
+    <title>Tailscale: Zero config VPN, using the open-source WireGuard protocol. Installs on MacOS, iO</title>
+    <link href="https://tailscale.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Tailscale free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Zero config VPN, using the open-source WireGuard protocol. Installs on MacOS, iOS, Windows, Linux, and Android devices. Free plan for personal use with 100 devices and three users.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:46ce612375521ef8</id>
+    <title>webhookrelay.com: Manage, debug, fan-out, and proxy all your webhooks to public or internal (i.e. </title>
+    <link href="https://webhookrelay.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] webhookrelay.com free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Manage, debug, fan-out, and proxy all your webhooks to public or internal (i.e. localhost) destinations. Also, expose servers running in a private network over a tunnel by getting a public HTTP endpoint (`https://yoursubdomain.webrelay.io &lt;----&gt; http://localhost:8080`).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:be880eb4a6feaa7d</id>
+    <title>Xirsys: Unlimited STUN usage + 500 MB monthly TURN bandwidth, capped bandwidth, single g</title>
+    <link href="https://www.xirsys.com/pricing/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Xirsys free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] Unlimited STUN usage + 500 MB monthly TURN bandwidth, capped bandwidth, single geographic region.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f105ac85b6db9e5e</id>
+    <title>ZeroTier: FOSS managed virtual Ethernet as a service. Unlimited end-to-end encrypted netwo</title>
+    <link href="https://www.zerotier.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] ZeroTier free_tier — [Tunneling, WebRTC, Web Socket Servers and Other Routers] FOSS managed virtual Ethernet as a service. Unlimited end-to-end encrypted networks of 25 clients on the free plan. Clients for desktop/mobile/NA; web interface for configuration of custom routing rules and approval of new client nodes on private networks</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ebd9e2dcdeaa3cde</id>
+    <title>AndroidFileHost: Free file-sharing platform with unlimited speed, bandwidth, file count, download</title>
+    <link href="https://androidfilehost.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] AndroidFileHost free_tier — [Storage and Media Processing] Free file-sharing platform with unlimited speed, bandwidth, file count, download count, etc. It is mainly aimed for Android dev-related files like APK build, custom ROM &amp; modifications, etc. But seems to accept any other files as well.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4d72b20442c26893</id>
+    <title>anon.li Drop: Zero-knowledge E2EE file sharing with client-side AES-256-GCM encryption and zer</title>
+    <link href="https://anon.li/drop" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] anon.li Drop free_tier — [Storage and Media Processing] Zero-knowledge E2EE file sharing with client-side AES-256-GCM encryption and zero server-side data access. Free uploads for files up to 5GB with max expiry up to 3 days through the website, CLI or API.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3da41991039e182f</id>
+    <title>borgbase.com: Simple and secure offsite backup hosting for Borg Backup. 10 GB free backup spac</title>
+    <link href="https://www.borgbase.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] borgbase.com free_tier — [Storage and Media Processing] Simple and secure offsite backup hosting for Borg Backup. 10 GB free backup space and two repositories.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:df12ee3fb38c220d</id>
+    <title>cloudinary.com: Image upload, powerful manipulations, storage, and delivery for sites and apps, </title>
+    <link href="https://cloudinary.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] cloudinary.com free_tier — [Storage and Media Processing] Image upload, powerful manipulations, storage, and delivery for sites and apps, with Ruby, Python, Java, PHP, Objective-C, and more libraries. The free tier includes 25 monthly credits. One credit equals 1,000 image transformations, 1 GB of storage, or 1 GB of CDN usage.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3030d1175ed9acb3</id>
+    <title>degoo.com: AI based cloud storage with free up to 20 GB, three devices, 5 GB referral bonus</title>
+    <link href="https://degoo.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] degoo.com free_tier — [Storage and Media Processing] AI based cloud storage with free up to 20 GB, three devices, 5 GB referral bonus (90 days account inactivity).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6eb76f405a29a3dd</id>
+    <title>dlvr.sh: Temporary file delivery for agents and automation. Free tier includes 10 deliver</title>
+    <link href="https://dlvr.sh/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] dlvr.sh free_tier — [Storage and Media Processing] Temporary file delivery for agents and automation. Free tier includes 10 deliveries every 24 hours with API, MCP, and CLI access.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:8a22b576c0e66826</id>
+    <title>Dropshare: Zero-knowledge file sharing. End-to-end encrypted file sharing with AES-256-GCM </title>
+    <link href="https://dropsha.re" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] Dropshare free_tier — [Storage and Media Processing] Zero-knowledge file sharing. End-to-end encrypted file sharing with AES-256-GCM encryption, client-side processing, and zero server-side data access. Free uploads for files up to 1GB with no data collection.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:76e608a68af2c864</id>
+    <title>embed.ly: Provides APIs for embedding media in a webpage, responsive image scaling, and ex</title>
+    <link href="https://embed.ly/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] embed.ly free_tier — [Storage and Media Processing] Provides APIs for embedding media in a webpage, responsive image scaling, and extracting elements from a webpage. Free for up to 5,000 URLs/month at 15 requests/second</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:753f5ffe9bd41901</id>
+    <title>Ente: Ente is an end-to-end encrypted cloud for photos, videos and 2FA secrets. Can al</title>
+    <link href="https://ente.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] Ente free_tier — [Storage and Media Processing] Ente is an end-to-end encrypted cloud for photos, videos and 2FA secrets. Can also be self-hosted along with a generous forever free-tier of 10GB. For free tier users, only single replica of data is kept.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a6ca1984d61e7377</id>
+    <title>FileShot.io: Zero-knowledge encrypted file sharing. AES-256-GCM browser-side encryption ensur</title>
+    <link href="https://fileshot.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] FileShot.io free_tier — [Storage and Media Processing] Zero-knowledge encrypted file sharing. AES-256-GCM browser-side encryption ensures files are encrypted in-browser before upload. No account required for sender or recipient. Self-hostable (MIT open-source). Free tier includes unlimited uploads with no file size restrictions.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a1b427a082b38d50</id>
+    <title>file.io: 2 GB storage of files. A file is auto-deleted after one download. REST API to in</title>
+    <link href="https://www.file.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[storage] file.io free_tier — [Storage and Media Processing] 2 GB storage of files. A file is auto-deleted after one download. REST API to interact with the storage. Rate limit one request/minute.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d91616e0bb81ae26</id>
+    <title>cloudns.net: Free DNS hosting up to 1 domain with 50 records</title>
+    <link href="https://www.cloudns.net/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] cloudns.net free_tier — [DNS] Free DNS hosting up to 1 domain with 50 records</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:879e3377650bea3f</id>
+    <title>deSEC: Free DNS hosting with API support, designed with security in mind. Runs on open-</title>
+    <link href="https://desec.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] deSEC free_tier — [DNS] Free DNS hosting with API support, designed with security in mind. Runs on open-source software and is supported by [SSE](https://www.securesystems.de/).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e3fe8f2db413be78</id>
+    <title>dns.he.net: Free DNS hosting service with Dynamic DNS Support</title>
+    <link href="https://dns.he.net/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] dns.he.net free_tier — [DNS] Free DNS hosting service with Dynamic DNS Support</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:926358511b830178</id>
+    <title>dnspod.com: Free DNS hosting.</title>
+    <link href="https://www.dnspod.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] dnspod.com free_tier — [DNS] Free DNS hosting.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5252e00c653f61cb</id>
+    <title>duckdns.org: Free DDNS with up to 5 domains on the free tier. With configuration guides for v</title>
+    <link href="https://www.duckdns.org/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] duckdns.org free_tier — [DNS] Free DDNS with up to 5 domains on the free tier. With configuration guides for various setups.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9856bc15208f80d0</id>
+    <title>Dynv6.com: Free DDNS service with [API support](https://dynv6.com/docs/apis) and management</title>
+    <link href="https://dynv6.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Dynv6.com free_tier — [DNS] Free DDNS service with [API support](https://dynv6.com/docs/apis) and management of a lot of dns record types (like CNAME, MX, SPF, SRV, TXT and others).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:7d95f1baf6558b8b</id>
+    <title>freedns.afraid.org: Free DNS hosting. Also, provide free subdomains based on numerous public user [c</title>
+    <link href="https://freedns.afraid.org/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] freedns.afraid.org free_tier — [DNS] Free DNS hosting. Also, provide free subdomains based on numerous public user [contributed domains](https://freedns.afraid.org/domain/registry/). Get free subdomains from the "Subdomains" menu after signing up.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0b2839537079dd39</id>
+    <title>Glauca: Free DNS hosting for up to 3 domains and DNSSEC support</title>
+    <link href="https://docs.glauca.digital/hexdns/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Glauca free_tier — [DNS] Free DNS hosting for up to 3 domains and DNSSEC support</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ea6fc3fa84aac5cc</id>
+    <title>Hetzner: Free DNS hosting from Hetzner with API support.</title>
+    <link href="https://www.hetzner.com/dns-console" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Hetzner free_tier — [DNS] Free DNS hosting from Hetzner with API support.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3242396f35b0365f</id>
+    <title>huaweicloud.com: Free DNS hosting by Huawei</title>
+    <link href="https://www.huaweicloud.com/intl/en-us/product/dns.html" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] huaweicloud.com free_tier — [DNS] Free DNS hosting by Huawei</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:91a8ace49428b201</id>
+    <title>LocalCert: Free `.localcert.net` subdomains compatible with public CAs for use with-in priv</title>
+    <link href="https://localcert.net" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] LocalCert free_tier — [DNS] Free `.localcert.net` subdomains compatible with public CAs for use with-in private networks</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:11ed1bb3458b9aa6</id>
+    <title>luadns.com: Free DNS hosting, three domains, all features with reasonable limits</title>
+    <link href="https://www.luadns.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] luadns.com free_tier — [DNS] Free DNS hosting, three domains, all features with reasonable limits</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5d459d42cda3286e</id>
+    <title>namecheap.com: Free DNS. No limit on the number of domains</title>
+    <link href="https://www.namecheap.com/domains/freedns/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] namecheap.com free_tier — [DNS] Free DNS. No limit on the number of domains</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4ad97fca13240fd9</id>
+    <title>nextdns.io: DNS-based firewall, 300K free queries monthly</title>
+    <link href="https://nextdns.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] nextdns.io free_tier — [DNS] DNS-based firewall, 300K free queries monthly</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:022f53faa0b1174c</id>
+    <title>noip.at: Free DDNS service without registration, tracking, logging or advertising. No lim</title>
+    <link href="https://noip.at/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] noip.at free_tier — [DNS] Free DDNS service without registration, tracking, logging or advertising. No limit to domains.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6f23c3e42734b8b8</id>
+    <title>noip: a dynamic DNS service that allows up to 3 hostnames free with confirmation every</title>
+    <link href="https://www.noip.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] noip free_tier — [DNS] a dynamic DNS service that allows up to 3 hostnames free with confirmation every 30 days</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ccef6b8225cd30a6</id>
+    <title>sslip.io: Free DNS service that when queried with a hostname with an embedded IP address r</title>
+    <link href="https://sslip.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] sslip.io free_tier — [DNS] Free DNS service that when queried with a hostname with an embedded IP address returns that IP address.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f97d2d518d2a8488</id>
+    <title>zilore.com: Free DNS hosting for 5 domains.</title>
+    <link href="https://zilore.com/en/dns" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] zilore.com free_tier — [DNS] Free DNS hosting for 5 domains.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:572369a394aea1cf</id>
+    <title>zoneedit.com: Free DNS hosting with Dynamic DNS Support.</title>
+    <link href="https://www.zoneedit.com/free-dns/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] zoneedit.com free_tier — [DNS] Free DNS hosting with Dynamic DNS Support.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4b6cb289aafd9136</id>
+    <title>Zonomi: Free DNS hosting service with instant DNS propagation. Free plan: 1 DNS zone (do</title>
+    <link href="https://zonomi.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] Zonomi free_tier — [DNS] Free DNS hosting service with instant DNS propagation. Free plan: 1 DNS zone (domain name) with up to 10 DNS records.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9bc55b5f3e071ce7</id>
+    <title>DigitalPlat: Free subdomains.</title>
+    <link href="https://domain.digitalplat.org" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] DigitalPlat free_tier — [Domain] Free subdomains.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e6f25fe8343b6d70</id>
+    <title>DNSHE: Free subdomain registration across multiple domain suffixes, with custom nameser</title>
+    <link href="https://www.dnshe.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] DNSHE free_tier — [Domain] Free subdomain registration across multiple domain suffixes, with custom nameserver support.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c28d2916579de83d</id>
+    <title>isroot.in: Free isroot.in subdomains.</title>
+    <link href="https://isroot.in" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] isroot.in free_tier — [Domain] Free isroot.in subdomains.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0fee3ad4aa964b48</id>
+    <title>pp.ua: Free pp.ua subdomains.</title>
+    <link href="https://nic.ua/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cdn] pp.ua free_tier — [Domain] Free pp.ua subdomains.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:22a11746985f7eb2</id>
+    <title>4EVERLAND: Compatible with AWS S3 - APIs, interface operations, CLI, and other upload metho</title>
+    <link href="https://www.4everland.org/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] 4EVERLAND free_tier — [IaaS] Compatible with AWS S3 - APIs, interface operations, CLI, and other upload methods, upload and store files from the IPFS and Arweave networks in a safe, convenient, and efficient manner. Registered users can get 6 GB of IPFS storage and 300MB of Arweave storage for free. Any Arweave file uploads smaller than 150 KB are free.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5874421053d610c1</id>
+    <title>backblaze.com: Backblaze B2 cloud storage. Free 10 GB (Amazon S3-like) object storage for unlim</title>
+    <link href="https://www.backblaze.com/b2/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] backblaze.com free_tier — [IaaS] Backblaze B2 cloud storage. Free 10 GB (Amazon S3-like) object storage for unlimited time</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:2e4fb9a89eca7b92</id>
+    <title>filebase.com: S3 Compatible Object Storage Powered by Blockchain. 5 GB free storage for an unl</title>
+    <link href="https://filebase.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] filebase.com free_tier — [IaaS] S3 Compatible Object Storage Powered by Blockchain. 5 GB free storage for an unlimited duration.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4eb79fc58806f7cc</id>
+    <title>Modal: AI-driven IaaS with generous compute, storage; offers $30 (might be limited to $</title>
+    <link href="https://modal.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[cloud] Modal free_tier — [IaaS] AI-driven IaaS with generous compute, storage; offers $30 (might be limited to $5 on certain accounts) of free monthly credits</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:10d7e65543d9586d</id>
+    <title>8base.com: 8base is a full-stack low-code development platform built for JavaScript develop</title>
+    <link href="https://www.8base.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] 8base.com free_tier — [Managed Data Services] 8base is a full-stack low-code development platform built for JavaScript developers built on top of MySQL and GraphQL and serverless backend-as-a-service. It allows you to start building web applications quickly using a UI app builder and scale quickly, The Free tier includes rows: 2,500, Storage: 500, Serverless computing: 1Gb/h, and client app users: 5.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:289ae300331dd746</id>
+    <title>airtable.com: Looks like a spreadsheet, but it's a relational database unlimited bases, 1,200 </title>
+    <link href="https://airtable.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] airtable.com free_tier — [Managed Data Services] Looks like a spreadsheet, but it's a relational database unlimited bases, 1,200 rows/base, and 1,000 API requests/month</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c5eaba64b9f8ec4a</id>
+    <title>Aiven: Aiven offers free PostgreSQL, MySQL and Valkey (Redis compatible) plans on its o</title>
+    <link href="https://aiven.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Aiven free_tier — [Managed Data Services] Aiven offers free PostgreSQL, MySQL and Valkey (Redis compatible) plans on its open-source data platform. Single node, 1 CPU, 1GB RAM, and for PostgreSQL and MySQL, 1GB storage. Easy migration to more extensive plans or across clouds.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f951c0bc57b14113</id>
+    <title>BackupDrill: Backs up Supabase projects to your own S3/R2/B2 bucket, then runs scheduled rest</title>
+    <link href="https://backupdrill.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] BackupDrill free_tier — [Managed Data Services] Backs up Supabase projects to your own S3/R2/B2 bucket, then runs scheduled restore drills to prove backups restore. Provides a free plan with weekly backups for one project and one restore drill on your first backup.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d091e6f7e409af66</id>
+    <title>CockroachDB Cloud: Free tier offers 50 million RUs and 10 GiB of storage (same as 15$ worth) free p</title>
+    <link href="https://www.cockroachlabs.com/pricing/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] CockroachDB Cloud free_tier — [Managed Data Services] Free tier offers 50 million RUs and 10 GiB of storage (same as 15$ worth) free per month. ([What's the Request Units](https://www.cockroachlabs.com/docs/cockroachcloud/metrics-request-units.html))</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6b00bb49d82a3a6a</id>
+    <title>codehooks.io: Easy to use JavaScript serverless API/backend and NoSQL database service with fu</title>
+    <link href="https://codehooks.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] codehooks.io free_tier — [Managed Data Services] Easy to use JavaScript serverless API/backend and NoSQL database service with functions, Mongdb-ish queries, key/value lookups, a job system, realtime messages, worker queues, a powerful CLI and a web-based data manager. Free plan has 5GB storage and 60/API calls per minute. 2 developers included. No credit-card required.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:605b16c91f60ffed</id>
+    <title>Couchbase Capella: deploy a forever free tier fully managed database cluster with 1 node and 8GB st</title>
+    <link href="https://www.couchbase.com/products/capella/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Couchbase Capella free_tier — [Managed Data Services] deploy a forever free tier fully managed database cluster with 1 node and 8GB storage, built for developers to create the next generation of applications across IoT to AI</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:af9a7541ba89b477</id>
+    <title>CrateDB: Distributed Open Source SQL database for real-time analytics. [Free Tier CRFREE]</title>
+    <link href="https://crate.io/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] CrateDB free_tier — [Managed Data Services] Distributed Open Source SQL database for real-time analytics. [Free Tier CRFREE](https://crate.io/lp-crfree): One-node with 2 CPUs, 2 GiB of memory, 8 GiB of storage. One cluster per organization, no payment method needed.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e06c217596679766</id>
+    <title>filess.io: filess.io is a platform where you can create two databases with up to 10 MB per </title>
+    <link href="https://filess.io" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] filess.io free_tier — [Managed Data Services] filess.io is a platform where you can create two databases with up to 10 MB per database of the following DBMS for free: MySQL, MariaDB, MongoDB, and PostgreSQL.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0fc73b621c85a419</id>
+    <title>InfluxDB: Timeseries database, free up to 3MB/5 minutes writes, 30MB/5 minutes reads and 1</title>
+    <link href="https://www.influxdata.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] InfluxDB free_tier — [Managed Data Services] Timeseries database, free up to 3MB/5 minutes writes, 30MB/5 minutes reads and 10,000 cardinalities series</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bb8ef407213d3535</id>
+    <title>Layerbase: 2 free managed databases, pick from: Postgres, MariaDB, Redis, Valkey, DuckDB, S</title>
+    <link href="https://layerbase.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Layerbase free_tier — [Managed Data Services] 2 free managed databases, pick from: Postgres, MariaDB, Redis, Valkey, DuckDB, SQLite, libSQL, and TypeDB. All with TLS. Branch 7 of 8 free engines, 1 branch per database - 10 GB/day, 50 GB/week, 150 GB/month throughput limits on free. 10 additional engines available on higher tiers with no meters.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f5f57e3be709c3ef</id>
+    <title>MemCachier: Managed Memcache service. Free for up to 25MB, 1 Proxy Server, and basic analyti</title>
+    <link href="https://www.memcachier.com/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] MemCachier free_tier — [Managed Data Services] Managed Memcache service. Free for up to 25MB, 1 Proxy Server, and basic analytics</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ab09bf98bd651220</id>
+    <title>MongoDB Atlas: free tier gives 512 MB</title>
+    <link href="https://www.mongodb.com/cloud/atlas" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] MongoDB Atlas free_tier — [Managed Data Services] free tier gives 512 MB</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:21809ca516b1e468</id>
+    <title>Neo4j Aura: Managed native Graph DBMS / analytics platform with a Cypher query language and </title>
+    <link href="https://neo4j.com/cloud/aura/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Neo4j Aura free_tier — [Managed Data Services] Managed native Graph DBMS / analytics platform with a Cypher query language and a REST API. Limits on graph size (200k nodes, 400k relationships).</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c7c666753c852dd1</id>
+    <title>Neon: Managed Postgres, 0.5 GB of storage per project, 100 projects, 10 branches per p</title>
+    <link href="https://neon.com" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Neon free_tier — [Managed Data Services] Managed Postgres, 0.5 GB of storage per project, 100 projects, 10 branches per project, 100 CU-hours of compute per project per month, autoscaling up to 2 CU, scales to zero after 5 minutes. Includes S3-compatible Object Storage with 5 GB per project that branches with the database. 5 GB of network transfer per project, shared across all products.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f5905e903b4b0620</id>
+    <title>Nile: A Postgres platform for B2B apps. Unlimited databases, Always available with no </title>
+    <link href="https://www.thenile.dev/" />
+    <updated>2026-11-14T09:23:59Z</updated>
+    <summary>[database] Nile free_tier — [Managed Data Services] A Postgres platform for B2B apps. Unlimited databases, Always available with no shutdown, 1GB of storage (total), 50 million query tokens, autoscaling, unlimited vector embeddings</summary>
+  </entry>
+</feed>
