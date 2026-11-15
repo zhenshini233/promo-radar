@@ -3249,3 +3249,472 @@ urls = [
 ]
 notes = "auto-enrolled from brands 2026-11-08"
 
+[[provider]]
+name = "50X"
+urls = [
+    { label = "home", url = "https://ai.50x.energy/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "AbliteratedLLM"
+urls = [
+    { label = "home", url = "https://abliteratedllm.dev/docs/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Adaption"
+urls = [
+    { label = "docs", url = "https://docs.adaptionlabs.ai" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "AI Stupid Level"
+urls = [
+    { label = "home", url = "https://aistupidlevel.info/router/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "AIGROW"
+urls = [
+    { label = "home", url = "https://aigrow.gg/ai-api/guide" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "AnonRouter"
+urls = [
+    { label = "docs", url = "https://docs.anonrouter.ai/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "APIKO"
+urls = [
+    { label = "home", url = "https://apiko.app/docs/introduction" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Augure"
+urls = [
+    { label = "home", url = "https://augureai.ca/docs/api" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Autarcho"
+urls = [
+    { label = "home", url = "https://autarcho.com/use/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "CedarLLM"
+urls = [
+    { label = "home", url = "https://cedarllm.com/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "cheapaimodel"
+urls = [
+    { label = "home", url = "https://cheapaimodel.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "CheapestToken"
+urls = [
+    { label = "home", url = "https://cheapest-token.com/docs/opencode" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "DotHoosh"
+urls = [
+    { label = "home", url = "https://gateway.dothoosh.com/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Doubleword"
+urls = [
+    { label = "docs", url = "https://docs.doubleword.ai/inference-api/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Entrim"
+urls = [
+    { label = "docs", url = "https://docs.entrim.ai/model-api/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Ezkielyna"
+urls = [
+    { label = "home", url = "https://ezkielyna.store/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Fortytwo"
+urls = [
+    { label = "docs", url = "https://docs.fortytwo.network/docs/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Frequency"
+urls = [
+    { label = "docs", url = "https://docs.miraiminds.co/v2/llm" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Gisoo"
+urls = [
+    { label = "home", url = "https://gisoo.pro/docs/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "GraphN"
+urls = [
+    { label = "home", url = "https://graphn.ai/docs/getting-started" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Hubris"
+urls = [
+    { label = "home", url = "https://hubris.pw/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "HUMAIN"
+urls = [
+    { label = "home", url = "https://platform.node.humain.com" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "InferAll"
+urls = [
+    { label = "home", url = "https://inferall.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Inference APIs"
+urls = [
+    { label = "home", url = "https://inferenceapis.com/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Inferris"
+urls = [
+    { label = "home", url = "https://inferris.ai/developers.md" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Infersia"
+urls = [
+    { label = "home", url = "https://infersia.com/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Isoquant"
+urls = [
+    { label = "home", url = "https://isoquant.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "JoinGonka"
+urls = [
+    { label = "home", url = "https://gate.joingonka.ai/docs/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "JZSTOKEN"
+urls = [
+    { label = "home", url = "https://jzstoken.com" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Keln"
+urls = [
+    { label = "docs", url = "https://docs.keln.ai/models-pricing/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Kitani"
+urls = [
+    { label = "home", url = "https://kitani.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "KoRouter"
+urls = [
+    { label = "home", url = "https://korouter.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Kunavo"
+urls = [
+    { label = "home", url = "https://kunavo.com/docs/quickstart?utm_source=models.dev&utm_medium=directory" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "LithosAI"
+urls = [
+    { label = "docs", url = "https://docs.lithosai.com" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Logits"
+urls = [
+    { label = "home", url = "https://logits.com/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Lyceum"
+urls = [
+    { label = "docs", url = "https://docs.lyceum.technology/docs/inference/serverless" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "meraGPT"
+urls = [
+    { label = "home", url = "https://meragpt.com/docs/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Moneo"
+urls = [
+    { label = "home", url = "https://moneo.one/api.html" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Nodecode"
+urls = [
+    { label = "home", url = "https://nodecode.ai/docs/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "nokeep"
+urls = [
+    { label = "home", url = "https://nokeep.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Outer Labs"
+urls = [
+    { label = "home", url = "https://outerlabs.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "ParalonCloud"
+urls = [
+    { label = "home", url = "https://paraloncloud.com/docs/inference-api" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Pareto by Unbiased"
+urls = [
+    { label = "home", url = "https://unbiased.ai/developers/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Powerspring"
+urls = [
+    { label = "home", url = "https://powerspring.eu/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Rayline"
+urls = [
+    { label = "docs", url = "https://docs.rayline.ai/tools/opencode" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Refuseless"
+urls = [
+    { label = "docs", url = "https://docs.refuseless.com/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "RuAPI"
+urls = [
+    { label = "home", url = "https://www.ruapi.ai/pricing?lng=en" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Runcrate"
+urls = [
+    { label = "home", url = "https://www.runcrate.ai/docs/models/overview" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "SAGG"
+urls = [
+    { label = "home", url = "https://api.privatedeskai.com/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "SandBase"
+urls = [
+    { label = "home", url = "https://www.sandbase.ai/docs/model-api-reference/llm-models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "SparrowCodes"
+urls = [
+    { label = "home", url = "https://sparrowcodes.com/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "SteadyRouter"
+urls = [
+    { label = "home", url = "https://www.steadyrouter.com/site/docs.html" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "superbot"
+urls = [
+    { label = "home", url = "https://superbot.gg/api" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Synthorai"
+urls = [
+    { label = "home", url = "https://synthorai.io/docs/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "TeamoRouter"
+urls = [
+    { label = "home", url = "https://teamorouter.com/docs/api-integration" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "TheRouter"
+urls = [
+    { label = "home", url = "https://therouter.ai/docs/quickstart/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "ToAPIs"
+urls = [
+    { label = "docs", url = "https://docs.toapis.com" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Tokenify"
+urls = [
+    { label = "home", url = "https://www.tokenify.dev/docs/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "TokenLab"
+urls = [
+    { label = "home", url = "https://tokenlab.sh/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "TokenWatt"
+urls = [
+    { label = "home", url = "https://www.tokenwatt.io/api.html" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "TrustedTokens"
+urls = [
+    { label = "home", url = "https://trustedtokens.eu/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "UncensuredAI"
+urls = [
+    { label = "home", url = "https://uncensuredai.com/en/api/reference" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Unrestricted"
+urls = [
+    { label = "home", url = "https://unrestricted.sh/reference" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "UplinkSwitch"
+urls = [
+    { label = "home", url = "https://uplinkswitch.ai/models" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "xxapi"
+urls = [
+    { label = "docs", url = "https://docs.xxapi.ai/opencode" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "ZeroGPU"
+urls = [
+    { label = "docs", url = "https://docs.zerogpu.ai/docs/model-catalog" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
+[[provider]]
+name = "Zro"
+urls = [
+    { label = "home", url = "https://zro.moonmath.ai/" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-15"
+
