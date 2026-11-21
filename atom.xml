@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>promo-radar: 免费资源雷达</title>
+  <id>urn:promo-radar:feed</id>
+  <updated>2026-11-21T10:10:53Z</updated>
+  <entry>
+    <id>urn:promo-radar:offer:dfadd256b7a3285b</id>
+    <title>Context.dev: Web scraping API with 1,000 API credits per month (1,000 standard scrapes) plus </title>
+    <link href="https://www.context.dev/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Context.dev free_tier — [APIs, Data, and ML] Web scraping API with 1,000 API credits per month (1,000 standard scrapes) plus 10,000 one-time Logo Link requests, no credit card required.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b08fc3204a06bde9</id>
+    <title>turboSMTP: SMTP relay service, free for 200 emails per day or 6000 emails per month, free f</title>
+    <link href="https://serversmtp.com" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] turboSMTP free_tier — [Email] SMTP relay service, free for 200 emails per day or 6000 emails per month, free forever, no time limit, no expiry. Web API, SPF/DKIM authentication, suppression management, 1 sending domain, 2 API keys, 2FA, ticket and chat support, GDPR compliant.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:8277f2ef60f04400</id>
+    <title>云途美国洛杉矶精品VPS补货促销：33.75元/月起，CN2+9929+CMIN2，支持支付宝/微信支付</title>
+    <link href="https://www.vpsxxs.com/yuntu20261121/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[vps]  promo_code — 云途的美国洛杉矶精品VPS缺货好久了，这次终于补货，而且特价循环75折优惠，最低配带宽比VPS小学生之前测试的 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:722e9ae5081a17cf</id>
+    <title>#黑五#AlexHost英国/保加利亚/罗马尼亚抗投诉VPS：7欧元/月，限量60台，摩尔多瓦离岸独服77欧元/月，无视DMCA滥用投诉/可匿名</title>
+    <link href="https://www.vpsxxs.com/alexhost20261121/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[vps]  promo_code — 老牌抗投诉服务器商家AlexHost的2026年黑色星期五促销活动来了，英国、罗马尼亚和保加利亚机房的VPS七 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:00ea92fad93d7dd7</id>
+    <title>upcloud.com — $3,000 in free credits</title>
+    <link href="https://upcloud.com" />
+    <updated>2026-11-21T10:10:51Z</updated>
+    <summary>[ai_api] upcloud.com credits — cale on your terms. Sign up and receive $200 in cloud credits Use it to deploy servers, Kubernetes, and storage – risk free. $200 free credits – Valid for the first 30 days Teemu, Chief Product Officer Trusted by 10,000+ organizations worldwide · Predictable pricing · Hum…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:40cc8b444166f228</id>
+    <title>[litellm] 价格大降 50%: fireworks_ai/accounts/fireworks/routers/deepseek-v4p1-flash-1017-ultrafast（fireworks_ai）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-20T10:28:04Z</updated>
+    <summary>[ai_api] fireworks_ai credits — fireworks_ai/accounts/fireworks/routers/deepseek-v4p1-flash-1017-ultrafast 输入价 2.40e-06 → 1.20e-06 $/token（降 50%）。大幅降价常伴随官方促销或竞争拉新。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bfd918a5b7b71506</id>
+    <title>Tigris: S3-compatible object storage with no egress fees. The free tier includes 5 GB of</title>
+    <link href="https://www.tigrisdata.com/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[storage] Tigris free_tier — [Storage and Media Processing] S3-compatible object storage with no egress fees. The free tier includes 5 GB of storage, 10,000 write requests and 100,000 read requests per month, with no card required.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:234ef77bdd1df469</id>
+    <title>#黑五#Ava.hosting摩尔多瓦抗投诉VPS：11欧元/年，虚拟主机1.6欧元/月，无版权独服68欧元/月，离岸无视DMCA/可匿名注册/支持加密货币/Paypal</title>
+    <link href="https://www.vpsxxs.com/ava-hosting20261119/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[vps]  promo_code — 摩尔多瓦老牌抗投诉VPS商家Ava.Hosting的2026年黑色星期五促销活动来了，补货1024台11欧元/ [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:43c36f4508cfa7d0</id>
+    <title>Respan: LLM observability and gateway with one format for 200+ models. The free plan inc</title>
+    <link href="https://www.respan.ai/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Respan free_tier — [Generative AI] LLM observability and gateway with one format for 200+ models. The free plan includes 100,000 logs, 1,000 scores, five datasets, two evaluators and ten prompts per month, with no credit card required.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:fc9df682f873457f</id>
+    <title>Ravion: Deploy web services, databases, and more on your own AWS account with a Git push</title>
+    <link href="https://www.ravion.com/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[paas] Ravion free_tier — [PaaS] Deploy web services, databases, and more on your own AWS account with a Git push style workflow. The Individuals plan is free for one user with up to 50 modules, 2,000 pipeline minutes and $20 of AI tokens per month. AWS costs are billed through AWS, but you can use credits and the AWS free tier.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:26a4e1da1e2cdae1</id>
+    <title>QRdx: Free Open-source QR code generator, plus an image API that needs no key (SVG, PN</title>
+    <link href="https://qrdx.dev" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[storage] QRdx free_tier — [Storage and Media Processing] Free Open-source QR code generator, plus an image API that needs no key (SVG, PNG, WebP or EPS). Free: unlimited static QR codes with no account, the image API up to 300 requests a minute, and 10 dynamic QR codes with scan analytics on a free account.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:80240293301eb985</id>
+    <title>[FreeToken] 中文清单新增: 七牛云 Conatus 限时免费 API</title>
+    <link href="https://github.com/AIPMAndy/FreeToken" />
+    <updated>2026-11-19T10:45:38Z</updated>
+    <summary>[ai_api] 七牛云 Conatus 限时免费 API credits — FreeToken（中文免费 AI API 额度大全）新增条目 七牛云 Conatus 限时免费 API，核验日期 True。建议查看其注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:074bec4ae46ef339</id>
+    <title>[FreeToken] 中文清单新增: 微信小程序成长计划 / CloudBase</title>
+    <link href="https://github.com/AIPMAndy/FreeToken" />
+    <updated>2026-11-19T10:45:38Z</updated>
+    <summary>[ai_api] 微信小程序成长计划 / CloudBase credits — FreeToken（中文免费 AI API 额度大全）新增条目 微信小程序成长计划 / CloudBase，核验日期 True。建议查看其注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:1f56f7ae30406f5a</id>
+    <title>[litellm] 新增免费模型: command-a-vision-07-2025（cohere）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-19T10:45:38Z</updated>
+    <summary>[ai_api] cohere credits — litellm 价格库出现 command-a-vision-07-2025（cohere），输入价 0。免费档上线通常是拉新信号。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:1571aac7cdc81730</id>
+    <title>[litellm] 新增免费模型: openrouter/inception/mercury-decide:free（openrouter）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-19T10:45:38Z</updated>
+    <summary>[ai_api] openrouter credits — litellm 价格库出现 openrouter/inception/mercury-decide:free（openrouter），输入价 0。免费档上线通常是拉新信号。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:01bad74df589cb4f</id>
+    <title>[litellm] 新增免费模型: openrouter/respan/span-01-lite:free（openrouter）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-19T10:45:38Z</updated>
+    <summary>[ai_api] openrouter credits — litellm 价格库出现 openrouter/respan/span-01-lite:free（openrouter），输入价 0。免费档上线通常是拉新信号。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:960ca76f998b0103</id>
+    <title>Wallaby — $0.50 in free credit</title>
+    <link href="https://wallabytoken.com" />
+    <updated>2026-11-19T10:45:38Z</updated>
+    <summary>[ai_api] Wallaby credits — ISTER → $0.50 → API CALL Register Email, password and a verification code. No phone, no card until you top up. Get your key $0.50 free credit is already on your account — enough for dozens of test calls. Point your code at us Swap base_url to https://api.wallabytoken.com…</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0eeeb3fe4a596e30</id>
+    <title>Kardinal: Route optimization API for delivery and field service fleets: multi-vehicle rout</title>
+    <link href="https://kardinal.ai/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Kardinal free_tier — [APIs, Data, and ML] Route optimization API for delivery and field service fleets: multi-vehicle routing with time windows, vehicle capacities and other real-world constraints, also usable by AI agents. Free tier includes 1,000 stops that never expire, no credit card required.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:35924d205d7d542d</id>
+    <title>Better Stack Logs: ClickHouse-based SQL-compatible log management. The free plan includes 3 GB of l</title>
+    <link href="https://betterstack.com/log-management" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Better Stack Logs free_tier — [Log Management] ClickHouse-based SQL-compatible log management. The free plan includes 3 GB of logs retained for three days.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4f42d4ca6f022581</id>
+    <title>Uptimeify: Permament free status pages including custom domain, subscribers (mail, slack, t</title>
+    <link href="https://uptimeify.io/status-pages" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Uptimeify free_tier — [Monitoring] Permament free status pages including custom domain, subscribers (mail, slack, teams, webhook and rss) and maintenance with postmortems. Fully hosted inside the EU.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f32522041b878a29</id>
+    <title>[free-llm-apis] 供应商清单新增: AxForge（4 个免费模型）</title>
+    <link href="https://github.com/mnfst/awesome-free-llm-apis" />
+    <updated>2026-11-18T10:41:41Z</updated>
+    <summary>[ai_api] AxForge credits — awesome-free-llm-apis 清单（inference_provider）新增 AxForge，标注 4 个免费模型。建议进官网确认注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:14d5fc74f1061e1d</id>
+    <title>[litellm] 新增免费模型: north-mini-code-1.0（cohere）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-18T10:41:41Z</updated>
+    <summary>[ai_api] cohere credits — litellm 价格库出现 north-mini-code-1.0（cohere），输入价 0。免费档上线通常是拉新信号。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d9f2e4c50d92225d</id>
+    <title>[litellm] 新增免费模型: north-small-translate-1.0（cohere）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-18T10:41:41Z</updated>
+    <summary>[ai_api] cohere credits — litellm 价格库出现 north-small-translate-1.0（cohere），输入价 0。免费档上线通常是拉新信号。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:31c2433bdc9631dd</id>
+    <title>[litellm] 价格大降 60%: snowflake/openai-gpt-5-nano（snowflake）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-18T10:41:41Z</updated>
+    <summary>[ai_api] snowflake credits — snowflake/openai-gpt-5-nano 输入价 1.50e-07 → 6.00e-08 $/token（降 60%）。大幅降价常伴随官方促销或竞争拉新。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:120bb40988c76bda</id>
+    <title>Jtti黑五促销：专用服务器最高70% OFF，CN2 GIA/中国优化线路直连/NVMe硬盘/纯净IPv4</title>
+    <link href="https://www.vpsxxs.com/jtti20261118/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[vps]  promo_code — Jtti目前有黑五促销活动，专用服务器最高70% OFF，终身循环优惠！如果你需要高性能大带宽产品，Jtti的 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:61fff899c27bc0ca</id>
+    <title>HKGserver香港/韩国/日本/美国/德国服务器：99元/年，美国NTT住宅双ISP服务器24.7元/月，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/hkgserver20261118/" />
+    <updated>2026-11-20T10:28:04Z</updated>
+    <summary>[vps]  promo_code — HKGserver上线了美国双ISP住宅云服务器，目前六五折循环优惠促销中，优惠后最低月付24.7元起。新用户 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c940177549698311</id>
+    <title>DeepSeek 悄悄收紧免费额度，或因算力资源紧张所致</title>
+    <link href="https://www.oschina.net/news/503610" />
+    <updated>2026-11-19T10:45:40Z</updated>
+    <summary>[devtool]  free_tier — 11 月 16 日，「DeepSeek 使用额度已达上限」冲上热搜。多名用户反馈，App 和网页端同时收紧了限制，而且一次收了三条。 最直接的一条：超过 7 天没交互的长对话不能再接着聊。页面上的原话是「因算力不足，不再支持 7 天不活跃的长对话」，系统给出的办法是新开一个对话，或者把历史记录导出去。 单次输入的文字上限也被...</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b45c89bcd18870df</id>
+    <title>#黑五#ZgoCloud冲100美元送10美元，美国三网精品/香港直连/德国优化线路服务器45美元/年起，支持支付宝/Paypal</title>
+    <link href="https://www.vpsxxs.com/zgocloud20261117/" />
+    <updated>2026-11-18T10:41:41Z</updated>
+    <summary>[vps]  promo_code — ZgoCloud（zgovps）2026年黑色星期五促销活动来了，充值送余额，每充值 100 美元，即赠送10 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a99db43146128c48</id>
+    <title>#黑五#EdgeNAT全场七折，冲500送100，日本双ISP/香港HGC双ISP/香港TGT直连/美国4837/韩国LG/韩国原生IP VPS，香港/日本/韩国物理机，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/edgenat20261117/" />
+    <updated>2026-11-20T10:28:04Z</updated>
+    <summary>[vps]  promo_code — EdgeNAT2026年黑色星期五促销活动来了，活动时间即日起至2026年11月30日，充值500元送100元 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:97ffd8c8f352c8e4</id>
+    <title>OneTechCloud：香港CN2/香港CMI/德国9929/英国ISP/美国CN2 GIA/美国9929/美国双ISP VPS，25.2元/月，支持支付宝</title>
+    <link href="https://www.vpsxxs.com/onetechcloud20261117/" />
+    <updated>2026-11-20T10:28:04Z</updated>
+    <summary>[vps]  promo_code — OneTechCloud2026年11月常规促销来了，还是全场月付9折季付8折，包括美国CN2 GIA、美国洛 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:cf023201549e033a</id>
+    <title>[litellm] 新增免费模型: omni-moderation-csam-latest（openai）</title>
+    <link href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" />
+    <updated>2026-11-17T11:06:38Z</updated>
+    <summary>[ai_api] openai credits — litellm 价格库出现 omni-moderation-csam-latest（openai），输入价 0。免费档上线通常是拉新信号。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:70be220acc6d3cd4</id>
+    <title>CustomJS: HTML to PDF or PDF to PNG/Text &amp; PDF merging/extraction/merging APIs. Free tier </title>
+    <link href="https://www.customjs.space" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] CustomJS free_tier — [APIs, Data, and ML] HTML to PDF or PDF to PNG/Text &amp; PDF merging/extraction/merging APIs. Free tier has 600 calls a month.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3f7eeb5cbd8e0204</id>
+    <title>addy.io: Open-source anonymous email forwarding, create unlimited email aliases for free</title>
+    <link href="https://addy.io" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] addy.io free_tier — [Email] Open-source anonymous email forwarding, create unlimited email aliases for free</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5c5651bbbe4cbc3b</id>
+    <title>ovh: Free DDoS protection and SSL certificate</title>
+    <link href="https://www.ovhcloud.com/en-ie/security/ssl-gateway/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[cdn] ovh free_tier — [CDN and Protection] Free DDoS protection and SSL certificate</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5fa9e1bfbebd2378</id>
+    <title>Raff: Managed PostgreSQL, MySQL and Valkey, 1 free database per account with no expiry</title>
+    <link href="https://rafftechnologies.com/products/managed-databases" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[database] Raff free_tier — [Managed Data Services] Managed PostgreSQL, MySQL and Valkey, 1 free database per account with no expiry, 1 vCPU, 1 GB RAM and 2 GB storage (Valkey: 512 MB memory), 20 direct and 200 pooled connections on PostgreSQL, TLS on every database, pauses after 7 days without connections and resumes in about a minute. No egress fees.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:95b19ff8bd6b5fb6</id>
+    <title>SeaTable: Flexible, Spreadsheet-like Database built by the Seafile team. unlimited tables,</title>
+    <link href="https://seatable.com/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[database] SeaTable free_tier — [Managed Data Services] Flexible, Spreadsheet-like Database built by the Seafile team. unlimited tables, 2,000 lines, 1-month versioning, up to 25 team members.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:79479c45f7b9db86</id>
+    <title>Mailkube: Email infrastructure for developers, 4,000 emails/month free, unlimited domains </title>
+    <link href="https://mailkube.com/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Mailkube free_tier — [Email] Email infrastructure for developers, 4,000 emails/month free, unlimited domains included</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:04d19251401a142a</id>
+    <title>readthedocs.com: Free documentation hosting with versioning, PDF generation, and more</title>
+    <link href="https://readthedocs.com/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[paas] readthedocs.com free_tier — [Web Hosting] Free documentation hosting with versioning, PDF generation, and more</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:eb762453350cd88b</id>
+    <title>We.Team: Encrypt, share, copy, and move all your cloud storage files from one place. The </title>
+    <link href="https://www.we.team/en" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[storage] We.Team free_tier — [Storage and Media Processing] Encrypt, share, copy, and move all your cloud storage files from one place. The basic plan provides unlimited file transfer with 250 MB max. file size and allows five encrypted files</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d6321321db804792</id>
+    <title>腾讯云2026上云采购：轻量云63元/年，海外云20.7元/月，Token Plan 28元/月</title>
+    <link href="https://www.vpsxxs.com/tengxunyun20261116/" />
+    <updated>2026-11-17T11:06:39Z</updated>
+    <summary>[vps]  promo_code — 腾讯云2026上云采购季开始“AI换新.智启新局”促销活动，内地轻量云服务器首单最低63元/年，海外轻量云20 [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:269a1807e9f6d092</id>
+    <title>野草云香港VPS：118元/年，500GB流量/200M带宽，香港物理服务器199元/月，支持支付宝/银联/Paypal</title>
+    <link href="https://www.vpsxxs.com/yecaoyun20261113/" />
+    <updated>2026-11-16T10:09:59Z</updated>
+    <summary>[vps]  promo_code — 野草云专门促销自己的香港机房，香港Intel/AMD轻量云服务器118元/年起，可选香港优质BGP、香港精品B [&amp;#8230;]</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0944dedbec896be2</id>
+    <title>[models.dev] 新供应商入库: TokenWatt（1 个模型）</title>
+    <link href="https://www.tokenwatt.io/api.html" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] TokenWatt credits — models.dev 名录出现新 provider tokenwatt（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:473f5f21bc880a6b</id>
+    <title>[models.dev] 新供应商入库: TrustedTokens（10 个模型）</title>
+    <link href="https://trustedtokens.eu/docs" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] TrustedTokens credits — models.dev 名录出现新 provider trustedtokens（10 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3f0742aab05aa704</id>
+    <title>[models.dev] 新供应商入库: Pareto by Unbiased（1 个模型）</title>
+    <link href="https://unbiased.ai/developers/" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] Pareto by Unbiased credits — models.dev 名录出现新 provider unbiased（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:57c598ea73a7950e</id>
+    <title>[models.dev] 新供应商入库: UncensuredAI（3 个模型）</title>
+    <link href="https://uncensuredai.com/en/api/reference" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] UncensuredAI credits — models.dev 名录出现新 provider uncensuredai（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:caf0958b07641b14</id>
+    <title>[models.dev] 新供应商入库: Unrestricted（4 个模型）</title>
+    <link href="https://unrestricted.sh/reference" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] Unrestricted credits — models.dev 名录出现新 provider unrestricted（4 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:99735ae42d0b2bf2</id>
+    <title>[models.dev] 新供应商入库: UplinkSwitch（12 个模型）</title>
+    <link href="https://uplinkswitch.ai/models" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] UplinkSwitch credits — models.dev 名录出现新 provider uplinkswitch（12 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:92989a2ca73ecf3a</id>
+    <title>[models.dev] 新供应商入库: Verda（1 个模型）</title>
+    <link href="https://docs.verda.com/inference/quickstart/" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] Verda credits — models.dev 名录出现新 provider verda（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:11e81202814db646</id>
+    <title>[models.dev] 新供应商入库: Watt Cloud（18 个模型）</title>
+    <link href="https://www.watt-cloud.com/docs/" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] Watt Cloud credits — models.dev 名录出现新 provider watt（18 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:020c05bb20198f36</id>
+    <title>[models.dev] 新供应商入库: xxapi（16 个模型）</title>
+    <link href="https://docs.xxapi.ai/opencode" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] xxapi credits — models.dev 名录出现新 provider xxapi（16 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:81aa10c02482d5b7</id>
+    <title>[models.dev] 新供应商入库: ZeroGPU（9 个模型）</title>
+    <link href="https://docs.zerogpu.ai/docs/model-catalog" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] ZeroGPU credits — models.dev 名录出现新 provider zerogpu（9 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:618de0abb64e0cd4</id>
+    <title>[models.dev] 新供应商入库: Zro（5 个模型）</title>
+    <link href="https://zro.moonmath.ai/" />
+    <updated>2026-11-15T09:53:25Z</updated>
+    <summary>[ai_api] Zro credits — models.dev 名录出现新 provider zro（5 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e47ab2076206ba51</id>
+    <title>VPNDetection: VPN, proxy and hosting detection API for any IP address. The free plan answers t</title>
+    <link href="https://vpndetection.io" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] VPNDetection free_tier — [APIs, Data, and ML] VPN, proxy and hosting detection API for any IP address. The free plan answers the VPN, Tor and relay flags, country and ASN, with no API key, signup or monthly cap.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:de1474f93ca22722</id>
+    <title>Stategraph: GitOps-first Terraform automation with pull request-driven workflows, project is</title>
+    <link href="https://stategraph.com" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Stategraph free_tier — [CI and CD] GitOps-first Terraform automation with pull request-driven workflows, project isolation via self-hosted runners, and layered runs for ordered operations. Free for up to 3 users.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ec9f8a05b3462c49</id>
+    <title>Pingzen: Free uptime and API monitoring with up to 55 monitors, 1-minute check intervals,</title>
+    <link href="https://pingzen.dev" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Pingzen free_tier — [Monitoring] Free uptime and API monitoring with up to 55 monitors, 1-minute check intervals, and instant alerts.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9809b486f2935cae</id>
+    <title>Alias Email: Free 10 Bump email addresses, one custom domain</title>
+    <link href="https://alias.email" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] Alias Email free_tier — [Email] Free 10 Bump email addresses, one custom domain</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:681578655037f80d</id>
+    <title>UserCheck: Prevent users to sign up with temporary email addresses, 120 requests/hour (~86,</title>
+    <link href="https://www.usercheck.com" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[devtool] UserCheck free_tier — [Email] Prevent users to sign up with temporary email addresses, 120 requests/hour (~86,400 per month)</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6ac498b55240bfb3</id>
+    <title>nip.io: Free DNS service that when queried with a hostname with an embedded IP address r</title>
+    <link href="https://nip.io/" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[cdn] nip.io free_tier — [DNS] Free DNS service that when queried with a hostname with an embedded IP address returns that IP address.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e2f8252ce45303ef</id>
+    <title>Out Plane: Cloud sandboxes for coding agents (Hangars) plus app hosting in Germany. Free: H</title>
+    <link href="https://outplane.com" />
+    <updated>2026-11-21T10:10:52Z</updated>
+    <summary>[cloud] Out Plane free_tier — [IaaS] Cloud sandboxes for coding agents (Hangars) plus app hosting in Germany. Free: Hangars, cloud machines where agents like Claude Code, Codex and Cursor run, with no credit card required; the agent uses your own plan or API key. App hosting is paid, from $9/month with a 14-day free trial.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:411aa6f010983253</id>
+    <title>Show HN: YVD – Generate videos, images, and music in seconds with AI</title>
+    <link href="https://yvd.io/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api]  free_tier — YVD is an AI studio for creating videos, images, and music. Features include text-to-video, text-to-image, AI music generation, and PNG background removal. Built with Seedance and GPT image models. Free tier with 20 welcome credits + 10 daily credits.</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d8b0a5448611b6c7</id>
+    <title>[models.dev] 新供应商入库: AbliteratedLLM（15 个模型）</title>
+    <link href="https://abliteratedllm.dev/docs/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] AbliteratedLLM credits — models.dev 名录出现新 provider abliteratedllm（15 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b3d68a6ab787bc0a</id>
+    <title>[models.dev] 新供应商入库: Adaption（7 个模型）</title>
+    <link href="https://docs.adaptionlabs.ai" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Adaption credits — models.dev 名录出现新 provider adaption（7 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9a0a8ceb4c5e9831</id>
+    <title>[models.dev] 新供应商入库: Adzuki AI（12 个模型）</title>
+    <link href="https://adzukiai.com/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Adzuki AI credits — models.dev 名录出现新 provider adzuki（12 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:1bd58f714a546787</id>
+    <title>[models.dev] 新供应商入库: AIGROW（9 个模型）</title>
+    <link href="https://aigrow.gg/ai-api/guide" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] AIGROW credits — models.dev 名录出现新 provider aigrow（9 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c7e3af711c7d0ea3</id>
+    <title>[models.dev] 新供应商入库: AI Power Grid（2 个模型）</title>
+    <link href="https://aipowergrid.io/docs/integrations" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] AI Power Grid credits — models.dev 名录出现新 provider aipg（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b899a41b2476af34</id>
+    <title>[models.dev] 新供应商入库: AI Stupid Level（10 个模型）</title>
+    <link href="https://aistupidlevel.info/router/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] AI Stupid Level credits — models.dev 名录出现新 provider aistupidlevel（10 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:be28b7460f00f0bf</id>
+    <title>[models.dev] 新供应商入库: AnonRouter（3 个模型）</title>
+    <link href="https://docs.anonrouter.ai/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] AnonRouter credits — models.dev 名录出现新 provider anonrouter（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dbd91bbaff4e8594</id>
+    <title>[models.dev] 新供应商入库: APIKO（3 个模型）</title>
+    <link href="https://apiko.app/docs/introduction" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] APIKO credits — models.dev 名录出现新 provider apiko（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:07c2198be70956ce</id>
+    <title>[models.dev] 新供应商入库: Augure（6 个模型）</title>
+    <link href="https://augureai.ca/docs/api" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Augure credits — models.dev 名录出现新 provider augure（6 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c0fd28e8a3607982</id>
+    <title>[models.dev] 新供应商入库: Autarcho（1 个模型）</title>
+    <link href="https://autarcho.com/use/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Autarcho credits — models.dev 名录出现新 provider autarcho（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0e017aa0fda671ac</id>
+    <title>[models.dev] 新供应商入库: Bumo Router（20 个模型）</title>
+    <link href="https://bumo.ai/docs/api" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Bumo Router credits — models.dev 名录出现新 provider bumo（20 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:4cfd9c93adadfa04</id>
+    <title>[models.dev] 新供应商入库: CedarLLM（1 个模型）</title>
+    <link href="https://cedarllm.com/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] CedarLLM credits — models.dev 名录出现新 provider cedarllm（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ee12e8222f964801</id>
+    <title>[models.dev] 新供应商入库: cheapaimodel（5 个模型）</title>
+    <link href="https://cheapaimodel.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] cheapaimodel credits — models.dev 名录出现新 provider cheapaimodel（5 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6ac4f2e30f4b2b54</id>
+    <title>[models.dev] 新供应商入库: CheapestToken（19 个模型）</title>
+    <link href="https://cheapest-token.com/docs/opencode" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] CheapestToken credits — models.dev 名录出现新 provider cheapest-token（19 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9f47ce4c046f00f2</id>
+    <title>[models.dev] 新供应商入库: cheapllm.shop（1 个模型）</title>
+    <link href="https://cheapllm.shop/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] cheapllm.shop credits — models.dev 名录出现新 provider cheapllm（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a90227662d8b7d3b</id>
+    <title>[models.dev] 新供应商入库: CloudCode.ONE（6 个模型）</title>
+    <link href="https://cloudcode.one" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] CloudCode.ONE credits — models.dev 名录出现新 provider cloudcode（6 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:30f9b98a473ef0fb</id>
+    <title>[models.dev] 新供应商入库: Confidential AI（1 个模型）</title>
+    <link href="https://confidential.ai/docs/inference-api/get-started" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Confidential AI credits — models.dev 名录出现新 provider confidential-ai（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:54eb0207deea9935</id>
+    <title>[models.dev] 新供应商入库: DotHoosh（16 个模型）</title>
+    <link href="https://gateway.dothoosh.com/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] DotHoosh credits — models.dev 名录出现新 provider dothoosh（16 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:42376e8d030c526b</id>
+    <title>[models.dev] 新供应商入库: Doubleword（18 个模型）</title>
+    <link href="https://docs.doubleword.ai/inference-api/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Doubleword credits — models.dev 名录出现新 provider doubleword（18 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f8e8cd41684d8c59</id>
+    <title>[models.dev] 新供应商入库: Entrim（4 个模型）</title>
+    <link href="https://docs.entrim.ai/model-api/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Entrim credits — models.dev 名录出现新 provider entrim（4 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a61ddd5f449a855f</id>
+    <title>[models.dev] 新供应商入库: Ezkielyna（5 个模型）</title>
+    <link href="https://ezkielyna.store/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Ezkielyna credits — models.dev 名录出现新 provider ezkielyna（5 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:eebf6b3e4cadc5d5</id>
+    <title>[models.dev] 新供应商入库: 50X（1 个模型）</title>
+    <link href="https://ai.50x.energy/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] 50X credits — models.dev 名录出现新 provider fiftyx（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:92199d8e755e4dcc</id>
+    <title>[models.dev] 新供应商入库: Fortytwo（1 个模型）</title>
+    <link href="https://docs.fortytwo.network/docs/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Fortytwo credits — models.dev 名录出现新 provider fortytwo（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dc4c59b6ccf9eaab</id>
+    <title>[models.dev] 新供应商入库: Frequency（1 个模型）</title>
+    <link href="https://docs.miraiminds.co/v2/llm" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Frequency credits — models.dev 名录出现新 provider frequency（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:0b493c8b29cc00dd</id>
+    <title>[models.dev] 新供应商入库: Gisoo（16 个模型）</title>
+    <link href="https://gisoo.pro/docs/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Gisoo credits — models.dev 名录出现新 provider gisoo（16 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:806ac6292def9092</id>
+    <title>[models.dev] 新供应商入库: GraphN（7 个模型）</title>
+    <link href="https://graphn.ai/docs/getting-started" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] GraphN credits — models.dev 名录出现新 provider graphn（7 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9ec1046a1a0cf356</id>
+    <title>[models.dev] 新供应商入库: Hostinger Router（8 个模型）</title>
+    <link href="https://www.hostinger.com/ai-router" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Hostinger Router credits — models.dev 名录出现新 provider hostinger-router（8 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:3acbf52721a1832c</id>
+    <title>[models.dev] 新供应商入库: Huawei Cloud MAAS（8 个模型）</title>
+    <link href="https://support.huaweicloud.com/model-call-maas/model-call-021.html" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Huawei Cloud MAAS credits — models.dev 名录出现新 provider huawei-maas（8 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:619122ad35cb625c</id>
+    <title>[models.dev] 新供应商入库: Hubris（16 个模型）</title>
+    <link href="https://hubris.pw/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Hubris credits — models.dev 名录出现新 provider hubris（16 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c317d9d1e5504937</id>
+    <title>[models.dev] 新供应商入库: HUMAIN（2 个模型）</title>
+    <link href="https://platform.node.humain.com" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] HUMAIN credits — models.dev 名录出现新 provider humain（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:fb550c659207b0b3</id>
+    <title>[models.dev] 新供应商入库: InferAll（6 个模型）</title>
+    <link href="https://inferall.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] InferAll credits — models.dev 名录出现新 provider inferall（6 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:017cb643a2ad0241</id>
+    <title>[models.dev] 新供应商入库: Inference Cooperative（8 个模型）</title>
+    <link href="https://inference.coop" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Inference Cooperative credits — models.dev 名录出现新 provider inference-coop（8 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:fc294442a9ccb8ad</id>
+    <title>[models.dev] 新供应商入库: Inference APIs（11 个模型）</title>
+    <link href="https://inferenceapis.com/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Inference APIs credits — models.dev 名录出现新 provider inferenceapis（11 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6592f933f52d1c71</id>
+    <title>[models.dev] 新供应商入库: Inferris（4 个模型）</title>
+    <link href="https://inferris.ai/developers.md" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Inferris credits — models.dev 名录出现新 provider inferris（4 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:43baf6facdbf4db0</id>
+    <title>[models.dev] 新供应商入库: Infersia（6 个模型）</title>
+    <link href="https://infersia.com/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Infersia credits — models.dev 名录出现新 provider infersia（6 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:465f81de55eb0805</id>
+    <title>[models.dev] 新供应商入库: Isoquant（2 个模型）</title>
+    <link href="https://isoquant.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Isoquant credits — models.dev 名录出现新 provider isoquant（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c9529081b560ded8</id>
+    <title>[models.dev] 新供应商入库: Jad AI（3 个模型）</title>
+    <link href="https://jadai.freesrv.com/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Jad AI credits — models.dev 名录出现新 provider jad-ai（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a4b7f6c46a738eb5</id>
+    <title>[models.dev] 新供应商入库: JoinGonka（3 个模型）</title>
+    <link href="https://gate.joingonka.ai/docs/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] JoinGonka credits — models.dev 名录出现新 provider joingonka（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:18d69207fecc5df0</id>
+    <title>[models.dev] 新供应商入库: JZSTOKEN（22 个模型）</title>
+    <link href="https://jzstoken.com" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] JZSTOKEN credits — models.dev 名录出现新 provider jzstoken（22 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d9de9ac08eae5a21</id>
+    <title>[models.dev] 新供应商入库: Keln（14 个模型）</title>
+    <link href="https://docs.keln.ai/models-pricing/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Keln credits — models.dev 名录出现新 provider keln（14 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dbddde503d62deb6</id>
+    <title>[models.dev] 新供应商入库: Kitani（9 个模型）</title>
+    <link href="https://kitani.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Kitani credits — models.dev 名录出现新 provider kitani（9 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:1f79962e596db5a3</id>
+    <title>[models.dev] 新供应商入库: Klavo AI（10 个模型）</title>
+    <link href="https://ai.klavo.ru/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Klavo AI credits — models.dev 名录出现新 provider klavo（10 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:d7e4a195f9471a51</id>
+    <title>[models.dev] 新供应商入库: KoRouter（19 个模型）</title>
+    <link href="https://korouter.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] KoRouter credits — models.dev 名录出现新 provider korouter（19 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:eb3eeda0463fdf19</id>
+    <title>[models.dev] 新供应商入库: Kunavo（16 个模型）</title>
+    <link href="https://kunavo.com/docs/quickstart?utm_source=models.dev&amp;utm_medium=directory" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Kunavo credits — models.dev 名录出现新 provider kunavo（16 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:220fcd846048765e</id>
+    <title>[models.dev] 新供应商入库: LithosAI（3 个模型）</title>
+    <link href="https://docs.lithosai.com" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] LithosAI credits — models.dev 名录出现新 provider lithosai（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:239481c5c2f1f2da</id>
+    <title>[models.dev] 新供应商入库: Logits（2 个模型）</title>
+    <link href="https://logits.com/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Logits credits — models.dev 名录出现新 provider logits（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:c3df5abf5481868a</id>
+    <title>[models.dev] 新供应商入库: Lyceum（8 个模型）</title>
+    <link href="https://docs.lyceum.technology/docs/inference/serverless" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Lyceum credits — models.dev 名录出现新 provider lyceum（8 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:8edfe72fe04fd132</id>
+    <title>[models.dev] 新供应商入库: Mallard AI（1 个模型）</title>
+    <link href="https://mallardai.co.uk/docs/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Mallard AI credits — models.dev 名录出现新 provider mallard（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a712543202ee4d5b</id>
+    <title>[models.dev] 新供应商入库: meraGPT（1 个模型）</title>
+    <link href="https://meragpt.com/docs/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] meraGPT credits — models.dev 名录出现新 provider meragpt（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:5b78a037a753a0e6</id>
+    <title>[models.dev] 新供应商入库: Moneo（11 个模型）</title>
+    <link href="https://moneo.one/api.html" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Moneo credits — models.dev 名录出现新 provider moneo（11 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b44b8c948055a4b9</id>
+    <title>[models.dev] 新供应商入库: Nodecode（1 个模型）</title>
+    <link href="https://nodecode.ai/docs/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Nodecode credits — models.dev 名录出现新 provider nodecode（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:46583a5eb6bf1f6d</id>
+    <title>[models.dev] 新供应商入库: nokeep（3 个模型）</title>
+    <link href="https://nokeep.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] nokeep credits — models.dev 名录出现新 provider nokeep（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:ae26a2b82794a8c9</id>
+    <title>[models.dev] 新供应商入库: Oathbreaker AI（2 个模型）</title>
+    <link href="https://oathbreaker.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Oathbreaker AI credits — models.dev 名录出现新 provider oathbreaker（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e340491b2d4bb941</id>
+    <title>[models.dev] 新供应商入库: Obscurify.ai（15 个模型）</title>
+    <link href="https://obscurify.ai/api-docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Obscurify.ai credits — models.dev 名录出现新 provider obscurify（15 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f90bbadd243653c0</id>
+    <title>[models.dev] 新供应商入库: Outer Labs（18 个模型）</title>
+    <link href="https://outerlabs.ai/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Outer Labs credits — models.dev 名录出现新 provider outerlabs（18 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:2bc2383ef22c77d8</id>
+    <title>[models.dev] 新供应商入库: ParalonCloud（1 个模型）</title>
+    <link href="https://paraloncloud.com/docs/inference-api" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] ParalonCloud credits — models.dev 名录出现新 provider paraloncloud（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6031cc5a422dec5f</id>
+    <title>[models.dev] 新供应商入库: Phala（19 个模型）</title>
+    <link href="https://docs.phala.com/phala-cloud/confidential-ai/confidential-model/confidential-ai-api" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Phala credits — models.dev 名录出现新 provider phala（19 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e8cef0cb4830eadd</id>
+    <title>[models.dev] 新供应商入库: Phase Router（2 个模型）</title>
+    <link href="https://router.phase.xyz/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Phase Router credits — models.dev 名录出现新 provider phase（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a1be8da9afd0c9f4</id>
+    <title>[models.dev] 新供应商入库: Powerspring（7 个模型）</title>
+    <link href="https://powerspring.eu/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Powerspring credits — models.dev 名录出现新 provider powerspring（7 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:601c8321115ec000</id>
+    <title>[models.dev] 新供应商入库: ProxyStacks Relay（4 个模型）</title>
+    <link href="https://proxystacks.com/en/docs/opencode" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] ProxyStacks Relay credits — models.dev 名录出现新 provider proxystacks（4 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:e549ef80e060534c</id>
+    <title>[models.dev] 新供应商入库: Rayline（2 个模型）</title>
+    <link href="https://docs.rayline.ai/tools/opencode" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Rayline credits — models.dev 名录出现新 provider rayline（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:dabe4fbb5602f7d0</id>
+    <title>[models.dev] 新供应商入库: Refuseless（6 个模型）</title>
+    <link href="https://docs.refuseless.com/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Refuseless credits — models.dev 名录出现新 provider refuseless（6 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:6c2161d8f8984c5f</id>
+    <title>[models.dev] 新供应商入库: RuAPI（9 个模型）</title>
+    <link href="https://www.ruapi.ai/pricing?lng=en" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] RuAPI credits — models.dev 名录出现新 provider ruapi（9 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:7ed8e8e698741487</id>
+    <title>[models.dev] 新供应商入库: Runcrate（11 个模型）</title>
+    <link href="https://www.runcrate.ai/docs/models/overview" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Runcrate credits — models.dev 名录出现新 provider runcrate（11 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:211849a088fdbcb4</id>
+    <title>[models.dev] 新供应商入库: SAGG（1 个模型）</title>
+    <link href="https://api.privatedeskai.com/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] SAGG credits — models.dev 名录出现新 provider sagg（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:a4f02a0fa40e135d</id>
+    <title>[models.dev] 新供应商入库: SandBase（10 个模型）</title>
+    <link href="https://www.sandbase.ai/docs/model-api-reference/llm-models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] SandBase credits — models.dev 名录出现新 provider sandbase（10 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:be13fb94a5cc5f51</id>
+    <title>[models.dev] 新供应商入库: SOKKAN Router（5 个模型）</title>
+    <link href="https://router.sokkan.ch/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] SOKKAN Router credits — models.dev 名录出现新 provider sokkan（5 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:27646fda22f35d23</id>
+    <title>[models.dev] 新供应商入库: SparrowCodes（19 个模型）</title>
+    <link href="https://sparrowcodes.com/models" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] SparrowCodes credits — models.dev 名录出现新 provider sparrowcodes（19 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:8cb68d6e86ddec22</id>
+    <title>[models.dev] 新供应商入库: SteadyRouter（21 个模型）</title>
+    <link href="https://www.steadyrouter.com/site/docs.html" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] SteadyRouter credits — models.dev 名录出现新 provider steadyrouter（21 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9bc6f9194434eb23</id>
+    <title>[models.dev] 新供应商入库: stepping stone AG（15 个模型）</title>
+    <link href="https://www.stepping-stone.ch/en/products/artificial-intelligence" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] stepping stone AG credits — models.dev 名录出现新 provider stepping-stone（15 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:bfd0f4a6a9a4df2d</id>
+    <title>[models.dev] 新供应商入库: superbot（2 个模型）</title>
+    <link href="https://superbot.gg/api" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] superbot credits — models.dev 名录出现新 provider superbot-gg（2 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b9cb61b1a94a1c0f</id>
+    <title>[models.dev] 新供应商入库: Synthorai（12 个模型）</title>
+    <link href="https://synthorai.io/docs/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Synthorai credits — models.dev 名录出现新 provider synthorai（12 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:9900c4a550a6e9ea</id>
+    <title>[models.dev] 新供应商入库: TeamoRouter（10 个模型）</title>
+    <link href="https://teamorouter.com/docs/api-integration" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] TeamoRouter credits — models.dev 名录出现新 provider teamorouter（10 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:788f9eb4a0517d87</id>
+    <title>[models.dev] 新供应商入库: Teapot Router（7 个模型）</title>
+    <link href="https://teapotrouter.com/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Teapot Router credits — models.dev 名录出现新 provider teapot-router（7 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:fb9ca1a711965ce5</id>
+    <title>[models.dev] 新供应商入库: Tenstorrent（4 个模型）</title>
+    <link href="https://console.tenstorrent.com" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Tenstorrent credits — models.dev 名录出现新 provider tenstorrent（4 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:b0e5940bfc598eab</id>
+    <title>[models.dev] 新供应商入库: TheRouter（1 个模型）</title>
+    <link href="https://therouter.ai/docs/quickstart/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] TheRouter credits — models.dev 名录出现新 provider therouter（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:f49f6bd0ccc8ac61</id>
+    <title>[models.dev] 新供应商入库: ToAPIs（3 个模型）</title>
+    <link href="https://docs.toapis.com" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] ToAPIs credits — models.dev 名录出现新 provider toapis（3 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:80c74de94851abec</id>
+    <title>[models.dev] 新供应商入库: Tokenify（5 个模型）</title>
+    <link href="https://www.tokenify.dev/docs/" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] Tokenify credits — models.dev 名录出现新 provider tokenify（5 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+  <entry>
+    <id>urn:promo-radar:offer:570d3d1928cadc2a</id>
+    <title>[models.dev] 新供应商入库: TokenLab（1 个模型）</title>
+    <link href="https://tokenlab.sh/docs" />
+    <updated>2026-11-15T09:53:24Z</updated>
+    <summary>[ai_api] TokenLab credits — models.dev 名录出现新 provider tokenlab（1 个模型）。新进名录的供应商通常在拉新期，建议查看其官网注册活动并收编 watchlist。</summary>
+  </entry>
+</feed>
