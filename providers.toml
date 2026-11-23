@@ -3718,3 +3718,10 @@ urls = [
 ]
 notes = "auto-enrolled from modelsdev 2026-11-15"
 
+[[provider]]
+name = "Concentrate"
+urls = [
+    { label = "home", url = "https://concentrate.ai/docs" },
+]
+notes = "auto-enrolled from modelsdev 2026-11-23"
+
